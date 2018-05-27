@@ -1,32 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="http://reachsrirams.github.io/blogs/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="http://reachsrirams.github.io/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://reachsrirams.github.io/blogs/blogs/2018/01/07/goals-for-the-first-half-of-2018/</loc>
+    <loc>http://reachsrirams.github.io/blogs/2018/01/07/goals-for-the-first-half-of-2018/</loc>
     <lastmod>2018-01-07T18:18:26+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://reachsrirams.github.io/blogs/blogs/</loc>
-    <lastmod>2018-01-07T18:18:26+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://reachsrirams.github.io/blogs/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://reachsrirams.github.io/blogs/categories/development/</loc>
-    <lastmod>2018-01-07T18:18:26+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -37,14 +17,34 @@
   </url>
   
   <url>
-    <loc>http://reachsrirams.github.io/blogs/categories/self-improvement/</loc>
+    <loc>http://reachsrirams.github.io/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/categories/development/</loc>
     <lastmod>2018-01-07T18:18:26+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://reachsrirams.github.io/blogs/tags/</loc>
+    <loc>http://reachsrirams.github.io/</loc>
+    <lastmod>2018-01-07T18:18:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/categories/self-improvement/</loc>
+    <lastmod>2018-01-07T18:18:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

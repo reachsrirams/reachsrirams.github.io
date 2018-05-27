@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://reachsrirams.github.io/blogs/sitemap.xml
+Sitemap: http://reachsrirams.github.io/sitemap.xml

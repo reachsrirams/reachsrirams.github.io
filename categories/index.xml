@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Innervoce Blogs</title>
-    <link>http://reachsrirams.github.io/blogs/categories/</link>
+    <link>http://reachsrirams.github.io/categories/</link>
     <description>Recent content in Categories on Innervoce Blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="http://reachsrirams.github.io/blogs/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://reachsrirams.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Development</title>
-      <link>http://reachsrirams.github.io/blogs/categories/development/</link>
+      <link>http://reachsrirams.github.io/categories/development/</link>
       <pubDate>Sun, 07 Jan 2018 18:18:26 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/categories/development/</guid>
+      <guid>http://reachsrirams.github.io/categories/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Self Improvement</title>
-      <link>http://reachsrirams.github.io/blogs/categories/self-improvement/</link>
+      <link>http://reachsrirams.github.io/categories/self-improvement/</link>
       <pubDate>Sun, 07 Jan 2018 18:18:26 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/categories/self-improvement/</guid>
+      <guid>http://reachsrirams.github.io/categories/self-improvement/</guid>
       <description></description>
     </item>
     
