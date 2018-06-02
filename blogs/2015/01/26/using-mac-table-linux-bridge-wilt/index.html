@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Using MAC table – Linux Bridge – WILT - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="In an earlier blog, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.
+MAC Table &amp;#8211; Background Bridges and Switches forward packets by examining and learning MAC address from incoming packets." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.40" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Using MAC table – Linux Bridge – WILT" />
+<meta property="og:description" content="In an earlier blog, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.
+MAC Table &#8211; Background Bridges and Switches forward packets by examining and learning MAC address from incoming packets." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/" />
+
+
+
+<meta property="article:published_time" content="2015-01-26T16:19:23&#43;00:00"/>
+
+<meta property="article:modified_time" content="2015-01-26T16:19:23&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Using MAC table – Linux Bridge – WILT">
+<meta itemprop="description" content="In an earlier blog, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.
+MAC Table &#8211; Background Bridges and Switches forward packets by examining and learning MAC address from incoming packets.">
+
+
+<meta itemprop="datePublished" content="2015-01-26T16:19:23&#43;00:00" />
+<meta itemprop="dateModified" content="2015-01-26T16:19:23&#43;00:00" />
+<meta itemprop="wordCount" content="621">
+
+
+
+<meta itemprop="keywords" content="brctl,Linux Bridge,MAC,MAC table,OpenStack,tap interface,Virtual Machine,Virtualization,VM," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using MAC table – Linux Bridge – WILT"/>
+<meta name="twitter:description" content="In an earlier blog, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.
+MAC Table &#8211; Background Bridges and Switches forward packets by examining and learning MAC address from incoming packets."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-26491607-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Using MAC table – Linux Bridge – WILT</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2015-01-26 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/networking/"> Networking </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+              <a href="/blogs/categories/virtualization/"> Virtualization </a>
+            
+          </div>
+        <span class="more-meta"> 621 words </span>
+        <span class="more-meta"> 3 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#mac-table-8211-background">MAC Table &#8211; Background</a></li>
+<li><a href="#interpreting-mac-table-8211-step-by-step-guide">Interpreting MAC Table &#8211; Step-by-Step guide</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>In an <a href="http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/" title="Linux Bridge and Virtual Networking">earlier blog</a>, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.</p>
+
+<h2 id="mac-table-8211-background">MAC Table &#8211; Background</h2>
+
+<p>Bridges and Switches forward packets by examining and learning MAC address from incoming packets. Linux bridges are no different from their hardware counterparts. And looking at the MAC table learnt by Linux bridges can provide useful insight into the flow of packets.</p>
+
+<p>In cloud platforms like OpenStack, virtual machines (VMs) started by different tenants may get <em>scheduled</em> on the same hardware server. It follows that these VMs will share the resources on that server including the network ports. Let us consider a scenario where Linux bridge is used for virtual networking (as Mechanism driver in OpenStack). Now if there was a problem with one of the network ports on a server, it will be good to know which VMs are impacted by it.</p>
+
+<p>Since multiple Linux bridges may be present, one of the best ways to find out the affected VMs for a given physical network port, is by looking at the MAC table of the Linux bridge <em>that is bound to the failed network port</em>.</p>
+
+<h2 id="interpreting-mac-table-8211-step-by-step-guide">Interpreting MAC Table &#8211; Step-by-Step guide</h2>
+
+<p><strong>Step 1</strong>: If you have detected that <em>eth0</em> interface is having a problem, then using <em>brctl show</em> command you can list all the bridges and identify the Linux bridge bound to <em>eth0</em>.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1.png"><img class="aligncenter size-full wp-image-1226" alt="Step 1 - Identify the bridge for a given interface" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1.png" width="719" height="178" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1.png 719w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1-300x74.png 300w" sizes="(max-width: 719px) 100vw, 719px" /></a></p>
+
+<p><strong>Step 2</strong>: Next execute the command _brctl showmacs <bridge_name>_ with the bridge you identified in Step 1 to view the MAC table. In the output, each row represents MAC address learnt at each port of the Linux bridge. The important columns in the output are &#8216;is local?&#8217;, &#8216;port no&#8217; and &#8216;mac addr&#8217;.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2.png"><img class="aligncenter size-full wp-image-1227" alt="Step 2 - View MAC Table using brctl showmacs command" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2.png" width="626" height="205" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2.png 626w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2-300x98.png 300w" sizes="(max-width: 626px) 100vw, 626px" /></a></p>
+
+<p><strong>Step 3</strong>: When a row (or MAC address) has &#8216;is local&#8217; as Y (means Yes), then it represents the <em>MAC address of an interface <strong>directly</strong> <strong>on</strong> the Linux Bridge</em><strong>. </strong>You can confirm this with the MAC address of _eth0 _which is <em>bound</em> to the Linux bridge (myvirtbridge in the screenshot below). The other interfaces with &#8216;is local&#8217; as Yes are the <em><a href="http://www.innervoice.in/blogs/2013/12/08/tap-interfaces-linux-bridge/" title="Tap Interfaces and Linux Bridge">tap interfaces</a> directly on the Linux bridge</em>. <strong>Make a note</strong> of the &#8216;port no&#8217; for these tap interface MAC addresses (where &#8216;is local&#8217; is Yes).</p>
+
+<p style="text-align: center;">
+  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1.png"><img class="aligncenter  wp-image-1228" title="Step 3 - Identify Port Numbers for Local Ports" alt="Step 3 - Identify Port Numbers for Local Ports" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1.png" width="451" height="331" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1.png 644w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1-300x220.png 300w" sizes="(max-width: 451px) 100vw, 451px" /></a>
+</p>
+
+<p>In this example, Port Number 1 belongs to the <em>eth0</em> interface. And Ports 2 and 3 represent the Tap interfaces on the Linux bridge (myvirtbridge).</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2.png"><img class="aligncenter size-full wp-image-1230" alt="Step 3 - Identify Port Numbers for Local Ports" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2.png" width="612" height="249" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2.png 612w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2-300x122.png 300w" sizes="(max-width: 612px) 100vw, 612px" /></a></p>
+
+<p><strong>Step 4</strong>: For each port number with a &#8216;is local&#8217; as Yes, you will find another entry in the MAC table _with the_ <em>same port number but with &#8216;is local&#8217; as No</em>. These entries with &#8216;is local&#8217; as No represents the MAC address _learnt _from the incoming packets. Since we are looking at Port number for tap interfaces, the remote entities that are sending these packets are basically the <em>virtual interfaces</em> inside virtual machines. In the picture below, for Local port 2, the non-local (remote) MAC address is &#8220;52:54:00:81:ad:5a&#8221;. This will be the MAC address of a virtual NIC of a VM. Similarly for local port 3.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1.png"><img class="aligncenter size-full wp-image-1232" alt="Step 4 - Identify Remote MAC address for the corresponding Local MAC" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1.png" width="596" height="230" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1.png 596w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1-300x116.png 300w" sizes="(max-width: 596px) 100vw, 596px" /></a></p>
+
+<p><strong>Step 5</strong>: There are two ways to confirm that the _remote_ MAC addresses belong to VMs.</p>
+
+<ol>
+<li>You can use the <em>ps -ef </em> command and <em>grep</em> for these remote MAC addresses.</li>
+<li>Or you can login into the VMs and try the <em>ifconfig</em> command _inside _the VM.</li>
+</ol>
+
+<p style="text-align: center;">
+  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5.png"><img class="aligncenter  wp-image-1233" alt="Step 5 - Verify the MAC address of the VM" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5.png" width="561" height="401" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5.png 701w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5-300x214.png 300w" sizes="(max-width: 561px) 100vw, 561px" /></a>
+</p>
+
+<p><strong>Conclusion</strong>: As seen in the step by step guide, understanding MAC table output provides useful insights into the flow of packets in a Linux bridge. It can be a useful tool in troubleshooting networking problems (in addition to other tools).</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/brctl/">brctl</a>
+          
+          <a href="/blogs/tags/linux-bridge/">Linux Bridge</a>
+          
+          <a href="/blogs/tags/mac/">MAC</a>
+          
+          <a href="/blogs/tags/mac-table/">MAC table</a>
+          
+          <a href="/blogs/tags/openstack/">OpenStack</a>
+          
+          <a href="/blogs/tags/tap-interface/">tap interface</a>
+          
+          <a href="/blogs/tags/virtual-machine/">Virtual Machine</a>
+          
+          <a href="/blogs/tags/virtualization/">Virtualization</a>
+          
+          <a href="/blogs/tags/vm/">VM</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/2017/11/26/docker-compose-nginx-nodejs/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Docker Compose with nginx and NodeJS</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/2014/12/17/linux-network-namespace-wilt/">
+            <span class="next-text nav-default">Linux Network Namespace – WILT</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

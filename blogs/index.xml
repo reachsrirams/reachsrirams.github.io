@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Innervoce Blogs</title>
+    <title>Sriram S - Innervoice</title>
     <link>http://reachsrirams.github.io/blogs/</link>
-    <description>Recent content on Innervoce Blogs</description>
+    <description>Recent content on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 07 Jan 2018 18:18:26 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Goals for the first half of 2018</title>
-      <link>http://reachsrirams.github.io/blogs/2018/01/goals-for-the-first-half-of-2018/</link>
+      <link>http://reachsrirams.github.io/blogs/2018/01/07/goals-for-the-first-half-of-2018/</link>
       <pubDate>Sun, 07 Jan 2018 18:18:26 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/2018/01/goals-for-the-first-half-of-2018/</guid>
+      <guid>http://reachsrirams.github.io/blogs/2018/01/07/goals-for-the-first-half-of-2018/</guid>
       
         <description>
 
@@ -57,6 +57,299 @@
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt; &amp;#8211; as you can see I am trying to consolidate the various online blogging platforms and align them to meet my future plans. &lt;span style=&#34;text-decoration: underline;&#34;&gt;&lt;strong&gt;You can really help me&lt;/strong&gt;&lt;/span&gt; by sharing ideas and suggestions about Medium, other online blogging platforms etc. Or sharing tools that will help me with the rationalization.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Docker Compose with nginx and NodeJS</title>
+      <link>http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/</link>
+      <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/</guid>
+      
+        <description>
+
+&lt;p&gt;If you are a follower of this blog, you might have read about &lt;a href=&#34;http://www.innervoice.in/blogs/2017/11/19/using-docker-nginx-nodejs/&#34;&gt;Using Docker with nginx and NodeJS&lt;/a&gt;. In this blog, I will discuss the code to build  the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is &lt;a href=&#34;https://goo.gl/sBmSt3&#34;&gt;available on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Acknowledgement: I was inspired by &lt;a href=&#34;http://schempy.com/2015/08/25/docker_nginx_nodejs/&#34;&gt;this blog&lt;/a&gt; and wanted to take it further using Docker Compose.&lt;/p&gt;
+
+&lt;h3 id=&#34;docker-compose-8211-background&#34;&gt;Docker Compose &amp;#8211; background&lt;/h3&gt;
+
+&lt;p&gt;Docker Compose is a tool to build and coordinate multi-container applications. You use a YAML file to define different containers and any relationship between them. Docker Compose uses this YAML file to start those containers. We can continue to use the Dockerfile as a building block for Docker Compose.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/docker-compose-yaml/#main&#34; target=&#34;_blank&#34; rel=&#34;attachment wp-att-1581 noopener&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1581&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/docker-compose-yaml-460x300.png&#34; alt=&#34;docker compose YAML&#34; width=&#34;500&#34; height=&#34;447&#34; /&gt;&lt;/a&gt;&lt;a style=&#34;font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 12px; font-family: &#39;Open Sans&#39;, sans-serif; color: #488cde;&#34; href=&#34;http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/docker-compose-code/#main&#34; target=&#34;_blank&#34; rel=&#34;attachment wp-att-1580 noopener&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1580&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/docker-compose-code-460x300.png&#34; alt=&#34;docker compose code&#34; width=&#34;449&#34; height=&#34;252&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see from the GitHub repository, I have two containers defined in my &lt;em&gt;docker-compose.yml&lt;/em&gt; file. The YAML file shows that the two &amp;#8220;services&amp;#8221; are &lt;em&gt;built&lt;/em&gt; using the Dockerfile specified for each of the containers. The steps in two Dockerfiles are fairly straightforward. They create an Ubuntu based container, install the necessary software packages and copy a few files to configure nginx and NodeJS.&lt;/p&gt;
+
+&lt;h3 id=&#34;nginx-proxy&#34;&gt;nginx Proxy&lt;/h3&gt;
+
+&lt;p&gt;In the previous blog, we showed that nginx is used to serve static HTML files and to forward (proxy) the API requests to NodeJS. Here is the screenshot of the file I use for nginx configuration.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/nginx-conf/#main&#34; rel=&#34;attachment wp-att-1586&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1586&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf.png&#34; alt=&#34;Nginx Config File&#34; width=&#34;560&#34; height=&#34;479&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf.png 560w, http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf-300x257.png 300w&#34; sizes=&#34;(max-width: 560px) 100vw, 560px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This config file configures nginx to listen on port 80 for HTTP requests. If the requests comes to a root folder &amp;#8216;/&amp;#8217;, it is redirected to the Application represented by &amp;#8220;/app&amp;#8221; on the same &lt;em&gt;host&lt;/em&gt;. However if the request is for API represented by &amp;#8220;/app/api&amp;#8221; URI, then nginx will &lt;em&gt;proxy&lt;/em&gt; the request to &amp;#8220;API Server&amp;#8221; on port 9090. If you look at the Dockerfile for the NodeJS container, you will see that it is listening on port 9090. The key thing here is the keyword &lt;em&gt;apiserver&lt;/em&gt;. &lt;strong&gt;How does nginx know what is the IP address for the NodeJS container?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;docker-8211-links&#34;&gt;Docker &amp;#8211; links&lt;/h3&gt;
+
+&lt;p&gt;Links are important concepts that help Docker containers communicate with one another. It is a good practice to use host names instead of hard-coding IP addresses when one container needs to communicate with another. But host names and IP addresses have to be mapped automatically. This is where the concept of Link comes into picture.&lt;/p&gt;
+
+&lt;p&gt;The YAML file has a stanza for the GUI container as follows:&lt;/p&gt;
+
+&lt;pre class=&#34;&#34;&gt;links:
+    - api:apiserver&lt;/pre&gt;
+
+&lt;p&gt;The keyword, &lt;em&gt;api,&lt;/em&gt; refers to the &amp;#8220;container&amp;#8221; mentioned earlier in the YAML file.&lt;/p&gt;
+
+&lt;pre class=&#34;&#34;&gt;services:
+    - api:
+        build: api-container&lt;/pre&gt;
+
+&lt;p&gt;The effect of this &lt;em&gt;link&lt;/em&gt; is that Docker will take the IP address of the container named &lt;em&gt;api&lt;/em&gt; and map it to the host name &lt;em&gt;apiserver&lt;/em&gt; inside the GUI container. The _/etc/hosts _file is used for this purpose.&lt;/p&gt;
+
+&lt;p&gt;In  real world scenarios it is common to have container distributed across servers in a datacenter. Therefore IP address may not be known upfront and may also change over the course of time. Docker Links provide a crucial capability to ensure that containers are able to communicate with one another using host names and let Docker &lt;em&gt;orchestrate&lt;/em&gt; the mapping of host names to IP addresses.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Using MAC table – Linux Bridge – WILT</title>
+      <link>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</link>
+      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
+      
+        <description>
+
+&lt;p&gt;In an &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; title=&#34;Linux Bridge and Virtual Networking&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
+
+&lt;h2 id=&#34;mac-table-8211-background&#34;&gt;MAC Table &amp;#8211; Background&lt;/h2&gt;
+
+&lt;p&gt;Bridges and Switches forward packets by examining and learning MAC address from incoming packets. Linux bridges are no different from their hardware counterparts. And looking at the MAC table learnt by Linux bridges can provide useful insight into the flow of packets.&lt;/p&gt;
+
+&lt;p&gt;In cloud platforms like OpenStack, virtual machines (VMs) started by different tenants may get &lt;em&gt;scheduled&lt;/em&gt; on the same hardware server. It follows that these VMs will share the resources on that server including the network ports. Let us consider a scenario where Linux bridge is used for virtual networking (as Mechanism driver in OpenStack). Now if there was a problem with one of the network ports on a server, it will be good to know which VMs are impacted by it.&lt;/p&gt;
+
+&lt;p&gt;Since multiple Linux bridges may be present, one of the best ways to find out the affected VMs for a given physical network port, is by looking at the MAC table of the Linux bridge &lt;em&gt;that is bound to the failed network port&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;interpreting-mac-table-8211-step-by-step-guide&#34;&gt;Interpreting MAC Table &amp;#8211; Step-by-Step guide&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt;: If you have detected that &lt;em&gt;eth0&lt;/em&gt; interface is having a problem, then using &lt;em&gt;brctl show&lt;/em&gt; command you can list all the bridges and identify the Linux bridge bound to &lt;em&gt;eth0&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1226&#34; alt=&#34;Step 1 - Identify the bridge for a given interface&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1.png&#34; width=&#34;719&#34; height=&#34;178&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1.png 719w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1-300x74.png 300w&#34; sizes=&#34;(max-width: 719px) 100vw, 719px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;: Next execute the command _brctl showmacs &lt;bridge_name&gt;_ with the bridge you identified in Step 1 to view the MAC table. In the output, each row represents MAC address learnt at each port of the Linux bridge. The important columns in the output are &amp;#8216;is local?&amp;#8217;, &amp;#8216;port no&amp;#8217; and &amp;#8216;mac addr&amp;#8217;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1227&#34; alt=&#34;Step 2 - View MAC Table using brctl showmacs command&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2.png&#34; width=&#34;626&#34; height=&#34;205&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2.png 626w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2-300x98.png 300w&#34; sizes=&#34;(max-width: 626px) 100vw, 626px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 3&lt;/strong&gt;: When a row (or MAC address) has &amp;#8216;is local&amp;#8217; as Y (means Yes), then it represents the &lt;em&gt;MAC address of an interface &lt;strong&gt;directly&lt;/strong&gt; &lt;strong&gt;on&lt;/strong&gt; the Linux Bridge&lt;/em&gt;&lt;strong&gt;. &lt;/strong&gt;You can confirm this with the MAC address of _eth0 _which is &lt;em&gt;bound&lt;/em&gt; to the Linux bridge (myvirtbridge in the screenshot below). The other interfaces with &amp;#8216;is local&amp;#8217; as Yes are the &lt;em&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/08/tap-interfaces-linux-bridge/&#34; title=&#34;Tap Interfaces and Linux Bridge&#34;&gt;tap interfaces&lt;/a&gt; directly on the Linux bridge&lt;/em&gt;. &lt;strong&gt;Make a note&lt;/strong&gt; of the &amp;#8216;port no&amp;#8217; for these tap interface MAC addresses (where &amp;#8216;is local&amp;#8217; is Yes).&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1228&#34; title=&#34;Step 3 - Identify Port Numbers for Local Ports&#34; alt=&#34;Step 3 - Identify Port Numbers for Local Ports&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1.png&#34; width=&#34;451&#34; height=&#34;331&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1.png 644w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1-300x220.png 300w&#34; sizes=&#34;(max-width: 451px) 100vw, 451px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;In this example, Port Number 1 belongs to the &lt;em&gt;eth0&lt;/em&gt; interface. And Ports 2 and 3 represent the Tap interfaces on the Linux bridge (myvirtbridge).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1230&#34; alt=&#34;Step 3 - Identify Port Numbers for Local Ports&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2.png&#34; width=&#34;612&#34; height=&#34;249&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2.png 612w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2-300x122.png 300w&#34; sizes=&#34;(max-width: 612px) 100vw, 612px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 4&lt;/strong&gt;: For each port number with a &amp;#8216;is local&amp;#8217; as Yes, you will find another entry in the MAC table _with the_ &lt;em&gt;same port number but with &amp;#8216;is local&amp;#8217; as No&lt;/em&gt;. These entries with &amp;#8216;is local&amp;#8217; as No represents the MAC address _learnt _from the incoming packets. Since we are looking at Port number for tap interfaces, the remote entities that are sending these packets are basically the &lt;em&gt;virtual interfaces&lt;/em&gt; inside virtual machines. In the picture below, for Local port 2, the non-local (remote) MAC address is &amp;#8220;52:54:00:81:ad:5a&amp;#8221;. This will be the MAC address of a virtual NIC of a VM. Similarly for local port 3.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1232&#34; alt=&#34;Step 4 - Identify Remote MAC address for the corresponding Local MAC&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1.png&#34; width=&#34;596&#34; height=&#34;230&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1.png 596w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1-300x116.png 300w&#34; sizes=&#34;(max-width: 596px) 100vw, 596px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 5&lt;/strong&gt;: There are two ways to confirm that the _remote_ MAC addresses belong to VMs.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;You can use the &lt;em&gt;ps -ef &lt;/em&gt; command and &lt;em&gt;grep&lt;/em&gt; for these remote MAC addresses.&lt;/li&gt;
+&lt;li&gt;Or you can login into the VMs and try the &lt;em&gt;ifconfig&lt;/em&gt; command _inside _the VM.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1233&#34; alt=&#34;Step 5 - Verify the MAC address of the VM&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5.png&#34; width=&#34;561&#34; height=&#34;401&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5.png 701w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5-300x214.png 300w&#34; sizes=&#34;(max-width: 561px) 100vw, 561px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;: As seen in the step by step guide, understanding MAC table output provides useful insights into the flow of packets in a Linux bridge. It can be a useful tool in troubleshooting networking problems (in addition to other tools).&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Linux Network Namespace – WILT</title>
+      <link>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</link>
+      <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</guid>
+      
+        <description>
+
+&lt;p&gt;In the next installment of &amp;#8220;What I learnt today&amp;#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a &lt;strong&gt;copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This concept of supporting multiple instances of routing tables, networking devices is not very new. Most networking hardware vendors have supported the concept, albeit with different names such as &amp;#8220;virtual routing and forwarding&amp;#8221; or VRF. &lt;strong&gt;In Linux, the namespace concept is supported by &amp;#8220;_ip _&lt;em&gt;netns&amp;#8221;&lt;/em&gt; command.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;why-do-we-need-namespace-8211-the-cloud-scenario&#34;&gt;Why do we need namespace? &amp;#8211; The cloud scenario&lt;/h2&gt;
+
+&lt;p&gt;In private enterprises and even in our homes, we tend to use private IP addresses such as 192.168.XXX.XX. In a cloud environment (especially multi-tenancy), it is possible that more than one users use IP addresses that overlap with each other. It is important that cloud infrastructure services such as OpenStack allow overlapping IP addresses to co-exist without any problems. In OpenStack, Neutron uses Network Namespaces to provide the isolation between overlapping IP addresses.&lt;/p&gt;
+
+&lt;h2 id=&#34;namespace-in-openstack&#34;&gt;Namespace in OpenStack&lt;/h2&gt;
+
+&lt;p&gt;In OpenStack, users (Tenants) can create their &amp;#8216;networks&amp;#8217; with a IP range (subnet). Then they can create Virtual machine instances and associate them to this IP subnet. As part of these steps, a DHCP server is started for each network or subnet. The role of the DHCP server is to supply IP addresses and other useful infromation for &lt;strong&gt;their respective virtual machines&lt;/strong&gt;. The picture below describes this scenario.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1158&#34; alt=&#34;Namespace in OpenStack&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack.png&#34; width=&#34;647&#34; height=&#34;407&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack.png 647w, http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack-300x189.png 300w&#34; sizes=&#34;(max-width: 647px) 100vw, 647px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The DHCP server is started on the &amp;#8216;network node&amp;#8217; in OpenStack &amp;#8211; using &lt;em&gt;dnsmasq&lt;/em&gt; program. And to support multiple networks, multiple dnsmasq processes need to be started on the &lt;em&gt;same network node&lt;/em&gt;, and that too with different IP addresses. This is accomplished using network namespace.&lt;/p&gt;
+
+&lt;p&gt;Here is the snippet of code from &lt;a href=&#34;https://github.com/openstack/neutron/blob/master/neutron/agent/linux/dhcp.py&#34; target=&#34;_blank&#34;&gt;OpenStack Neutron source code for DHCP.&lt;/a&gt; In the spawn_process function, we can see at the end that &lt;em&gt;netns&lt;/em&gt; command is used to start the &lt;em&gt;dnsmasq&lt;/em&gt; process. The &amp;#8216;cmd&amp;#8217; variable is constructed using &lt;em&gt;dnsmasq&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1160&#34; alt=&#34;DHCP Namespace Command Neutron&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron.png&#34; width=&#34;652&#34; height=&#34;358&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron.png 931w, http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron-300x165.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron-768x422.png 768w&#34; sizes=&#34;(max-width: 652px) 100vw, 652px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;the-ip-netns-command&#34;&gt;The &lt;em&gt;ip netns&lt;/em&gt; command&lt;/h2&gt;
+
+&lt;p&gt;One interesting tip about _ip netns _command is that  the &amp;#8216;exec&amp;#8217; sub-command lets you execute a specific &amp;#8216;shell&amp;#8217; command &lt;em&gt;on the specified namespace&lt;/em&gt;. With _ip netns exec &lt;namespacename&gt; &lt;strong&gt;bash&lt;/strong&gt;, _you can get a shell prompt specifically for the namespace. This will be useful in troubleshootign any networking problems. Commands and programs executed under the &amp;#8216;exec&amp;#8217; sub-command are aware of the &amp;#8216;isolate namespace&amp;#8217; only.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Tap Interfaces and Linux Bridge</title>
+      <link>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</link>
+      <pubDate>Sun, 08 Dec 2013 06:56:00 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</guid>
+      
+        <description>
+
+&lt;p&gt;&lt;span style=&#34;font-size: 13px;&#34;&gt;In the &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; target=&#34;_blank&#34;&gt;previous blog of this series&lt;/a&gt; we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;physical-vs-virtual-networking&#34;&gt;Physical vs. Virtual Networking&lt;/h2&gt;
+
+&lt;p&gt;The network data traffic is handled by the physical Ethernet ports on physical machines. Similarly for virtual machines this traffic needs to be handled by the &lt;em&gt;virtual ethernet ports&lt;/em&gt;. Eventually this traffic from virtual ports needs to be sent to the physical network for external connectivity. How does this happen? As seen in the image below the following components are key for physical networking:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Ethernet Port on the server &amp;#8211; commonly called pNIC (physical NIC)&lt;/li&gt;
+&lt;li&gt;RJ45 Cable&lt;/li&gt;
+&lt;li&gt;Ethernet Port on the physical switch&lt;/li&gt;
+&lt;li&gt;Uplink Port on the physical switch &amp;#8211; connects to external network.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-944&#34; alt=&#34;Physical Network Components&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network.png&#34; width=&#34;645&#34; height=&#34;253&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network.png 806w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network-300x118.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network-768x301.png 768w&#34; sizes=&#34;(max-width: 645px) 100vw, 645px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Since the goal of virtualization is to emulate _physical entities_ in software, it must support a construct where &amp;#8220;a virtual machine&amp;#8217;s virtual Ethernet port is connected to a virtual switch&amp;#8221;.&lt;/p&gt;
+
+&lt;h2 id=&#34;switch-ports&#34;&gt;Switch Ports&lt;/h2&gt;
+
+&lt;p&gt;As mentioned in my previous post, Linux bridge is really a switch implemented inside Linux kernel. And like any switch, it requires &lt;em&gt;ports&lt;/em&gt; or _interfaces_ to carry data traffic in and out of the switch. We have also seen how to add a physical interface to the bridge. Linux bridge also supports &lt;em&gt;virtual ports&lt;/em&gt;. Since virtual ports are actually software entities,  other software entities can use them to send Ethernet frames to the &lt;em&gt;virtual switch&lt;/em&gt; for further processing. For Ethernet traffic, these &lt;span style=&#34;text-decoration: underline;&#34;&gt;Linux virtual ports are called tap&lt;em&gt; &lt;/em&gt;&lt;/span&gt;&lt;span style=&#34;text-decoration: underline;&#34;&gt;interfaces.&lt;/span&gt; Tap interfaces can be added to a Linux bridge just like physical interfaces. With this approach a Linux bridge can forward packets from virtualized world to a physical world (and vice-versa).&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-945&#34; alt=&#34;Virtual Network Components with tap interfaces&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk.png&#34; width=&#34;621&#34; height=&#34;371&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk.png 887w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk-300x179.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk-768x459.png 768w&#34; sizes=&#34;(max-width: 621px) 100vw, 621px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;As seen in the image below, when virtualization comes into the picture, the following components play a key role in networking:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Ethernet Port on VM (emulates the pNIC) &amp;#8211; commonly knows as vNIC (Virtual NIC). Virtual port is &lt;em&gt;emulated&lt;/em&gt; with help from KVM/QEMU.&lt;/li&gt;
+&lt;li&gt;Virtual RJ45 Cable &amp;#8211; we will see how this is created.&lt;/li&gt;
+&lt;li&gt;Ethernet Port on Virtual Switch &amp;#8211; for Linux Bridge, this is represented by the &lt;em&gt;tap interface&lt;/em&gt; since it connects to a vNIC.&lt;/li&gt;
+&lt;li&gt;Uplink Port on the Virtual Switch &amp;#8211; this is usually the &lt;em&gt;interface&lt;/em&gt; that represent the pNIC. In Linux world eth0, eth1 etc are the software interfaces that represent the physical ethernet port.&lt;/li&gt;
+&lt;li&gt;In case of a physical server, the Uplink port on physical switch provided &lt;em&gt;external network connectivity&lt;/em&gt;. In case of virtual machines, the Uplink port on virtual switch provides &lt;em&gt;external network connectivity&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;tap-interfaces-8211-why-do-we-need-them&#34;&gt;Tap interfaces &amp;#8211; Why do we need them?&lt;/h2&gt;
+
+&lt;p&gt;Like their physical counterparts, virtual machines network ports can only process Ethernet frames. In non-virtualized environments, the physical NIC interface will receive and process the Ethernet frames. It will strip out the Ethernet related overhead bytes and forward the payload (usually IP packets) further up to the OS. With virtualization however, this will not work since the virtual NICs would expect Ethernet frames. This is where tap interfaces come into picture. Tap interfaces are special software entities which tell the Linux bridge to forward Ethernet frames as it is. In other words, the virtual machines connected to tap interfaces will be able to receive raw Ethernet frames. And due to this virtual machines can continue to emulate physical machines from a networking perspective.&lt;/p&gt;
+
+&lt;h2 id=&#34;is-there-a-virtual-rj45-cable-as-well&#34;&gt;Is there a virtual RJ45 cable as well?&lt;/h2&gt;
+
+&lt;p&gt;The short answer is no. But there is a need for connecting a virtual Ethernet port of a VM to the &lt;em&gt;tap&lt;/em&gt; interface on a Linux bridge. This connection is achieved programmatically. Applications such as libvirt create a &amp;#8216;file descriptor&amp;#8217; using the tap interface. When Linux bridge sends Ethernet frames to a &lt;em&gt;tap&lt;/em&gt; interface, it actually is sending the bytes to a file descriptor. Emulators like QEMU, read the bytes from this file descriptor and pass it onto the &amp;#8216;guest operating system&amp;#8217; inside the VM, via the virtual network port on the VM. &lt;strong&gt;Note: &lt;/strong&gt;Tap interfaces are listed as part of the _ifconfig_ Linux command.&lt;/p&gt;
+
+&lt;h3 id=&#34;further-reading-8211-a-href-http-backreference-org-2010-03-26-tuntap-interface-tutorial-target-blank-tun-tap-interface-tutorial-a&#34;&gt;&lt;strong&gt;Further Reading &amp;#8211; &lt;/strong&gt;&lt;a href=&#34;http://backreference.org/2010/03/26/tuntap-interface-tutorial/&#34; target=&#34;_blank&#34;&gt;Tun/Tap interface tutorial&lt;/a&gt;&lt;/h3&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Linux Bridge and Virtual Networking</title>
+      <link>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</link>
+      <pubDate>Mon, 02 Dec 2013 18:00:47 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</guid>
+      
+        <description>
+
+&lt;p&gt;Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.&lt;/p&gt;
+
+&lt;h2 id=&#34;linux-bridge-8211-the-basics&#34;&gt;Linux Bridge &amp;#8211; The Basics&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/08/16/understanding-virtual-networks-the-basics/&#34; target=&#34;_blank&#34;&gt;Virtual networking requires the presence of a virtual switch &lt;/a&gt;inside a server/hypervisor. Even though it is called a bridge, &lt;span style=&#34;text-decoration: underline;&#34;&gt;the Linux bridge is really a virtual switch&lt;/span&gt; and used with KVM/QEMU hypervisor. Linux Bridge is a kernel module, first introduced in 2.2 kernel (circa 2000). And it is administered using &lt;em&gt;brctl&lt;/em&gt; command on Linux.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-simple-use-case&#34;&gt;The Simple Use Case&lt;/h2&gt;
+
+&lt;p&gt;Now we will delve a bit more into Linux bridge by looking at a very basic use case. Let us say that you want to create a VM on your KVM-enabled Linux server (host). Among other things, this VM will be configured with one virtual NIC. In order to give Internet connectivity to this VM, we will have to associate the virtual NIC of the VM to the physical NIC of the server. This &lt;em&gt;association&lt;/em&gt; is facilitated by the Linux bridge. Here is a picture of what we want to accomplish:&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase.png&#34;&gt;&lt;img class=&#34; wp-image-907  aligncenter&#34; alt=&#34;Simple Use Case for Linux Bridge&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase.png&#34; width=&#34;743&#34; height=&#34;175&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase.png 1238w, http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase-300x71.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase-768x181.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase-1024x241.png 1024w&#34; sizes=&#34;(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The above picture is based on my home Ubuntu laptop running KVM. I am using the wireless connection so that the laptop itself has network connectivity. But to illustrate Linux bridge capability, I will create a VM and associate it to my wired NIC port on the same laptop. The newly created VM will get its IP address etc (via DHCP) from the router in the middle.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-by-step-guide&#34;&gt;Step-by-step guide&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Step &amp;#8211; 1: &lt;/strong&gt;The first step is to create a Linux bridge using the &lt;em&gt;brctl&lt;/em&gt; command. &lt;strong&gt;Note:&lt;/strong&gt; for more ways to create Linux bridges (depends on you distro) &amp;#8211; &lt;a href=&#34;http://xmodulo.com/2013/04/how-to-configure-linux-bridge-interface.html&#34; target=&#34;_blank&#34;&gt;check this out&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;# sudo brctl addbr kvmbr0&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Step &amp;#8211; 2: &lt;/strong&gt;The next step is to associate the physical NIC of the server (eth0) to this bridge. &lt;strong&gt;Note:&lt;/strong&gt;&amp;#8211; prior to this step ensure that the physical NIC does not have any IP address configured.&lt;/p&gt;
+
+&lt;pre&gt;# sudo brctl addif kvmbr0 eth0&lt;/pre&gt;
+
+&lt;p&gt;At the end of these two steps, the network configuration would look something like this. Note that the &lt;em&gt;kvmbr0&lt;/em&gt; Linux bridge has only one interface at this time (eth0).&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-915&#34; alt=&#34;Linux Bridge Interface Config Sample&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config.png&#34; width=&#34;507&#34; height=&#34;324&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config.png 724w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config-300x192.png 300w&#34; sizes=&#34;(max-width: 507px) 100vw, 507px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step &amp;#8211; 3:&lt;/strong&gt; The next step is to create a Virtual Machine and ensure that it uses the Linux bridge created above for the virtual networking. For this blog, I will demonstrate this step using &amp;#8220;Virtual Machine Manager&amp;#8221; (VMM) which is a GUI for &lt;em&gt;libvirt&lt;/em&gt;. Here is a screenshot on how you can associate the Linux Bridge to a VM.**&lt;/p&gt;
+
+&lt;p&gt;**&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-918&#34; alt=&#34;Associate Linux Bridge to a VM&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager.png&#34; width=&#34;386&#34; height=&#34;405&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager.png 552w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager-286x300.png 286w&#34; sizes=&#34;(max-width: 386px) 100vw, 386px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Once the virtual machine is created and booted up, you will see that the virtual machine has external network connectivity.&lt;/p&gt;
+
+&lt;h2 id=&#34;let-us-connect-the-interfaces&#34;&gt;Let us connect the interfaces&lt;/h2&gt;
+
+&lt;p&gt;The output of _brctl_ &lt;em&gt;show&lt;/em&gt; command shows that there is another interface on the _kvmbr0_ Linux bridge. This interface &lt;strong&gt;&lt;em&gt;vnet0&lt;/em&gt; is a virtual interface created by libvirt&lt;/strong&gt; (VMM) as seen in the screenshot here. This virtual interface is also called a &lt;strong&gt;&lt;em&gt;tap interface&lt;/em&gt;&lt;/strong&gt;. You can see from the PS command that the _KVM/QEMU _command that started the VM, uses a &lt;em&gt;tap&lt;/em&gt; interface as a network device. &lt;em&gt;More about this in the next post.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-929&#34; alt=&#34;Linux Bridge with Virtual Interface&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28.png&#34; width=&#34;633&#34; height=&#34;412&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28.png 904w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28-300x195.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28-768x500.png 768w&#34; sizes=&#34;(max-width: 633px) 100vw, 633px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Now just like you connect an Ethernet (RJ-45) cable from a physical NIC to an port (interface) on a physical switch, the VM&amp;#8217;s virtual NIC is connected to this virtual _tap_ interface on the Linux bridge. The below screenshot highlights the relationship between the VM&amp;#8217;s virtual NIC and the Linux Bridge tap interface.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The first thing to notice is the similarities in the MAC address of vnet0 (on the host server) and the eth0 (virtual NIC in the VM).&lt;/li&gt;
+&lt;li&gt;The next giveaway is the data transmitted and received on each of the interface. Since there is a direct 1-1 relationship, the TX bytes of the VM NIC matches the RX bytes of _vnet0. _And vice-versa.&lt;/li&gt;
+&lt;li&gt;Finally, we can see that the Virtual NIC has been configured with IP address and gateway etc. This configuration is done using the DHCP server on my physical router. This implies that virtual NIC has external network connectivity.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-930&#34; alt=&#34;VM NIC to Tap Interface relationship&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24.png&#34; width=&#34;820&#34; height=&#34;461&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24.png 1366w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24-300x169.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24-768x432.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24-1024x576.png 1024w&#34; sizes=&#34;(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;To summarize:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We created a Linux bridge and added a physical NIC interface of the host.&lt;/li&gt;
+&lt;li&gt;Then while creating a VM, we specified the Linux bridge to be used for virtual networking.&lt;/li&gt;
+&lt;li&gt;The Virtual Machine Manager (libvirt GUI) did some behind-the-scene work to associate the Virtual NIC to the Linux bridge and in turn to the Physical NIC.&lt;/li&gt;
+&lt;li&gt;We then observed how the VM&amp;#8217;s virtual NIC is associated to the virtual &lt;em&gt;tap&lt;/em&gt; interface on the host. And how the tap interface is added to the Linux bridge.&lt;/li&gt;
+&lt;li&gt;This shows that the traffic will flow from the VM&amp;#8217;s virtual NIC to the &lt;em&gt;vnet0&lt;/em&gt; tap interface, then onto the Linux bridge (virtual switch) which will send it out on the other virtual switch interface (eth0) on the host.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the next blog post, we will understand what happened behind-the-scene.&lt;/p&gt;
 </description>
       
     </item>

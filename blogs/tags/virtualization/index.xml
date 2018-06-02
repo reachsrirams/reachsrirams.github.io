@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualization on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/virtualization/</link>
+    <description>Recent content in Virtualization on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Jan 2015 16:19:23 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using MAC table – Linux Bridge – WILT</title>
+      <link>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</link>
+      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
+      <description>In an earlier blog, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.
+MAC Table &amp;#8211; Background Bridges and Switches forward packets by examining and learning MAC address from incoming packets.</description>
+    </item>
+    
+    <item>
+      <title>Tap Interfaces and Linux Bridge</title>
+      <link>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</link>
+      <pubDate>Sun, 08 Dec 2013 06:56:00 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</guid>
+      <description>In the previous blog of this series we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.
+Physical vs. Virtual Networking The network data traffic is handled by the physical Ethernet ports on physical machines.</description>
+    </item>
+    
+    <item>
+      <title>Linux Bridge and Virtual Networking</title>
+      <link>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</link>
+      <pubDate>Mon, 02 Dec 2013 18:00:47 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</guid>
+      <description>Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.
+Linux Bridge &amp;#8211; The Basics Virtual networking requires the presence of a virtual switch inside a server/hypervisor.</description>
+    </item>
+    
+  </channel>
+</rss>

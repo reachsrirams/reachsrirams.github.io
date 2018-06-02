@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Innervoce Blogs</title>
+    <title>Categories on Sriram S - Innervoice</title>
     <link>http://reachsrirams.github.io/blogs/categories/</link>
-    <description>Recent content in Categories on Innervoce Blogs</description>
+    <description>Recent content in Categories on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cloud Computing</title>
+      <link>http://reachsrirams.github.io/blogs/categories/cloud-computing/</link>
+      <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/categories/cloud-computing/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Development</title>
@@ -20,11 +29,65 @@
     </item>
     
     <item>
+      <title>Networking</title>
+      <link>http://reachsrirams.github.io/blogs/categories/networking/</link>
+      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/categories/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Opinion</title>
+      <link>http://reachsrirams.github.io/blogs/categories/opinion/</link>
+      <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/categories/opinion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>http://reachsrirams.github.io/blogs/categories/programming/</link>
+      <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Self Improvement</title>
       <link>http://reachsrirams.github.io/blogs/categories/self-improvement/</link>
       <pubDate>Sun, 07 Jan 2018 18:18:26 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/categories/self-improvement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technology</title>
+      <link>http://reachsrirams.github.io/blogs/categories/technology/</link>
+      <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/categories/technology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtualization</title>
+      <link>http://reachsrirams.github.io/blogs/categories/virtualization/</link>
+      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/categories/virtualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wilt</title>
+      <link>http://reachsrirams.github.io/blogs/categories/wilt/</link>
+      <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/categories/wilt/</guid>
       <description></description>
     </item>
     

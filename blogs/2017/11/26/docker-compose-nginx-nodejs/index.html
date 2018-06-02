@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Docker Compose with nginx and NodeJS - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="If you are a follower of this blog, you might have read about Using Docker with nginx and NodeJS. In this blog, I will discuss the code to build the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is available on GitHub.
+Acknowledgement: I was inspired by this blog and wanted to take it further using Docker Compose." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.40" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Docker Compose with nginx and NodeJS" />
+<meta property="og:description" content="If you are a follower of this blog, you might have read about Using Docker with nginx and NodeJS. In this blog, I will discuss the code to build the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is available on GitHub.
+Acknowledgement: I was inspired by this blog and wanted to take it further using Docker Compose." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/" />
+
+
+
+<meta property="article:published_time" content="2017-11-26T05:15:30&#43;00:00"/>
+
+<meta property="article:modified_time" content="2017-11-26T05:15:30&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Docker Compose with nginx and NodeJS">
+<meta itemprop="description" content="If you are a follower of this blog, you might have read about Using Docker with nginx and NodeJS. In this blog, I will discuss the code to build the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is available on GitHub.
+Acknowledgement: I was inspired by this blog and wanted to take it further using Docker Compose.">
+
+
+<meta itemprop="datePublished" content="2017-11-26T05:15:30&#43;00:00" />
+<meta itemprop="dateModified" content="2017-11-26T05:15:30&#43;00:00" />
+<meta itemprop="wordCount" content="527">
+
+
+
+<meta itemprop="keywords" content="compose,container,docker,links,nginx,nodejs," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker Compose with nginx and NodeJS"/>
+<meta name="twitter:description" content="If you are a follower of this blog, you might have read about Using Docker with nginx and NodeJS. In this blog, I will discuss the code to build the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is available on GitHub.
+Acknowledgement: I was inspired by this blog and wanted to take it further using Docker Compose."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-26491607-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Docker Compose with nginx and NodeJS</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2017-11-26 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/programming/"> Programming </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+          </div>
+        <span class="more-meta"> 527 words </span>
+        <span class="more-meta"> 3 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#docker-compose-8211-background">Docker Compose &#8211; background</a></li>
+<li><a href="#nginx-proxy">nginx Proxy</a></li>
+<li><a href="#docker-8211-links">Docker &#8211; links</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>If you are a follower of this blog, you might have read about <a href="http://www.innervoice.in/blogs/2017/11/19/using-docker-nginx-nodejs/">Using Docker with nginx and NodeJS</a>. In this blog, I will discuss the code to build  the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is <a href="https://goo.gl/sBmSt3">available on GitHub</a>.</p>
+
+<p>Acknowledgement: I was inspired by <a href="http://schempy.com/2015/08/25/docker_nginx_nodejs/">this blog</a> and wanted to take it further using Docker Compose.</p>
+
+<h3 id="docker-compose-8211-background">Docker Compose &#8211; background</h3>
+
+<p>Docker Compose is a tool to build and coordinate multi-container applications. You use a YAML file to define different containers and any relationship between them. Docker Compose uses this YAML file to start those containers. We can continue to use the Dockerfile as a building block for Docker Compose.</p>
+
+<p><a href="http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/docker-compose-yaml/#main" target="_blank" rel="attachment wp-att-1581 noopener"><img class="aligncenter wp-image-1581" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/11/docker-compose-yaml-460x300.png" alt="docker compose YAML" width="500" height="447" /></a><a style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 12px; font-family: 'Open Sans', sans-serif; color: #488cde;" href="http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/docker-compose-code/#main" target="_blank" rel="attachment wp-att-1580 noopener"><img class="aligncenter wp-image-1580" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/11/docker-compose-code-460x300.png" alt="docker compose code" width="449" height="252" /></a></p>
+
+<p>As you can see from the GitHub repository, I have two containers defined in my <em>docker-compose.yml</em> file. The YAML file shows that the two &#8220;services&#8221; are <em>built</em> using the Dockerfile specified for each of the containers. The steps in two Dockerfiles are fairly straightforward. They create an Ubuntu based container, install the necessary software packages and copy a few files to configure nginx and NodeJS.</p>
+
+<h3 id="nginx-proxy">nginx Proxy</h3>
+
+<p>In the previous blog, we showed that nginx is used to serve static HTML files and to forward (proxy) the API requests to NodeJS. Here is the screenshot of the file I use for nginx configuration.</p>
+
+<p><a href="http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/nginx-conf/#main" rel="attachment wp-att-1586"><img class="aligncenter size-full wp-image-1586" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf.png" alt="Nginx Config File" width="560" height="479" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf.png 560w, http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf-300x257.png 300w" sizes="(max-width: 560px) 100vw, 560px" /></a></p>
+
+<p>This config file configures nginx to listen on port 80 for HTTP requests. If the requests comes to a root folder &#8216;/&#8217;, it is redirected to the Application represented by &#8220;/app&#8221; on the same <em>host</em>. However if the request is for API represented by &#8220;/app/api&#8221; URI, then nginx will <em>proxy</em> the request to &#8220;API Server&#8221; on port 9090. If you look at the Dockerfile for the NodeJS container, you will see that it is listening on port 9090. The key thing here is the keyword <em>apiserver</em>. <strong>How does nginx know what is the IP address for the NodeJS container?</strong></p>
+
+<h3 id="docker-8211-links">Docker &#8211; links</h3>
+
+<p>Links are important concepts that help Docker containers communicate with one another. It is a good practice to use host names instead of hard-coding IP addresses when one container needs to communicate with another. But host names and IP addresses have to be mapped automatically. This is where the concept of Link comes into picture.</p>
+
+<p>The YAML file has a stanza for the GUI container as follows:</p>
+
+<pre class="">links:
+    - api:apiserver</pre>
+
+<p>The keyword, <em>api,</em> refers to the &#8220;container&#8221; mentioned earlier in the YAML file.</p>
+
+<pre class="">services:
+    - api:
+        build: api-container</pre>
+
+<p>The effect of this <em>link</em> is that Docker will take the IP address of the container named <em>api</em> and map it to the host name <em>apiserver</em> inside the GUI container. The _/etc/hosts _file is used for this purpose.</p>
+
+<p>In  real world scenarios it is common to have container distributed across servers in a datacenter. Therefore IP address may not be known upfront and may also change over the course of time. Docker Links provide a crucial capability to ensure that containers are able to communicate with one another using host names and let Docker <em>orchestrate</em> the mapping of host names to IP addresses.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/compose/">compose</a>
+          
+          <a href="/blogs/tags/container/">container</a>
+          
+          <a href="/blogs/tags/docker/">docker</a>
+          
+          <a href="/blogs/tags/links/">links</a>
+          
+          <a href="/blogs/tags/nginx/">nginx</a>
+          
+          <a href="/blogs/tags/nodejs/">nodejs</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/2018/01/07/goals-for-the-first-half-of-2018/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Goals for the first half of 2018</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/2015/01/26/using-mac-table-linux-bridge-wilt/">
+            <span class="next-text nav-default">Using MAC table – Linux Bridge – WILT</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

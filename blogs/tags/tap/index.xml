@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tap on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/tap/</link>
+    <description>Recent content in Tap on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 08 Dec 2013 06:56:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/tap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tap Interfaces and Linux Bridge</title>
+      <link>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</link>
+      <pubDate>Sun, 08 Dec 2013 06:56:00 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</guid>
+      <description>In the previous blog of this series we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.
+Physical vs. Virtual Networking The network data traffic is handled by the physical Ethernet ports on physical machines.</description>
+    </item>
+    
+    <item>
+      <title>Linux Bridge and Virtual Networking</title>
+      <link>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</link>
+      <pubDate>Mon, 02 Dec 2013 18:00:47 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</guid>
+      <description>Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.
+Linux Bridge &amp;#8211; The Basics Virtual networking requires the presence of a virtual switch inside a server/hypervisor.</description>
+    </item>
+    
+  </channel>
+</rss>

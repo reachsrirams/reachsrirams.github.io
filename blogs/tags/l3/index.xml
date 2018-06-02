@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>L3 on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/l3/</link>
+    <description>Recent content in L3 on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Dec 2014 18:05:29 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/l3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux Network Namespace – WILT</title>
+      <link>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</link>
+      <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</guid>
+      <description>In the next installment of &amp;#8220;What I learnt today&amp;#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.
+This concept of supporting multiple instances of routing tables, networking devices is not very new.</description>
+    </item>
+    
+  </channel>
+</rss>

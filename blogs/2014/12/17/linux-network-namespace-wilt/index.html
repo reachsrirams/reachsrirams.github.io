@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux Network Namespace – WILT - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="In the next installment of &amp;#8220;What I learnt today&amp;#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.
+This concept of supporting multiple instances of routing tables, networking devices is not very new." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.40" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Linux Network Namespace – WILT" />
+<meta property="og:description" content="In the next installment of &#8220;What I learnt today&#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a copy of the TCP/IP network stack &#8211; all the way from the Ethernet interfaces (L2), routing tables etc.
+This concept of supporting multiple instances of routing tables, networking devices is not very new." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/" />
+
+
+
+<meta property="article:published_time" content="2014-12-17T18:05:29&#43;00:00"/>
+
+<meta property="article:modified_time" content="2014-12-17T18:05:29&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Linux Network Namespace – WILT">
+<meta itemprop="description" content="In the next installment of &#8220;What I learnt today&#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a copy of the TCP/IP network stack &#8211; all the way from the Ethernet interfaces (L2), routing tables etc.
+This concept of supporting multiple instances of routing tables, networking devices is not very new.">
+
+
+<meta itemprop="datePublished" content="2014-12-17T18:05:29&#43;00:00" />
+<meta itemprop="dateModified" content="2014-12-17T18:05:29&#43;00:00" />
+<meta itemprop="wordCount" content="410">
+
+
+
+<meta itemprop="keywords" content="DHCP,dnsmasq,L3,Linux,Namespace,OpenStack," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux Network Namespace – WILT"/>
+<meta name="twitter:description" content="In the next installment of &#8220;What I learnt today&#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a copy of the TCP/IP network stack &#8211; all the way from the Ethernet interfaces (L2), routing tables etc.
+This concept of supporting multiple instances of routing tables, networking devices is not very new."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-26491607-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Linux Network Namespace – WILT</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2014-12-17 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/networking/"> Networking </a>
+            
+              <a href="/blogs/categories/opinion/"> Opinion </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+              <a href="/blogs/categories/wilt/"> WILT </a>
+            
+          </div>
+        <span class="more-meta"> 410 words </span>
+        <span class="more-meta"> 2 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#why-do-we-need-namespace-8211-the-cloud-scenario">Why do we need namespace? &#8211; The cloud scenario</a></li>
+<li><a href="#namespace-in-openstack">Namespace in OpenStack</a></li>
+<li><a href="#the-ip-netns-command">The <em>ip netns</em> command</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>In the next installment of &#8220;What I learnt today&#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a <strong>copy of the TCP/IP network stack &#8211; all the way from the Ethernet interfaces (L2), routing tables etc.</strong></p>
+
+<p>This concept of supporting multiple instances of routing tables, networking devices is not very new. Most networking hardware vendors have supported the concept, albeit with different names such as &#8220;virtual routing and forwarding&#8221; or VRF. <strong>In Linux, the namespace concept is supported by &#8220;_ip _<em>netns&#8221;</em> command.</strong></p>
+
+<h2 id="why-do-we-need-namespace-8211-the-cloud-scenario">Why do we need namespace? &#8211; The cloud scenario</h2>
+
+<p>In private enterprises and even in our homes, we tend to use private IP addresses such as 192.168.XXX.XX. In a cloud environment (especially multi-tenancy), it is possible that more than one users use IP addresses that overlap with each other. It is important that cloud infrastructure services such as OpenStack allow overlapping IP addresses to co-exist without any problems. In OpenStack, Neutron uses Network Namespaces to provide the isolation between overlapping IP addresses.</p>
+
+<h2 id="namespace-in-openstack">Namespace in OpenStack</h2>
+
+<p>In OpenStack, users (Tenants) can create their &#8216;networks&#8217; with a IP range (subnet). Then they can create Virtual machine instances and associate them to this IP subnet. As part of these steps, a DHCP server is started for each network or subnet. The role of the DHCP server is to supply IP addresses and other useful infromation for <strong>their respective virtual machines</strong>. The picture below describes this scenario.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack.png"><img class="aligncenter size-full wp-image-1158" alt="Namespace in OpenStack" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack.png" width="647" height="407" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack.png 647w, http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack-300x189.png 300w" sizes="(max-width: 647px) 100vw, 647px" /></a></p>
+
+<p>The DHCP server is started on the &#8216;network node&#8217; in OpenStack &#8211; using <em>dnsmasq</em> program. And to support multiple networks, multiple dnsmasq processes need to be started on the <em>same network node</em>, and that too with different IP addresses. This is accomplished using network namespace.</p>
+
+<p>Here is the snippet of code from <a href="https://github.com/openstack/neutron/blob/master/neutron/agent/linux/dhcp.py" target="_blank">OpenStack Neutron source code for DHCP.</a> In the spawn_process function, we can see at the end that <em>netns</em> command is used to start the <em>dnsmasq</em> process. The &#8216;cmd&#8217; variable is constructed using <em>dnsmasq</em>.</p>
+
+<p style="text-align: center;">
+  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron.png"><img class="aligncenter  wp-image-1160" alt="DHCP Namespace Command Neutron" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron.png" width="652" height="358" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron.png 931w, http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron-300x165.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron-768x422.png 768w" sizes="(max-width: 652px) 100vw, 652px" /></a>
+</p>
+
+<h2 id="the-ip-netns-command">The <em>ip netns</em> command</h2>
+
+<p>One interesting tip about _ip netns _command is that  the &#8216;exec&#8217; sub-command lets you execute a specific &#8216;shell&#8217; command <em>on the specified namespace</em>. With _ip netns exec <namespacename> <strong>bash</strong>, _you can get a shell prompt specifically for the namespace. This will be useful in troubleshootign any networking problems. Commands and programs executed under the &#8216;exec&#8217; sub-command are aware of the &#8216;isolate namespace&#8217; only.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/dhcp/">DHCP</a>
+          
+          <a href="/blogs/tags/dnsmasq/">dnsmasq</a>
+          
+          <a href="/blogs/tags/l3/">L3</a>
+          
+          <a href="/blogs/tags/linux/">Linux</a>
+          
+          <a href="/blogs/tags/namespace/">Namespace</a>
+          
+          <a href="/blogs/tags/openstack/">OpenStack</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/2015/01/26/using-mac-table-linux-bridge-wilt/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Using MAC table – Linux Bridge – WILT</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/2013/12/08/tap-interfaces-linux-bridge/">
+            <span class="next-text nav-default">Tap Interfaces and Linux Bridge</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

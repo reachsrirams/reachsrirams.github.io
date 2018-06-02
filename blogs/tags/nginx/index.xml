@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/nginx/</link>
+    <description>Recent content in Nginx on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 26 Nov 2017 05:15:30 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker Compose with nginx and NodeJS</title>
+      <link>http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/</link>
+      <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/</guid>
+      <description>If you are a follower of this blog, you might have read about Using Docker with nginx and NodeJS. In this blog, I will discuss the code to build the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is available on GitHub.
+Acknowledgement: I was inspired by this blog and wanted to take it further using Docker Compose.</description>
+    </item>
+    
+  </channel>
+</rss>

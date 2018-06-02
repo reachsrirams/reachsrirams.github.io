@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Libvirt on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/libvirt/</link>
+    <description>Recent content in Libvirt on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 02 Dec 2013 18:00:47 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/libvirt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux Bridge and Virtual Networking</title>
+      <link>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</link>
+      <pubDate>Mon, 02 Dec 2013 18:00:47 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</guid>
+      <description>Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.
+Linux Bridge &amp;#8211; The Basics Virtual networking requires the presence of a virtual switch inside a server/hypervisor.</description>
+    </item>
+    
+  </channel>
+</rss>
