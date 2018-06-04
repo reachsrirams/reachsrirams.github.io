@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Jan 2015 16:19:23 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Jan 2013 13:00:28 +0000</lastBuildDate>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2013</title>
+      <link>http://reachsrirams.github.io/blogs/tags/2013/</link>
+      <pubDate>Tue, 01 Jan 2013 13:00:28 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/tags/2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>http://reachsrirams.github.io/blogs/tags/blog/</link>
+      <pubDate>Mon, 01 Feb 2016 05:17:20 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blogging</title>
+      <link>http://reachsrirams.github.io/blogs/tags/blogging/</link>
+      <pubDate>Sun, 16 Feb 2014 16:15:16 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/tags/blogging/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Brctl</title>
@@ -44,6 +71,33 @@
       <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cpu</title>
+      <link>http://reachsrirams.github.io/blogs/tags/cpu/</link>
+      <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/tags/cpu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Curation</title>
+      <link>http://reachsrirams.github.io/blogs/tags/curation/</link>
+      <pubDate>Sun, 16 Feb 2014 16:15:16 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/tags/curation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>http://reachsrirams.github.io/blogs/tags/database/</link>
+      <pubDate>Thu, 27 Dec 2012 13:30:45 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/tags/database/</guid>
       <description></description>
     </item>
     
@@ -93,101 +147,47 @@
     </item>
     
     <item>
-      <title>Interface</title>
-      <link>http://reachsrirams.github.io/blogs/tags/interface/</link>
-      <pubDate>Sun, 08 Dec 2013 06:56:00 +0000</pubDate>
+      <title>Github</title>
+      <link>http://reachsrirams.github.io/blogs/tags/github/</link>
+      <pubDate>Mon, 01 Feb 2016 05:17:20 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/tags/interface/</guid>
+      <guid>http://reachsrirams.github.io/blogs/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>L3</title>
-      <link>http://reachsrirams.github.io/blogs/tags/l3/</link>
-      <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
+      <title>Goal</title>
+      <link>http://reachsrirams.github.io/blogs/tags/goal/</link>
+      <pubDate>Mon, 01 Feb 2016 05:17:20 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/tags/l3/</guid>
+      <guid>http://reachsrirams.github.io/blogs/tags/goal/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Libvirt</title>
-      <link>http://reachsrirams.github.io/blogs/tags/libvirt/</link>
-      <pubDate>Mon, 02 Dec 2013 18:00:47 +0000</pubDate>
+      <title>Goals</title>
+      <link>http://reachsrirams.github.io/blogs/tags/goals/</link>
+      <pubDate>Sun, 05 Jul 2015 17:30:43 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/tags/libvirt/</guid>
+      <guid>http://reachsrirams.github.io/blogs/tags/goals/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Links</title>
-      <link>http://reachsrirams.github.io/blogs/tags/links/</link>
-      <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
+      <title>Html5</title>
+      <link>http://reachsrirams.github.io/blogs/tags/html5/</link>
+      <pubDate>Thu, 27 Dec 2012 13:30:45 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/tags/links/</guid>
+      <guid>http://reachsrirams.github.io/blogs/tags/html5/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>http://reachsrirams.github.io/blogs/tags/linux/</link>
-      <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
+      <title>Hypervisor</title>
+      <link>http://reachsrirams.github.io/blogs/tags/hypervisor/</link>
+      <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux Bridge</title>
-      <link>http://reachsrirams.github.io/blogs/tags/linux-bridge/</link>
-      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/tags/linux-bridge/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mac</title>
-      <link>http://reachsrirams.github.io/blogs/tags/mac/</link>
-      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/tags/mac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mac Table</title>
-      <link>http://reachsrirams.github.io/blogs/tags/mac-table/</link>
-      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/tags/mac-table/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Namespace</title>
-      <link>http://reachsrirams.github.io/blogs/tags/namespace/</link>
-      <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/tags/namespace/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nginx</title>
-      <link>http://reachsrirams.github.io/blogs/tags/nginx/</link>
-      <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/tags/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nic</title>
-      <link>http://reachsrirams.github.io/blogs/tags/nic/</link>
-      <pubDate>Sun, 08 Dec 2013 06:56:00 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/tags/nic/</guid>
+      <guid>http://reachsrirams.github.io/blogs/tags/hypervisor/</guid>
       <description></description>
     </item>
     

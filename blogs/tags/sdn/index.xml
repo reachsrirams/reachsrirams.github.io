@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sdn on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/sdn/</link>
+    <description>Recent content in Sdn on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 16 Aug 2012 04:34:57 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/sdn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Understanding Virtual Networks</title>
+      <link>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks/</link>
+      <pubDate>Thu, 16 Aug 2012 04:34:57 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks/</guid>
+      <description>&lt;p&gt;Upcoming technologies like OpenFlow and SDN are altering the networking landscape very quickly. The underlying drivers are Cloud Computing and Virtualization. Servers, Storage and Networking make up the trinity for effective Cloud computing strategy. Servers and Storage Virtualization has helped drive the adoption of flexible cloud services already. Now it is time for Network Virtualization.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -22,6 +22,15 @@ MAC Table &amp;#8211; Background Bridges and Switches forward packets by examini
     </item>
     
     <item>
+      <title>KVM and QEMU – do you know the connection?</title>
+      <link>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</link>
+      <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</guid>
+      <description>If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).</description>
+    </item>
+    
+    <item>
       <title>Tap Interfaces and Linux Bridge</title>
       <link>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</link>
       <pubDate>Sun, 08 Dec 2013 06:56:00 +0000</pubDate>
@@ -39,6 +48,26 @@ Physical vs. Virtual Networking The network data traffic is handled by the physi
       <guid>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</guid>
       <description>Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.
 Linux Bridge &amp;#8211; The Basics Virtual networking requires the presence of a virtual switch inside a server/hypervisor.</description>
+    </item>
+    
+    <item>
+      <title>Understanding Virtual Networks – The Basics</title>
+      <link>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/</link>
+      <pubDate>Thu, 16 Aug 2012 04:35:41 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/</guid>
+      <description>&lt;p&gt;In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Understanding Virtual Networks</title>
+      <link>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks/</link>
+      <pubDate>Thu, 16 Aug 2012 04:34:57 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks/</guid>
+      <description>&lt;p&gt;Upcoming technologies like OpenFlow and SDN are altering the networking landscape very quickly. The underlying drivers are Cloud Computing and Virtualization. Servers, Storage and Networking make up the trinity for effective Cloud computing strategy. Servers and Storage Virtualization has helped drive the adoption of flexible cloud services already. Now it is time for Network Virtualization.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

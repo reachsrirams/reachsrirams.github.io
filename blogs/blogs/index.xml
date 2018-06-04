@@ -23,12 +23,72 @@ Status of 2017 second half goals I had set a goal to write 3 blogs in the second
     
     <item>
       <title>Docker Compose with nginx and NodeJS</title>
-      <link>http://reachsrirams.github.io/blogs/2017/11/26/using-docker-nginx-nodejs/</link>
+      <link>http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/</link>
       <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/2017/11/26/using-docker-nginx-nodejs/</guid>
+      <guid>http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/</guid>
       <description>If you are a follower of this blog, you might have read about Using Docker with nginx and NodeJS. In this blog, I will discuss the code to build the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is available on GitHub.
 Acknowledgement: I was inspired by this blog and wanted to take it further using Docker Compose.</description>
+    </item>
+    
+    <item>
+      <title>Using Docker with nginx and NodeJS</title>
+      <link>http://reachsrirams.github.io/blogs/2017/11/19/using-docker-nginx-nodejs/</link>
+      <pubDate>Sun, 19 Nov 2017 05:56:48 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/11/19/using-docker-nginx-nodejs/</guid>
+      <description>The best way to learn a new technology is by doing some hands-on practice or exercise. In order to learn the basics of Docker, I was scouting for a problem and the one that captured my imagination was how to use Docker for handling static web pages and dynamic REST APIs. In this 2-part blog, I will describe the problem and the solution first and then show how I implemented the solution using Docker.</description>
+    </item>
+    
+    <item>
+      <title>Goals for the second half of 2017</title>
+      <link>http://reachsrirams.github.io/blogs/2017/07/07/goals-2h-2017/</link>
+      <pubDate>Fri, 07 Jul 2017 18:27:16 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/07/07/goals-2h-2017/</guid>
+      <description>The customary update about my blogging and learning goals is here.
+Status of 2017 first half goals  Enhance my OpenStack install scripts for _Newton_ and _Ocata _release. Newton release is already out and Ocata should release around May-mid  Score: 9&amp;frasl;10 Status: I completed the scripting for both Newton and Ocata release. The reason for 9 (instead of 10) is that there are 1-2 really minor issues that I need to fix.</description>
+    </item>
+    
+    <item>
+      <title>Goals for the first half of 2017</title>
+      <link>http://reachsrirams.github.io/blogs/2017/02/02/goals-first-half-2017/</link>
+      <pubDate>Thu, 02 Feb 2017 04:10:53 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/02/02/goals-first-half-2017/</guid>
+      <description>First of all a very happy new year to all the readers. The fact that this blog comes more than a month into 2017 should give you hints on what sort of goals I have planned for 2017 first half. I will start with an assessment of the second half of 2016.
+Status of 2016 second half goals  Build and blog about a small OpenStack GUI related idea – this could be 1-2 blogs  Score: 8&amp;frasl;10 Status: I wrote two blogs related to OpenStack Horizon and shared my code on Github.</description>
+    </item>
+    
+    <item>
+      <title>Goals for second half of 2016</title>
+      <link>http://reachsrirams.github.io/blogs/2016/07/06/goals-for-second-half-of-2016/</link>
+      <pubDate>Wed, 06 Jul 2016 07:19:37 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/07/06/goals-for-second-half-of-2016/</guid>
+      <description>It is that time of the year again &amp;#8211; time to share my blogging and learning goals for the second half of 2016. Let’s start with a review of the first half of 2016.
+Status of 2016 first half goals  Build and blog about a small OpenStack GUI related idea – this could be 1-2 blogs  Score: 0/10 Status: Technically I have done some ground work but nowhere near what I wanted to be  Release the installation scripts for Liberty release of OpenStack on GitHub  Score: 10&amp;frasl;10 Status: I exceeded this goal and completed scripting even for Mitaka release of OpenStack.</description>
+    </item>
+    
+    <item>
+      <title>Goals for the first half of 2016</title>
+      <link>http://reachsrirams.github.io/blogs/2016/02/01/goals-for-the-first-half-of-2016/</link>
+      <pubDate>Mon, 01 Feb 2016 05:17:20 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/02/01/goals-for-the-first-half-of-2016/</guid>
+      <description>I am late by a month in sharing my blogging and learning goals for the first half of 2016. Let&amp;#8217;s start with a review of the second half of 2015.
+Status of 2015 second half goals  YouTube video related to OpenStack – making a video is not easy but I believe I have nailed down the topic for the video.  Score: 10&amp;frasl;10 Status: I published a YouTube video on OpenStack Neutron Ports.</description>
+    </item>
+    
+    <item>
+      <title>My goals for the second half of 2015</title>
+      <link>http://reachsrirams.github.io/blogs/2015/07/05/my-goals-for-the-second-half-of-2015/</link>
+      <pubDate>Sun, 05 Jul 2015 17:30:43 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/07/05/my-goals-for-the-second-half-of-2015/</guid>
+      <description>As I have been doing for last few years, it is time to assess how well I have done on my blogging and learning goals. I will also share my goals for the second half of 2015.
+Status for 2015 first half goals Here is my assessment of the goals I had set out for myself:
+ Write 2 blogs related to OpenStack: this time I must blog about Open vSwitch and Neutron agents  Score: 9&amp;frasl;10 Status: While I wrote multiple blogs about OpenStack, I could not focus on Open vSwitch.</description>
     </item>
     
     <item>
@@ -42,6 +102,16 @@ MAC Table &amp;#8211; Background Bridges and Switches forward packets by examini
     </item>
     
     <item>
+      <title>Goals for the first half of 2015</title>
+      <link>http://reachsrirams.github.io/blogs/2015/01/14/goals-first-half-2015/</link>
+      <pubDate>Wed, 14 Jan 2015 10:31:21 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/01/14/goals-first-half-2015/</guid>
+      <description>Here I am once again, with fresh blogging and learning goals for the first half of 2015. This time I am able to share my goals earlier than usual. In the past, I was delayed by almost 2 months. This is clearly a good start for me and I hope that the rest of the year, I am able to stick to a better cadence for my blogging.
+Status for 2014 second half goals Here is my assessment of the goals I had set out for myself last year.</description>
+    </item>
+    
+    <item>
       <title>Linux Network Namespace – WILT</title>
       <link>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</link>
       <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
@@ -49,6 +119,36 @@ MAC Table &amp;#8211; Background Bridges and Switches forward packets by examini
       <guid>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</guid>
       <description>In the next installment of &amp;#8220;What I learnt today&amp;#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.
 This concept of supporting multiple instances of routing tables, networking devices is not very new.</description>
+    </item>
+    
+    <item>
+      <title>Goals for the second half of 2014</title>
+      <link>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</link>
+      <pubDate>Mon, 08 Sep 2014 07:48:13 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</guid>
+      <description>Here is my mid-year (I know I am off by couple of months) review of my blogging and learning goals for 2014. I will start off with my assessment of the first half of 2014 and then wrap with goals for the remaining four months of this year.
+Status of 2014 first half goals  Complete the Understanding Virtual Networks series &amp;#8211; Finish the introductory blogs about OpenStack Networking and Open vSwitch  Status Update &amp;#8211; The OpenStack networking blog was completed as per plan but I could not cover Open vSwitch in detail.</description>
+    </item>
+    
+    <item>
+      <title>KVM and QEMU – do you know the connection?</title>
+      <link>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</link>
+      <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</guid>
+      <description>If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).</description>
+    </item>
+    
+    <item>
+      <title>Goals for the first half of 2014</title>
+      <link>http://reachsrirams.github.io/blogs/2014/02/16/goals-first-half-2014/</link>
+      <pubDate>Sun, 16 Feb 2014 16:15:16 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/02/16/goals-first-half-2014/</guid>
+      <description>Like previous years, I want to continue the habit of sharing my goals around blogging and learning experiments. Clearly, this update for the first half of 2014 is already late. In addition, I did slip up on the important goals of 2013.
+Status of 2013 Goals Here is my assessment of the goals I had set myself in the second half of 2014.
+ Complete the blog series on Understanding Virtual Networks  Status Update: I completed the blogs related to Linux based Virtual Networking.</description>
     </item>
     
     <item>
@@ -69,6 +169,49 @@ Physical vs. Virtual Networking The network data traffic is handled by the physi
       <guid>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</guid>
       <description>Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.
 Linux Bridge &amp;#8211; The Basics Virtual networking requires the presence of a virtual switch inside a server/hypervisor.</description>
+    </item>
+    
+    <item>
+      <title>Goals for 2013 – Status Update</title>
+      <link>http://reachsrirams.github.io/blogs/2013/09/01/goals-for-2013-status-update/</link>
+      <pubDate>Sun, 01 Sep 2013 07:10:14 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/09/01/goals-for-2013-status-update/</guid>
+      <description>At the beginning of the year, I had set myself few goals related to my blogging and learning activities. This belated mid-year review of those goals already gives an indication of how I have performed against the goals I set for myself:
+Status and Score for 2013 1st half goals  Optimize my WordPress install for mobile viewing and better SEO  Status Update  Mobile version completed. I use Tiga wordpress theme which is Mobile friendly.</description>
+    </item>
+    
+    <item>
+      <title>Goals for 2013</title>
+      <link>http://reachsrirams.github.io/blogs/2013/01/01/goals-for-2013/</link>
+      <pubDate>Tue, 01 Jan 2013 13:00:28 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/01/01/goals-for-2013/</guid>
+      <description>&lt;p&gt;Before I share my goals for the first half of 2013, here is an assessment of my 2012 goals. Around mid 2012, I had set out with some goals to learn a JavaScript, CSS and HTML5 as part of UTM URL Generator project. You can check out &lt;a href=&#34;http://www.innervoice.in/blogs/2012/06/29/how-i-am-learning-javascript-and-css/&#34;&gt;those goals here&lt;/a&gt;. Around November I reworked some of the &lt;a href=&#34;http://www.innervoice.in/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/&#34; target=&#34;_blank&#34;&gt;milestones of that project&lt;/a&gt; and completed most of it recently. The main intention of the UTM URL Generator project was to learn the basics of few technologies.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HTML5 Local Storage – 5 Useful Tips</title>
+      <link>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</link>
+      <pubDate>Thu, 27 Dec 2012 13:30:45 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</guid>
+      <description>&lt;p&gt;HTML5 Local Storage is a browser based &lt;em&gt;key-value database&lt;/em&gt; that is available for client side applications. Java programmers (like me) will find that  HTML5 Local Storage is very similar to HashMap (or Hashtable). It is important to remember that Local Storage is available to client side applications even across browser restarts. In that context, Local Storage is similar to cookies. &lt;strong&gt;But unlike cookies, Local Storage is not accessible to the server side applications. &lt;/strong&gt;Also cookies provide very limited storage (4 KB).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HTML5 Local Storage based preferences for the URL Generator project</title>
+      <link>http://reachsrirams.github.io/blogs/2012/12/24/html5-local-storage-url-generator-project/</link>
+      <pubDate>Mon, 24 Dec 2012 16:45:58 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/12/24/html5-local-storage-url-generator-project/</guid>
+      <description>&lt;p&gt;The release 2 (R2) of my URL Generator Project is now ready. You can check it out at the &lt;a href=&#34;http://www.innervoice.in/tools/urlgen/&#34; target=&#34;_blank&#34;&gt;usual location&lt;/a&gt;. I am happy to share that this revision was completed on time as per my &lt;a href=&#34;http://www.innervoice.in/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/&#34; target=&#34;_blank&#34;&gt;revised project plan&lt;/a&gt;. Of course the announcement was delayed a bit. The main additions to this version of the URL generator are HTML5 based Local Storage, a simple usage of Object-oriented JavaScript techniques and jQuery.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

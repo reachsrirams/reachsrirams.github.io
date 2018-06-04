@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Html5 on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/html5/</link>
+    <description>Recent content in Html5 on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 27 Dec 2012 13:30:45 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/html5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTML5 Local Storage – 5 Useful Tips</title>
+      <link>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</link>
+      <pubDate>Thu, 27 Dec 2012 13:30:45 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</guid>
+      <description>&lt;p&gt;HTML5 Local Storage is a browser based &lt;em&gt;key-value database&lt;/em&gt; that is available for client side applications. Java programmers (like me) will find that  HTML5 Local Storage is very similar to HashMap (or Hashtable). It is important to remember that Local Storage is available to client side applications even across browser restarts. In that context, Local Storage is similar to cookies. &lt;strong&gt;But unlike cookies, Local Storage is not accessible to the server side applications. &lt;/strong&gt;Also cookies provide very limited storage (4 KB).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HTML5 Local Storage based preferences for the URL Generator project</title>
+      <link>http://reachsrirams.github.io/blogs/2012/12/24/html5-local-storage-url-generator-project/</link>
+      <pubDate>Mon, 24 Dec 2012 16:45:58 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/12/24/html5-local-storage-url-generator-project/</guid>
+      <description>&lt;p&gt;The release 2 (R2) of my URL Generator Project is now ready. You can check it out at the &lt;a href=&#34;http://www.innervoice.in/tools/urlgen/&#34; target=&#34;_blank&#34;&gt;usual location&lt;/a&gt;. I am happy to share that this revision was completed on time as per my &lt;a href=&#34;http://www.innervoice.in/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/&#34; target=&#34;_blank&#34;&gt;revised project plan&lt;/a&gt;. Of course the announcement was delayed a bit. The main additions to this version of the URL generator are HTML5 based Local Storage, a simple usage of Object-oriented JavaScript techniques and jQuery.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

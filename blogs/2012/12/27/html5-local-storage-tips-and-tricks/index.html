@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>HTML5 Local Storage – 5 Useful Tips - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="HTML5 Local Storage is a browser based key-value database that is available for client side applications. Java programmers (like me) will find that HTML5 Local Storage is very similar to HashMap (or Hashtable). It is important to remember that Local Storage is available to client side applications even across browser restarts. In that context, Local Storage is similar to cookies. But unlike cookies, Local Storage is not accessible to the server side applications. Also cookies provide very limited storage (4 KB).
+
+" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="HTML5 Local Storage – 5 Useful Tips" />
+<meta property="og:description" content="HTML5 Local Storage is a browser based key-value database that is available for client side applications. Java programmers (like me) will find that  HTML5 Local Storage is very similar to HashMap (or Hashtable). It is important to remember that Local Storage is available to client side applications even across browser restarts. In that context, Local Storage is similar to cookies. But unlike cookies, Local Storage is not accessible to the server side applications. Also cookies provide very limited storage (4 KB).
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/" />
+
+
+
+<meta property="article:published_time" content="2012-12-27T13:30:45&#43;00:00"/>
+
+<meta property="article:modified_time" content="2012-12-27T13:30:45&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="HTML5 Local Storage – 5 Useful Tips">
+<meta itemprop="description" content="HTML5 Local Storage is a browser based key-value database that is available for client side applications. Java programmers (like me) will find that  HTML5 Local Storage is very similar to HashMap (or Hashtable). It is important to remember that Local Storage is available to client side applications even across browser restarts. In that context, Local Storage is similar to cookies. But unlike cookies, Local Storage is not accessible to the server side applications. Also cookies provide very limited storage (4 KB).
+
+">
+
+
+<meta itemprop="datePublished" content="2012-12-27T13:30:45&#43;00:00" />
+<meta itemprop="dateModified" content="2012-12-27T13:30:45&#43;00:00" />
+<meta itemprop="wordCount" content="695">
+
+
+
+<meta itemprop="keywords" content="Database,HTML5,Javascript,JSON,Key,Local Storage,Value," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML5 Local Storage – 5 Useful Tips"/>
+<meta name="twitter:description" content="HTML5 Local Storage is a browser based key-value database that is available for client side applications. Java programmers (like me) will find that  HTML5 Local Storage is very similar to HashMap (or Hashtable). It is important to remember that Local Storage is available to client side applications even across browser restarts. In that context, Local Storage is similar to cookies. But unlike cookies, Local Storage is not accessible to the server side applications. Also cookies provide very limited storage (4 KB).
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 2em 4em;
+		margin: 0 4em 2em;
+	}
+	.content-wrapper {
+		padding: 2em 0 1px;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">HTML5 Local Storage – 5 Useful Tips</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2012-12-27 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/programming/"> Programming </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+          </div>
+        <span class="more-meta"> 695 words </span>
+        <span class="more-meta"> 4 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#tip-8211-1-8211-pay-attention-to-the-url">Tip &#8211; 1 &#8211; Pay attention to the URL</a></li>
+<li><a href="#tip-8211-2-8211-size-does-matter">Tip &#8211; 2 &#8211; Size does matter</a></li>
+<li><a href="#tip-8211-3-8211-store-and-retrieve-data-types">Tip &#8211; 3 &#8211; Store and retrieve data types</a></li>
+<li><a href="#tip-8211-4-8211-store-multiple-values-for-a-single-key">Tip &#8211; 4 &#8211; Store multiple values for a single key</a></li>
+<li><a href="#tip-8211-5-8211-always-check-for-browser-support">Tip &#8211; 5 &#8211; Always check for Browser Support</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>HTML5 Local Storage is a browser based <em>key-value database</em> that is available for client side applications. Java programmers (like me) will find that  HTML5 Local Storage is very similar to HashMap (or Hashtable). It is important to remember that Local Storage is available to client side applications even across browser restarts. In that context, Local Storage is similar to cookies. <strong>But unlike cookies, Local Storage is not accessible to the server side applications. </strong>Also cookies provide very limited storage (4 KB).</p>
+
+<p></p>
+
+<p>Here is an example of the two most important methods of <em>localStorage</em> object.</p>
+
+<pre class="lang:js decode:true">localStorage.setItem("foo", "bar");
+localStorage.getItem("foo");</pre>
+
+<p>JavaScript language allows several other ways to access localStorage.</p>
+
+<pre class="lang:js decode:true">var storeValue = localStorage["foo"];</pre>
+
+<p>For more introductory material please read &#8211; <a href="http://diveintohtml5.info/storage.html">http://diveintohtml5.info/storage.html</a>.</p>
+
+<h3 id="tip-8211-1-8211-pay-attention-to-the-url">Tip &#8211; 1 &#8211; Pay attention to the URL</h3>
+
+<p>Browsers persist HTML5 Local Storage on a per domain basis. So a web application can only access Local Storage defined for its domain. Not just the domain but subdomain and HTTP vs HTTPS are also used to identify the domain. For example, a key-value stored in Local Storage for <a href="http://www.mysite.com">http://www.mysite.com</a> is not available <a href="https://www.mysite.com">https://www.mysite.com</a>. So if you want to share client side data between applications on different domain or sub-domains, you need to use re-directs.</p>
+
+<p>On the other hand if you host multiple web applications on the same domain (hosted as sub-directories) then all your web applications share the information stored in Local Storage. While this could be useful sometimes, care must be taken to avoid one application from over-writing the values of another application. It is good to identify the key along with application name or other identifiers.</p>
+
+<h3 id="tip-8211-2-8211-size-does-matter">Tip &#8211; 2 &#8211; Size does matter</h3>
+
+<p>The HTML5 specification has <em>arbitrarily</em> fixed the maximum storage size <em>per domain</em> to 5 MB. This includes keys as well as values. While  5 MB worth of client side data is quite a bit, ensure that you handle the exception QUOTA_EXCEEDED_ERR and probably cleanup the storage.</p>
+
+<h3 id="tip-8211-3-8211-store-and-retrieve-data-types">Tip &#8211; 3 &#8211; Store and retrieve data types</h3>
+
+<p>Local Storage supports only string values to be persisted. When you call <em>setItem</em> method, it internally converts the value object to String and persists it. So additional steps need to be taken to store and retrieve objects of different data types. Fortunately we can use JSON parsing for this purpose.</p>
+
+<p>The technique is to use <em>JSON.stringify()</em> and <em>JSON.parse()</em> functions to perform this conversion automatically. JavaScript allows us to add newer methods to existing objects. So it is advisable to incorporate this technique into the _standard localStorage object _itself. This can done as follows:</p>
+
+<pre class="lang:js decode:true">Storage.prototype.setObject = function(key, value) {
+    this.setItem(key, JSON.stringify(value));
+}
+
+Storage.prototype.getObject = function(key) {
+    var value = this.getItem(key);
+    return value && JSON.parse(value);
+}</pre>
+
+<p>With the above code you can invoke</p>
+
+<pre class="lang:js decode:true">localStorage.getObject("foo");
+localStorage.setObject("foo", obj);</pre>
+
+<p>The above code is courtesy &#8211; <a href="http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage">http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage</a></p>
+
+<h3 id="tip-8211-4-8211-store-multiple-values-for-a-single-key">Tip &#8211; 4 &#8211; Store multiple values for a single key</h3>
+
+<p>If you want to store multiple values for a single key, then this tip is very useful. I borrowed this technique from <a href="http://paperkilledrock.com/2010/05/html5-localstorage-part-two/">http://paperkilledrock.com/2010/05/html5-localstorage-part-two/</a>. Here is what you need to do:</p>
+
+<ul>
+<li>Create an array and <em>push</em> different values into it.</li>
+</ul>
+
+<pre class="lang:js decode:true">var values = new Array();
+values.push(value1);
+values.push(value2);
+values.push(value3);</pre>
+
+<ul>
+<li>Stringify the array using the <em>join</em> method by specifying a <em>separator</em>. Note choose a separator that is unlikely to appear in your values.</li>
+<li>Persist this string into Local Storage.</li>
+</ul>
+
+<pre class="lang:js decode:true">try {
+    localStorage.setItem(key, values.join(";")); //store the item in the database
+} catch (e) {
+    if (e == QUOTA_EXCEEDED_ERR) {
+        alert("Quota exceeded!");
+    }
+}</pre>
+
+<ul>
+<li>While retrieving fetch the concatenated String from Local Storage and use <em>String.split()</em> to parse the different values.</li>
+</ul>
+
+<pre class="lang:js decode:true">var valueFromStore = localStorage.getItem(key); // get the String from Local Storage
+var values = valueFromStore.split(";"); // get an Array back</pre>
+
+<h3 id="tip-8211-5-8211-always-check-for-browser-support">Tip &#8211; 5 &#8211; Always check for Browser Support</h3>
+
+<p>A very large number of modern browsers support Local Storage but as a web application developer you may still encounter browsers that do not support many HTML5 constructs and certainly not Local Storage. So you are well advised to check whether your browser supports Local Storage or not. While there are many ways to check, I strongly recommend Modernizr API (why re-invent the wheel).</p>
+
+<pre class="lang:js decode:true">if (Modernizr.localstorage) {
+  // localStorage is supported
+} else {
+  // localStorage not supported
+}</pre>
+
+<p>&nbsp;</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/database/">Database</a>
+          
+          <a href="/blogs/tags/html5/">HTML5</a>
+          
+          <a href="/blogs/tags/javascript/">Javascript</a>
+          
+          <a href="/blogs/tags/json/">JSON</a>
+          
+          <a href="/blogs/tags/key/">Key</a>
+          
+          <a href="/blogs/tags/local-storage/">Local Storage</a>
+          
+          <a href="/blogs/tags/value/">Value</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2013/01/01/goals-for-2013/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Goals for 2013</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2012/12/24/html5-local-storage-url-generator-project/">
+            <span class="next-text nav-default">HTML5 Local Storage based preferences for the URL Generator project</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

@@ -63,10 +63,10 @@
     
     <item>
       <title>Docker Compose with nginx and NodeJS</title>
-      <link>http://reachsrirams.github.io/blogs/2017/11/26/using-docker-nginx-nodejs/</link>
+      <link>http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/</link>
       <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/2017/11/26/using-docker-nginx-nodejs/</guid>
+      <guid>http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/</guid>
       
         <description>
 
@@ -108,6 +108,284 @@
 &lt;p&gt;The effect of this &lt;em&gt;link&lt;/em&gt; is that Docker will take the IP address of the container named &lt;em&gt;api&lt;/em&gt; and map it to the host name &lt;em&gt;apiserver&lt;/em&gt; inside the GUI container. The _/etc/hosts _file is used for this purpose.&lt;/p&gt;
 
 &lt;p&gt;In  real world scenarios it is common to have container distributed across servers in a datacenter. Therefore IP address may not be known upfront and may also change over the course of time. Docker Links provide a crucial capability to ensure that containers are able to communicate with one another using host names and let Docker &lt;em&gt;orchestrate&lt;/em&gt; the mapping of host names to IP addresses.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Using Docker with nginx and NodeJS</title>
+      <link>http://reachsrirams.github.io/blogs/2017/11/19/using-docker-nginx-nodejs/</link>
+      <pubDate>Sun, 19 Nov 2017 05:56:48 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/11/19/using-docker-nginx-nodejs/</guid>
+      
+        <description>
+
+&lt;p&gt;The best way to learn a new technology is by doing some hands-on practice or exercise. In order to learn the basics of Docker, I was scouting for a problem and the one that captured my imagination was how to use Docker for handling static web pages and dynamic REST APIs. In this 2-part blog, I will describe the problem and the solution first and then show how I implemented the solution using Docker.&lt;/p&gt;
+
+&lt;h3 id=&#34;problem-description&#34;&gt;Problem description&lt;/h3&gt;
+
+&lt;p&gt;Modern web-based applications are built using static or dynamic web pages. And these web pages in turn invoke RESTful APIs to fetch data or perform some operations on the backend. The important aspect here is that both the UI pages as well as RESTful APIs are transported over HTTP/S. So we effectively need web server(s) to serve UI pages as well as RESTful APIs.&lt;/p&gt;
+
+&lt;h3 id=&#34;solution-overview&#34;&gt;Solution overview&lt;/h3&gt;
+
+&lt;p&gt;While standard web servers can serve static HTML pages, the REST API processing requires web servers to support programming languages. Depending on the language the web servers for handling REST APIs can by built using NodeJS (JavaScript) or Bottle/Flask (Python) for example. But tools like NodeJS and Bottle etc do not support standard web server features like caching, proxying etc, which are useful for static web pages. So the common solution is to use both regular web servers like apache or nginx (proxy) for web pages and use NodeJS etc for REST APIs.&lt;/p&gt;
+
+&lt;h3 id=&#34;solution-in-depth-8211-deploying-using-docker&#34;&gt;Solution in depth &amp;#8211; deploying using Docker&lt;/h3&gt;
+
+&lt;p&gt;For this Docker learning exercise we will deploy two containers &amp;#8211; one running nginx and another running NodeJS. The ngnix server will handle &lt;em&gt;all&lt;/em&gt; incoming HTTP/S requests. However it will &lt;em&gt;proxy&lt;/em&gt; the REST API requests to the NodeJS process and handle the UI pages itself.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2017/11/19/using-docker-nginx-nodejs/docker-nginx-nodejs-1/#main&#34; rel=&#34;attachment wp-att-1572&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1572&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/Docker-nginx-NodeJS-1-1.png&#34; alt=&#34;&#34; width=&#34;603&#34; height=&#34;436&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/Docker-nginx-NodeJS-1-1.png 603w, http://127.0.0.1/wordpress/wp-content/uploads/2017/11/Docker-nginx-NodeJS-1-1-300x217.png 300w&#34; sizes=&#34;(max-width: 603px) 100vw, 603px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;the-code&#34;&gt;The Code&lt;/h3&gt;
+
+&lt;p&gt;The source code for this learning exercise can be found on &lt;a href=&#34;https://goo.gl/sBmSt3&#34;&gt;my Github account&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I have used Docker Compose to &lt;em&gt;orchestrate&lt;/em&gt; the two containers. The &lt;em&gt;gui-container&lt;/em&gt; on the Github account implements the nginx server and the &lt;em&gt;api-container&lt;/em&gt; implements the NodeJS container. In the next installment of the blog, I will describe the code and show how it implements the solution mentioned above. I will also describe one interesting and useful feature of Docker that I learnt in this process.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Goals for the second half of 2017</title>
+      <link>http://reachsrirams.github.io/blogs/2017/07/07/goals-2h-2017/</link>
+      <pubDate>Fri, 07 Jul 2017 18:27:16 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/07/07/goals-2h-2017/</guid>
+      
+        <description>
+
+&lt;p&gt;The customary update about my blogging and learning goals is here.&lt;/p&gt;
+
+&lt;h2 id=&#34;status-of-2017-first-half-goals&#34;&gt;Status of 2017 first half goals&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Enhance my OpenStack install scripts for _Newton_ and _Ocata _release. Newton release is already out and Ocata should release around May-mid
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;9&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: I completed the scripting for both Newton and Ocata release. The reason for 9 (instead of 10) is that there are 1-2 really minor issues that I need to fix.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;goals-for-the-second-half-of-2017&#34;&gt;Goals for the second half of 2017&lt;/h2&gt;
+
+&lt;p&gt;I am planning to explore newer aspects of OpenStack along with some completely new technologies in the next 6 months. With that in mind, I am not planning any specific goals for the 2nd half of 2017. However my experience shows that learning is more deep rooted and satisfying if I blog about different topics. Therefore &lt;strong&gt;my goal for the second half of 2017 is to write 3 blogs&lt;/strong&gt;. The exact topics are not known as of today.&lt;/p&gt;
+
+&lt;p&gt;I also commit to fixing any errors or bugs in my OpenStack install scripts. The Pike release will sometime around end of August 2017. &lt;strong&gt;I will take on a stretch goal to support Pike release install scripts before the end of the year&lt;/strong&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Goals for the first half of 2017</title>
+      <link>http://reachsrirams.github.io/blogs/2017/02/02/goals-first-half-2017/</link>
+      <pubDate>Thu, 02 Feb 2017 04:10:53 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/02/02/goals-first-half-2017/</guid>
+      
+        <description>
+
+&lt;p&gt;First of all a very happy new year to all the readers. The fact that this blog comes more than a month into 2017 should give you hints on what sort of goals I have planned for 2017 first half. I will start with an assessment of the second half of 2016.&lt;/p&gt;
+
+&lt;h2 id=&#34;status-of-2016-second-half-goals&#34;&gt;Status of 2016 second half goals&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Build and blog about a small OpenStack GUI related idea – this could be 1-2 blogs
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;8&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: I wrote two blogs related to OpenStack Horizon and shared my code on Github. I rated myself as &lt;sup&gt;8&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt; because I could have done better. Both in terms of timing of the blogs and the depth of content I really feel there was scope for improvement.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Enhance my OpenStack install scripts for &lt;em&gt;Newton&lt;/em&gt; release. This release will happen in October
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: 0/10&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: This work hardly moved an inch.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In the second half of 2016, I released my second book titled “Software Defined Networking with OpenStack”. While I am not happy that I missed the Newton install scripts goal, overall I am pleased with the way the year turned out.&lt;/p&gt;
+
+&lt;h2 id=&#34;goals-for-the-first-half-of-2017&#34;&gt;Goals for the first half of 2017&lt;/h2&gt;
+
+&lt;p&gt;I am going to carry forward a simple goal for several reasons. I want to manage this before June-end that is 5 months away. I need time to explore ideas for yet another book. And finally I am working on some personal projects that will improve my writing skills in general. So here is the only goal for 2017 first half:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Enhance my OpenStack install scripts for _Newton_ and _Ocata _release. Newton release is already out and Ocata should release around May-mid.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is still an aggressive goal &amp;#8211; espeacially for Ocata.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Goals for second half of 2016</title>
+      <link>http://reachsrirams.github.io/blogs/2016/07/06/goals-for-second-half-of-2016/</link>
+      <pubDate>Wed, 06 Jul 2016 07:19:37 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/07/06/goals-for-second-half-of-2016/</guid>
+      
+        <description>
+
+&lt;p&gt;It is that time of the year again &amp;#8211; time to share my blogging and learning goals for the second half of 2016. Let’s start with a review of the first half of 2016.&lt;/p&gt;
+
+&lt;h2 id=&#34;status-of-2016-first-half-goals&#34;&gt;Status of 2016 first half goals&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Build and blog about a small OpenStack GUI related idea – this could be 1-2 blogs
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: 0/10&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: Technically I have done some ground work but nowhere near what I wanted to be&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Release the installation scripts for Liberty release of OpenStack on GitHub
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;10&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: I exceeded this goal and completed &lt;a href=&#34;http://www.innervoice.in/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/&#34; target=&#34;_blank&#34;&gt;scripting even for Mitaka release of OpenStack.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Write a management related blog on LinkedIn
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: 0/10&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;:Another easy one. I have no plans to do this and will be abandoning this idea.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is clearly not what I had planned for. And no excuses for not being able to meet my goals. While I exceeded one of the goals and wrote another blog related to &lt;a href=&#34;http://www.innervoice.in/blogs/2016/06/27/openstack-controller-logs-view-using-browser/&#34; target=&#34;_blank&#34;&gt;viewing logs using browser&lt;/a&gt;, I must admit that I did not execute on my plans properly.&lt;/p&gt;
+
+&lt;h2 id=&#34;goals-for-the-second-half-of-2016&#34;&gt;Goals for the second half of 2016&lt;/h2&gt;
+
+&lt;p&gt;Finally here are my ideas for the second half of 2016.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Build and blog about a small OpenStack GUI related idea – this could be 1-2 blogs&lt;/li&gt;
+&lt;li&gt;Enhance my OpenStack install scripts for &lt;em&gt;Newton&lt;/em&gt; release. This release will happen in October&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;My second book covers some very interesting and challenging (for me) topics. I foresee that it will continue to keep me busy (happily) so I will have to be more conservative with my goals now. I really hope to be successful with these two goals and other personal/professional plans I have for myself.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Goals for the first half of 2016</title>
+      <link>http://reachsrirams.github.io/blogs/2016/02/01/goals-for-the-first-half-of-2016/</link>
+      <pubDate>Mon, 01 Feb 2016 05:17:20 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/02/01/goals-for-the-first-half-of-2016/</guid>
+      
+        <description>
+
+&lt;p&gt;I am late by a month in sharing my blogging and learning goals for the first half of 2016. Let&amp;#8217;s start with a review of the second half of 2015.&lt;/p&gt;
+
+&lt;h2 id=&#34;status-of-2015-second-half-goals&#34;&gt;Status of 2015 second half goals&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;YouTube video related to OpenStack – making a video is not easy but I believe I have nailed down the topic for the video.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score:&lt;/strong&gt; &lt;strong&gt;&lt;sup&gt;10&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status:&lt;/strong&gt; I published a YouTube video on &lt;a href=&#34;https://goo.gl/wkJnjv&#34; target=&#34;_blank&#34;&gt;OpenStack Neutron Ports.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Build and blog about a small OpenStack GUI related idea – this could be 1-2 blogs
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score:&lt;/strong&gt; &lt;strong&gt;0/10&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status: &lt;/strong&gt;I have done some ground work but no blogs, so no score&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Release the installation scripts for Kilo on Github
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;3&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status: &lt;/strong&gt;I have the working code in my &lt;a href=&#34;https://goo.gl/vgUSpO&#34; target=&#34;_blank&#34;&gt;GitHub account&lt;/a&gt; &amp;#8211; check out the dev/kilo branch. It works well but requires some finishing touches.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Write a management related blog on LinkedIn – something new that I want to attempt
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: 0/10&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status:&lt;/strong&gt; Again I have written up a skeleton blog but nothing official to show&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Write 1 blog in the WILT series
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;10&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status: &lt;/strong&gt;Published the &lt;a href=&#34;http://www.innervoice.in/blogs/2015/11/27/ip-vs-ifconfig-wilt/&#34; target=&#34;_blank&#34;&gt;ip vs ipconfig WILT blog.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you look at the goals alone, it is clearly a mixed bag. I should have stretched a bit more completed more of the goals I set for myself. But considering the fact that I co-authored a &lt;a href=&#34;https://goo.gl/nCw8pc&#34; target=&#34;_blank&#34;&gt;book on OpenStack&lt;/a&gt; and spoke at the &lt;a href=&#34;https://goo.gl/JYGcFo&#34; target=&#34;_blank&#34;&gt;OpenStack Summit in Tokyo&lt;/a&gt;, I am happy with the accomplishments.&lt;/p&gt;
+
+&lt;h2 id=&#34;goals-for-the-first-half-of-2016&#34;&gt;Goals for the first half of 2016&lt;/h2&gt;
+
+&lt;p&gt;I am working on an idea for my second book so the goals for the first half will be somewhat conservative. OpenStack will continue to be the dominant theme.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Build and blog about a small OpenStack GUI related idea – this could be 1-2 blogs&lt;/li&gt;
+&lt;li&gt;Release the installation scripts for _Liberty_ release of OpenStack on GitHub&lt;/li&gt;
+&lt;li&gt;Write a management related blog on LinkedIn&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Given that only 5 months are left, I believe the goals above are reasonable taking into account personal and professional workload. I have carried forward these goals for a while and I am determined to complete them this time, so that I can pursue some fresh ideas for the second half of 2016&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>My goals for the second half of 2015</title>
+      <link>http://reachsrirams.github.io/blogs/2015/07/05/my-goals-for-the-second-half-of-2015/</link>
+      <pubDate>Sun, 05 Jul 2015 17:30:43 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/07/05/my-goals-for-the-second-half-of-2015/</guid>
+      
+        <description>
+
+&lt;p&gt;As I have been doing for last few years, it is time to assess how well I have done on my blogging and learning goals. I will also share my goals for the second half of 2015.&lt;/p&gt;
+
+&lt;h2 id=&#34;status-for-2015-first-half-goals&#34;&gt;Status for 2015 first half goals&lt;/h2&gt;
+
+&lt;p&gt;Here is my assessment of the goals I had set out for myself:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Write 2 blogs related to OpenStack: this time I must blog about Open vSwitch and Neutron agents
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;9&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status: &lt;/strong&gt;While I wrote multiple blogs about OpenStack, I could not focus on Open vSwitch.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Write 2 blogs in the WILT series
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;5&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status: &lt;/strong&gt;I have learnt a lot this year but could write only one blog on the WILT series&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Create one YouTube video related to OpenStack or Networking
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score: 0/10&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status: &lt;/strong&gt;This is an easy one. No new YouTube video so the score is zero :).&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The first half of the year brought with it some very positive developments professionally. The biggest being the opportunity to write a &lt;a href=&#34;https://goo.gl/nCw8pc&#34; target=&#34;_blank&#34;&gt;book about OpenStack&lt;/a&gt;. I also spent considerable time developing &lt;a href=&#34;https://github.com/reachsrirams/openstack-scripts&#34;&gt;OpenStack install scripts for Juno release&lt;/a&gt;. Both activities kept me well occupied and overall it has been a great first half of the year. On the improvement side, I will try to space my blogs more evenly through out the 6 months.&lt;/p&gt;
+
+&lt;h2 id=&#34;goals-for-the-second-half-of-2015&#34;&gt;Goals for the second half of 2015&lt;/h2&gt;
+
+&lt;p&gt;The OpenStack book is due later this year and I definitely intend to work on the install scripts for OpenStack Kilo release. So continuing the theme of blogging and experimenting around OpenStack, her are my goals:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;YouTube video related to OpenStack &amp;#8211; making a video is not easy but I believe I have nailed down the topic for the video.&lt;/li&gt;
+&lt;li&gt;Build and blog about a small OpenStack GUI related idea &amp;#8211; this could be 1-2 blogs&lt;/li&gt;
+&lt;li&gt;Release the installation scripts for Kilo on Github&lt;/li&gt;
+&lt;li&gt;Write a management related blog on LinkedIn &amp;#8211; something new that I want to attempt&lt;/li&gt;
+&lt;li&gt;Write 1 blog in the WILT series&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The ground work for some these goals are already in place. However with the release of the book later this year, I need to manage my time well to meet these goals.&lt;/p&gt;
 </description>
       
     </item>
@@ -172,6 +450,67 @@
     </item>
     
     <item>
+      <title>Goals for the first half of 2015</title>
+      <link>http://reachsrirams.github.io/blogs/2015/01/14/goals-first-half-2015/</link>
+      <pubDate>Wed, 14 Jan 2015 10:31:21 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/01/14/goals-first-half-2015/</guid>
+      
+        <description>
+
+&lt;p&gt;Here I am once again, with fresh blogging and learning goals for the first half of 2015. This time I am able to share my goals earlier than usual. In the past, I was delayed by almost 2 months. This is clearly a good start for me and I hope that the rest of the year, I am able to stick to a better cadence for my blogging.&lt;/p&gt;
+
+&lt;h2 id=&#34;status-for-2014-second-half-goals&#34;&gt;Status for 2014 second half goals&lt;/h2&gt;
+
+&lt;p&gt;Here is my assessment of the goals I had set out for myself last year.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Write 2 blogs related to OpenStack: I am thinking about Open vSwitch and Neutron agents
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score &amp;#8211; &lt;sup&gt;7&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status &lt;/strong&gt; &amp;#8211; I did not blog specifically about these topics but I have blogged about Namespace usage in OpenStack and Neutron Components.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Write at least one blog about setting up OpenStack infrastructure
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score &amp;#8211; &lt;sup&gt;8&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; &amp;#8211; I have blogged about home OpenStack setup. But I wish I had done a bit more. On my Github account I have posted some homegrown scripts for OpenStack installation. But there is still some work pending on that front. &lt;a href=&#34;https://github.com/reachsrirams/openstack-install-scripts&#34; target=&#34;_blank&#34;&gt;Here is the link to the Github project&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Create one YouTube video related to a networking concept.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score&lt;/strong&gt; &lt;strong&gt;&amp;#8211; 0/10&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status &lt;/strong&gt;&amp;#8211; I could not complete this &amp;#8211; though I did create a video on a different topic.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In isolation, it may appear that overall I am still lagging behind on my blogging goals. But there are other aspects that are very encouraging.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The blog readership is steady and much higher than it used to be earlier. I am averaging around 30 visitors per day.&lt;/li&gt;
+&lt;li&gt;I introduced a new series called WILT &amp;#8211; what I learnt today. This series allows me to blog about some odd ball topics just out of the blue.&lt;/li&gt;
+&lt;li&gt;And most importantly, I have a healthy pipeline of topics and ideas for the upcoming year.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;goals-for-first-half-2015&#34;&gt;Goals for first half 2015&lt;/h2&gt;
+
+&lt;p&gt;I will continue my focus on OpenStack for the coming 6 months and hopefully learn basics of Python along the way. Here are the goals for the first half of 2015:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Write 2 blogs related to OpenStack: this time I must blog about Open vSwitch and Neutron agents&lt;/li&gt;
+&lt;li&gt;Write 2 blogs in the WILT series&lt;/li&gt;
+&lt;li&gt;Create one YouTube video related to OpenStack or Networking&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I am setting realistic goals for 2015 so that I can meet them with a bit of stretch.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Comments&lt;/strong&gt; &amp;#8211; Do let me know what you think about these goals by leaving your comments below.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Linux Network Namespace – WILT</title>
       <link>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</link>
       <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
@@ -205,6 +544,202 @@
 &lt;h2 id=&#34;the-ip-netns-command&#34;&gt;The &lt;em&gt;ip netns&lt;/em&gt; command&lt;/h2&gt;
 
 &lt;p&gt;One interesting tip about _ip netns _command is that  the &amp;#8216;exec&amp;#8217; sub-command lets you execute a specific &amp;#8216;shell&amp;#8217; command &lt;em&gt;on the specified namespace&lt;/em&gt;. With _ip netns exec &lt;namespacename&gt; &lt;strong&gt;bash&lt;/strong&gt;, _you can get a shell prompt specifically for the namespace. This will be useful in troubleshootign any networking problems. Commands and programs executed under the &amp;#8216;exec&amp;#8217; sub-command are aware of the &amp;#8216;isolate namespace&amp;#8217; only.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Goals for the second half of 2014</title>
+      <link>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</link>
+      <pubDate>Mon, 08 Sep 2014 07:48:13 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</guid>
+      
+        <description>
+
+&lt;p&gt;Here is my mid-year (I know I am off by couple of months) review of my blogging and learning goals for 2014. I will start off with my assessment of the first half of 2014 and then wrap with goals for the remaining four months of this year.&lt;/p&gt;
+
+&lt;h3 id=&#34;status-of-2014-first-half-goals&#34;&gt;Status of 2014 first half goals&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Complete the Understanding Virtual Networks series &amp;#8211; Finish the introductory blogs about OpenStack Networking and Open vSwitch
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Status Update&lt;/strong&gt; &amp;#8211; The OpenStack networking blog was completed as per plan but I could not cover Open vSwitch in detail. But I did write a blog on &lt;a title=&#34;KVM and QEMU – do you know the connection?&#34; href=&#34;http://www.innervoice.in/blogs/2014/03/10/kvm-and-qemu/&#34; target=&#34;_blank&#34;&gt;KVM vs QEMU&lt;/a&gt; which has got very high hits. I also worked with a colleague of mine to start guest blogs on my website.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Score &amp;#8211; &lt;sup&gt;7&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt; &amp;#8211; This is mainly because there were some interesting blogs with lots of visits. But the area I really need to improve is writing regularly.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Write two &lt;a href=&#34;http://smallbusiness.chron.com/curate-blog-34682.html&#34;&gt;curated posts&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Score&lt;/strong&gt; &lt;strong&gt;&amp;#8211; 0/10&lt;/strong&gt; &amp;#8211; It should be obvious why I rated myself zero. I did not write any curated posts.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Publish two short YouTube videos
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Status Update &lt;/strong&gt;&amp;#8211; Shared my first unboxing video for Intel NUC (which will feature more in my future posts). I have the second video ready but not fully edited for sharing yet.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Score&lt;/strong&gt; &lt;strong&gt;&amp;#8211; &lt;sup&gt;6&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt; &amp;#8211; I have given one bonus point for finally publishing my own unboxing video.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Overall Assessment&lt;/strong&gt; &amp;#8211; overall I would say it was a mixed bag. My blogging was definitely more sporadic but the some of the content was unique and has helped increase the number of visits. This tells me that good content is the core ingredient of a good blog. Being consistent can only make it better.&lt;/p&gt;
+
+&lt;h3 id=&#34;goals-for-the-second-half-of-2014&#34;&gt;Goals for the second half of 2014&lt;/h3&gt;
+
+&lt;p&gt;Given the delay in working out my goals, I am left with less than 4 months till the end of 2014. Given my work and personal commitment, I have to plan a realistic set of goals for blogging. The theme will center around OpenStack and also delve into the nitty gritty of setting up OpenStack lab at home. So here are some goals I have planned:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Write 2 blogs related to OpenStack: I am thinking about Open vSwitch and Neutron agents&lt;/li&gt;
+&lt;li&gt;Write at least one blog about setting up OpenStack infrastructure&lt;/li&gt;
+&lt;li&gt;Create one YouTube video related to a networking concept.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Let me know what you think about these goals. If you have any specific idea or topic that you would like me to research and blog, please leave your comments.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>KVM and QEMU – do you know the connection?</title>
+      <link>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</link>
+      <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</guid>
+      
+        <description>
+
+&lt;p&gt;If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).&lt;/p&gt;
+
+&lt;h2 id=&#34;kvm-and-qemu-8211-the-process-id-check&#34;&gt;KVM and QEMU &amp;#8211; the process ID check&lt;/h2&gt;
+
+&lt;p&gt;You can use &lt;em&gt;libvirt&lt;/em&gt; and the associated Virtual Machine Manager GUI to start a virtual machine. In the GUI, you can choose the &amp;#8216;Virt Type&amp;#8217; as either KVM or QEMU. I started a VM, once with QEMU as the Virt Type and once with KVM. In both cases, I did a _grep_ of the process ID to see if there was any difference. &lt;strong&gt;Note&lt;/strong&gt;: I used Ubuntu 13.10 for my experiments.&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1024&#34; alt=&#34;KVM and QEMU - VMM Select Virt Type&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png&#34; width=&#34;540&#34; height=&#34;533&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png 675w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM-300x296.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM-100x100.png 100w&#34; sizes=&#34;(max-width: 540px) 100vw, 540px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt; When I started the VM with KVM as the Virt Type the process ID details showed an interesting attribute &amp;#8220;accel=kvm&amp;#8221; as highlighted below.&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1025&#34; alt=&#34;QEMU using KVM Accelarator&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png&#34; width=&#34;755&#34; height=&#34;374&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png 944w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM-300x149.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM-768x381.png 768w&#34; sizes=&#34;(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;When I started the same Virtual Machine with QEMU as the Virt Type, the process ID showed &amp;#8220;accel=tcg&amp;#8221;.&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1026&#34; alt=&#34;QEMU using TCG Accelarator&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png&#34; width=&#34;756&#34; height=&#34;373&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png 945w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG-300x148.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG-768x379.png 768w&#34; sizes=&#34;(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Note that in both the cases the same _binary_ is executed to start the VM, namely, _qemu-system-x86&lt;em&gt;64&lt;/em&gt;. The main difference is the acceleration type.&lt;/p&gt;
+
+&lt;h2 id=&#34;kvm-and-qemu-8211-understanding-hardware-acceleration&#34;&gt;KVM and QEMU &amp;#8211; understanding hardware acceleration&lt;/h2&gt;
+
+&lt;p&gt;To understand hardware acceleration, we must understand how Virtual Machine CPU works. In real hardware, the Operating System (OS) translates programs into instructions that are executed by the physical CPU. In a virtual machine, the same thing happens. However, the key difference is that the Virtual CPU is actually emulated (or virtualized) by the hypervisor. Therefore, the hypervisor software has to &lt;em&gt;translate the instructions meant for the Virtual CPU&lt;/em&gt; and convert it into instructions for the physical CPU. This translation has a big performance overhead.&lt;/p&gt;
+
+&lt;p&gt;To minimize this performance overhead, modern processors support &lt;em&gt;virtualization extensions&lt;/em&gt;. Intel support a technology called VT-x and the AMD equivalent is AMD-V. Using these technologies, a &lt;em&gt;slice of physical CPU&lt;/em&gt; can be directly mapped to the Virtual CPU. &lt;strong&gt;Hence the instructions meant for the Virtual CPU can be directly executed the physical CPU slice. &lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;KVM is the Linux kernel module&lt;/strong&gt; that enables this mapping of physical CPU to Virtual CPU. This mapping provides the hardware acceleration for Virtual Machine and boosts its performance. Moreover, QEMU uses this acceleration when Virt Type is chosen as KVM.&lt;/p&gt;
+
+&lt;p&gt;Then what is TCG? If your server CPU does not support virtualization extension, then it is the job of the emulator (or hypervisor) to execute the Virtual CPU instruction using translation. QEMU uses TCG or Tiny Code Generator to _optimally_ _translate and execute _the Virtual CPU instructions on the physical CPU.&lt;/p&gt;
+
+&lt;h2 id=&#34;kvm-and-qemu-8211-type-1-or-type-2-hypervisor&#34;&gt;KVM and QEMU &amp;#8211; Type 1 or Type 2 hypervisor&lt;/h2&gt;
+
+&lt;p&gt;The web pages of &lt;a href=&#34;http://www.linux-kvm.org/page/Main_Page&#34; target=&#34;_blank&#34;&gt;KVM &lt;/a&gt;and &lt;a href=&#34;http://wiki.qemu.org/Main_Page&#34; target=&#34;_blank&#34;&gt;QEMU&lt;/a&gt; clearly show that KVM needs QEMU to provide full hypervisor functionality. By itself, KVM is more of a virtualization infrastructure provider.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1038&#34; alt=&#34;KVM and QEMU relationship&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png&#34; width=&#34;1115&#34; height=&#34;413&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png 1115w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-300x111.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-768x284.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-1024x379.png 1024w&#34; sizes=&#34;(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;QEMU by itself is a Type-2 hypervisor. It intercepts the instructions meant for Virtual CPU and uses the host operating system to get those instructions executed on the physical CPU. &lt;strong&gt;When QEMU uses KVM for hardware acceleration, the combination becomes a Type-1 hypervisor.&lt;/strong&gt; This difference is quite clear from the description on the QEMU website.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1036&#34; alt=&#34;KVM and QEMU relationship&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png&#34; width=&#34;1086&#34; height=&#34;415&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png 1086w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-300x115.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-768x293.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-1024x391.png 1024w&#34; sizes=&#34;(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;kvm-and-qemu-8211-the-x86-dependency&#34;&gt;KVM and QEMU &amp;#8211; the x86 dependency&lt;/h2&gt;
+
+&lt;p&gt;Since KVM is really a &lt;em&gt;driver&lt;/em&gt; for the physical CPU capabilities, it is very tightly associated with the CPU architecture (the x86 architecture). This means that the benefits of hardware acceleration will be available only if the Virtual Machine CPU also uses the same architecture (x86).&lt;/p&gt;
+
+&lt;p&gt;If a VM needs to run Power PC CPU but the hypervisor server has an Intel CPU, then KVM will not work. You must use QEMU as the Virt Type and live with the performance overhead.&lt;/p&gt;
+
+&lt;h2 id=&#34;kvm-and-qemu-8211-the-conclusion&#34;&gt;KVM and QEMU &amp;#8211; the conclusion&lt;/h2&gt;
+
+&lt;p&gt;Based on the discussion above, it is quite clear that QEMU plays a very critical role in Linux based Open Source virtualization solutions. &lt;strong&gt;For all practical applications, QEMU needs KVM&amp;#8217;s performance boost.&lt;/strong&gt; However, it is clear that **KVM by itself cannot provide the complete virtualization solution. It needs QEMU.&lt;/p&gt;
+
+&lt;p&gt;**&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Goals for the first half of 2014</title>
+      <link>http://reachsrirams.github.io/blogs/2014/02/16/goals-first-half-2014/</link>
+      <pubDate>Sun, 16 Feb 2014 16:15:16 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/02/16/goals-first-half-2014/</guid>
+      
+        <description>
+
+&lt;p&gt;Like previous years, I want to continue the habit of sharing my goals around blogging and learning experiments. Clearly, this update for the first half of 2014 is already late. In addition, I did slip up on the important goals of 2013.&lt;/p&gt;
+
+&lt;h2 id=&#34;status-of-2013-goals&#34;&gt;Status of 2013 Goals&lt;/h2&gt;
+
+&lt;p&gt;Here is my assessment of the goals I had set myself in the second half of 2014.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Complete the blog series on Understanding Virtual Networks
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Status Update:&lt;/strong&gt; I completed the blogs related to Linux based Virtual Networking.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Coming soon: &lt;/strong&gt;The blog on VMware based Virtual Networking is just around the corner (belatedly)&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;strong&gt;Pending&lt;/strong&gt;: OpenStack networking and Open vSwitch&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Score: 5/10&lt;/strong&gt;. I should have completed this. There is absolutely no excuse for missing this goal.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Complete the permalink SEO change for this blog
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Status Update: &lt;/strong&gt;The permalink changes are still pending.&lt;/li&gt;
+&lt;li&gt;This is an important goal but has wider impact. In order to switch-over to new permalink structure on my blog, I need to make sure that old style permalinks are reachable. I need some time to test all the changes so have been delaying this task.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Score: 0/10&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Reading up on E-book publishing with focus on Leanpub.com, Amazon.com, Google Play Books
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Status Update:&lt;/strong&gt; Finished my reading of Leanpub and Amazon. But Google Play was more of a cursory glance.&lt;/li&gt;
+&lt;li&gt;Though I have read through these resources, I have not yet finalized a strategy or goal for E-book publishing&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;7&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Overall assessment: &lt;/strong&gt;Looking back at 2013, I clearly missed several goals. Though I tasted &lt;a href=&#34;http://www.innervoice.in/blogs/2014/02/14/2000-views-youtube-video/&#34; title=&#34;Over 2000 views of my YouTube Video&#34;&gt;some success with unplanned goals&lt;/a&gt;, I am disappointed that I missed the goal that was closest to my heart.&lt;/p&gt;
+
+&lt;h2 id=&#34;below-content&#34;&gt;Goals for 2014 first half&lt;/h2&gt;
+
+&lt;div&gt;
+  And here is what I have planned for the first half of 2014 (really the remaining 4 months)
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      Complete the Understanding Virtual Networks series &lt;ul&gt;
+        &lt;li&gt;
+          Finish the introductory blogs about OpenStack Networking and Open vSwitch
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    
+    &lt;li&gt;
+      Write &lt;strong&gt;two&lt;/strong&gt; &lt;a href=&#34;http://smallbusiness.chron.com/curate-blog-34682.html&#34;&gt;curated posts&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      Publish &lt;strong&gt;two &lt;/strong&gt;short YouTube videos
+    &lt;/li&gt;
+  &lt;/ol&gt;
+  
+  &lt;p&gt;
+    Given that I have about 4 months for these goals and that work pressure will be high during this time, I believe the goals are challenging yet achievable. I hope that in 2014, I become more systematic and consistent with my blogging by using techniques such as curated content.
+  &lt;/p&gt;
+  
+  &lt;p&gt;
+    Please share your thoughts and suggestions to help me become a more regular and effective blogger.
+  &lt;/p&gt;
+&lt;/div&gt;
 </description>
       
     </item>
@@ -351,6 +886,266 @@
 
 &lt;p&gt;In the next blog post, we will understand what happened behind-the-scene.&lt;/p&gt;
 </description>
+      
+    </item>
+    
+    <item>
+      <title>Goals for 2013 – Status Update</title>
+      <link>http://reachsrirams.github.io/blogs/2013/09/01/goals-for-2013-status-update/</link>
+      <pubDate>Sun, 01 Sep 2013 07:10:14 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/09/01/goals-for-2013-status-update/</guid>
+      
+        <description>
+
+&lt;p&gt;At the beginning of the year, I had set myself &lt;a href=&#34;http://www.innervoice.in/blogs/2013/01/01/goals-for-2013/&#34;&gt;few goals&lt;/a&gt; related to my blogging and learning activities. This belated mid-year review of those goals already gives an indication of how I have performed against the goals I set for myself:&lt;/p&gt;
+
+&lt;h2 id=&#34;status-and-score-for-2013-1st-half-goals&#34;&gt;Status and Score for 2013 1st half goals&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Optimize my WordPress install for mobile viewing and better SEO
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Status Update&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mobile version completed. I use Tiga wordpress theme which is Mobile friendly. It provides just enough features that I want.&lt;/li&gt;
+&lt;li&gt;Better SEO &amp;#8211; 50% complete. The main goal here was to fix the permalinks of my blog posts. I have completed this for one of my two blogs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Overall score &amp;#8211; &lt;sup&gt;7&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;. I certainly could have done better. But I am happy that I kept with a large number of WordPress updates so far this year.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Complete the blog series on Understanding Virtual Networks
+
+&lt;ul&gt;
+&lt;li&gt;The pending items are technology intensive topics such as Linux Bridges, Open vSwitch, VMware Virtual Networking and OpenStack Quantum&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status Update&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;As mentioned in my blog about goals, significant amount hands-on learning and experimentation was required for this blog series.&lt;/li&gt;
+&lt;li&gt;While I am happy to say that my knowledge of these areas has grown leaps and bounds, I have failed badly in translating the knowledge into blogs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Overall Score &amp;#8211; &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Understand E-Book publishing concepts.
+
+&lt;ul&gt;
+&lt;li&gt;I have started reading up on leanpub.com. I also want to explore the technology and business model behind publishing E-Books.&lt;/li&gt;
+&lt;li&gt;The plan is to convert a blog series into an E-Book.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status Update&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The scores will be lower for this goal since I hardly spent any time in the last 6 months.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Overall Score &amp;#8211; 0/10&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;the-positives&#34;&gt;The positives&lt;/h2&gt;
+
+&lt;p&gt;It is quite obvious that I have lagged behind my goals. But there are some key positives during the last six months, that I would like to highlight:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Through video blogging I have found a new medium to share my knowledge and I believe this will be a compelling platform for sharing. I created two YouTube videos in the last six months.&lt;/li&gt;
+&lt;li&gt;Technical skill update &amp;#8211; thanks to my work at Juniper, I have been on a continuous learning curve in some exciting technology areas. This has kept me happily and heavily occupied.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;the-goals-for-rest-of-2013&#34;&gt;The goals for rest of 2013&lt;/h2&gt;
+
+&lt;p&gt;Since none of the goals I set earlier have been fully complete, I will persist with the same goals.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Complete the blog series on Understanding Virtual Networks &amp;#8211; enough said !&lt;/li&gt;
+&lt;li&gt;Complete the permalink SEO change for this blog&lt;/li&gt;
+&lt;li&gt;Reading up on E-book publishing with focus on:
+
+&lt;ul&gt;
+&lt;li&gt;Leanpub.com&lt;/li&gt;
+&lt;li&gt;Amazon.com&lt;/li&gt;
+&lt;li&gt;Google Play Books&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Goals for 2013</title>
+      <link>http://reachsrirams.github.io/blogs/2013/01/01/goals-for-2013/</link>
+      <pubDate>Tue, 01 Jan 2013 13:00:28 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/01/01/goals-for-2013/</guid>
+      
+        <description>&lt;p&gt;Before I share my goals for the first half of 2013, here is an assessment of my 2012 goals. Around mid 2012, I had set out with some goals to learn a JavaScript, CSS and HTML5 as part of UTM URL Generator project. You can check out &lt;a href=&#34;http://www.innervoice.in/blogs/2012/06/29/how-i-am-learning-javascript-and-css/&#34;&gt;those goals here&lt;/a&gt;. Around November I reworked some of the &lt;a href=&#34;http://www.innervoice.in/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/&#34; target=&#34;_blank&#34;&gt;milestones of that project&lt;/a&gt; and completed most of it recently. The main intention of the UTM URL Generator project was to learn the basics of few technologies.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;And my assessment is that I learnt what I set out to learn. Clearly by sharing my goals with a broad audience I felt accountable and hence was able to focus and get the results that I wanted. In more specific technical terms, I also learnt about HTML5 Local Storage, JQuery, classes in JavaScript, Bookmarklet and Media Query. Here are the blogs related to this project:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/11/14/4-important-css-concepts-i-learnt/&#34;&gt;http://www.innervoice.in/blogs/2012/11/14/4-important-css-concepts-i-learnt/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/02/bookmarklets-for-convenience/&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/02/bookmarklets-for-convenience/&#34;&gt;http://www.innervoice.in/blogs/2012/12/02/bookmarklets-for-convenience/&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/24/html5-local-storage-url-generator-project/&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/24/html5-local-storage-url-generator-project/&#34;&gt;http://www.innervoice.in/blogs/2012/12/24/html5-local-storage-url-generator-project/&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/27/html5-local-storage-tips-and-tricks/&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/27/html5-local-storage-tips-and-tricks/&#34;&gt;http://www.innervoice.in/blogs/2012/12/27/html5-local-storage-tips-and-tricks/&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;goals-for-2013&#34;&gt;Goals for 2013&lt;/h3&gt;
+
+&lt;p&gt;So I am going to continue the tradition of declaring my goals for 2013. Instead of setting targets for the whole year, I am going to work on few goals for the first half of 2013. So here they are:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Optimize my WordPress install for mobile viewing and better SEO&lt;/li&gt;
+&lt;li&gt;Complete the blog series on Understanding Virtual Networks
+
+&lt;ul&gt;
+&lt;li&gt;The pending items are technology intensive topics such as Linux Bridges, Open vSwitch, VMware Virtual Networking and OpenStack Quantum&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Understand E-Book publishing concepts.
+
+&lt;ul&gt;
+&lt;li&gt;I have started reading up on leanpub.com. I also want to explore the technology and business model behind publishing E-Books.&lt;/li&gt;
+&lt;li&gt;The plan is to convert a blog series into an E-Book.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So those are the goals for the first half of 2013. They may be just three goals but given the workload at office and certain other personal commitments, I believe these goals will be more than a handful. The Virtual Networking series would require a good amount of hands-on experimentation and authoring effort.&lt;/p&gt;
+
+&lt;p&gt;Besides these, I will continue blog on and off on other topics of relevance and interest. The implicit goal is to be more consistent with my blogging.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>HTML5 Local Storage – 5 Useful Tips</title>
+      <link>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</link>
+      <pubDate>Thu, 27 Dec 2012 13:30:45 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</guid>
+      
+        <description>&lt;p&gt;HTML5 Local Storage is a browser based &lt;em&gt;key-value database&lt;/em&gt; that is available for client side applications. Java programmers (like me) will find that  HTML5 Local Storage is very similar to HashMap (or Hashtable). It is important to remember that Local Storage is available to client side applications even across browser restarts. In that context, Local Storage is similar to cookies. &lt;strong&gt;But unlike cookies, Local Storage is not accessible to the server side applications. &lt;/strong&gt;Also cookies provide very limited storage (4 KB).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is an example of the two most important methods of &lt;em&gt;localStorage&lt;/em&gt; object.&lt;/p&gt;
+
+&lt;pre class=&#34;lang:js decode:true&#34;&gt;localStorage.setItem(&#34;foo&#34;, &#34;bar&#34;);
+localStorage.getItem(&#34;foo&#34;);&lt;/pre&gt;
+
+&lt;p&gt;JavaScript language allows several other ways to access localStorage.&lt;/p&gt;
+
+&lt;pre class=&#34;lang:js decode:true&#34;&gt;var storeValue = localStorage[&#34;foo&#34;];&lt;/pre&gt;
+
+&lt;p&gt;For more introductory material please read &amp;#8211; &lt;a href=&#34;http://diveintohtml5.info/storage.html&#34;&gt;http://diveintohtml5.info/storage.html&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;tip-8211-1-8211-pay-attention-to-the-url&#34;&gt;Tip &amp;#8211; 1 &amp;#8211; Pay attention to the URL&lt;/h3&gt;
+
+&lt;p&gt;Browsers persist HTML5 Local Storage on a per domain basis. So a web application can only access Local Storage defined for its domain. Not just the domain but subdomain and HTTP vs HTTPS are also used to identify the domain. For example, a key-value stored in Local Storage for &lt;a href=&#34;http://www.mysite.com&#34;&gt;http://www.mysite.com&lt;/a&gt; is not available &lt;a href=&#34;https://www.mysite.com&#34;&gt;https://www.mysite.com&lt;/a&gt;. So if you want to share client side data between applications on different domain or sub-domains, you need to use re-directs.&lt;/p&gt;
+
+&lt;p&gt;On the other hand if you host multiple web applications on the same domain (hosted as sub-directories) then all your web applications share the information stored in Local Storage. While this could be useful sometimes, care must be taken to avoid one application from over-writing the values of another application. It is good to identify the key along with application name or other identifiers.&lt;/p&gt;
+
+&lt;h3 id=&#34;tip-8211-2-8211-size-does-matter&#34;&gt;Tip &amp;#8211; 2 &amp;#8211; Size does matter&lt;/h3&gt;
+
+&lt;p&gt;The HTML5 specification has &lt;em&gt;arbitrarily&lt;/em&gt; fixed the maximum storage size &lt;em&gt;per domain&lt;/em&gt; to 5 MB. This includes keys as well as values. While  5 MB worth of client side data is quite a bit, ensure that you handle the exception QUOTA_EXCEEDED_ERR and probably cleanup the storage.&lt;/p&gt;
+
+&lt;h3 id=&#34;tip-8211-3-8211-store-and-retrieve-data-types&#34;&gt;Tip &amp;#8211; 3 &amp;#8211; Store and retrieve data types&lt;/h3&gt;
+
+&lt;p&gt;Local Storage supports only string values to be persisted. When you call &lt;em&gt;setItem&lt;/em&gt; method, it internally converts the value object to String and persists it. So additional steps need to be taken to store and retrieve objects of different data types. Fortunately we can use JSON parsing for this purpose.&lt;/p&gt;
+
+&lt;p&gt;The technique is to use &lt;em&gt;JSON.stringify()&lt;/em&gt; and &lt;em&gt;JSON.parse()&lt;/em&gt; functions to perform this conversion automatically. JavaScript allows us to add newer methods to existing objects. So it is advisable to incorporate this technique into the _standard localStorage object _itself. This can done as follows:&lt;/p&gt;
+
+&lt;pre class=&#34;lang:js decode:true&#34;&gt;Storage.prototype.setObject = function(key, value) {
+    this.setItem(key, JSON.stringify(value));
+}
+
+Storage.prototype.getObject = function(key) {
+    var value = this.getItem(key);
+    return value &amp;&amp; JSON.parse(value);
+}&lt;/pre&gt;
+
+&lt;p&gt;With the above code you can invoke&lt;/p&gt;
+
+&lt;pre class=&#34;lang:js decode:true&#34;&gt;localStorage.getObject(&#34;foo&#34;);
+localStorage.setObject(&#34;foo&#34;, obj);&lt;/pre&gt;
+
+&lt;p&gt;The above code is courtesy &amp;#8211; &lt;a href=&#34;http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage&#34;&gt;http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;tip-8211-4-8211-store-multiple-values-for-a-single-key&#34;&gt;Tip &amp;#8211; 4 &amp;#8211; Store multiple values for a single key&lt;/h3&gt;
+
+&lt;p&gt;If you want to store multiple values for a single key, then this tip is very useful. I borrowed this technique from &lt;a href=&#34;http://paperkilledrock.com/2010/05/html5-localstorage-part-two/&#34;&gt;http://paperkilledrock.com/2010/05/html5-localstorage-part-two/&lt;/a&gt;. Here is what you need to do:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Create an array and &lt;em&gt;push&lt;/em&gt; different values into it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre class=&#34;lang:js decode:true&#34;&gt;var values = new Array();
+values.push(value1);
+values.push(value2);
+values.push(value3);&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Stringify the array using the &lt;em&gt;join&lt;/em&gt; method by specifying a &lt;em&gt;separator&lt;/em&gt;. Note choose a separator that is unlikely to appear in your values.&lt;/li&gt;
+&lt;li&gt;Persist this string into Local Storage.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre class=&#34;lang:js decode:true&#34;&gt;try {
+    localStorage.setItem(key, values.join(&#34;;&#34;)); //store the item in the database
+} catch (e) {
+    if (e == QUOTA_EXCEEDED_ERR) {
+        alert(&#34;Quota exceeded!&#34;);
+    }
+}&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;While retrieving fetch the concatenated String from Local Storage and use &lt;em&gt;String.split()&lt;/em&gt; to parse the different values.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre class=&#34;lang:js decode:true&#34;&gt;var valueFromStore = localStorage.getItem(key); // get the String from Local Storage
+var values = valueFromStore.split(&#34;;&#34;); // get an Array back&lt;/pre&gt;
+
+&lt;h3 id=&#34;tip-8211-5-8211-always-check-for-browser-support&#34;&gt;Tip &amp;#8211; 5 &amp;#8211; Always check for Browser Support&lt;/h3&gt;
+
+&lt;p&gt;A very large number of modern browsers support Local Storage but as a web application developer you may still encounter browsers that do not support many HTML5 constructs and certainly not Local Storage. So you are well advised to check whether your browser supports Local Storage or not. While there are many ways to check, I strongly recommend Modernizr API (why re-invent the wheel).&lt;/p&gt;
+
+&lt;pre class=&#34;lang:js decode:true&#34;&gt;if (Modernizr.localstorage) {
+  // localStorage is supported
+} else {
+  // localStorage not supported
+}&lt;/pre&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>HTML5 Local Storage based preferences for the URL Generator project</title>
+      <link>http://reachsrirams.github.io/blogs/2012/12/24/html5-local-storage-url-generator-project/</link>
+      <pubDate>Mon, 24 Dec 2012 16:45:58 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/12/24/html5-local-storage-url-generator-project/</guid>
+      
+        <description>&lt;p&gt;The release 2 (R2) of my URL Generator Project is now ready. You can check it out at the &lt;a href=&#34;http://www.innervoice.in/tools/urlgen/&#34; target=&#34;_blank&#34;&gt;usual location&lt;/a&gt;. I am happy to share that this revision was completed on time as per my &lt;a href=&#34;http://www.innervoice.in/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/&#34; target=&#34;_blank&#34;&gt;revised project plan&lt;/a&gt;. Of course the announcement was delayed a bit. The main additions to this version of the URL generator are HTML5 based Local Storage, a simple usage of Object-oriented JavaScript techniques and jQuery.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;storing-preferences-using-html5-local-storage&#34;&gt;Storing preferences using HTML5 Local Storage&lt;/h3&gt;
+
+&lt;p&gt;The UTM URL generator page has several settings such as check boxes for UTM medium, fields for UTM category and source. The main goal was to persist user selections as his _&lt;strong&gt;preferences&lt;/strong&gt;_ and load the saved preferences when the user revisits. The common technique is to use cookies but with the I felt that HTML5 local storage provided a much simpler API for this purpose.&lt;/p&gt;
+
+&lt;h4 id=&#34;what-happens&#34;&gt;What happens?&lt;/h4&gt;
+
+&lt;p&gt;When user visits the tool web page, the HTML5 Local Storage database is queries for the preference information. If nothing is found, default values are returned. The page is then initialized with values based on the preference. Subsequent changes due to user interaction results in updating of the preference in the Local Storage.&lt;/p&gt;
+
+&lt;p&gt;You can read more about HTML5 Local Storage &lt;a href=&#34;http://blog.yjl.im/2010/05/localstorage-primitive-types-and-json.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, especially the techniques to manage non-string values.&lt;/p&gt;
+
+&lt;h3 id=&#34;object-oriented-javascript&#34;&gt;Object Oriented JavaScript&lt;/h3&gt;
+
+&lt;p&gt;The preferences based on local storage required several get and set functions as well as validations. In order to have a clean separation I created a JavaScript class called &lt;em&gt;&lt;strong&gt;PreferenceManager&lt;/strong&gt;&lt;/em&gt;. This is my first class in JavaScript and for a Java language enthusiast this is an important milestone. There are many ways to define &lt;strong&gt;&lt;em&gt;classes&lt;/em&gt;&lt;/strong&gt; in JavaScript. But I opted for the &lt;em&gt;&lt;strong&gt;prototype&lt;/strong&gt;&lt;/em&gt; based approach since the code seemed more organized and cohesive with this approach.&lt;/p&gt;
+
+&lt;p&gt;The source code for the _&lt;strong&gt;PreferenceManager&lt;/strong&gt; _class &lt;a href=&#34;http://innervoice.in/tools/urlgen/r2/utm.pref.mgr.js&#34; target=&#34;_blank&#34;&gt;can be found here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;using-jquery-for-code-cleanup&#34;&gt;Using jQuery for code cleanup&lt;/h3&gt;
+
+&lt;p&gt;Lastly I used jQuery to perform get and set on the actual form components. For example, check whether a checkbox is _&lt;strong&gt;checked&lt;/strong&gt; _or not. Until this version, I had utility functions that effectively called getElementById() methods which had bloated the code. With jQuery, I was able to reduce the number of functions as well as number of lines of code.&lt;/p&gt;
+
+&lt;p&gt;The usage of jQuery &lt;a href=&#34;http://www.innervoice.in/tools/urlgen/r2/urlgen.js&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;</description>
       
     </item>
     

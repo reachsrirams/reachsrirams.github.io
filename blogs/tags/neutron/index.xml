@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Neutron on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/neutron/</link>
+    <description>Recent content in Neutron on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 08 Sep 2014 07:48:13 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/neutron/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Goals for the second half of 2014</title>
+      <link>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</link>
+      <pubDate>Mon, 08 Sep 2014 07:48:13 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</guid>
+      <description>Here is my mid-year (I know I am off by couple of months) review of my blogging and learning goals for 2014. I will start off with my assessment of the first half of 2014 and then wrap with goals for the remaining four months of this year.
+Status of 2014 first half goals  Complete the Understanding Virtual Networks series &amp;#8211; Finish the introductory blogs about OpenStack Networking and Open vSwitch  Status Update &amp;#8211; The OpenStack networking blog was completed as per plan but I could not cover Open vSwitch in detail.</description>
+    </item>
+    
+  </channel>
+</rss>

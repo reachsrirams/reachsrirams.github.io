@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/blog/</link>
+    <description>Recent content in Blog on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Feb 2016 05:17:20 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Goals for the first half of 2016</title>
+      <link>http://reachsrirams.github.io/blogs/2016/02/01/goals-for-the-first-half-of-2016/</link>
+      <pubDate>Mon, 01 Feb 2016 05:17:20 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/02/01/goals-for-the-first-half-of-2016/</guid>
+      <description>I am late by a month in sharing my blogging and learning goals for the first half of 2016. Let&amp;#8217;s start with a review of the second half of 2015.
+Status of 2015 second half goals  YouTube video related to OpenStack – making a video is not easy but I believe I have nailed down the topic for the video.  Score: 10&amp;frasl;10 Status: I published a YouTube video on OpenStack Neutron Ports.</description>
+    </item>
+    
+  </channel>
+</rss>

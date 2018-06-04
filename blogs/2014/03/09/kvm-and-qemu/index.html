@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>KVM and QEMU – do you know the connection? - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator)." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="KVM and QEMU – do you know the connection?" />
+<meta property="og:description" content="If you were to ask someone &#8220;what is the most popular open source hypervisor&#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/" />
+
+
+
+<meta property="article:published_time" content="2014-03-09T18:58:23&#43;00:00"/>
+
+<meta property="article:modified_time" content="2014-03-09T18:58:23&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="KVM and QEMU – do you know the connection?">
+<meta itemprop="description" content="If you were to ask someone &#8220;what is the most popular open source hypervisor&#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).">
+
+
+<meta itemprop="datePublished" content="2014-03-09T18:58:23&#43;00:00" />
+<meta itemprop="dateModified" content="2014-03-09T18:58:23&#43;00:00" />
+<meta itemprop="wordCount" content="697">
+
+
+
+<meta itemprop="keywords" content="CPU,Hypervisor,KVM,Linux,QEMU,Virtualization,VM,VT-x,x86," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="KVM and QEMU – do you know the connection?"/>
+<meta name="twitter:description" content="If you were to ask someone &#8220;what is the most popular open source hypervisor&#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator)."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 2em 4em;
+		margin: 0 4em 2em;
+	}
+	.content-wrapper {
+		padding: 2em 0 1px;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">KVM and QEMU – do you know the connection?</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2014-03-09 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+              <a href="/blogs/categories/virtualization/"> Virtualization </a>
+            
+          </div>
+        <span class="more-meta"> 697 words </span>
+        <span class="more-meta"> 4 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#kvm-and-qemu-8211-the-process-id-check">KVM and QEMU &#8211; the process ID check</a></li>
+<li><a href="#kvm-and-qemu-8211-understanding-hardware-acceleration">KVM and QEMU &#8211; understanding hardware acceleration</a></li>
+<li><a href="#kvm-and-qemu-8211-type-1-or-type-2-hypervisor">KVM and QEMU &#8211; Type 1 or Type 2 hypervisor</a></li>
+<li><a href="#kvm-and-qemu-8211-the-x86-dependency">KVM and QEMU &#8211; the x86 dependency</a></li>
+<li><a href="#kvm-and-qemu-8211-the-conclusion">KVM and QEMU &#8211; the conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>If you were to ask someone &#8220;what is the most popular open source hypervisor&#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).</p>
+
+<h2 id="kvm-and-qemu-8211-the-process-id-check">KVM and QEMU &#8211; the process ID check</h2>
+
+<p>You can use <em>libvirt</em> and the associated Virtual Machine Manager GUI to start a virtual machine. In the GUI, you can choose the &#8216;Virt Type&#8217; as either KVM or QEMU. I started a VM, once with QEMU as the Virt Type and once with KVM. In both cases, I did a _grep_ of the process ID to see if there was any difference. <strong>Note</strong>: I used Ubuntu 13.10 for my experiments.</p>
+
+<p style="text-align: center;">
+  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png"><img class="aligncenter  wp-image-1024" alt="KVM and QEMU - VMM Select Virt Type" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png" width="540" height="533" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png 675w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM-300x296.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM-100x100.png 100w" sizes="(max-width: 540px) 100vw, 540px" /></a>
+</p>
+
+<p> When I started the VM with KVM as the Virt Type the process ID details showed an interesting attribute &#8220;accel=kvm&#8221; as highlighted below.</p>
+
+<p style="text-align: center;">
+  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png"><img class="aligncenter  wp-image-1025" alt="QEMU using KVM Accelarator" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png" width="755" height="374" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png 944w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM-300x149.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM-768x381.png 768w" sizes="(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px" /></a>
+</p>
+
+<p>When I started the same Virtual Machine with QEMU as the Virt Type, the process ID showed &#8220;accel=tcg&#8221;.</p>
+
+<p style="text-align: center;">
+  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png"><img class="aligncenter  wp-image-1026" alt="QEMU using TCG Accelarator" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png" width="756" height="373" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png 945w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG-300x148.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG-768x379.png 768w" sizes="(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px" /></a>
+</p>
+
+<p>Note that in both the cases the same _binary_ is executed to start the VM, namely, _qemu-system-x86<em>64</em>. The main difference is the acceleration type.</p>
+
+<h2 id="kvm-and-qemu-8211-understanding-hardware-acceleration">KVM and QEMU &#8211; understanding hardware acceleration</h2>
+
+<p>To understand hardware acceleration, we must understand how Virtual Machine CPU works. In real hardware, the Operating System (OS) translates programs into instructions that are executed by the physical CPU. In a virtual machine, the same thing happens. However, the key difference is that the Virtual CPU is actually emulated (or virtualized) by the hypervisor. Therefore, the hypervisor software has to <em>translate the instructions meant for the Virtual CPU</em> and convert it into instructions for the physical CPU. This translation has a big performance overhead.</p>
+
+<p>To minimize this performance overhead, modern processors support <em>virtualization extensions</em>. Intel support a technology called VT-x and the AMD equivalent is AMD-V. Using these technologies, a <em>slice of physical CPU</em> can be directly mapped to the Virtual CPU. <strong>Hence the instructions meant for the Virtual CPU can be directly executed the physical CPU slice. </strong></p>
+
+<p><strong>KVM is the Linux kernel module</strong> that enables this mapping of physical CPU to Virtual CPU. This mapping provides the hardware acceleration for Virtual Machine and boosts its performance. Moreover, QEMU uses this acceleration when Virt Type is chosen as KVM.</p>
+
+<p>Then what is TCG? If your server CPU does not support virtualization extension, then it is the job of the emulator (or hypervisor) to execute the Virtual CPU instruction using translation. QEMU uses TCG or Tiny Code Generator to _optimally_ _translate and execute _the Virtual CPU instructions on the physical CPU.</p>
+
+<h2 id="kvm-and-qemu-8211-type-1-or-type-2-hypervisor">KVM and QEMU &#8211; Type 1 or Type 2 hypervisor</h2>
+
+<p>The web pages of <a href="http://www.linux-kvm.org/page/Main_Page" target="_blank">KVM </a>and <a href="http://wiki.qemu.org/Main_Page" target="_blank">QEMU</a> clearly show that KVM needs QEMU to provide full hypervisor functionality. By itself, KVM is more of a virtualization infrastructure provider.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png"><img class="aligncenter size-full wp-image-1038" alt="KVM and QEMU relationship" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png" width="1115" height="413" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png 1115w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-300x111.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-768x284.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-1024x379.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+<p>QEMU by itself is a Type-2 hypervisor. It intercepts the instructions meant for Virtual CPU and uses the host operating system to get those instructions executed on the physical CPU. <strong>When QEMU uses KVM for hardware acceleration, the combination becomes a Type-1 hypervisor.</strong> This difference is quite clear from the description on the QEMU website.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png"><img class="aligncenter size-full wp-image-1036" alt="KVM and QEMU relationship" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png" width="1086" height="415" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png 1086w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-300x115.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-768x293.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-1024x391.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+<h2 id="kvm-and-qemu-8211-the-x86-dependency">KVM and QEMU &#8211; the x86 dependency</h2>
+
+<p>Since KVM is really a <em>driver</em> for the physical CPU capabilities, it is very tightly associated with the CPU architecture (the x86 architecture). This means that the benefits of hardware acceleration will be available only if the Virtual Machine CPU also uses the same architecture (x86).</p>
+
+<p>If a VM needs to run Power PC CPU but the hypervisor server has an Intel CPU, then KVM will not work. You must use QEMU as the Virt Type and live with the performance overhead.</p>
+
+<h2 id="kvm-and-qemu-8211-the-conclusion">KVM and QEMU &#8211; the conclusion</h2>
+
+<p>Based on the discussion above, it is quite clear that QEMU plays a very critical role in Linux based Open Source virtualization solutions. <strong>For all practical applications, QEMU needs KVM&#8217;s performance boost.</strong> However, it is clear that **KVM by itself cannot provide the complete virtualization solution. It needs QEMU.</p>
+
+<p>**</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/cpu/">CPU</a>
+          
+          <a href="/blogs/tags/hypervisor/">Hypervisor</a>
+          
+          <a href="/blogs/tags/kvm/">KVM</a>
+          
+          <a href="/blogs/tags/linux/">Linux</a>
+          
+          <a href="/blogs/tags/qemu/">QEMU</a>
+          
+          <a href="/blogs/tags/virtualization/">Virtualization</a>
+          
+          <a href="/blogs/tags/vm/">VM</a>
+          
+          <a href="/blogs/tags/vt-x/">VT-x</a>
+          
+          <a href="/blogs/tags/x86/">x86</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2014/09/08/goals-second-half-2014/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Goals for the second half of 2014</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2014/02/16/goals-first-half-2014/">
+            <span class="next-text nav-default">Goals for the first half of 2014</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Understanding Virtual Networks – The Basics - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.
+" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Understanding Virtual Networks – The Basics" />
+<meta property="og:description" content="In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/" />
+
+
+
+<meta property="article:published_time" content="2012-08-16T04:35:41&#43;00:00"/>
+
+<meta property="article:modified_time" content="2012-08-16T04:35:41&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Understanding Virtual Networks – The Basics">
+<meta itemprop="description" content="In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.">
+
+
+<meta itemprop="datePublished" content="2012-08-16T04:35:41&#43;00:00" />
+<meta itemprop="dateModified" content="2012-08-16T04:35:41&#43;00:00" />
+<meta itemprop="wordCount" content="716">
+
+
+
+<meta itemprop="keywords" content="Networking,Networks,NIC,OpenStack,Virtual,Virtual Switch,Virtualization,VLAN,VMware,vSwitch," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Understanding Virtual Networks – The Basics"/>
+<meta name="twitter:description" content="In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 2em 4em;
+		margin: 0 4em 2em;
+	}
+	.content-wrapper {
+		padding: 2em 0 1px;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Understanding Virtual Networks – The Basics</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2012-08-16 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/networking/"> Networking </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+              <a href="/blogs/categories/virtualization/"> Virtualization </a>
+            
+          </div>
+        <span class="more-meta"> 716 words </span>
+        <span class="more-meta"> 4 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.</p>
+
+<p><figure id="attachment_407" style="width: 654px" class="wp-caption aligncenter"></p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetworkConnectivity.png"><img class="size-full wp-image-407" title="Home Network Connectivity" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetworkConnectivity.png" alt="" width="654" height="326" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetworkConnectivity.png 654w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetworkConnectivity-300x150.png 300w" sizes="(max-width: 654px) 100vw, 654px" /></a><figcaption class="wp-caption-text">Home Network Connectivity</figcaption></figure></p>
+
+<p><strong>Components of a home network</strong></p>
+
+<ul>
+<li><strong>Computing devices:</strong> these are our desktop and/or notebook computers</li>
+<li><strong>Physical NIC (pNIC):</strong> These are the Network Interface Card and ports on the computing devices</li>
+<li><strong>Layer 2 switch:</strong> The main component which provides networking support is a Layer 2 Ethernet Switch.</li>
+<li><strong>External network:</strong> The switch is usually connected to a cable or DSL modem which in turn gives Internet access to our home computing devices. Note: Most of us probably use an ‘all-in-one’ device that acts as a Modem as well as a switch. But for understanding the important entity is the Switch part of the device.</li>
+</ul>
+
+<p><strong>Steps to configure the home network</strong></p>
+
+<p>Let us take a look at the main steps involved in setting up and configuring this home network.</p>
+
+<p style="text-align: center;">
+  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetwork_Steps.png"><img class="size-full wp-image-406 aligncenter" title="Steps to configure Home Network" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetwork_Steps.png" alt="" width="654" height="326" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetwork_Steps.png 654w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetwork_Steps-300x150.png 300w" sizes="(max-width: 654px) 100vw, 654px" /></a>
+</p>
+
+<ul>
+<li><strong>Step 1:</strong> Power up the Ethernet Switch</li>
+<li><strong>Step 2:</strong> Configure the Internet (external network) access. This includes configure your ISP details and credentials.</li>
+<li><strong>Step 3:</strong> Configuring the LAN features such as DHCP etc.</li>
+<li><strong>Step 4:</strong> Connect the computing device to the Switch. The computing devices will get IP address from the DHCP server on the switch. The switch will act as the gateway for external connectivity.</li>
+</ul>
+
+<p>At the end of this process the two computing devices will be able to communicate with one another and also be able to access the external network.</p>
+
+<p>In a virtualized environment many of the physical components get converted into virtual components. But you still need the physical components that will act as <em>hosts</em>. The following picture shows the different components involved in a virtual computing environment:</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Components.png"><img class="aligncenter size-full wp-image-408" title="Components of a virtual network" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Components.png" alt="" width="890" height="336" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Components.png 890w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Components-300x113.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Components-768x290.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+<ul>
+<li><strong>Virtual Computing Device:</strong> Popularly known as Virtual Machine (VM) runs as a software entity within the host server.</li>
+<li><strong>Virtual NIC (vNIC):</strong> Virtual machines have virtual network adapters (vNIC) that provide networking support.</li>
+<li><strong>Virtual L2 Switch:</strong> Since multiple virtual machines can be instantiated within a single host server, a virtual switch is required to provide inter-VM connectivity as well as external access.</li>
+<li><strong>Physical NIC (pNIC):</strong> On the host servers the physical NIC supports physical network connectivity.</li>
+<li><strong>Host Server:</strong> This computing device runs the operating systems and hypervisor software that support the life cycle of virtual machines.</li>
+</ul>
+
+<p>As you can see there is strong similarity between the home networking setup and the virtualized computing setup.</p>
+
+<p>The physical devices at home are connected to physical switch. Similarly the physical host server is connected to physical switch. The virtual devices (virtual machines) are connected to virtual switch. For the virtual switch, the physical switch acts as external connectivity provider.</p>
+
+<p>Let us now look at the steps to configure the virtual network as described in the picture below.<figure id="attachment_405" style="width: 890px" class="wp-caption aligncenter"></p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Steps.png"><img class="size-full wp-image-405" title="Steps to configure Virtual Networks" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Steps.png" alt="" width="890" height="336" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Steps.png 890w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Steps-300x113.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Steps-768x290.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a><figcaption class="wp-caption-text">Steps to configure Virtual Networks</figcaption></figure></p>
+
+<ul>
+<li><strong>Step 1:</strong> Power up the Ethernet Switch</li>
+<li><strong>Step 2:</strong> Configure the external network access. This includes configure your ISP/WAN details.</li>
+<li><strong>Step 3:</strong> Configuring the LAN features such as VLAN etc. VLAN or Virtual LAN is one of the most heavily used LAN functionality especially for virtual networking.</li>
+<li><strong>Step 4:</strong> Create a Virtual Switch. Depending on the hypervisor and the operating system there are several options to create virtual switches. We will discuss these in detail in subsequently.</li>
+<li><strong>Step 5:</strong> Configure the physical network information (pNIC) in the Virtual Switch.</li>
+<li><strong>Step 6:</strong> On the virtual switch configure LAN features such as DHCP etc.</li>
+<li><strong>Step 7:</strong> Instantiate Virtual Machines and associate the virtual NIC to the virtual Switch.</li>
+</ul>
+
+<p>So at a broad level, we can see that conceptually home networking setup and a virtual networking setup are very similar. But as they say the devil is in the details. While physical networking features are well standardized, virtual network configuration is still very vendor and technology specific. The advent of cloud computing has accelerated new products such as OpenStack and CloudStack that provide automated APIs for configuring virtual networks. On the other hand vendors such as VMware provide fabulous tools for creating and managing virtual networks.</p>
+
+<p>In the next part we will take a look at the networking aspects of OpenStack – the Quantum project.</p>
+
+<p>&nbsp;</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/networking/">Networking</a>
+          
+          <a href="/blogs/tags/networks/">Networks</a>
+          
+          <a href="/blogs/tags/nic/">NIC</a>
+          
+          <a href="/blogs/tags/openstack/">OpenStack</a>
+          
+          <a href="/blogs/tags/virtual/">Virtual</a>
+          
+          <a href="/blogs/tags/virtual-switch/">Virtual Switch</a>
+          
+          <a href="/blogs/tags/virtualization/">Virtualization</a>
+          
+          <a href="/blogs/tags/vlan/">VLAN</a>
+          
+          <a href="/blogs/tags/vmware/">VMware</a>
+          
+          <a href="/blogs/tags/vswitch/">vSwitch</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2012/12/24/html5-local-storage-url-generator-project/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">HTML5 Local Storage based preferences for the URL Generator project</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2012/08/16/understanding-virtual-networks/">
+            <span class="next-text nav-default">Understanding Virtual Networks</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

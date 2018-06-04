@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vswitch on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/vswitch/</link>
+    <description>Recent content in Vswitch on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 08 Sep 2014 07:48:13 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/vswitch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Goals for the second half of 2014</title>
+      <link>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</link>
+      <pubDate>Mon, 08 Sep 2014 07:48:13 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</guid>
+      <description>Here is my mid-year (I know I am off by couple of months) review of my blogging and learning goals for 2014. I will start off with my assessment of the first half of 2014 and then wrap with goals for the remaining four months of this year.
+Status of 2014 first half goals  Complete the Understanding Virtual Networks series &amp;#8211; Finish the introductory blogs about OpenStack Networking and Open vSwitch  Status Update &amp;#8211; The OpenStack networking blog was completed as per plan but I could not cover Open vSwitch in detail.</description>
+    </item>
+    
+    <item>
+      <title>Understanding Virtual Networks – The Basics</title>
+      <link>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/</link>
+      <pubDate>Thu, 16 Aug 2012 04:35:41 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/</guid>
+      <description>&lt;p&gt;In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Understanding Virtual Networks</title>
+      <link>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks/</link>
+      <pubDate>Thu, 16 Aug 2012 04:34:57 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks/</guid>
+      <description>&lt;p&gt;Upcoming technologies like OpenFlow and SDN are altering the networking landscape very quickly. The underlying drivers are Cloud Computing and Virtualization. Servers, Storage and Networking make up the trinity for effective Cloud computing strategy. Servers and Storage Virtualization has helped drive the adoption of flexible cloud services already. Now it is time for Network Virtualization.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

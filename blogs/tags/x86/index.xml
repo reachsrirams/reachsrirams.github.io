@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>X86 on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/x86/</link>
+    <description>Recent content in X86 on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 09 Mar 2014 18:58:23 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/x86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>KVM and QEMU – do you know the connection?</title>
+      <link>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</link>
+      <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</guid>
+      <description>If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).</description>
+    </item>
+    
+  </channel>
+</rss>
