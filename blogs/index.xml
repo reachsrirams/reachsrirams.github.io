@@ -33,7 +33,7 @@
 
 &lt;h2 id=&#34;goals-for-first-half-of-2018&#34;&gt;Goals for first half of 2018&lt;/h2&gt;
 
-&lt;p&gt;For the first half of 2018 I plan to write couple of blogs &lt;strong&gt;at most.&lt;/strong&gt; This will allow me to spend time on cleaning up my existing blogs &lt;strong&gt;&amp;#8211; a long overdue task&lt;/strong&gt;. Since I need to spend more time on a critical activity, I have not planned for specific topics as yet.&lt;/p&gt;
+&lt;p&gt;For the first half of 2018 I plan to write couple of blogs &lt;strong&gt;at most.&lt;/strong&gt; This will allow me to spend time on cleaning up my existing blogs &lt;strong&gt;- a long overdue task&lt;/strong&gt;. Since I need to spend more time on a critical activity, I have not planned for specific topics as yet.&lt;/p&gt;
 
 &lt;p&gt;The main goal can be summarized as &lt;strong&gt;Blog rationalization&lt;/strong&gt;. And I will describe what I am planning to do. Currently I have two blogs one active and the other dead for all practical purposes. These blogs are hosted through a paid account at a Web Hosting provider but I also use Google services to host my mail for the same domains. The goal is to consolidate and also explore newer options to host my blogs.&lt;/p&gt;
 
@@ -56,7 +56,7 @@
 &lt;li&gt;The final aspect of the &lt;em&gt;Blog rationalization&lt;/em&gt; is to &lt;strong&gt;start blogging on LinkedIn&lt;/strong&gt;. I have been blogging about technical topics whereas my work experience is more on the managerial side. Moreover writing about non-technical yet professional topics will challenge my writing skills more. I will be posting about this on my LinkedIn account soon.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt; &amp;#8211; as you can see I am trying to consolidate the various online blogging platforms and align them to meet my future plans. &lt;span style=&#34;text-decoration: underline;&#34;&gt;&lt;strong&gt;You can really help me&lt;/strong&gt;&lt;/span&gt; by sharing ideas and suggestions about Medium, other online blogging platforms etc. Or sharing tools that will help me with the rationalization.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt; - as you can see I am trying to consolidate the various online blogging platforms and align them to meet my future plans. &lt;strong&gt;You can really help me&lt;/strong&gt; by sharing ideas and suggestions about Medium, other online blogging platforms etc. Or sharing tools that will help me with the rationalization.&lt;/p&gt;
 </description>
       
     </item>
@@ -506,6 +506,87 @@
 &lt;p&gt;I am setting realistic goals for 2015 so that I can meet them with a bit of stretch.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Comments&lt;/strong&gt; &amp;#8211; Do let me know what you think about these goals by leaving your comments below.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>OpenStack Neutron – the components</title>
+      <link>http://reachsrirams.github.io/blogs/2015/01/13/openstack-neutron-components/</link>
+      <pubDate>Tue, 13 Jan 2015 18:20:22 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/01/13/openstack-neutron-components/</guid>
+      
+        <description>
+
+&lt;p&gt;Neutron is the networking project within the OpenStack cloud platform. The purpose of OpenStack Neutron is to provide physical and virtual network resources to the instances (or virtual machines). Before you continue to read this article I would recommend that you read about &lt;a href=&#34;http://www.innervoice.in/blogs/2014/04/07/openstack-networking/&#34; title=&#34;OpenStack Networking – an introduction&#34;&gt;OpenStack networking concepts&lt;/a&gt;. To appreciate the architecture and the functionality of Neutron, it is important to understand the components that are part of Neutron.&lt;/p&gt;
+
+&lt;h2 id=&#34;openstack-neutron-software-components&#34;&gt;OpenStack Neutron Software Components&lt;/h2&gt;
+
+&lt;h4 id=&#34;neutron-server&#34;&gt;Neutron Server&lt;/h4&gt;
+
+&lt;p&gt;The main software entity for Neutron is the neutron-server daemon. This is basically a python program which is started when you execute:&lt;/p&gt;
+
+&lt;pre&gt;# service neutron-server start&lt;/pre&gt;
+
+&lt;p&gt;This Neutron server daemon starts two critical components:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Neutron REST service&lt;/li&gt;
+&lt;li&gt;Neutron Plugin &amp;#8211; core and service plugin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Neutron RPC service is also started so that the neutron servers can communicate with the agents. And the RPC service actually loads the Neutron Plugin.&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1199&#34; alt=&#34;OpenStack Neutron Server Loading Steps&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png&#34; width=&#34;522&#34; height=&#34;373&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png 816w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps-300x214.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps-768x549.png 768w&#34; sizes=&#34;(max-width: 522px) 100vw, 522px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;h4 id=&#34;neutron-plugins&#34;&gt;Neutron Plugins&lt;/h4&gt;
+
+&lt;p&gt;Plugins in Neutron allow extension and/or customization of the pre-existing functionality in Neutron. Networking vendors can write plugins that ensures smooth inter-operability between OpenStack Neutron and vendor-specific software and hardware. With this approach a rich set of physical and virtual networking resources can be made available to the virtual machines instances.&lt;/p&gt;
+
+&lt;h4 id=&#34;neutron-agents&#34;&gt;Neutron Agents&lt;/h4&gt;
+
+&lt;p&gt;The agents are another set of critical components within Neutron. The main Neutron server (and the plugins) communicate with Neutron agents. The Neutron agents implement &lt;strong&gt;very specific networking functionality&lt;/strong&gt;. Examples include DHCP Agent, L3 Agent etc. Some agents may be specific to the plugin such as Linux Bridge Neutron Agent etc.&lt;/p&gt;
+
+&lt;p&gt;I will be blogging about Plugins and Agents in detail soon.&lt;/p&gt;
+
+&lt;h2 id=&#34;openstack-neutron-hardware-components&#34;&gt;OpenStack Neutron Hardware Components&lt;/h2&gt;
+
+&lt;p&gt;The following hardware components support one or more of the above mentioned software components.&lt;/p&gt;
+
+&lt;h4 id=&#34;controller-node&#34;&gt;Controller Node&lt;/h4&gt;
+
+&lt;p&gt;The main OpenStack Neutron server runs in the controller node. This means that Neutron API requests from Horizon (Dashboard) or the Neutron CLI, land on this server. As seen above, the plugins that do the main networking configurations also run on this server.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Physical network connectivity for Controller Node:&lt;/em&gt; Since the Neutron server needs to receive API requests and also needs to communicate with agents via RPC, it requires a minimum of &lt;strong&gt;one Ethernet interface (Management Network)&lt;/strong&gt; for this purpose.&lt;/p&gt;
+
+&lt;h4 id=&#34;compute-node&#34;&gt;Compute Node&lt;/h4&gt;
+
+&lt;p&gt;The compute node is where the instances or virtual machines are started. The main goal of OpenStack Neutron, within the compute node, is to provide networking resources for &amp;#8216;each&amp;#8217; instance. Since the core element of Neutron is to provide Layer-2 (L2) connectivity an instance, the L2 agent (depending on the plugin) runs on the compute node.&lt;/p&gt;
+
+&lt;p&gt;_Physical network connectivity for Compute Node: _The compute node may run agents and will respond to RPC messages from Neutron Server (Management Network). In addition it also needs to provide a dedicate interface for network traffic from the virtual machines (Data Network). Hence the Compute node requires &lt;strong&gt;two Ethernet interfaces&lt;/strong&gt;. **&lt;/p&gt;
+
+&lt;p&gt;**&lt;/p&gt;
+
+&lt;h4 id=&#34;networking-node&#34;&gt;Networking Node&lt;/h4&gt;
+
+&lt;p&gt;The networking node is a special node dedicated to provide several key networking capabilities. Since the instances or VMs run on the compute node, the main purpose of networking node is to provide &lt;strong&gt;networking services that span across virtual machines &amp;#8211; for example DHCP and Routing etc.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Physical network connectivity for Controller Node:&lt;/em&gt; Just like the Compute node, the network node needs two Ethernet Interfaces for Management and Data network. In addition, Networking Node can also provide to-and-fro Internet access for the virtual machines. It is recommended that a separate &lt;strong&gt;third Ethernet interface&lt;/strong&gt; be used for this purpose.&lt;/p&gt;
+
+&lt;p&gt;The following &lt;a href=&#34;http://docs.openstack.org/admin-guide-cloud/content/network-connectivity.html&#34; target=&#34;_blank&#34;&gt;diagram from the OpenStack Admin Guide&lt;/a&gt; clarifies the services and the network connectivity supported by these three physical components.&lt;/p&gt;
+
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1202&#34; alt=&#34;OpenStack Neutron Physical Network Diagram&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png&#34; width=&#34;622&#34; height=&#34;455&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png 778w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1-300x219.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1-768x562.png 768w&#34; sizes=&#34;(max-width: 622px) 100vw, 622px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h4 id=&#34;physical-network&#34;&gt;Physical Network&lt;/h4&gt;
+
+&lt;p&gt;In real data centers, physical servers (nodes) are connected to switches and further these switches are connected to Routers. The capabilities of Neutron can be enhanced by using vendor specific plugins that can help leverage specialized networking equipment. In addition, the network topology of the data center, that hosts your OpenStack cloud will also play a role in the kind of capabilities OpenStack tenants can leverage. Even though physical networks are not tightly integrated with OpenStack Neutron, they nevertheless are instrumental in the cloud services available to tenants.&lt;/p&gt;
 </description>
       
     </item>
@@ -1111,41 +1192,6 @@ var values = valueFromStore.split(&#34;;&#34;); // get an Array back&lt;/pre&gt;
 }&lt;/pre&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>HTML5 Local Storage based preferences for the URL Generator project</title>
-      <link>http://reachsrirams.github.io/blogs/2012/12/24/html5-local-storage-url-generator-project/</link>
-      <pubDate>Mon, 24 Dec 2012 16:45:58 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2012/12/24/html5-local-storage-url-generator-project/</guid>
-      
-        <description>&lt;p&gt;The release 2 (R2) of my URL Generator Project is now ready. You can check it out at the &lt;a href=&#34;http://www.innervoice.in/tools/urlgen/&#34; target=&#34;_blank&#34;&gt;usual location&lt;/a&gt;. I am happy to share that this revision was completed on time as per my &lt;a href=&#34;http://www.innervoice.in/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/&#34; target=&#34;_blank&#34;&gt;revised project plan&lt;/a&gt;. Of course the announcement was delayed a bit. The main additions to this version of the URL generator are HTML5 based Local Storage, a simple usage of Object-oriented JavaScript techniques and jQuery.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;storing-preferences-using-html5-local-storage&#34;&gt;Storing preferences using HTML5 Local Storage&lt;/h3&gt;
-
-&lt;p&gt;The UTM URL generator page has several settings such as check boxes for UTM medium, fields for UTM category and source. The main goal was to persist user selections as his _&lt;strong&gt;preferences&lt;/strong&gt;_ and load the saved preferences when the user revisits. The common technique is to use cookies but with the I felt that HTML5 local storage provided a much simpler API for this purpose.&lt;/p&gt;
-
-&lt;h4 id=&#34;what-happens&#34;&gt;What happens?&lt;/h4&gt;
-
-&lt;p&gt;When user visits the tool web page, the HTML5 Local Storage database is queries for the preference information. If nothing is found, default values are returned. The page is then initialized with values based on the preference. Subsequent changes due to user interaction results in updating of the preference in the Local Storage.&lt;/p&gt;
-
-&lt;p&gt;You can read more about HTML5 Local Storage &lt;a href=&#34;http://blog.yjl.im/2010/05/localstorage-primitive-types-and-json.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, especially the techniques to manage non-string values.&lt;/p&gt;
-
-&lt;h3 id=&#34;object-oriented-javascript&#34;&gt;Object Oriented JavaScript&lt;/h3&gt;
-
-&lt;p&gt;The preferences based on local storage required several get and set functions as well as validations. In order to have a clean separation I created a JavaScript class called &lt;em&gt;&lt;strong&gt;PreferenceManager&lt;/strong&gt;&lt;/em&gt;. This is my first class in JavaScript and for a Java language enthusiast this is an important milestone. There are many ways to define &lt;strong&gt;&lt;em&gt;classes&lt;/em&gt;&lt;/strong&gt; in JavaScript. But I opted for the &lt;em&gt;&lt;strong&gt;prototype&lt;/strong&gt;&lt;/em&gt; based approach since the code seemed more organized and cohesive with this approach.&lt;/p&gt;
-
-&lt;p&gt;The source code for the _&lt;strong&gt;PreferenceManager&lt;/strong&gt; _class &lt;a href=&#34;http://innervoice.in/tools/urlgen/r2/utm.pref.mgr.js&#34; target=&#34;_blank&#34;&gt;can be found here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;using-jquery-for-code-cleanup&#34;&gt;Using jQuery for code cleanup&lt;/h3&gt;
-
-&lt;p&gt;Lastly I used jQuery to perform get and set on the actual form components. For example, check whether a checkbox is _&lt;strong&gt;checked&lt;/strong&gt; _or not. Until this version, I had utility functions that effectively called getElementById() methods which had bloated the code. With jQuery, I was able to reduce the number of functions as well as number of lines of code.&lt;/p&gt;
-
-&lt;p&gt;The usage of jQuery &lt;a href=&#34;http://www.innervoice.in/tools/urlgen/r2/urlgen.js&#34; target=&#34;_blank&#34;&gt;can be found here&lt;/a&gt;.&lt;/p&gt;</description>
       
     </item>
     

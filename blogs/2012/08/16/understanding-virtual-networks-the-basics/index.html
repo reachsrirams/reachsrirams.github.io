@@ -26,6 +26,7 @@
 
 <meta name="author" content="Sriram S" />
   <meta name="description" content="In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.
+
 " />
 
   <meta name="keywords" content="Hugo, theme, jane" />
@@ -59,7 +60,9 @@
 
 
 <meta property="og:title" content="Understanding Virtual Networks – The Basics" />
-<meta property="og:description" content="In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike." />
+<meta property="og:description" content="In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/" />
 
@@ -80,19 +83,23 @@
 
 
 <meta itemprop="name" content="Understanding Virtual Networks – The Basics">
-<meta itemprop="description" content="In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.">
+<meta itemprop="description" content="In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.
+
+">
 
 
 <meta itemprop="datePublished" content="2012-08-16T04:35:41&#43;00:00" />
 <meta itemprop="dateModified" content="2012-08-16T04:35:41&#43;00:00" />
-<meta itemprop="wordCount" content="716">
+<meta itemprop="wordCount" content="727">
 
 
 
 <meta itemprop="keywords" content="Networking,Networks,NIC,OpenStack,Virtual,Virtual Switch,Virtualization,VLAN,VMware,vSwitch," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Understanding Virtual Networks – The Basics"/>
-<meta name="twitter:description" content="In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike."/>
+<meta name="twitter:description" content="In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.
+
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -306,7 +313,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/virtualization/"> Virtualization </a>
             
           </div>
-        <span class="more-meta"> 716 words </span>
+        <span class="more-meta"> 727 words </span>
         <span class="more-meta"> 4 min read </span>
       </div>
     </header>
@@ -324,9 +331,22 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.</p>
 
-<p><figure id="attachment_407" style="width: 654px" class="wp-caption aligncenter"></p>
+<p></p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetworkConnectivity.png"><img class="size-full wp-image-407" title="Home Network Connectivity" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetworkConnectivity.png" alt="" width="654" height="326" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetworkConnectivity.png 654w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetworkConnectivity-300x150.png 300w" sizes="(max-width: 654px) 100vw, 654px" /></a><figcaption class="wp-caption-text">Home Network Connectivity</figcaption></figure></p>
+
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2012/HomeNetworkConnectivity.png" alt="Home Network Connectivity"/>
+    </div>
+    <a href="/blogs/images/2012/HomeNetworkConnectivity.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Home Network Connectivity</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p><strong>Components of a home network</strong></p>
 
@@ -341,9 +361,20 @@ if (!doNotTrack) {
 
 <p>Let us take a look at the main steps involved in setting up and configuring this home network.</p>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetwork_Steps.png"><img class="size-full wp-image-406 aligncenter" title="Steps to configure Home Network" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetwork_Steps.png" alt="" width="654" height="326" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetwork_Steps.png 654w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/HomeNetwork_Steps-300x150.png 300w" sizes="(max-width: 654px) 100vw, 654px" /></a>
-</p>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2012/HomeNetwork_Steps.png" alt="Steps to Configure Home Network"/>
+    </div>
+    <a href="/blogs/images/2012/HomeNetwork_Steps.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Steps to Configure Home Network</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <ul>
 <li><strong>Step 1:</strong> Power up the Ethernet Switch</li>
@@ -356,7 +387,20 @@ if (!doNotTrack) {
 
 <p>In a virtualized environment many of the physical components get converted into virtual components. But you still need the physical components that will act as <em>hosts</em>. The following picture shows the different components involved in a virtual computing environment:</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Components.png"><img class="aligncenter size-full wp-image-408" title="Components of a virtual network" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Components.png" alt="" width="890" height="336" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Components.png 890w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Components-300x113.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Components-768x290.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2012/VirtualNW_Components.png" alt="Components of a virtual network"/>
+    </div>
+    <a href="/blogs/images/2012/VirtualNW_Components.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Components of a virtual network</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <ul>
 <li><strong>Virtual Computing Device:</strong> Popularly known as Virtual Machine (VM) runs as a software entity within the host server.</li>
@@ -370,9 +414,22 @@ if (!doNotTrack) {
 
 <p>The physical devices at home are connected to physical switch. Similarly the physical host server is connected to physical switch. The virtual devices (virtual machines) are connected to virtual switch. For the virtual switch, the physical switch acts as external connectivity provider.</p>
 
-<p>Let us now look at the steps to configure the virtual network as described in the picture below.<figure id="attachment_405" style="width: 890px" class="wp-caption aligncenter"></p>
+<p>Let us now look at the steps to configure the virtual network as described in the picture below.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Steps.png"><img class="size-full wp-image-405" title="Steps to configure Virtual Networks" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Steps.png" alt="" width="890" height="336" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Steps.png 890w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Steps-300x113.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VirtualNW_Steps-768x290.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a><figcaption class="wp-caption-text">Steps to configure Virtual Networks</figcaption></figure></p>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2012/VirtualNW_Steps.png" alt="Steps to configure Virtual Networks"/>
+    </div>
+    <a href="/blogs/images/2012/VirtualNW_Steps.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Steps to configure Virtual Networks</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <ul>
 <li><strong>Step 1:</strong> Power up the Ethernet Switch</li>
@@ -425,9 +482,9 @@ if (!doNotTrack) {
       
       <nav class="post-nav">
         
-          <a class="prev" href="/blogs/2012/12/24/html5-local-storage-url-generator-project/">
+          <a class="prev" href="/blogs/2012/08/30/understanding-virtual-networks-ports-and-vlan/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">HTML5 Local Storage based preferences for the URL Generator project</span>
+            <span class="prev-text nav-default">Understanding Virtual Networks – Ports and VLAN</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         

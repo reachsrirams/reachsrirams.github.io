@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>OpenStack Neutron – the components - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="Neutron is the networking project within the OpenStack cloud platform. The purpose of OpenStack Neutron is to provide physical and virtual network resources to the instances (or virtual machines). Before you continue to read this article I would recommend that you read about OpenStack networking concepts. To appreciate the architecture and the functionality of Neutron, it is important to understand the components that are part of Neutron.
+OpenStack Neutron Software Components Neutron Server The main software entity for Neutron is the neutron-server daemon." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2015/01/13/openstack-neutron-components/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="OpenStack Neutron – the components" />
+<meta property="og:description" content="Neutron is the networking project within the OpenStack cloud platform. The purpose of OpenStack Neutron is to provide physical and virtual network resources to the instances (or virtual machines). Before you continue to read this article I would recommend that you read about OpenStack networking concepts. To appreciate the architecture and the functionality of Neutron, it is important to understand the components that are part of Neutron.
+OpenStack Neutron Software Components Neutron Server The main software entity for Neutron is the neutron-server daemon." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2015/01/13/openstack-neutron-components/" />
+
+
+
+<meta property="article:published_time" content="2015-01-13T18:20:22&#43;00:00"/>
+
+<meta property="article:modified_time" content="2015-01-13T18:20:22&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="OpenStack Neutron – the components">
+<meta itemprop="description" content="Neutron is the networking project within the OpenStack cloud platform. The purpose of OpenStack Neutron is to provide physical and virtual network resources to the instances (or virtual machines). Before you continue to read this article I would recommend that you read about OpenStack networking concepts. To appreciate the architecture and the functionality of Neutron, it is important to understand the components that are part of Neutron.
+OpenStack Neutron Software Components Neutron Server The main software entity for Neutron is the neutron-server daemon.">
+
+
+<meta itemprop="datePublished" content="2015-01-13T18:20:22&#43;00:00" />
+<meta itemprop="dateModified" content="2015-01-13T18:20:22&#43;00:00" />
+<meta itemprop="wordCount" content="682">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OpenStack Neutron – the components"/>
+<meta name="twitter:description" content="Neutron is the networking project within the OpenStack cloud platform. The purpose of OpenStack Neutron is to provide physical and virtual network resources to the instances (or virtual machines). Before you continue to read this article I would recommend that you read about OpenStack networking concepts. To appreciate the architecture and the functionality of Neutron, it is important to understand the components that are part of Neutron.
+OpenStack Neutron Software Components Neutron Server The main software entity for Neutron is the neutron-server daemon."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 2em 4em;
+		margin: 0 4em 2em;
+	}
+	.content-wrapper {
+		padding: 2em 0 1px;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">OpenStack Neutron – the components</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2015-01-13 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/networking/"> Networking </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+          </div>
+        <span class="more-meta"> 682 words </span>
+        <span class="more-meta"> 4 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#openstack-neutron-software-components">OpenStack Neutron Software Components</a>
+<ul>
+<li>
+<ul>
+<li><a href="#neutron-server">Neutron Server</a></li>
+<li><a href="#neutron-plugins">Neutron Plugins</a></li>
+<li><a href="#neutron-agents">Neutron Agents</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#openstack-neutron-hardware-components">OpenStack Neutron Hardware Components</a>
+<ul>
+<li>
+<ul>
+<li><a href="#controller-node">Controller Node</a></li>
+<li><a href="#compute-node">Compute Node</a></li>
+<li><a href="#networking-node">Networking Node</a></li>
+<li><a href="#physical-network">Physical Network</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Neutron is the networking project within the OpenStack cloud platform. The purpose of OpenStack Neutron is to provide physical and virtual network resources to the instances (or virtual machines). Before you continue to read this article I would recommend that you read about <a href="http://www.innervoice.in/blogs/2014/04/07/openstack-networking/" title="OpenStack Networking – an introduction">OpenStack networking concepts</a>. To appreciate the architecture and the functionality of Neutron, it is important to understand the components that are part of Neutron.</p>
+
+<h2 id="openstack-neutron-software-components">OpenStack Neutron Software Components</h2>
+
+<h4 id="neutron-server">Neutron Server</h4>
+
+<p>The main software entity for Neutron is the neutron-server daemon. This is basically a python program which is started when you execute:</p>
+
+<pre># service neutron-server start</pre>
+
+<p>This Neutron server daemon starts two critical components:</p>
+
+<ul>
+<li>Neutron REST service</li>
+<li>Neutron Plugin &#8211; core and service plugin</li>
+</ul>
+
+<p>The Neutron RPC service is also started so that the neutron servers can communicate with the agents. And the RPC service actually loads the Neutron Plugin.</p>
+
+<p style="text-align: center;">
+  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png"><img class="aligncenter  wp-image-1199" alt="OpenStack Neutron Server Loading Steps" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png" width="522" height="373" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png 816w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps-300x214.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps-768x549.png 768w" sizes="(max-width: 522px) 100vw, 522px" /></a>
+</p>
+
+<h4 id="neutron-plugins">Neutron Plugins</h4>
+
+<p>Plugins in Neutron allow extension and/or customization of the pre-existing functionality in Neutron. Networking vendors can write plugins that ensures smooth inter-operability between OpenStack Neutron and vendor-specific software and hardware. With this approach a rich set of physical and virtual networking resources can be made available to the virtual machines instances.</p>
+
+<h4 id="neutron-agents">Neutron Agents</h4>
+
+<p>The agents are another set of critical components within Neutron. The main Neutron server (and the plugins) communicate with Neutron agents. The Neutron agents implement <strong>very specific networking functionality</strong>. Examples include DHCP Agent, L3 Agent etc. Some agents may be specific to the plugin such as Linux Bridge Neutron Agent etc.</p>
+
+<p>I will be blogging about Plugins and Agents in detail soon.</p>
+
+<h2 id="openstack-neutron-hardware-components">OpenStack Neutron Hardware Components</h2>
+
+<p>The following hardware components support one or more of the above mentioned software components.</p>
+
+<h4 id="controller-node">Controller Node</h4>
+
+<p>The main OpenStack Neutron server runs in the controller node. This means that Neutron API requests from Horizon (Dashboard) or the Neutron CLI, land on this server. As seen above, the plugins that do the main networking configurations also run on this server.</p>
+
+<p><em>Physical network connectivity for Controller Node:</em> Since the Neutron server needs to receive API requests and also needs to communicate with agents via RPC, it requires a minimum of <strong>one Ethernet interface (Management Network)</strong> for this purpose.</p>
+
+<h4 id="compute-node">Compute Node</h4>
+
+<p>The compute node is where the instances or virtual machines are started. The main goal of OpenStack Neutron, within the compute node, is to provide networking resources for &#8216;each&#8217; instance. Since the core element of Neutron is to provide Layer-2 (L2) connectivity an instance, the L2 agent (depending on the plugin) runs on the compute node.</p>
+
+<p>_Physical network connectivity for Compute Node: _The compute node may run agents and will respond to RPC messages from Neutron Server (Management Network). In addition it also needs to provide a dedicate interface for network traffic from the virtual machines (Data Network). Hence the Compute node requires <strong>two Ethernet interfaces</strong>. **</p>
+
+<p>**</p>
+
+<h4 id="networking-node">Networking Node</h4>
+
+<p>The networking node is a special node dedicated to provide several key networking capabilities. Since the instances or VMs run on the compute node, the main purpose of networking node is to provide <strong>networking services that span across virtual machines &#8211; for example DHCP and Routing etc.</strong></p>
+
+<p><em>Physical network connectivity for Controller Node:</em> Just like the Compute node, the network node needs two Ethernet Interfaces for Management and Data network. In addition, Networking Node can also provide to-and-fro Internet access for the virtual machines. It is recommended that a separate <strong>third Ethernet interface</strong> be used for this purpose.</p>
+
+<p>The following <a href="http://docs.openstack.org/admin-guide-cloud/content/network-connectivity.html" target="_blank">diagram from the OpenStack Admin Guide</a> clarifies the services and the network connectivity supported by these three physical components.</p>
+
+<p style="text-align: center;">
+  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png"><img class="aligncenter  wp-image-1202" alt="OpenStack Neutron Physical Network Diagram" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png" width="622" height="455" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png 778w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1-300x219.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1-768x562.png 768w" sizes="(max-width: 622px) 100vw, 622px" /></a>
+</p>
+
+<p>&nbsp;</p>
+
+<h4 id="physical-network">Physical Network</h4>
+
+<p>In real data centers, physical servers (nodes) are connected to switches and further these switches are connected to Routers. The capabilities of Neutron can be enhanced by using vendor specific plugins that can help leverage specialized networking equipment. In addition, the network topology of the data center, that hosts your OpenStack cloud will also play a role in the kind of capabilities OpenStack tenants can leverage. Even though physical networks are not tightly integrated with OpenStack Neutron, they nevertheless are instrumental in the cloud services available to tenants.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2015/01/14/goals-first-half-2015/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Goals for the first half of 2015</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2014/12/17/linux-network-namespace-wilt/">
+            <span class="next-text nav-default">Linux Network Namespace – WILT</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

@@ -6,10 +6,21 @@
     <description>Recent content in Virtual Switch on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Aug 2012 04:35:41 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Aug 2012 18:01:24 +0000</lastBuildDate>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/tags/virtual-switch/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Understanding Virtual Networks – Ports and VLAN</title>
+      <link>http://reachsrirams.github.io/blogs/2012/08/30/understanding-virtual-networks-ports-and-vlan/</link>
+      <pubDate>Thu, 30 Aug 2012 18:01:24 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/08/30/understanding-virtual-networks-ports-and-vlan/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;http://www.innervoice.in/blogs/2012/08/16/understanding-virtual-networks-the-basics/?utm_campaign=promote_blog&amp;utm_medium=allpurpose&amp;utm_source=innervoice.in&#34; target=&#34;_blank&#34;&gt;previous post&lt;/a&gt; we looked at the fundamental building blocks of physical and virtual networks. Now let us look at two key concepts in physical and virtual networks. They are Ports and VLAN.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Understanding Virtual Networks – The Basics</title>
@@ -17,7 +28,9 @@
       <pubDate>Thu, 16 Aug 2012 04:35:41 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/</guid>
-      <description>&lt;p&gt;In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -41,6 +41,16 @@ MAC Table &amp;#8211; Background Bridges and Switches forward packets by examini
     </item>
     
     <item>
+      <title>OpenStack Neutron – the components</title>
+      <link>http://reachsrirams.github.io/blogs/2015/01/13/openstack-neutron-components/</link>
+      <pubDate>Tue, 13 Jan 2015 18:20:22 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/01/13/openstack-neutron-components/</guid>
+      <description>Neutron is the networking project within the OpenStack cloud platform. The purpose of OpenStack Neutron is to provide physical and virtual network resources to the instances (or virtual machines). Before you continue to read this article I would recommend that you read about OpenStack networking concepts. To appreciate the architecture and the functionality of Neutron, it is important to understand the components that are part of Neutron.
+OpenStack Neutron Software Components Neutron Server The main software entity for Neutron is the neutron-server daemon.</description>
+    </item>
+    
+    <item>
       <title>Linux Network Namespace – WILT</title>
       <link>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</link>
       <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
@@ -102,12 +112,25 @@ Linux Bridge &amp;#8211; The Basics Virtual networking requires the presence of 
     </item>
     
     <item>
+      <title>Understanding Virtual Networks – Ports and VLAN</title>
+      <link>http://reachsrirams.github.io/blogs/2012/08/30/understanding-virtual-networks-ports-and-vlan/</link>
+      <pubDate>Thu, 30 Aug 2012 18:01:24 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/08/30/understanding-virtual-networks-ports-and-vlan/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;http://www.innervoice.in/blogs/2012/08/16/understanding-virtual-networks-the-basics/?utm_campaign=promote_blog&amp;utm_medium=allpurpose&amp;utm_source=innervoice.in&#34; target=&#34;_blank&#34;&gt;previous post&lt;/a&gt; we looked at the fundamental building blocks of physical and virtual networks. Now let us look at two key concepts in physical and virtual networks. They are Ports and VLAN.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Understanding Virtual Networks – The Basics</title>
       <link>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/</link>
       <pubDate>Thu, 16 Aug 2012 04:35:41 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/</guid>
-      <description>&lt;p&gt;In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

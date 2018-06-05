@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Understanding Virtual Networks – Ports and VLAN - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="In the previous post we looked at the fundamental building blocks of physical and virtual networks. Now let us look at two key concepts in physical and virtual networks. They are Ports and VLAN.
+
+" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2012/08/30/understanding-virtual-networks-ports-and-vlan/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Understanding Virtual Networks – Ports and VLAN" />
+<meta property="og:description" content="In the previous post we looked at the fundamental building blocks of physical and virtual networks. Now let us look at two key concepts in physical and virtual networks. They are Ports and VLAN.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2012/08/30/understanding-virtual-networks-ports-and-vlan/" />
+
+
+
+<meta property="article:published_time" content="2012-08-30T18:01:24&#43;00:00"/>
+
+<meta property="article:modified_time" content="2012-08-30T18:01:24&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Understanding Virtual Networks – Ports and VLAN">
+<meta itemprop="description" content="In the previous post we looked at the fundamental building blocks of physical and virtual networks. Now let us look at two key concepts in physical and virtual networks. They are Ports and VLAN.
+
+">
+
+
+<meta itemprop="datePublished" content="2012-08-30T18:01:24&#43;00:00" />
+<meta itemprop="dateModified" content="2012-08-30T18:01:24&#43;00:00" />
+<meta itemprop="wordCount" content="893">
+
+
+
+<meta itemprop="keywords" content="Networking,Networks,NIC,OpenStack,Tutorial,Virtual,Virtual Switch,Virtualization,VLAN,VMware,vSwitch," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Understanding Virtual Networks – Ports and VLAN"/>
+<meta name="twitter:description" content="In the previous post we looked at the fundamental building blocks of physical and virtual networks. Now let us look at two key concepts in physical and virtual networks. They are Ports and VLAN.
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 2em 4em;
+		margin: 0 4em 2em;
+	}
+	.content-wrapper {
+		padding: 2em 0 1px;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Understanding Virtual Networks – Ports and VLAN</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2012-08-30 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/networking/"> Networking </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+              <a href="/blogs/categories/virtualization/"> Virtualization </a>
+            
+          </div>
+        <span class="more-meta"> 893 words </span>
+        <span class="more-meta"> 5 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>In the <a href="http://www.innervoice.in/blogs/2012/08/16/understanding-virtual-networks-the-basics/?utm_campaign=promote_blog&utm_medium=allpurpose&utm_source=innervoice.in" target="_blank">previous post</a> we looked at the fundamental building blocks of physical and virtual networks. Now let us look at two key concepts in physical and virtual networks. They are Ports and VLAN.</p>
+
+<p></p>
+
+<p><strong>What are Ports?</strong></p>
+
+<p>In the world of networking, a _port_ represents the entry and exit point for data traffic on computing and networking devices. Ports can exist as software as well as hardware entities.</p>
+
+<ul>
+<li>Software ports exist within an operating system. They are usually entry and exit points for application traffic. For example port 80 on a server is associated with Web server and for HTTP traffic.</li>
+<li>Hardware ports are physical connectivity points on devices such as switches, computers, routers etc. For example, home routers have 4 RJ45 (L2/Ethernet) ports to connect home computers.</li>
+</ul>
+
+<p><strong>Types of Switch Ports</strong></p>
+
+<p>We have seen that data traffic from virtual machines is carried over virtual switches and then over physical switches. Hence two types of ports are very significant when it comes to virtual networks.</p>
+
+<ul>
+<li><strong>Physical Switch Ports</strong>: For the commonly used L2/Ethernet switches, the physical switch port is identified by the RJ45 port. An RJ45 connector/cable connects the ports on the switch to the port on the Network Interface Card (NIC) of the computing device.</li>
+<li><strong>Virtual Switch Ports</strong>: Similar to physical switch ports, a virtual switch port exists as a software entity on a virtual switch.  As both virtual NIC (vNIC) and virtual port are software entities, the underlying software maintains an association between the two. This association represent the _virtual cables_ that connect vNIC to a virtual switch port.</li>
+</ul>
+
+<div>
+  The picture below captures the two types of switch ports. All the ports on the virtual switch are called virtual ports. Similarly ports on physical switches are called physical switch ports. The blue arrows that connect pNIC to a physical switch port are real cables, whereas the red arrows connect a vNIC to virtual switch ports are associations maintained in software.
+</div>
+
+<div>
+</div>
+
+<div>
+  <figure id="attachment_437" style="width: 642px" class="wp-caption aligncenter"><a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/Physical-And-Virtual-Ports.png"><img class=" wp-image-437  " title="Physical And Virtual Ports" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/Physical-And-Virtual-Ports.png" alt="" width="642" height="284" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/Physical-And-Virtual-Ports.png 1003w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/Physical-And-Virtual-Ports-300x133.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/Physical-And-Virtual-Ports-768x340.png 768w" sizes="(max-width: 642px) 100vw, 642px" /></a><figcaption class="wp-caption-text">Physical And Virtual Ports</figcaption></figure>
+</div>
+
+<p><strong>Why are Ports important?</strong></p>
+
+<p>Ports are very important in networking for various reasons. Here are some of them:</p>
+
+<ol>
+<li>The first obvious reason is that ports are entry and exit points for data traffic. Without data traffic, networks are not that meaningful.</li>
+<li>Users of switches (physical and virtual) decide which ports to use and which not to use. Since ports have a user controlled element, they are important from network management perspective.</li>
+<li>Once again ports are the entities that provide the ability regulate/control data traffic. For example a user may want to throttle the amount data being sent into a switch port. Network administrators may want to restrict the _type_ of data traffic using firewalls. All these example are realized by configuring ports.</li>
+</ol>
+
+<hr />
+
+<p><strong>What is VLAN?</strong></p>
+
+<p>VLAN stands for Virtual LAN or Virtual Local Area Network.</p>
+
+<p>In order to understand the concept of VLAN let us look at the analogy of hard disk partitioning. We partition hard disks on a computer into several logical partitions. The main purpose is to organize the disk space as well as to ensure that corruption/exhaustion of one logical partition does not impact another partition.</p>
+
+<p>Similarly in L2/Ethernet networks, VLAN give us the capability to partition a L2/Ethernet into multiple logical L2/Ethernet networks. This allows us to ensure that traffic from one VLAN does not mix with traffic from another VLAN. As seen in the picture below, the traffic from Device 2 on Switch 1 can only reach Device 4 on Switch 2, because the corresponding physical switch ports are on the same VLAN.<figure id="attachment_447" style="width: 709px" class="wp-caption aligncenter"></p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VLAN_Basics.png"><img class="size-full wp-image-447" title="VLAN Basics" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VLAN_Basics.png" alt="VLAN Basics" width="709" height="448" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VLAN_Basics.png 709w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VLAN_Basics-300x190.png 300w" sizes="(max-width: 709px) 100vw, 709px" /></a><figcaption class="wp-caption-text">VLAN Basics</figcaption></figure></p>
+
+<p><a href="http://goo.gl/OhVY7" target="_blank">A great overview of VLAN can be found here.</a></p>
+
+<p><strong>Why do we need VLAN?</strong></p>
+
+<p>Here are some important reasons why we need VLAN:</p>
+
+<ol>
+<li>VLAN give us the capability to create a L2 Broadcast domain across multiple physical switches. In other words devices on multiple switches can be considered on the same LAN.</li>
+<li>In normal Layer 2 operation flooding of L2 frames can happen for various reasons. By segmenting the physical network with VLAN, the impact of flooding can be well regulated.</li>
+</ol>
+
+<div>
+  <em>Further reading: </em><a href="http://goo.gl/dVkro" target="_blank">Why we need VLAN?</a>
+</div>
+
+<p><strong>Why is VLAN important for Virtual Networks?</strong></p>
+
+<p>Virtual networks share many characteristics of physical networks hence it is logical to see that VLAN is important for virtual networks as well.</p>
+
+<p>The advent of cloud computing has only increased the importance of VLAN. In Infrastructure as a Service (IaaS) products such as Amazon EC2, Rackspace etc virtual machines are created and deleted all the time. In addition, users who request virtual machines expect that the traffic intended for their virtual machines is not shared with virtual machines belonging to other users of the cloud service. Hence there is a strong argument in favour of network segmentation in a cloud infrastructure. VLAN provide a simple and well established solution for this segmentation.</p>
+
+<hr />
+
+<p><strong>Relationship between Ports and VLAN</strong></p>
+
+<p>We have seen that Ports are the entry and exit points for data traffic. We have also discussed that VLAN allow us to segregate traffic in a L2 network. Naturally there is a relationship between Ports and VLAN.</p>
+
+<p>The VLAN information is configured on the objects representing the switch ports. Based on the VLAN configuration, the data plane software in the switch handles traffic bound for the port in a different manner.</p>
+
+<hr />
+
+<p>In the next installment of this series, we will take a quick look at the different options for virtual switch available in the market.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/networking/">Networking</a>
+          
+          <a href="/blogs/tags/networks/">Networks</a>
+          
+          <a href="/blogs/tags/nic/">NIC</a>
+          
+          <a href="/blogs/tags/openstack/">OpenStack</a>
+          
+          <a href="/blogs/tags/tutorial/">Tutorial</a>
+          
+          <a href="/blogs/tags/virtual/">Virtual</a>
+          
+          <a href="/blogs/tags/virtual-switch/">Virtual Switch</a>
+          
+          <a href="/blogs/tags/virtualization/">Virtualization</a>
+          
+          <a href="/blogs/tags/vlan/">VLAN</a>
+          
+          <a href="/blogs/tags/vmware/">VMware</a>
+          
+          <a href="/blogs/tags/vswitch/">vSwitch</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2012/12/24/html5-local-storage-url-generator-project/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">HTML5 Local Storage based preferences for the URL Generator project</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2012/08/16/understanding-virtual-networks-the-basics/">
+            <span class="next-text nav-default">Understanding Virtual Networks – The Basics</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

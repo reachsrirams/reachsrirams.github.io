@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/tutorial/</link>
+    <description>Recent content in Tutorial on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Aug 2012 18:01:24 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Understanding Virtual Networks – Ports and VLAN</title>
+      <link>http://reachsrirams.github.io/blogs/2012/08/30/understanding-virtual-networks-ports-and-vlan/</link>
+      <pubDate>Thu, 30 Aug 2012 18:01:24 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/08/30/understanding-virtual-networks-ports-and-vlan/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;http://www.innervoice.in/blogs/2012/08/16/understanding-virtual-networks-the-basics/?utm_campaign=promote_blog&amp;utm_medium=allpurpose&amp;utm_source=innervoice.in&#34; target=&#34;_blank&#34;&gt;previous post&lt;/a&gt; we looked at the fundamental building blocks of physical and virtual networks. Now let us look at two key concepts in physical and virtual networks. They are Ports and VLAN.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
