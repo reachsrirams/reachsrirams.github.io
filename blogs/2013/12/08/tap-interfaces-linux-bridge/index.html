@@ -26,7 +26,8 @@
 
 <meta name="author" content="admin" />
   <meta name="description" content="In the previous blog of this series we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.
-Physical vs. Virtual Networking The network data traffic is handled by the physical Ethernet ports on physical machines." />
+
+" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -60,7 +61,8 @@ Physical vs. Virtual Networking The network data traffic is handled by the physi
 
 <meta property="og:title" content="Tap Interfaces and Linux Bridge" />
 <meta property="og:description" content="In the previous blog of this series we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.
-Physical vs. Virtual Networking The network data traffic is handled by the physical Ethernet ports on physical machines." />
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/" />
 
@@ -82,7 +84,8 @@ Physical vs. Virtual Networking The network data traffic is handled by the physi
 
 <meta itemprop="name" content="Tap Interfaces and Linux Bridge">
 <meta itemprop="description" content="In the previous blog of this series we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.
-Physical vs. Virtual Networking The network data traffic is handled by the physical Ethernet ports on physical machines.">
+
+">
 
 
 <meta itemprop="datePublished" content="2013-12-08T06:56:00&#43;00:00" />
@@ -95,7 +98,8 @@ Physical vs. Virtual Networking The network data traffic is handled by the physi
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tap Interfaces and Linux Bridge"/>
 <meta name="twitter:description" content="In the previous blog of this series we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.
-Physical vs. Virtual Networking The network data traffic is handled by the physical Ethernet ports on physical machines."/>
+
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -336,9 +340,9 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      
+      <p><span style="font-size: 13px;">In the <a href="http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/" target="_blank">previous blog of this series</a> we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.</span></p>
 
-<p><span style="font-size: 13px;">In the <a href="http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/" target="_blank">previous blog of this series</a> we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.</span></p>
+<p></p>
 
 <h2 id="physical-vs-virtual-networking">Physical vs. Virtual Networking</h2>
 
@@ -384,7 +388,6 @@ if (!doNotTrack) {
 <p>The short answer is no. But there is a need for connecting a virtual Ethernet port of a VM to the <em>tap</em> interface on a Linux bridge. This connection is achieved programmatically. Applications such as libvirt create a &#8216;file descriptor&#8217; using the tap interface. When Linux bridge sends Ethernet frames to a <em>tap</em> interface, it actually is sending the bytes to a file descriptor. Emulators like QEMU, read the bytes from this file descriptor and pass it onto the &#8216;guest operating system&#8217; inside the VM, via the virtual network port on the VM. <strong>Note: </strong>Tap interfaces are listed as part of the _ifconfig_ Linux command.</p>
 
 <h3 id="further-reading-8211-a-href-http-backreference-org-2010-03-26-tuntap-interface-tutorial-target-blank-tun-tap-interface-tutorial-a"><strong>Further Reading &#8211; </strong><a href="http://backreference.org/2010/03/26/tuntap-interface-tutorial/" target="_blank">Tun/Tap interface tutorial</a></h3>
-
     </div>
 
     

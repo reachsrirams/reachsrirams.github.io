@@ -26,7 +26,8 @@
 
 <meta name="author" content="Sriram S" />
   <meta name="description" content="In the next installment of &amp;#8220;What I learnt today&amp;#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.
-This concept of supporting multiple instances of routing tables, networking devices is not very new." />
+
+" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -60,7 +61,8 @@ This concept of supporting multiple instances of routing tables, networking devi
 
 <meta property="og:title" content="Linux Network Namespace – WILT" />
 <meta property="og:description" content="In the next installment of &#8220;What I learnt today&#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a copy of the TCP/IP network stack &#8211; all the way from the Ethernet interfaces (L2), routing tables etc.
-This concept of supporting multiple instances of routing tables, networking devices is not very new." />
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/" />
 
@@ -82,7 +84,8 @@ This concept of supporting multiple instances of routing tables, networking devi
 
 <meta itemprop="name" content="Linux Network Namespace – WILT">
 <meta itemprop="description" content="In the next installment of &#8220;What I learnt today&#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a copy of the TCP/IP network stack &#8211; all the way from the Ethernet interfaces (L2), routing tables etc.
-This concept of supporting multiple instances of routing tables, networking devices is not very new.">
+
+">
 
 
 <meta itemprop="datePublished" content="2014-12-17T18:05:29&#43;00:00" />
@@ -95,7 +98,8 @@ This concept of supporting multiple instances of routing tables, networking devi
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux Network Namespace – WILT"/>
 <meta name="twitter:description" content="In the next installment of &#8220;What I learnt today&#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a copy of the TCP/IP network stack &#8211; all the way from the Ethernet interfaces (L2), routing tables etc.
-This concept of supporting multiple instances of routing tables, networking devices is not very new."/>
+
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -336,9 +340,9 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      
+      <p>In the next installment of &#8220;What I learnt today&#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a <strong>copy of the TCP/IP network stack &#8211; all the way from the Ethernet interfaces (L2), routing tables etc.</strong></p>
 
-<p>In the next installment of &#8220;What I learnt today&#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a <strong>copy of the TCP/IP network stack &#8211; all the way from the Ethernet interfaces (L2), routing tables etc.</strong></p>
+<p></p>
 
 <p>This concept of supporting multiple instances of routing tables, networking devices is not very new. Most networking hardware vendors have supported the concept, albeit with different names such as &#8220;virtual routing and forwarding&#8221; or VRF. <strong>In Linux, the namespace concept is supported by &#8220;_ip _<em>netns&#8221;</em> command.</strong></p>
 
@@ -363,7 +367,6 @@ if (!doNotTrack) {
 <h2 id="the-ip-netns-command">The <em>ip netns</em> command</h2>
 
 <p>One interesting tip about _ip netns _command is that  the &#8216;exec&#8217; sub-command lets you execute a specific &#8216;shell&#8217; command <em>on the specified namespace</em>. With _ip netns exec <namespacename> <strong>bash</strong>, _you can get a shell prompt specifically for the namespace. This will be useful in troubleshootign any networking problems. Commands and programs executed under the &#8216;exec&#8217; sub-command are aware of the &#8216;isolate namespace&#8217; only.</p>
-
     </div>
 
     

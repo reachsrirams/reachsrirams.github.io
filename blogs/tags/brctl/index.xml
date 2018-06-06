@@ -17,8 +17,9 @@
       <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
-      <description>In an earlier blog, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.
-MAC Table &amp;#8211; Background Bridges and Switches forward packets by examining and learning MAC address from incoming packets.</description>
+      <description>&lt;p&gt;In an &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; title=&#34;Linux Bridge and Virtual Networking&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,8 +28,9 @@ MAC Table &amp;#8211; Background Bridges and Switches forward packets by examini
       <pubDate>Mon, 02 Dec 2013 18:00:47 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</guid>
-      <description>Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.
-Linux Bridge &amp;#8211; The Basics Virtual networking requires the presence of a virtual switch inside a server/hypervisor.</description>
+      <description>&lt;p&gt;Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -17,8 +17,9 @@
       <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/</guid>
-      <description>If you are a follower of this blog, you might have read about Using Docker with nginx and NodeJS. In this blog, I will discuss the code to build the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is available on GitHub.
-Acknowledgement: I was inspired by this blog and wanted to take it further using Docker Compose.</description>
+      <description>&lt;p&gt;If you are a follower of this blog, you might have read about &lt;a href=&#34;http://www.innervoice.in/blogs/2017/11/19/using-docker-nginx-nodejs/&#34;&gt;Using Docker with nginx and NodeJS&lt;/a&gt;. In this blog, I will discuss the code to build  the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is &lt;a href=&#34;https://goo.gl/sBmSt3&#34;&gt;available on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

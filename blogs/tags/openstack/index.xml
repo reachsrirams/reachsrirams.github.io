@@ -17,8 +17,9 @@
       <pubDate>Mon, 01 Feb 2016 05:17:20 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/02/01/goals-for-the-first-half-of-2016/</guid>
-      <description>I am late by a month in sharing my blogging and learning goals for the first half of 2016. Let&amp;#8217;s start with a review of the second half of 2015.
-Status of 2015 second half goals  YouTube video related to OpenStack – making a video is not easy but I believe I have nailed down the topic for the video.  Score: 10&amp;frasl;10 Status: I published a YouTube video on OpenStack Neutron Ports.</description>
+      <description>&lt;p&gt;I am late by a month in sharing my blogging and learning goals for the first half of 2016. Let&amp;#8217;s start with a review of the second half of 2015.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,9 +28,9 @@ Status of 2015 second half goals  YouTube video related to OpenStack – making 
       <pubDate>Sun, 05 Jul 2015 17:30:43 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/07/05/my-goals-for-the-second-half-of-2015/</guid>
-      <description>As I have been doing for last few years, it is time to assess how well I have done on my blogging and learning goals. I will also share my goals for the second half of 2015.
-Status for 2015 first half goals Here is my assessment of the goals I had set out for myself:
- Write 2 blogs related to OpenStack: this time I must blog about Open vSwitch and Neutron agents  Score: 9&amp;frasl;10 Status: While I wrote multiple blogs about OpenStack, I could not focus on Open vSwitch.</description>
+      <description>&lt;p&gt;As I have been doing for last few years, it is time to assess how well I have done on my blogging and learning goals. I will also share my goals for the second half of 2015.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -38,8 +39,9 @@ Status for 2015 first half goals Here is my assessment of the goals I had set o
       <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
-      <description>In an earlier blog, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.
-MAC Table &amp;#8211; Background Bridges and Switches forward packets by examining and learning MAC address from incoming packets.</description>
+      <description>&lt;p&gt;In an &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; title=&#34;Linux Bridge and Virtual Networking&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,8 +50,9 @@ MAC Table &amp;#8211; Background Bridges and Switches forward packets by examini
       <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</guid>
-      <description>In the next installment of &amp;#8220;What I learnt today&amp;#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.
-This concept of supporting multiple instances of routing tables, networking devices is not very new.</description>
+      <description>&lt;p&gt;In the next installment of &amp;#8220;What I learnt today&amp;#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a &lt;strong&gt;copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -58,8 +61,9 @@ This concept of supporting multiple instances of routing tables, networking devi
       <pubDate>Mon, 08 Sep 2014 07:48:13 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</guid>
-      <description>Here is my mid-year (I know I am off by couple of months) review of my blogging and learning goals for 2014. I will start off with my assessment of the first half of 2014 and then wrap with goals for the remaining four months of this year.
-Status of 2014 first half goals  Complete the Understanding Virtual Networks series &amp;#8211; Finish the introductory blogs about OpenStack Networking and Open vSwitch  Status Update &amp;#8211; The OpenStack networking blog was completed as per plan but I could not cover Open vSwitch in detail.</description>
+      <description>&lt;p&gt;Here is my mid-year (I know I am off by couple of months) review of my blogging and learning goals for 2014. I will start off with my assessment of the first half of 2014 and then wrap with goals for the remaining four months of this year.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
