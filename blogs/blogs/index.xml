@@ -182,7 +182,7 @@
       <pubDate>Sun, 08 Dec 2013 06:56:00 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</guid>
-      <description>&lt;p&gt;&lt;span style=&#34;font-size: 13px;&#34;&gt;In the &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; target=&#34;_blank&#34;&gt;previous blog of this series&lt;/a&gt; we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.&lt;/span&gt;&lt;/p&gt;
+      <description>&lt;p&gt;In the &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/02/linux-bridge-virtual-networking/&#34;&gt;previous blog of this series&lt;/a&gt; we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
