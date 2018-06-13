@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>OpenStack Neutron Plugins and Agents - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
+OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="OpenStack Neutron Plugins and Agents" />
+<meta property="og:description" content="I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
+OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/" />
+
+
+
+<meta property="article:published_time" content="2015-03-31T16:55:40&#43;00:00"/>
+
+<meta property="article:modified_time" content="2015-03-31T16:55:40&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="OpenStack Neutron Plugins and Agents">
+<meta itemprop="description" content="I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
+OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services.">
+
+
+<meta itemprop="datePublished" content="2015-03-31T16:55:40&#43;00:00" />
+<meta itemprop="dateModified" content="2015-03-31T16:55:40&#43;00:00" />
+<meta itemprop="wordCount" content="519">
+
+
+
+<meta itemprop="keywords" content="Agents,Networking,Neutron,OpenStack,OVS,Plugin,VM," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OpenStack Neutron Plugins and Agents"/>
+<meta name="twitter:description" content="I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
+OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 1em 2em;
+		margin: 0 2em 1em;
+	}
+	.content-wrapper {
+		padding: 1em 0 1px;
+	}
+	.post-header {
+		font-size: 1.0em;
+		font-weight: 600;
+	}
+	.post-content {
+		font-size: 16px;
+	}
+	.logo {
+		font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">OpenStack Neutron Plugins and Agents</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2015-03-31 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/networking/"> Networking </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+          </div>
+        <span class="more-meta"> 519 words </span>
+        <span class="more-meta"> 3 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#openstack-neutron-plugins-why-do-we-need-them">OpenStack Neutron Plugins – why do we need them?</a>
+<ul>
+<li><a href="#more-about-neutron-plugins">More about Neutron Plugins</a></li>
+<li><a href="#ml2-the-most-important-core-plugin">ML2 – the most important core plugin</a></li>
+</ul></li>
+<li><a href="#openstack-neutron-agents">OpenStack Neutron Agents</a></li>
+<li><a href="#an-example-8211-open-vswitch-ovs-plugin-and-agent">An example &#8211; Open vSwitch (OVS) Plugin and Agent</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>I briefly talked about OpenStack Neutron plugins and agents in <a title="OpenStack Neutron – the components" href="http://www.innervoice.in/blogs/2015/01/13/openstack-neutron-components/" target="_blank">my blog about OpenStack Neutron components</a>. In this blog, let us go a step further and understand the roles of plugins and the agents.</p>
+
+<h2 id="openstack-neutron-plugins-why-do-we-need-them">OpenStack Neutron Plugins – why do we need them?</h2>
+
+<p>Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services. These networking technologies and services can be implemented using a combination of software and networking hardware. In order to allow flexibility and choice, Neutron relies on <strong>plugins</strong> to support a wide variety of networking technologies.</p>
+
+<h3 id="more-about-neutron-plugins">More about Neutron Plugins</h3>
+
+<p>Plugins are pluggable python classes that are invoked while responding to API requests. Neutron plugins are classified into Core and Service plugins. Core plugin primarily deals with L2 connectivity and IP Address management. On the other hand, Service plugins support services such as Routing (L3), firewall and load-balancing services etc.</p>
+
+<p><strong>Note: plugin code is executed as part of Neutron Server on the Controller node.</strong></p>
+
+<h3 id="ml2-the-most-important-core-plugin">ML2 – the most important core plugin</h3>
+
+<p>The ML2 or Modular Layer 2 plugin is bundled with OpenStack. It is an important core plugin because it supports wide variety of L2 technologies. More importantly the ML2 plugin allows multiple vendor technologies to co-exist.</p>
+
+<p>Out of the box, the ML2 plugin supports Layer 2 technologies such as VLAN, VXLAN and GRE etc. These technologies are referred to as Type drivers. And these technologies in turn can be implemented using various methods like Open vSwitch or via network hardware. ML2 Plugin allows different implementation methods using mechanism drivers.</p>
+
+<p>Although ML2 is the sole core plugin, it can support multiple type drivers and mechanism drivers. This model provides the flexibility and choice needed for tenants as well as leverage the hardware and software networking resources effectively.</p>
+
+<h2 id="openstack-neutron-agents">OpenStack Neutron Agents</h2>
+
+<p>While the Neutron server acts as the centralized controller, the actual networking related commands and configuration are executed on the Compute and the Network nodes. And <strong>agents</strong> are the entities that implement the actual networking changes on these nodes. Agents receive messages and instructions from the Neutron server (via plugins or directly) on the message bus.</p>
+
+<p>Since Agents are responsible for the implementation of networking, they are closely associated to specific technologies and the corresponding plugins.</p>
+
+<h2 id="an-example-8211-open-vswitch-ovs-plugin-and-agent">An example &#8211; Open vSwitch (OVS) Plugin and Agent</h2>
+
+<p>The picture below shows a simplified view of the interaction of plugins and agents with rest of the components in OpenStack Networking.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/03/Plugin-Agents.jpg"><img class="aligncenter wp-image-1262 size-full" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/03/Plugin-Agents.jpg" alt="Neutron Plugins Agents Interaction" width="807" height="737" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/03/Plugin-Agents.jpg 807w, http://127.0.0.1/wordpress/wp-content/uploads/2015/03/Plugin-Agents-300x274.jpg 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/03/Plugin-Agents-768x701.jpg 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+<p>As shown in the picture above, Neutron receives an API request (due to operations done on Horizon or CLI). The API server invokes the ML2 plugin to processes the request. The ML2 plugin has already loaded the OVS Mechanism driver and passes the request related information to the OVS driver. The OVS driver creates an RPC message using the information available in the request. The RPC message is <strong>cast</strong> to a particular OVS agent running on a compute node. This OVS agent receives the RPC message and proceeds to configure the local instance of OVS switch.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/agents/">Agents</a>
+          
+          <a href="/blogs/tags/networking/">Networking</a>
+          
+          <a href="/blogs/tags/neutron/">Neutron</a>
+          
+          <a href="/blogs/tags/openstack/">OpenStack</a>
+          
+          <a href="/blogs/tags/ovs/">OVS</a>
+          
+          <a href="/blogs/tags/plugin/">Plugin</a>
+          
+          <a href="/blogs/tags/vm/">VM</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">VirtualBox networking settings for OpenStack</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/">
+            <span class="next-text nav-default">Using MAC table – Linux Bridge – WILT</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

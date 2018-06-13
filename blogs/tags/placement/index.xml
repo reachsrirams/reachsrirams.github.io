@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Placement on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/placement/</link>
+    <description>Recent content in Placement on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 03 Jun 2017 02:39:12 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/placement/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ocata release install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/</link>
+      <pubDate>Sat, 03 Jun 2017 02:39:12 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/</guid>
+      <description>Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects</description>
+    </item>
+    
+  </channel>
+</rss>

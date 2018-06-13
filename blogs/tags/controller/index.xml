@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Controller on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/controller/</link>
+    <description>Recent content in Controller on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 27 Jun 2016 18:22:07 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/controller/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenStack Controller Logs – view using a browser</title>
+      <link>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</link>
+      <pubDate>Mon, 27 Jun 2016 18:22:07 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</guid>
+      <description>OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -31,8 +31,50 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/</loc>
+    <lastmod>2017-06-03T02:39:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</loc>
+    <lastmod>2017-05-02T05:07:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/2017/02/02/goals-first-half-2017/</loc>
     <lastmod>2017-02-02T04:10:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</loc>
+    <lastmod>2017-01-22T17:42:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/</loc>
+    <lastmod>2016-12-27T10:31:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</loc>
+    <lastmod>2016-11-13T16:44:06+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2016/10/26/book-announcement-launch-discounts/</loc>
+    <lastmod>2016-10-26T14:57:29+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -45,6 +87,20 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/</loc>
+    <lastmod>2016-07-06T06:45:45+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</loc>
+    <lastmod>2016-06-27T18:22:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/2016/02/01/goals-for-the-first-half-of-2016/</loc>
     <lastmod>2016-02-01T05:17:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -52,8 +108,50 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</loc>
+    <lastmod>2016-01-02T17:43:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</loc>
+    <lastmod>2015-11-27T06:54:27+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</loc>
+    <lastmod>2015-10-23T16:47:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/2015/07/05/my-goals-for-the-second-half-of-2015/</loc>
     <lastmod>2015-07-05T17:30:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</loc>
+    <lastmod>2015-07-04T18:55:10+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</loc>
+    <lastmod>2015-06-14T14:58:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</loc>
+    <lastmod>2015-03-31T16:55:40+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -122,8 +220,64 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/2013/11/18/using-slf4j-servlets/</loc>
+    <lastmod>2013-11-18T16:07:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2013/10/20/log-api-comparison-java-logger-vs-slf4j/</loc>
+    <lastmod>2013-10-20T17:34:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2013/09/08/usability-social-commenting/</loc>
+    <lastmod>2013-09-08T18:12:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/2013/09/01/goals-for-2013-status-update/</loc>
     <lastmod>2013-09-01T07:10:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2013/08/17/logger-statements-the-performance-impact/</loc>
+    <lastmod>2013-08-17T08:55:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2013/07/14/networking-nuggets-1/</loc>
+    <lastmod>2013-07-14T19:28:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2013/07/07/fundamental-networking-concepts/</loc>
+    <lastmod>2013-07-07T09:02:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2013/01/14/4-tools-for-more-productivity/</loc>
+    <lastmod>2013-01-14T13:30:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/2013/01/07/book-review-101-myths-realities/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -171,8 +325,64 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/101-myths-and-realities/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/14.04/</loc>
+    <lastmod>2016-07-06T06:45:45+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/2013/</loc>
     <lastmod>2013-01-01T13:00:28+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/agents/</loc>
+    <lastmod>2015-03-31T16:55:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/annotation/</loc>
+    <lastmod>2013-11-18T16:07:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/apache/</loc>
+    <lastmod>2016-06-27T18:22:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/application-layer/</loc>
+    <lastmod>2013-07-07T09:02:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/ashes/</loc>
+    <lastmod>2013-09-08T18:12:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/at-office/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -199,6 +409,20 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/categories/book-review/</loc>
+    <lastmod>2015-10-23T16:47:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/book-review/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/brctl/</loc>
     <lastmod>2015-01-26T16:19:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -213,14 +437,64 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/browser/</loc>
+    <lastmod>2016-06-27T18:22:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/buffer/</loc>
+    <lastmod>2013-01-14T13:30:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/categories/</loc>
+    <lastmod>2015-10-23T16:47:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/ceilometer/</loc>
+    <lastmod>2015-10-23T16:47:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/cells/</loc>
+    <lastmod>2017-06-03T02:39:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/clipper/</loc>
+    <lastmod>2013-01-14T13:30:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/cloud/</loc>
+    <lastmod>2016-12-27T10:31:44+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://reachsrirams.github.io/blogs/categories/cloud-computing/</loc>
-    <lastmod>2015-01-13T18:20:22+00:00</lastmod>
+    <lastmod>2017-06-03T02:39:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/comments/</loc>
+    <lastmod>2013-09-08T18:12:53+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -240,8 +514,29 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/controller/</loc>
+    <lastmod>2016-06-27T18:22:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/cookbook/</loc>
+    <lastmod>2015-10-23T16:47:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/cpu/</loc>
     <lastmod>2014-03-09T18:58:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/cricket/</loc>
+    <lastmod>2013-09-08T18:12:53+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -254,8 +549,22 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/dashboard/</loc>
+    <lastmod>2017-01-22T17:42:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/database/</loc>
     <lastmod>2012-12-27T13:30:45+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/default-gateway/</loc>
+    <lastmod>2013-07-07T09:02:53+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -275,6 +584,20 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/django/</loc>
+    <lastmod>2017-01-22T17:42:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/dns/</loc>
+    <lastmod>2013-07-07T09:02:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/dnsmasq/</loc>
     <lastmod>2014-12-17T18:05:29+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -289,6 +612,20 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/dropbox/</loc>
+    <lastmod>2013-01-14T13:30:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/employee/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/eth0/</loc>
     <lastmod>2013-12-02T18:00:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -298,6 +635,27 @@
   <url>
     <loc>http://reachsrirams.github.io/blogs/tags/ethernet/</loc>
     <lastmod>2013-12-08T06:56:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/evernote/</loc>
+    <lastmod>2013-01-14T13:30:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/extension/</loc>
+    <lastmod>2013-01-14T13:30:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/frames/</loc>
+    <lastmod>2013-07-14T19:28:32+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -324,8 +682,36 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/google/</loc>
+    <lastmod>2013-01-14T13:30:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/google-tasks/</loc>
+    <lastmod>2013-01-14T13:30:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/horizon/</loc>
+    <lastmod>2017-01-22T17:42:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/html5/</loc>
     <lastmod>2012-12-27T13:30:45+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/hub/</loc>
+    <lastmod>2013-07-14T19:28:32+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -338,8 +724,85 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/ifconfig/</loc>
+    <lastmod>2015-11-27T06:54:27+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/india/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/infibeam/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/infinera/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/install/</loc>
+    <lastmod>2017-05-02T05:07:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/interface/</loc>
     <lastmod>2013-12-08T06:56:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/internet/</loc>
+    <lastmod>2013-07-07T09:02:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/ip/</loc>
+    <lastmod>2015-11-27T06:54:27+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/ip-address/</loc>
+    <lastmod>2013-07-07T09:02:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/isp/</loc>
+    <lastmod>2013-07-07T09:02:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/java/</loc>
+    <lastmod>2013-11-18T16:07:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/java-logger/</loc>
+    <lastmod>2013-10-20T17:34:26+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -366,8 +829,22 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/jul/</loc>
+    <lastmod>2013-10-20T17:34:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/key/</loc>
     <lastmod>2012-12-27T13:30:45+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/keystone/</loc>
+    <lastmod>2017-05-02T05:07:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -402,7 +879,7 @@
   
   <url>
     <loc>http://reachsrirams.github.io/blogs/tags/linux/</loc>
-    <lastmod>2014-12-17T18:05:29+00:00</lastmod>
+    <lastmod>2015-11-27T06:54:27+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -422,6 +899,27 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/log-api/</loc>
+    <lastmod>2013-10-20T17:34:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/logger/</loc>
+    <lastmod>2013-11-18T16:07:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/logs/</loc>
+    <lastmod>2016-06-27T18:22:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/mac/</loc>
     <lastmod>2015-01-26T16:19:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -436,15 +934,57 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/categories/management/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/management/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/manager/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/mariadb/</loc>
+    <lastmod>2016-11-13T16:44:06+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/mitaka/</loc>
+    <lastmod>2016-07-06T06:45:45+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/mysql/</loc>
+    <lastmod>2016-11-13T16:44:06+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/namespace/</loc>
-    <lastmod>2014-12-17T18:05:29+00:00</lastmod>
+    <lastmod>2015-11-27T06:54:27+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://reachsrirams.github.io/blogs/tags/network/</loc>
-    <lastmod>2013-01-01T13:00:28+00:00</lastmod>
+    <lastmod>2015-07-04T18:55:10+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -457,29 +997,36 @@
   </url>
   
   <url>
-    <loc>http://reachsrirams.github.io/blogs/tags/networking/</loc>
-    <lastmod>2012-08-30T18:01:24+00:00</lastmod>
+    <loc>http://reachsrirams.github.io/blogs/categories/networking/</loc>
+    <lastmod>2017-01-22T17:42:35+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://reachsrirams.github.io/blogs/categories/networking/</loc>
-    <lastmod>2015-01-26T16:19:23+00:00</lastmod>
+    <loc>http://reachsrirams.github.io/blogs/tags/networking/</loc>
+    <lastmod>2015-10-23T16:47:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://reachsrirams.github.io/blogs/tags/networks/</loc>
-    <lastmod>2012-08-30T18:01:24+00:00</lastmod>
+    <lastmod>2013-07-14T19:28:32+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://reachsrirams.github.io/blogs/tags/neutron/</loc>
-    <lastmod>2014-09-08T07:48:13+00:00</lastmod>
+    <lastmod>2017-05-02T05:07:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/newton/</loc>
+    <lastmod>2017-05-02T05:07:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -506,6 +1053,20 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/nova/</loc>
+    <lastmod>2017-06-03T02:39:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/ocata/</loc>
+    <lastmod>2017-06-03T02:39:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/open-vswitch/</loc>
     <lastmod>2013-01-01T13:00:28+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -514,7 +1075,14 @@
   
   <url>
     <loc>http://reachsrirams.github.io/blogs/tags/openstack/</loc>
-    <lastmod>2016-02-01T05:17:20+00:00</lastmod>
+    <lastmod>2017-06-03T02:39:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/openstack-neutron/</loc>
+    <lastmod>2015-07-04T18:55:10+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -527,6 +1095,62 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/osi/</loc>
+    <lastmod>2013-07-14T19:28:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/ovs/</loc>
+    <lastmod>2015-03-31T16:55:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/packt/</loc>
+    <lastmod>2015-10-23T16:47:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/placement/</loc>
+    <lastmod>2017-06-03T02:39:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/plugin/</loc>
+    <lastmod>2015-03-31T16:55:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/port/</loc>
+    <lastmod>2017-01-22T17:42:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/ports/</loc>
+    <lastmod>2015-07-04T18:55:10+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/productivity/</loc>
+    <lastmod>2013-01-14T13:30:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/categories/programming/</loc>
     <lastmod>2017-11-26T05:15:30+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -534,8 +1158,29 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/python/</loc>
+    <lastmod>2017-01-22T17:42:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/qemu/</loc>
     <lastmod>2014-03-09T18:58:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/root/</loc>
+    <lastmod>2016-11-13T16:44:06+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/router/</loc>
+    <lastmod>2015-07-04T18:55:10+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -555,6 +1200,41 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/servlets/</loc>
+    <lastmod>2013-11-18T16:07:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/simplelogger/</loc>
+    <lastmod>2013-11-18T16:07:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/slf4j/</loc>
+    <lastmod>2013-11-18T16:07:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/smartphone/</loc>
+    <lastmod>2013-01-14T13:30:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/social-network/</loc>
+    <lastmod>2013-09-08T18:12:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/</loc>
     <lastmod>2018-01-07T18:18:26+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -562,8 +1242,43 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/subnet/</loc>
+    <lastmod>2015-07-04T18:55:10+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/subnet-mask/</loc>
+    <lastmod>2013-07-07T09:02:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/sudo/</loc>
+    <lastmod>2016-11-13T16:44:06+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/summit/</loc>
+    <lastmod>2015-10-23T16:47:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/switch/</loc>
+    <lastmod>2013-07-14T19:28:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/</loc>
-    <lastmod>2013-01-01T13:00:28+00:00</lastmod>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -583,6 +1298,13 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/categories/tech-nuggets/</loc>
+    <lastmod>2016-11-13T16:44:06+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/categories/technology/</loc>
     <lastmod>2017-11-26T05:15:30+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -590,8 +1312,50 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/time-management/</loc>
+    <lastmod>2013-01-14T13:30:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/trusty/</loc>
+    <lastmod>2016-07-06T06:45:45+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/tutorial/</loc>
     <lastmod>2012-08-30T18:01:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/ubuntu/</loc>
+    <lastmod>2017-05-02T05:07:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/usability/</loc>
+    <lastmod>2013-09-08T18:12:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/categories/user-experience/</loc>
+    <lastmod>2013-09-08T18:12:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/utkarsh-rai/</loc>
+    <lastmod>2013-01-07T03:00:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -612,7 +1376,7 @@
   
   <url>
     <loc>http://reachsrirams.github.io/blogs/tags/virtual/</loc>
-    <lastmod>2013-01-01T13:00:28+00:00</lastmod>
+    <lastmod>2013-07-14T19:28:32+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -639,15 +1403,22 @@
   </url>
   
   <url>
-    <loc>http://reachsrirams.github.io/blogs/tags/virtualization/</loc>
-    <lastmod>2015-01-26T16:19:23+00:00</lastmod>
+    <loc>http://reachsrirams.github.io/blogs/tags/virtualbox/</loc>
+    <lastmod>2015-06-14T14:58:44+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://reachsrirams.github.io/blogs/categories/virtualization/</loc>
-    <lastmod>2015-01-26T16:19:23+00:00</lastmod>
+    <lastmod>2015-06-14T14:58:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/virtualization/</loc>
+    <lastmod>2015-07-04T18:55:10+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -661,7 +1432,7 @@
   
   <url>
     <loc>http://reachsrirams.github.io/blogs/tags/vm/</loc>
-    <lastmod>2015-01-26T16:19:23+00:00</lastmod>
+    <lastmod>2015-03-31T16:55:40+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -689,7 +1460,7 @@
   
   <url>
     <loc>http://reachsrirams.github.io/blogs/categories/wilt/</loc>
-    <lastmod>2014-12-17T18:05:29+00:00</lastmod>
+    <lastmod>2016-11-13T16:44:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Port on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/port/</link>
+    <description>Recent content in Port on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 22 Jan 2017 17:42:35 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/port/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenStack Horizon: extending the dashboard – Part 2</title>
+      <link>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</link>
+      <pubDate>Sun, 22 Jan 2017 17:42:35 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</guid>
+      <description>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;#8220;ports&amp;#8221; in your OpenStack based cloud.
+Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard.</description>
+    </item>
+    
+  </channel>
+</rss>

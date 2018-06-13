@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>OpenStack Controller Logs – view using a browser - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="OpenStack Controller Logs – view using a browser" />
+<meta property="og:description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/" />
+
+
+
+<meta property="article:published_time" content="2016-06-27T18:22:07&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-06-27T18:22:07&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="OpenStack Controller Logs – view using a browser">
+<meta itemprop="description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.">
+
+
+<meta itemprop="datePublished" content="2016-06-27T18:22:07&#43;00:00" />
+<meta itemprop="dateModified" content="2016-06-27T18:22:07&#43;00:00" />
+<meta itemprop="wordCount" content="311">
+
+
+
+<meta itemprop="keywords" content="Apache,browser,Controller,Logs,OpenStack," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OpenStack Controller Logs – view using a browser"/>
+<meta name="twitter:description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 1em 2em;
+		margin: 0 2em 1em;
+	}
+	.content-wrapper {
+		padding: 1em 0 1px;
+	}
+	.post-header {
+		font-size: 1.0em;
+		font-weight: 600;
+	}
+	.post-content {
+		font-size: 16px;
+	}
+	.logo {
+		font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">OpenStack Controller Logs – view using a browser</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-27 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/tech-nuggets/"> Tech Nuggets </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+          </div>
+        <span class="more-meta"> 311 words </span>
+        <span class="more-meta"> 2 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#using-a-browser-for-openstack-controller-logs">Using a browser for OpenStack Controller Logs</a></li>
+<li><a href="#configuring-apache">Configuring Apache</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.</p>
+
+<h2 id="using-a-browser-for-openstack-controller-logs">Using a browser for OpenStack Controller Logs</h2>
+
+<p>We can easily use browser tabs to view multiple logs simultaneously. Searching a log file is lot more user friendly on a browser. The best part of this solution is that you do not need to install additional software. OpenStack controller requires Apache web server for several purposes. We will show how to leverage the same web server to stream the logs.</p>
+
+<h2 id="configuring-apache">Configuring Apache</h2>
+
+<p>OpenStack uses Apache web server for different projects. We will leverage the same web server to display logs of different services.</p>
+
+<ul>
+<li><strong>Step 1</strong> &#8211; The first step is to create a directory under /var/www/html. This directory will be used as part of the URL on the web browser. For example if you create a directory called openstacklogs, then point your web browser to &#8211; http://&lt;horizon-controller-ip/openstacklogs</li>
+</ul>
+
+<pre class="lang:java decode:true ">sudo mkdir /var/www/html/openstacklogs</pre>
+
+<ul>
+<li><strong>Step 2</strong> &#8211; Give read and execute permissions to the log directories of OpenStack services. For example if you want to allow Nova and Neutron logs to be viewable using web browser, execute the steps below.</li>
+</ul>
+
+<pre class="lang:java decode:true ">sudo chmod a+rx /var/log/nova
+sudo chmod a+rx /var/log/neutron</pre>
+
+<ul>
+<li><strong>Step 3</strong> &#8211; Create symlinks for these log directories as shown below.</li>
+</ul>
+
+<pre class="lang:java decode:true ">sudo ln -s /var/log/nova /var/www/html/openstacklogs/nova
+sudo ln -s /var/log/neutron /var/www/html/openstacklogs/neutron</pre>
+
+<p>These steps ensure that Apache is able to show the OpenStack Controller Logs as browsable content. You can now point your browser to http://<horizon-controller-ip>/openstacklogs. Here is screenshot of the same from my setup.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21.png"><img class="aligncenter wp-image-1407 size-medium" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21-300x189.png" alt="OpenStack Controller Logs using Web Browser" width="300" height="189" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21-300x189.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21-768x484.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21.png 918w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+
+<p>&nbsp;</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/apache/">Apache</a>
+          
+          <a href="/blogs/tags/browser/">browser</a>
+          
+          <a href="/blogs/tags/controller/">Controller</a>
+          
+          <a href="/blogs/tags/logs/">Logs</a>
+          
+          <a href="/blogs/tags/openstack/">OpenStack</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Mitaka on Ubuntu – install scripts for OpenStack</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2016/02/01/goals-for-the-first-half-of-2016/">
+            <span class="next-text nav-default">Goals for the first half of 2016</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

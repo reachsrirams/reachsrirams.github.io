@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/mysql/</link>
+    <description>Recent content in Mysql on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 13 Nov 2016 16:44:06 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WILT – mysql, root and sudo</title>
+      <link>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</link>
+      <pubDate>Sun, 13 Nov 2016 16:44:06 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</guid>
+      <description>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;#8220;unix socket&amp;#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user.</description>
+    </item>
+    
+  </channel>
+</rss>

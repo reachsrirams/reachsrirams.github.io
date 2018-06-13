@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java Logger on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/java-logger/</link>
+    <description>Recent content in Java Logger on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Oct 2013 17:34:26 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/java-logger/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Log API Comparison – Java Logger vs SLF4J</title>
+      <link>http://reachsrirams.github.io/blogs/2013/10/20/log-api-comparison-java-logger-vs-slf4j/</link>
+      <pubDate>Sun, 20 Oct 2013 17:34:26 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/10/20/log-api-comparison-java-logger-vs-slf4j/</guid>
+      <description>&lt;p&gt;Log statements help record the flow of an application&amp;#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.&lt;/p&gt;
+
+&lt;p&gt;In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

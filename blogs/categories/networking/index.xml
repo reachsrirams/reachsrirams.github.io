@@ -6,10 +6,68 @@
     <description>Recent content in Networking on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Jan 2015 16:19:23 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Jan 2017 17:42:35 +0000</lastBuildDate>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/categories/networking/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OpenStack Horizon: extending the dashboard – Part 2</title>
+      <link>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</link>
+      <pubDate>Sun, 22 Jan 2017 17:42:35 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</guid>
+      <description>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;#8220;ports&amp;#8221; in your OpenStack based cloud.
+Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard.</description>
+    </item>
+    
+    <item>
+      <title>ip vs. ifconfig – WILT</title>
+      <link>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</link>
+      <pubDate>Fri, 27 Nov 2015 06:54:27 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</guid>
+      <description>One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc).</description>
+    </item>
+    
+    <item>
+      <title>Announcing: OpenStack Networking Cookbook</title>
+      <link>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</link>
+      <pubDate>Fri, 23 Oct 2015 16:47:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</guid>
+      <description>My first publication &amp;#8220;OpenStack Networking Cookbook&amp;#8221; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.</description>
+    </item>
+    
+    <item>
+      <title>Ports in OpenStack Neutron</title>
+      <link>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</link>
+      <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
+      <description>OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+Why are Ports important?</description>
+    </item>
+    
+    <item>
+      <title>VirtualBox networking settings for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</link>
+      <pubDate>Sun, 14 Jun 2015 14:58:44 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</guid>
+      <description>The best way to learn OpenStack is by installing, running and playing with it directly. While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.
+In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Neutron Plugins and Agents</title>
+      <link>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</link>
+      <pubDate>Tue, 31 Mar 2015 16:55:40 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</guid>
+      <description>I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
+OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services.</description>
+    </item>
     
     <item>
       <title>Using MAC table – Linux Bridge – WILT</title>
@@ -62,6 +120,32 @@
       
       <guid>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</guid>
       <description>&lt;p&gt;Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Networking Nuggets – Hub vs Bridge vs Switch</title>
+      <link>http://reachsrirams.github.io/blogs/2013/07/14/networking-nuggets-1/</link>
+      <pubDate>Sun, 14 Jul 2013 19:28:32 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/07/14/networking-nuggets-1/</guid>
+      <description>&lt;p&gt;Here is an overview of three basic networking devices &amp;#8211; Hub, Bridge and a Switch. This blog and the related &lt;a href=&#34;#youtubevideo&#34;&gt;YouTube video&lt;/a&gt; will be useful for upcoming topics related to virtual networking such as Linux Bridge and Open vSwitch. &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Networking Concepts – the fundamentals</title>
+      <link>http://reachsrirams.github.io/blogs/2013/07/07/fundamental-networking-concepts/</link>
+      <pubDate>Sun, 07 Jul 2013 09:02:53 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/07/07/fundamental-networking-concepts/</guid>
+      <description>&lt;p&gt;In my first YouTube video, I discuss 3 networking concepts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;line-height: 13px;&#34;&gt;Default Gateway&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;DNS Server&lt;/li&gt;
+&lt;li&gt;Subnet Mask&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

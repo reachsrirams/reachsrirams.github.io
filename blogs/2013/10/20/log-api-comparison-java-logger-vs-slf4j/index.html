@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Log API Comparison – Java Logger vs SLF4J - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="Log statements help record the flow of an application&amp;#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
+In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.
+
+" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2013/10/20/log-api-comparison-java-logger-vs-slf4j/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Log API Comparison – Java Logger vs SLF4J" />
+<meta property="og:description" content="Log statements help record the flow of an application&#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
+
+In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2013/10/20/log-api-comparison-java-logger-vs-slf4j/" />
+
+
+
+<meta property="article:published_time" content="2013-10-20T17:34:26&#43;00:00"/>
+
+<meta property="article:modified_time" content="2013-10-20T17:34:26&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Log API Comparison – Java Logger vs SLF4J">
+<meta itemprop="description" content="Log statements help record the flow of an application&#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
+
+In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.
+
+">
+
+
+<meta itemprop="datePublished" content="2013-10-20T17:34:26&#43;00:00" />
+<meta itemprop="dateModified" content="2013-10-20T17:34:26&#43;00:00" />
+<meta itemprop="wordCount" content="1081">
+
+
+
+<meta itemprop="keywords" content="java logger,JUL,log api,logger,SLF4J," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Log API Comparison – Java Logger vs SLF4J"/>
+<meta name="twitter:description" content="Log statements help record the flow of an application&#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
+
+In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 1em 2em;
+		margin: 0 2em 1em;
+	}
+	.content-wrapper {
+		padding: 1em 0 1px;
+	}
+	.post-header {
+		font-size: 1.0em;
+		font-weight: 600;
+	}
+	.post-content {
+		font-size: 16px;
+	}
+	.logo {
+		font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Log API Comparison – Java Logger vs SLF4J</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2013-10-20 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/programming/"> Programming </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+          </div>
+        <span class="more-meta"> 1081 words </span>
+        <span class="more-meta"> 6 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#log-api-8211-logging-to-console">Log API &#8211; Logging to Console</a></li>
+<li><a href="#log-api-8211-including-timestamp-and-changing-log-level">Log API &#8211; including timestamp and changing log level</a></li>
+<li><a href="#log-api-8211-redirecting-output-to-a-file">Log API &#8211; Redirecting output to a file</a></li>
+<li><a href="#log-api-8211-conclusion">Log API &#8211; Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>Log statements help record the flow of an application&#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.</p>
+
+<p>In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.</p>
+
+<p></p>
+
+<p>In order to setup SLF4J with SimpleLogger you just need to include both JAR files in your class path. Please refer to the <a href="http://slf4j.org/manual.html">SLF4J Manual</a>.</p>
+
+<h2 id="log-api-8211-logging-to-console">Log API &#8211; Logging to Console</h2>
+
+<p>By default most Log API libraries support redirecting output to console. Let us look at a code snippet that shows how this is accomplished in JUL and SLF4J.</p>
+
+<pre class="lang:java decode:true" title="Logging Comparison 1 - JUL vs SLF4J">public class LoggerComparison1 {
+
+    private static java.util.logging.Logger javaLogger = java.util.logging.Logger.getLogger("LoggerComparison1");
+    private static org.slf4j.Logger slf4jLogger = org.slf4j.LoggerFactory.getLogger("LoggerComparison1");
+
+    public static void main(String[] args)
+    {
+        javaLogger.severe("This message is from Java Util Logger");
+        javaLogger.finer("This is a finer message from Java Util Logger");
+        slf4jLogger.warn("This message is from SLF4J Logger");
+        slf4jLogger.debug("This is a debug log from SLF4J Logger");
+    }
+}</pre>
+
+<p>The output of the above program is as follows:</p>
+
+<pre class="lang:default decode:true">Oct 06, 2013 11:05:29 PM LoggerComparison1 main                         ==&gt; This is printed by JUL
+SEVERE: This message is from Java Util Logger                           ==&gt; This is printed by JUL
+[main] WARN LoggerComparison1 - This message is from SLF4J Logger       ==&gt; This is printed by SLF4J</pre>
+
+<ul>
+<li>You can see that Java Util Logger did not print the &#8220;finer&#8221; statement. This is because the default Log level is INFO</li>
+<li>The more interesting thing to observe is that JUL prints <em>two lines</em> of logger output. This can be confusing while doing GREP.</li>
+<li>The SLF4J Simple Logger does not print the time stamp by default. I strongly believe that most systematic users will end up configuring SLF4J such that timestamp is printed.</li>
+<li>Overall, both JUL and SLF4J have some drawbacks while use them in their minimally initialized avatars.</li>
+</ul>
+
+<h2 id="log-api-8211-including-timestamp-and-changing-log-level">Log API &#8211; including timestamp and changing log level</h2>
+
+<p>Let us see how we can include timestamp for SLF4J Simple Logger (JUL already includes it) and also check out how log levels can be changed.</p>
+
+<pre class="lang:java decode:true">public class LoggerComparison2 {
+    static {
+        // set a system property such that Simple Logger will include timestamp
+        System.setProperty("org.slf4j.simpleLogger.showDateTime", "true");
+        // set a system property such that Simple Logger will include timestamp in the given format
+        System.setProperty("org.slf4j.simpleLogger.dateTimeFormat", "dd-MM-yy HH:mm:ss");
+        // set minimum log level for SLF4J Simple Logger at warn
+        System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "warn");
+    }
+    private static java.util.logging.Logger javaLogger = java.util.logging.Logger.getLogger("LoggerComparison2");
+    private static org.slf4j.Logger slf4jLogger = org.slf4j.LoggerFactory.getLogger("LoggerComparison2");
+
+    public static void main(String[] args)
+    {
+        // set minimum log level for JUL at WARNING
+        javaLogger.setLevel(java.util.logging.Level.WARNING);
+        javaLogger.severe("This SEVERE Log is from Java Util Logger.");
+        javaLogger.info("This INFO Log from Java Util Logger should not be printed.");
+        slf4jLogger.warn("This WARN Log is from SLF4J.");
+        slf4jLogger.debug("This DEBUG Log from SLF4J should not be printed.");
+    }
+}</pre>
+
+<p>If you compile and run the above program, here is the output you get:</p>
+
+<pre class="lang:default decode:true">Oct 20, 2013 10:35:27 PM LoggerComparison2 main
+SEVERE: This SEVERE Log is from Java Util Logger.
+20-10-13 22:35:27 [main] WARN LoggerComparison2 - This WARN Log is from SLF4J.</pre>
+
+<ul>
+<li>You can see that the timestamp limitation of SLF4J Simple Logger can be overcome very easily. In fact SLF4J Simple Logger uses system property to customize the logger and hence can be configured in many different ways with ease.</li>
+<li>Also note that unlike JUL, the timestamp of SLF4J Simple Logger is included in the same line as the log statement output.</li>
+<li>You can also see that by setting appropriate Log levels, we can include or exclude some statements from the output.</li>
+</ul>
+
+<h2 id="log-api-8211-redirecting-output-to-a-file">Log API &#8211; Redirecting output to a file</h2>
+
+<p>Finally, lets look at one more commonly used log API feature &#8211; redirecting output to a file. Here is the program:</p>
+
+<pre class="lang:java decode:true">import java.io.IOException;
+import java.util.logging.FileHandler;
+
+public class LoggerComparison3 {
+    static {
+        // set a system property such that Simple Logger will include timestamp
+        System.setProperty("org.slf4j.simpleLogger.showDateTime", "true");
+
+        // set a system property such that Simple Logger will include timestamp in the given format
+        System.setProperty("org.slf4j.simpleLogger.dateTimeFormat", "dd-MM-yy HH:mm:ss");
+
+        // set minimum log level for SLF4J Simple Logger at warn
+        System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "warn");
+
+        // configure SLF4J Simple Logger to redirect output to a file
+        System.setProperty("org.slf4j.simpleLogger.logFile", "SLF4J-File.log");
+    }
+    private static java.util.logging.Logger javaLogger = java.util.logging.Logger.getLogger("LoggerComparison3");
+    private static org.slf4j.Logger slf4jLogger = org.slf4j.LoggerFactory.getLogger("LoggerComparison3");
+
+    public static void main(String[] args)
+    {
+        // configure File Handler for JUL
+        addFileHandlerToJavaLogger(javaLogger);
+
+        // set minimum log level for JUL at WARNING
+        javaLogger.setLevel(java.util.logging.Level.WARNING);
+
+        javaLogger.severe("This SEVERE Log is from Java Util Logger.");
+        javaLogger.info("This INFO Log from Java Util Logger should not be printed.");
+        slf4jLogger.warn("This WARN Log is from SLF4J.");
+        slf4jLogger.debug("This DEBUG Log from SLF4J should not be printed.");
+    }
+
+    private static void addFileHandlerToJavaLogger(java.util.logging.Logger logger)
+    {
+        try {
+            logger.addHandler(new FileHandler("JUL-File.log"));
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+    }
+}</pre>
+
+<p>If you compile and run the above, you will notice several interesting results.</p>
+
+<ul>
+<li>It is much easier to configure output redirection in SLF4J vs. Java Logger. In SLF4J you simply set the appropriate property whereas in Java Logger you need to create an instance of FileHandler.</li>
+<li>Even though Java Logger is configured with FileHandler, a copy of the log statements is redirected to Console also. This may not be the desired result everytime. This is as per design of Java Logger where multiple handlers are supported. If you want to have only one Handler in JUL, you need to write additional code.</li>
+<li>Probably the <strong>most peculiar</strong> result of this program, is that the output file for JUL contains XML message where as SLF4J output file contains the logger output as was seen on the console earlier.</li>
+<li>This is yet again an unwanted design intent of Java Logger. Each Handler can have a Formatter associated with it. And the output format is controlled by the Formatter. For some weird reason, the FileHandler of JUL uses an XMLFormatter by default.</li>
+</ul>
+
+<h2 id="log-api-8211-conclusion">Log API &#8211; Conclusion</h2>
+
+<p>With these three simple programs, it can be seen that with SLF4J you can hit the ground running. For the most common and also the most used Log API features, SLF4J (Simple Logger) provides much simple APIs when compared to Java Util Logger.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/java-logger/">java logger</a>
+          
+          <a href="/blogs/tags/jul/">JUL</a>
+          
+          <a href="/blogs/tags/log-api/">log api</a>
+          
+          <a href="/blogs/tags/logger/">logger</a>
+          
+          <a href="/blogs/tags/slf4j/">SLF4J</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2013/11/18/using-slf4j-servlets/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Using SL4J and SimpleLogger with Servlets</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2013/09/08/usability-social-commenting/">
+            <span class="next-text nav-default">Usability of Social Commenting</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

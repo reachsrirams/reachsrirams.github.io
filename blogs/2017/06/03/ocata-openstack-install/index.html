@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ocata release install scripts for OpenStack - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Ocata release install scripts for OpenStack" />
+<meta property="og:description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/" />
+
+
+
+<meta property="article:published_time" content="2017-06-03T02:39:12&#43;00:00"/>
+
+<meta property="article:modified_time" content="2017-06-03T02:39:12&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Ocata release install scripts for OpenStack">
+<meta itemprop="description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects">
+
+
+<meta itemprop="datePublished" content="2017-06-03T02:39:12&#43;00:00" />
+<meta itemprop="dateModified" content="2017-06-03T02:39:12&#43;00:00" />
+<meta itemprop="wordCount" content="504">
+
+
+
+<meta itemprop="keywords" content="Cells,Nova,Ocata,OpenStack,Placement," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ocata release install scripts for OpenStack"/>
+<meta name="twitter:description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 1em 2em;
+		margin: 0 2em 1em;
+	}
+	.content-wrapper {
+		padding: 1em 0 1px;
+	}
+	.post-header {
+		font-size: 1.0em;
+		font-weight: 600;
+	}
+	.post-content {
+		font-size: 16px;
+	}
+	.logo {
+		font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ocata release install scripts for OpenStack</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2017-06-03 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+          </div>
+        <span class="more-meta"> 504 words </span>
+        <span class="more-meta"> 3 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#openstack-services-installed">OpenStack services installed</a></li>
+<li><a href="#what-8217-s-new-in-ocata-in-terms-of-installation">What&#8217;s new in Ocata in terms of Installation?</a></li>
+<li><a href="#ocata-install-scripts-on-github">Ocata install scripts on GitHub</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installation-steps">Installation steps</a></li>
+<li><a href="#openstack-services-installed-1">OpenStack services installed</a></li>
+<li><a href="#what-8217-s-new-in-ocata-in-terms-of-installation-1">What&#8217;s new in Ocata in terms of Installation?</a></li>
+<li><a href="#ocata-install-scripts-on-github-1">Ocata install scripts on GitHub</a></li>
+<li><a href="#prerequisites-1">Prerequisites</a></li>
+<li><a href="#installation-steps-1">Installation steps</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the <a href="https://goo.gl/A8JmlO">Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the</a> server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects</p>
+
+<h2 id="openstack-services-installed">OpenStack services installed</h2>
+
+<p>The following OpenStack services are installed as part these scripts:</p>
+
+<ul>
+<li>Keystone (Identity)</li>
+<li>Glance (Image)</li>
+<li>Nova (Compute)</li>
+<li>Neutron (Networking)</li>
+<li>Horizon (Dashboard)</li>
+</ul>
+
+<h2 id="what-8217-s-new-in-ocata-in-terms-of-installation">What&#8217;s new in Ocata in terms of Installation?</h2>
+
+<p>Here are some changes in the installation steps of OpenStack Ocata release with respect to the above services.</p>
+
+<ol>
+<li>Nova now supports Cells. Cells allow grouping of Nova services in a hierarchical manner. This in turn can provide more scalability.</li>
+<li>Nova has also started using Placement API &#8211; this is a new way of doing instance scheduling or placement of workloads.</li>
+</ol>
+
+<h2 id="ocata-install-scripts-on-github">Ocata install scripts on GitHub</h2>
+
+<p>All the scripts are available as an open source package (Apache License). You can get the source code <a href="https://goo.gl/A8JmlO" target="_blank">from my GitHub repository</a>. I welcome you to fork the repo and enhance/extend it.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p><em>git</em> binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.</p>
+
+<p>If you are using VirtualBox, <a href="http://goo.gl/VTJVmv" target="_blank">refer to this blog for Network settings</a>.</p>
+
+<h2 id="installation-steps">Installation steps</h2>
+
+<p>The GitHub repository includes details about the installation steps.[Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the <a href="https://goo.gl/A8JmlO">Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the</a> server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects</p>
+
+<h2 id="openstack-services-installed-1">OpenStack services installed</h2>
+
+<p>The following OpenStack services are installed as part these scripts:</p>
+
+<ul>
+<li>Keystone (Identity)</li>
+<li>Glance (Image)</li>
+<li>Nova (Compute)</li>
+<li>Neutron (Networking)</li>
+<li>Horizon (Dashboard)</li>
+</ul>
+
+<h2 id="what-8217-s-new-in-ocata-in-terms-of-installation-1">What&#8217;s new in Ocata in terms of Installation?</h2>
+
+<p>Here are some changes in the installation steps of OpenStack Ocata release with respect to the above services.</p>
+
+<ol>
+<li>Nova now supports Cells. Cells allow grouping of Nova services in a hierarchical manner. This in turn can provide more scalability.</li>
+<li>Nova has also started using Placement API &#8211; this is a new way of doing instance scheduling or placement of workloads.</li>
+</ol>
+
+<h2 id="ocata-install-scripts-on-github-1">Ocata install scripts on GitHub</h2>
+
+<p>All the scripts are available as an open source package (Apache License). You can get the source code <a href="https://goo.gl/A8JmlO" target="_blank">from my GitHub repository</a>. I welcome you to fork the repo and enhance/extend it.</p>
+
+<h2 id="prerequisites-1">Prerequisites</h2>
+
+<p><em>git</em> binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.</p>
+
+<p>If you are using VirtualBox, <a href="http://goo.gl/VTJVmv" target="_blank">refer to this blog for Network settings</a>.</p>
+
+<h2 id="installation-steps-1">Installation steps</h2>
+
+<p>The GitHub repository includes details about the installation steps.]<a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02.png">2</a></p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41.png"><img class="aligncenter wp-image-1497 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-1024x887.png" alt="Ocata Install Notes" width="620" height="537" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-1024x887.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-300x260.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-768x666.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<p>##</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/cells/">Cells</a>
+          
+          <a href="/blogs/tags/nova/">Nova</a>
+          
+          <a href="/blogs/tags/ocata/">Ocata</a>
+          
+          <a href="/blogs/tags/openstack/">OpenStack</a>
+          
+          <a href="/blogs/tags/placement/">Placement</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2017/07/07/goals-2h-2017/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Goals for the second half of 2017</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2017/05/02/openstack-newton-install/">
+            <span class="next-text nav-default">Newton release install scripts for OpenStack</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

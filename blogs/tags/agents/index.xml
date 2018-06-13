@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agents on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/agents/</link>
+    <description>Recent content in Agents on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 31 Mar 2015 16:55:40 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/agents/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenStack Neutron Plugins and Agents</title>
+      <link>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</link>
+      <pubDate>Tue, 31 Mar 2015 16:55:40 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</guid>
+      <description>I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
+OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services.</description>
+    </item>
+    
+  </channel>
+</rss>

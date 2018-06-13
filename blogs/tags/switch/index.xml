@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Switch on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/switch/</link>
+    <description>Recent content in Switch on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 14 Jul 2013 19:28:32 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/switch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Networking Nuggets – Hub vs Bridge vs Switch</title>
+      <link>http://reachsrirams.github.io/blogs/2013/07/14/networking-nuggets-1/</link>
+      <pubDate>Sun, 14 Jul 2013 19:28:32 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/07/14/networking-nuggets-1/</guid>
+      <description>&lt;p&gt;Here is an overview of three basic networking devices &amp;#8211; Hub, Bridge and a Switch. This blog and the related &lt;a href=&#34;#youtubevideo&#34;&gt;YouTube video&lt;/a&gt; will be useful for upcoming topics related to virtual networking such as Linux Bridge and Open vSwitch. &lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

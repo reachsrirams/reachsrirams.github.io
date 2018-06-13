@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simplelogger on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/simplelogger/</link>
+    <description>Recent content in Simplelogger on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 18 Nov 2013 16:07:04 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/simplelogger/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using SL4J and SimpleLogger with Servlets</title>
+      <link>http://reachsrirams.github.io/blogs/2013/11/18/using-slf4j-servlets/</link>
+      <pubDate>Mon, 18 Nov 2013 16:07:04 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/11/18/using-slf4j-servlets/</guid>
+      <description>We saw in my previous blog that SLF4J and SimpleLogger support the most critical logging requirements with ease. In this blog, we will see how to use SLF4J in a Servlets based application.
+The general practice is to initialize logging related objects and parameters at the startup of an application. In case of Servlets, any of the servlet in the Web Application can be invoked due to user action. So we need to use a different technique for initializing logging related objects.</description>
+    </item>
+    
+  </channel>
+</rss>

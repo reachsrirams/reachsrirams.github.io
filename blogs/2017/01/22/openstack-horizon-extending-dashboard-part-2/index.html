@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>OpenStack Horizon: extending the dashboard – Part 2 - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;#8220;ports&amp;#8221; in your OpenStack based cloud.
+Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="OpenStack Horizon: extending the dashboard – Part 2" />
+<meta property="og:description" content="In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &#8220;ports&#8221; in your OpenStack based cloud.
+Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/" />
+
+
+
+<meta property="article:published_time" content="2017-01-22T17:42:35&#43;00:00"/>
+
+<meta property="article:modified_time" content="2017-01-22T17:42:35&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="OpenStack Horizon: extending the dashboard – Part 2">
+<meta itemprop="description" content="In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &#8220;ports&#8221; in your OpenStack based cloud.
+Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard.">
+
+
+<meta itemprop="datePublished" content="2017-01-22T17:42:35&#43;00:00" />
+<meta itemprop="dateModified" content="2017-01-22T17:42:35&#43;00:00" />
+<meta itemprop="wordCount" content="742">
+
+
+
+<meta itemprop="keywords" content="Dashboard,Django,Horizon,Neutron,OpenStack,Port,Python," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OpenStack Horizon: extending the dashboard – Part 2"/>
+<meta name="twitter:description" content="In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &#8220;ports&#8221; in your OpenStack based cloud.
+Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 1em 2em;
+		margin: 0 2em 1em;
+	}
+	.content-wrapper {
+		padding: 1em 0 1px;
+	}
+	.post-header {
+		font-size: 1.0em;
+		font-weight: 600;
+	}
+	.post-content {
+		font-size: 16px;
+	}
+	.logo {
+		font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">OpenStack Horizon: extending the dashboard – Part 2</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2017-01-22 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/networking/"> Networking </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+          </div>
+        <span class="more-meta"> 742 words </span>
+        <span class="more-meta"> 4 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#enabling-openstack-horizon-dashboard">Enabling OpenStack Horizon Dashboard</a></li>
+<li><a href="#openstack-dashboard-panel">OpenStack Dashboard Panel</a></li>
+<li><a href="#putting-it-all-together">Putting it all together</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the <a href="http://www.innervoice.in/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/" target="_blank">first installment</a>, I will show you how to create a custom dashboard to view all the Neutron &#8220;ports&#8221; in your OpenStack based cloud.</p>
+
+<h2 id="enabling-openstack-horizon-dashboard">Enabling OpenStack Horizon Dashboard</h2>
+
+<p>Django framework loads and enables dashboards based on entries present in the <em>enabled</em> directory of OpenStack Dashboard. This is typically located under _/usr/share/openstack-dashboard/openstack<em>dashboard/enabed/</em> folder of your OpenStack Horizon installation.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24.png"><img class="aligncenter wp-image-1468 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24-1024x468.png" alt="Python file to enable a OpenStack Horizon dashboard" width="620" height="283" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24-1024x468.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24-300x137.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24-768x351.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24.png 1384w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<p>As shown above this Python file defines a Dashboard called <em>cloudbuilder</em> and the DISABLED flag is set to False. Django will look for a Python package called <em>cloudbuilder</em> to construct and display a custom dashboard. In this package, Django will look for a file called _dashboard.py_ to load the actual implementation of the dashboard.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.32.png"><img class="aligncenter size-large wp-image-1471" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.32-1024x681.png" alt="Python file containing dashboard implementation" width="620" height="412" /></a></p>
+
+<p>As shown above the <em>dashboard.py</em> defines a class <em>CloudBuilderDashboard</em> that extends the default <em>horizon.Dashboard</em> class. The slug used to give a unique URL for the dashboard. We further define the list of Panel Groups for this Dashboard. The definition of Panel group called <em>NeutronPanels</em> shows that it will contain one Panel called <em>neutronportlist</em>.</p>
+
+<h2 id="openstack-dashboard-panel">OpenStack Dashboard Panel</h2>
+
+<p>We have shown that Panel Group contains one or more panels and in the code snippet above <em>neutronportlist</em> is one of the panel in our example. Once again the Horizon Django framework looks for a Python package named _neutronportlist_ in order load the panel. This is the package that will contain the Django MVC code that we discussed in the first installment of this blog.</p>
+
+<p>Let us first look at the <em>panel.py</em> file. This file <em>registers</em> the panel with Dashboard so that it can be shown as part of the overall Horizon dashboard. Once again the <em>slug</em> represents the URL that will be used to display the panel on the web broweser.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52.png"><img class="aligncenter wp-image-1476 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52-1024x490.png" alt="Registering a panel with a Dashboard" width="620" height="297" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52-1024x490.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52-300x144.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52-768x367.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52.png 1580w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<p>Now we will turn our attention to the most important file within the entire custom dashboard code. This is the <em>views.py</em> file for a given panel. As discussed in the previous installment, the <em>views.py</em> represents the controller of the panel. Therefore it plays a central role in what is finally shown to the end user.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08.png"><img class="aligncenter wp-image-1478 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08-1024x606.png" alt="Neutron Port List Panel" width="620" height="367" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08-1024x606.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08-300x178.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08-768x455.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08.png 1598w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>The above code snippet shows the <em>views.py</em> of the Neutron Port List Panel. This file represents the Controller in the MVC pattern and as you can see from the code the Model is represented by _table<em>class</em> variable and the View is represented by the _template_name _variable. In addition, the Controller decides how to fetch the _data_ that will be displayed in this page. Since we are showing a <em>list of all Neutron ports</em> the _get_data _method is using the <strong>Neutron API of Horizon</strong> to fetch the list of ports.</p>
+
+<p>The last file related to this custom dashboard is the <em>tables.py</em>. This file represents the model for the Django application. We have shown that the controller (<em>views.py</em>) retrieves the data but the UI will use the tables.py as the model to process and data.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.40.png"><img class="aligncenter size-large wp-image-1479" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.40-1024x966.png" alt="Code representing the Model" width="620" height="585" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.40-1024x966.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.40-300x283.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.40-768x725.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>A quick look at the <em>tables.py</em> shows that it defines the columns and the corresponding values from _port _that will be displayed on the UI. You can use this file to customize what gets displayed on the Web page. For example: if port has a non-empty Device ID, then it means that it is attached to some network resource. This is displayed as &#8220;Attached&#8221; as per the snippet shown above.</p>
+
+<p>The final piece of the MVC pattern used in a OpenStack Horizon dashboard is the UI. This is represented by the <em>index.html</em> in the _templates_ package of the panel. In our case we can see below that the Django framework will simply render the _table_ while processing the directives inside <em>index.html</em>.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18.png"><img class="aligncenter size-large wp-image-1480" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18-1024x534.png" alt="The view component of the dashboard panel" width="620" height="323" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18-1024x534.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18-300x156.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18-768x400.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18.png 1596w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<p>&nbsp;</p>
+
+<h2 id="putting-it-all-together">Putting it all together</h2>
+
+<p>We have seen all the important files that make up a custom OpenStack dashboard. <a href="https://github.com/reachsrirams/openstack-custom-dashboard" target="_blank">The source code for this blog is available on GitHub</a>. It also includes a script to install these files in appropriate locations of your OpenStack installation. Please check <em>install.sh</em> to ensure that the locations match your installation. Once the files are installed, you need to restart the Apache service using <em>sudo service apache2 restart</em>. You can then login into your Horizon UI and check if the new custom dashboard is seen or not.</p>
+
+<p>Here is the screenshot of how the dashboard looks on my OpenStack setup.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-23.09.59.png"><img class="aligncenter size-large wp-image-1481" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-23.09.59-1024x283.png" alt="How the dashboard looks" width="620" height="171" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-23.09.59-1024x283.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-23.09.59-300x83.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-23.09.59-768x212.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<p>This completes my introduction to the source code involved in creating custom dashboards and panels in OpenStack Horizon.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/dashboard/">Dashboard</a>
+          
+          <a href="/blogs/tags/django/">Django</a>
+          
+          <a href="/blogs/tags/horizon/">Horizon</a>
+          
+          <a href="/blogs/tags/neutron/">Neutron</a>
+          
+          <a href="/blogs/tags/openstack/">OpenStack</a>
+          
+          <a href="/blogs/tags/port/">Port</a>
+          
+          <a href="/blogs/tags/python/">Python</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2017/02/02/goals-first-half-2017/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Goals for the first half of 2017</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/">
+            <span class="next-text nav-default">OpenStack Horizon: extending the dashboard – Part 1</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech Nuggets on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/categories/tech-nuggets/</link>
+    <description>Recent content in Tech Nuggets on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 13 Nov 2016 16:44:06 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/categories/tech-nuggets/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WILT – mysql, root and sudo</title>
+      <link>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</link>
+      <pubDate>Sun, 13 Nov 2016 16:44:06 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</guid>
+      <description>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;#8220;unix socket&amp;#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Controller Logs – view using a browser</title>
+      <link>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</link>
+      <pubDate>Mon, 27 Jun 2016 18:22:07 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</guid>
+      <description>OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.</description>
+    </item>
+    
+    <item>
+      <title>Ports in OpenStack Neutron</title>
+      <link>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</link>
+      <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
+      <description>OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+Why are Ports important?</description>
+    </item>
+    
+    <item>
+      <title>Logger statements – the performance impact</title>
+      <link>http://reachsrirams.github.io/blogs/2013/08/17/logger-statements-the-performance-impact/</link>
+      <pubDate>Sat, 17 Aug 2013 08:55:42 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/08/17/logger-statements-the-performance-impact/</guid>
+      <description>Logger statements are among the most heavily used statements in most Java applications. While the code contains Logger statement at different levels, the common practice is to set a default log level for the entire application. This will ensure that only important statements are logged by default.
+The general understanding is that the statements below the default log level will not be executed and hence there is no impact to performance.</description>
+    </item>
+    
+    <item>
+      <title>Networking Nuggets – Hub vs Bridge vs Switch</title>
+      <link>http://reachsrirams.github.io/blogs/2013/07/14/networking-nuggets-1/</link>
+      <pubDate>Sun, 14 Jul 2013 19:28:32 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/07/14/networking-nuggets-1/</guid>
+      <description>&lt;p&gt;Here is an overview of three basic networking devices &amp;#8211; Hub, Bridge and a Switch. This blog and the related &lt;a href=&#34;#youtubevideo&#34;&gt;YouTube video&lt;/a&gt; will be useful for upcoming topics related to virtual networking such as Linux Bridge and Open vSwitch. &lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

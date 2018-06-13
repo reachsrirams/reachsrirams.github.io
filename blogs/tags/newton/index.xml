@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Newton on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/newton/</link>
+    <description>Recent content in Newton on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 02 May 2017 05:07:42 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/newton/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Newton release install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</link>
+      <pubDate>Tue, 02 May 2017 05:07:42 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</guid>
+      <description>Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.</description>
+    </item>
+    
+  </channel>
+</rss>

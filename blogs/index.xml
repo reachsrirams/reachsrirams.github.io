@@ -227,6 +227,155 @@
     </item>
     
     <item>
+      <title>Ocata release install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/</link>
+      <pubDate>Sat, 03 Jun 2017 02:39:12 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/</guid>
+      
+        <description>
+
+&lt;p&gt;Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the &lt;a href=&#34;https://goo.gl/A8JmlO&#34;&gt;Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the&lt;/a&gt; server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects&lt;/p&gt;
+
+&lt;h2 id=&#34;openstack-services-installed&#34;&gt;OpenStack services installed&lt;/h2&gt;
+
+&lt;p&gt;The following OpenStack services are installed as part these scripts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Keystone (Identity)&lt;/li&gt;
+&lt;li&gt;Glance (Image)&lt;/li&gt;
+&lt;li&gt;Nova (Compute)&lt;/li&gt;
+&lt;li&gt;Neutron (Networking)&lt;/li&gt;
+&lt;li&gt;Horizon (Dashboard)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what-8217-s-new-in-ocata-in-terms-of-installation&#34;&gt;What&amp;#8217;s new in Ocata in terms of Installation?&lt;/h2&gt;
+
+&lt;p&gt;Here are some changes in the installation steps of OpenStack Ocata release with respect to the above services.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Nova now supports Cells. Cells allow grouping of Nova services in a hierarchical manner. This in turn can provide more scalability.&lt;/li&gt;
+&lt;li&gt;Nova has also started using Placement API &amp;#8211; this is a new way of doing instance scheduling or placement of workloads.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;ocata-install-scripts-on-github&#34;&gt;Ocata install scripts on GitHub&lt;/h2&gt;
+
+&lt;p&gt;All the scripts are available as an open source package (Apache License). You can get the source code &lt;a href=&#34;https://goo.gl/A8JmlO&#34; target=&#34;_blank&#34;&gt;from my GitHub repository&lt;/a&gt;. I welcome you to fork the repo and enhance/extend it.&lt;/p&gt;
+
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;git&lt;/em&gt; binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.&lt;/p&gt;
+
+&lt;p&gt;If you are using VirtualBox, &lt;a href=&#34;http://goo.gl/VTJVmv&#34; target=&#34;_blank&#34;&gt;refer to this blog for Network settings&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;installation-steps&#34;&gt;Installation steps&lt;/h2&gt;
+
+&lt;p&gt;The GitHub repository includes details about the installation steps.[Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the &lt;a href=&#34;https://goo.gl/A8JmlO&#34;&gt;Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the&lt;/a&gt; server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects&lt;/p&gt;
+
+&lt;h2 id=&#34;openstack-services-installed-1&#34;&gt;OpenStack services installed&lt;/h2&gt;
+
+&lt;p&gt;The following OpenStack services are installed as part these scripts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Keystone (Identity)&lt;/li&gt;
+&lt;li&gt;Glance (Image)&lt;/li&gt;
+&lt;li&gt;Nova (Compute)&lt;/li&gt;
+&lt;li&gt;Neutron (Networking)&lt;/li&gt;
+&lt;li&gt;Horizon (Dashboard)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what-8217-s-new-in-ocata-in-terms-of-installation-1&#34;&gt;What&amp;#8217;s new in Ocata in terms of Installation?&lt;/h2&gt;
+
+&lt;p&gt;Here are some changes in the installation steps of OpenStack Ocata release with respect to the above services.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Nova now supports Cells. Cells allow grouping of Nova services in a hierarchical manner. This in turn can provide more scalability.&lt;/li&gt;
+&lt;li&gt;Nova has also started using Placement API &amp;#8211; this is a new way of doing instance scheduling or placement of workloads.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;ocata-install-scripts-on-github-1&#34;&gt;Ocata install scripts on GitHub&lt;/h2&gt;
+
+&lt;p&gt;All the scripts are available as an open source package (Apache License). You can get the source code &lt;a href=&#34;https://goo.gl/A8JmlO&#34; target=&#34;_blank&#34;&gt;from my GitHub repository&lt;/a&gt;. I welcome you to fork the repo and enhance/extend it.&lt;/p&gt;
+
+&lt;h2 id=&#34;prerequisites-1&#34;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;git&lt;/em&gt; binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.&lt;/p&gt;
+
+&lt;p&gt;If you are using VirtualBox, &lt;a href=&#34;http://goo.gl/VTJVmv&#34; target=&#34;_blank&#34;&gt;refer to this blog for Network settings&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;installation-steps-1&#34;&gt;Installation steps&lt;/h2&gt;
+
+&lt;p&gt;The GitHub repository includes details about the installation steps.]&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02.png&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1497 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-1024x887.png&#34; alt=&#34;Ocata Install Notes&#34; width=&#34;620&#34; height=&#34;537&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-1024x887.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-300x260.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-768x666.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;##&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Newton release install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</link>
+      <pubDate>Tue, 02 May 2017 05:07:42 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</guid>
+      
+        <description>
+
+&lt;p&gt;Newton is one the recent releases of OpenStack.  I would like to share scripts that can be used to install the &lt;a href=&#34;https://docs.openstack.org/newton/install-guide-ubuntu/&#34;&gt;Newton release of OpenStack on Ubuntu 16.04 as per the installation guide&lt;/a&gt;. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.&lt;/p&gt;
+
+&lt;h2 id=&#34;openstack-services-installed&#34;&gt;OpenStack services installed&lt;/h2&gt;
+
+&lt;p&gt;The following OpenStack services are installed as part these scripts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Keystone (Identity)&lt;/li&gt;
+&lt;li&gt;Glance (Image)&lt;/li&gt;
+&lt;li&gt;Nova (Compute)&lt;/li&gt;
+&lt;li&gt;Neutron (Networking)&lt;/li&gt;
+&lt;li&gt;Horizon (Dashboard)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what-8217-s-new-in-newton-in-terms-of-installation&#34;&gt;What&amp;#8217;s new in Newton in terms of Installation?&lt;/h2&gt;
+
+&lt;p&gt;Here are some changes in the installation steps of OpenStack Newton release.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Keystone bootstrap process is different. The Admin projects/user is created using the &lt;em&gt;keystone-manage bootstrap&lt;/em&gt; command.&lt;/li&gt;
+&lt;li&gt;The keystone endpoint creation steps are not required&lt;/li&gt;
+&lt;li&gt;For Nova and Neutron, the OSLO configuration steps are not required&lt;/li&gt;
+&lt;li&gt;The rabbitmq configuration steps are different in Newton release&lt;/li&gt;
+&lt;li&gt;For Neutron Linux Bridge agent, the bridge name must be &lt;em&gt;provider&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Important&lt;/strong&gt; &amp;#8211; Newton release does not ship with any Flavors for instances. This means that users need to create at least one flavor before they can spawn their first VM instance.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;newton-install-scripts-on-github&#34;&gt;Newton install scripts on GitHub&lt;/h2&gt;
+
+&lt;p&gt;All the scripts are available as an open source package (Apache License). You can get the source code &lt;a href=&#34;https://goo.gl/Jac2bv&#34; target=&#34;_blank&#34;&gt;from my GitHub repository&lt;/a&gt;. I welcome you to fork the repo and enhance/extend it.&lt;/p&gt;
+
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;git&lt;/em&gt; binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.&lt;/p&gt;
+
+&lt;p&gt;If you are using VirtualBox, &lt;a href=&#34;http://goo.gl/VTJVmv&#34; target=&#34;_blank&#34;&gt;refer to this blog for Network settings&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;installation-steps&#34;&gt;Installation steps&lt;/h2&gt;
+
+&lt;p&gt;The GitHub repository includes details about the installation steps.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1492&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-1024x887.png&#34; alt=&#34;OpenStack Newton install scripts&#34; width=&#34;620&#34; height=&#34;537&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-1024x887.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-300x260.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-768x665.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&#34;next-steps&#34;&gt;Next steps&lt;/h2&gt;
+
+&lt;p&gt;The most recent release of OpenStack is the Ocata release and that is the target for the next version of my OpenStack install scripts.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Goals for the first half of 2017</title>
       <link>http://reachsrirams.github.io/blogs/2017/02/02/goals-first-half-2017/</link>
       <pubDate>Thu, 02 Feb 2017 04:10:53 +0000</pubDate>
@@ -265,6 +414,207 @@
 &lt;/ol&gt;
 
 &lt;p&gt;This is still an aggressive goal - espeacially for Ocata.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>OpenStack Horizon: extending the dashboard – Part 2</title>
+      <link>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</link>
+      <pubDate>Sun, 22 Jan 2017 17:42:35 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</guid>
+      
+        <description>
+
+&lt;p&gt;In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the &lt;a href=&#34;http://www.innervoice.in/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/&#34; target=&#34;_blank&#34;&gt;first installment&lt;/a&gt;, I will show you how to create a custom dashboard to view all the Neutron &amp;#8220;ports&amp;#8221; in your OpenStack based cloud.&lt;/p&gt;
+
+&lt;h2 id=&#34;enabling-openstack-horizon-dashboard&#34;&gt;Enabling OpenStack Horizon Dashboard&lt;/h2&gt;
+
+&lt;p&gt;Django framework loads and enables dashboards based on entries present in the &lt;em&gt;enabled&lt;/em&gt; directory of OpenStack Dashboard. This is typically located under _/usr/share/openstack-dashboard/openstack&lt;em&gt;dashboard/enabed/&lt;/em&gt; folder of your OpenStack Horizon installation.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1468 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24-1024x468.png&#34; alt=&#34;Python file to enable a OpenStack Horizon dashboard&#34; width=&#34;620&#34; height=&#34;283&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24-1024x468.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24-300x137.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24-768x351.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.53.24.png 1384w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As shown above this Python file defines a Dashboard called &lt;em&gt;cloudbuilder&lt;/em&gt; and the DISABLED flag is set to False. Django will look for a Python package called &lt;em&gt;cloudbuilder&lt;/em&gt; to construct and display a custom dashboard. In this package, Django will look for a file called _dashboard.py_ to load the actual implementation of the dashboard.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.32.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1471&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.32-1024x681.png&#34; alt=&#34;Python file containing dashboard implementation&#34; width=&#34;620&#34; height=&#34;412&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As shown above the &lt;em&gt;dashboard.py&lt;/em&gt; defines a class &lt;em&gt;CloudBuilderDashboard&lt;/em&gt; that extends the default &lt;em&gt;horizon.Dashboard&lt;/em&gt; class. The slug used to give a unique URL for the dashboard. We further define the list of Panel Groups for this Dashboard. The definition of Panel group called &lt;em&gt;NeutronPanels&lt;/em&gt; shows that it will contain one Panel called &lt;em&gt;neutronportlist&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;openstack-dashboard-panel&#34;&gt;OpenStack Dashboard Panel&lt;/h2&gt;
+
+&lt;p&gt;We have shown that Panel Group contains one or more panels and in the code snippet above &lt;em&gt;neutronportlist&lt;/em&gt; is one of the panel in our example. Once again the Horizon Django framework looks for a Python package named _neutronportlist_ in order load the panel. This is the package that will contain the Django MVC code that we discussed in the first installment of this blog.&lt;/p&gt;
+
+&lt;p&gt;Let us first look at the &lt;em&gt;panel.py&lt;/em&gt; file. This file &lt;em&gt;registers&lt;/em&gt; the panel with Dashboard so that it can be shown as part of the overall Horizon dashboard. Once again the &lt;em&gt;slug&lt;/em&gt; represents the URL that will be used to display the panel on the web broweser.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1476 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52-1024x490.png&#34; alt=&#34;Registering a panel with a Dashboard&#34; width=&#34;620&#34; height=&#34;297&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52-1024x490.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52-300x144.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52-768x367.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.54.52.png 1580w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now we will turn our attention to the most important file within the entire custom dashboard code. This is the &lt;em&gt;views.py&lt;/em&gt; file for a given panel. As discussed in the previous installment, the &lt;em&gt;views.py&lt;/em&gt; represents the controller of the panel. Therefore it plays a central role in what is finally shown to the end user.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1478 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08-1024x606.png&#34; alt=&#34;Neutron Port List Panel&#34; width=&#34;620&#34; height=&#34;367&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08-1024x606.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08-300x178.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08-768x455.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.08.png 1598w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;The above code snippet shows the &lt;em&gt;views.py&lt;/em&gt; of the Neutron Port List Panel. This file represents the Controller in the MVC pattern and as you can see from the code the Model is represented by _table&lt;em&gt;class&lt;/em&gt; variable and the View is represented by the _template_name _variable. In addition, the Controller decides how to fetch the _data_ that will be displayed in this page. Since we are showing a &lt;em&gt;list of all Neutron ports&lt;/em&gt; the _get_data _method is using the &lt;strong&gt;Neutron API of Horizon&lt;/strong&gt; to fetch the list of ports.&lt;/p&gt;
+
+&lt;p&gt;The last file related to this custom dashboard is the &lt;em&gt;tables.py&lt;/em&gt;. This file represents the model for the Django application. We have shown that the controller (&lt;em&gt;views.py&lt;/em&gt;) retrieves the data but the UI will use the tables.py as the model to process and data.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.40.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1479&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.40-1024x966.png&#34; alt=&#34;Code representing the Model&#34; width=&#34;620&#34; height=&#34;585&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.40-1024x966.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.40-300x283.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-09.55.40-768x725.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;A quick look at the &lt;em&gt;tables.py&lt;/em&gt; shows that it defines the columns and the corresponding values from _port _that will be displayed on the UI. You can use this file to customize what gets displayed on the Web page. For example: if port has a non-empty Device ID, then it means that it is attached to some network resource. This is displayed as &amp;#8220;Attached&amp;#8221; as per the snippet shown above.&lt;/p&gt;
+
+&lt;p&gt;The final piece of the MVC pattern used in a OpenStack Horizon dashboard is the UI. This is represented by the &lt;em&gt;index.html&lt;/em&gt; in the _templates_ package of the panel. In our case we can see below that the Django framework will simply render the _table_ while processing the directives inside &lt;em&gt;index.html&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1480&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18-1024x534.png&#34; alt=&#34;The view component of the dashboard panel&#34; width=&#34;620&#34; height=&#34;323&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18-1024x534.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18-300x156.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18-768x400.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-22.59.18.png 1596w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&#34;putting-it-all-together&#34;&gt;Putting it all together&lt;/h2&gt;
+
+&lt;p&gt;We have seen all the important files that make up a custom OpenStack dashboard. &lt;a href=&#34;https://github.com/reachsrirams/openstack-custom-dashboard&#34; target=&#34;_blank&#34;&gt;The source code for this blog is available on GitHub&lt;/a&gt;. It also includes a script to install these files in appropriate locations of your OpenStack installation. Please check &lt;em&gt;install.sh&lt;/em&gt; to ensure that the locations match your installation. Once the files are installed, you need to restart the Apache service using &lt;em&gt;sudo service apache2 restart&lt;/em&gt;. You can then login into your Horizon UI and check if the new custom dashboard is seen or not.&lt;/p&gt;
+
+&lt;p&gt;Here is the screenshot of how the dashboard looks on my OpenStack setup.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-23.09.59.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1481&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-23.09.59-1024x283.png&#34; alt=&#34;How the dashboard looks&#34; width=&#34;620&#34; height=&#34;171&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-23.09.59-1024x283.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-23.09.59-300x83.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/01/Screenshot-2017-01-22-23.09.59-768x212.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This completes my introduction to the source code involved in creating custom dashboards and panels in OpenStack Horizon.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>OpenStack Horizon: extending the dashboard – Part 1</title>
+      <link>http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/</link>
+      <pubDate>Tue, 27 Dec 2016 10:31:44 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/</guid>
+      
+        <description>
+
+&lt;p&gt;OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&amp;#8217;s needs.&lt;/p&gt;
+
+&lt;h2 id=&#34;openstack-horizon-background&#34;&gt;OpenStack Horizon Background&lt;/h2&gt;
+
+&lt;p&gt;Horizon is a Django based web application and is hosted using an Apache web server. User operations performed on the web dashboards are processed by Django scripts running on the backend. In the recent releases Horizon also support AngularJS based web interface. In this blog, however, I will cover only the Django based approach.&lt;/p&gt;
+
+&lt;h3 id=&#34;architecture&#34;&gt;Architecture&lt;/h3&gt;
+
+&lt;p&gt;As a Django application the OpenStack Horizon dashboard follows and MVC (Model-View-Controller) based architecture. The dashboard provides a web based interface for almost all the services within an OpenStack cloud. This requires the Horizon code to interact with other OpenStack services such as Nova, Neutron, Keystone to name a few. This interaction is implemented using a library of OpenStack Horizon APIs.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/12/Horizon-UI-Components.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1459 size-tiga-700px&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/12/Horizon-UI-Components-700x300.png&#34; alt=&#34;OpenStack Horizon MVC Architecture&#34; width=&#34;620&#34; height=&#34;266&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The above picture shows examples of directories containing code that make up the architecture of a typical OpenStack Horizon Dashboard.&lt;/p&gt;
+
+&lt;h2 id=&#34;openstack-horizon-view-components&#34;&gt;OpenStack Horizon View Components&lt;/h2&gt;
+
+&lt;p&gt;Visually the OpenStack Horizon UI is organized as a collection of &lt;em&gt;dashboards&lt;/em&gt;. A dashboard is further organized as a collection of &lt;em&gt;panel groups&lt;/em&gt;. And each panel group can support one more &lt;em&gt;panels&lt;/em&gt;. The picture below highlight these components on a typical OpenStack Horizon UI.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/12/Horizon-View-Components.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1460 size-tiga-460px&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/12/Horizon-View-Components-460x300.png&#34; alt=&#34;OpenStack Horizon UI Components&#34; width=&#34;460&#34; height=&#34;300&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The View aspect of the Django MVC architecture maps to a panel on the navigation bar. So for a given panel on the Horizon UI, we will have to implement the MVC components.&lt;/p&gt;
+
+&lt;h2 id=&#34;enhancing-horizon&#34;&gt;Enhancing Horizon&lt;/h2&gt;
+
+&lt;p&gt;As part of this blog, I will show you how to add a completely new dashboard and support a panel (view) that lists all the Neutron ports in an OpenStack cloud. Neutron ports represent the ingress and egress points for network traffic. So it will be useful to view all ports in a single web page.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/reachsrirams/openstack-custom-dashboard&#34; target=&#34;_blank&#34;&gt;The source code need for this blog is located on Github.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In the next part, I will walk you through the important files for the custom OpenStack dashboard.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>WILT – mysql, root and sudo</title>
+      <link>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</link>
+      <pubDate>Sun, 13 Nov 2016 16:44:06 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</guid>
+      
+        <description>
+
+&lt;p&gt;I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;#8220;unix socket&amp;#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.&lt;/p&gt;
+
+&lt;h2 id=&#34;mariadb-install-and-root-user&#34;&gt;MariaDB Install and root user&lt;/h2&gt;
+
+&lt;p&gt;In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user. This is the root user for the database. But in Ubuntu 16.04 and MariaDB server 10, the installation does not require you enter a root password. Post install you can either use the mysqladmin command or the mysql_secure_installation command to set root password.&lt;/p&gt;
+
+&lt;h2 id=&#34;setting-password-using-mysql-secure-installation-command&#34;&gt;Setting password using mysql_secure_installation command&lt;/h2&gt;
+
+&lt;p&gt;As a first step we will set a specific password for root user using mysql_secure_installation command. The screenshot below shows how this can be performed. Note: after setting password the command will ask few more questions whose answer are not directly relevant for this blog.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1434 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08-1024x879.png&#34; alt=&#34;mysql_secure_installation command to change root password&#34; width=&#34;620&#34; height=&#34;532&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08-1024x879.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08-300x258.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08-768x659.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08.png 1202w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;logging-into-the-mysql-client&#34;&gt;Logging into the mysql client&lt;/h2&gt;
+
+&lt;p&gt;Now we will see what happens if I try to access the mysql client using the root DB user. As shown below, even though mysql client prompts for root password, the authentication actually fails.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.44.03.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1435 size-full&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.44.03.png&#34; alt=&#34;mysql command using root&#34; width=&#34;998&#34; height=&#34;156&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.44.03.png 998w, http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.44.03-300x47.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.44.03-768x120.png 768w&#34; sizes=&#34;(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;logging-in-using-sudo&#34;&gt;Logging in using sudo&lt;/h2&gt;
+
+&lt;p&gt;Next I will try to access the mysql client with sudo.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1444 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02-1024x317.png&#34; alt=&#34;mysql command using sudo and password&#34; width=&#34;620&#34; height=&#34;192&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02-1024x317.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02-300x93.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02-768x238.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02.png 1286w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As shown above, now when you enter the correct password for root DB user, you will be able to access the database. And this is where things start to get interesting. Even if you enter a wrong password, you will notice that you can access the MySQL client as root user.&lt;/p&gt;
+
+&lt;p&gt;Next try accessing the MySQL without the -p option and without even the -u option, &lt;strong&gt;but with sudo_._ &lt;/strong&gt;As shown below, in both cases you will be able to login into the MySQL client.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1445 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25-1024x294.png&#34; alt=&#34;mysql without -p option&#34; width=&#34;620&#34; height=&#34;178&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25-1024x294.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25-300x86.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25-768x221.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25.png 1274w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1446 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42-1024x278.png&#34; alt=&#34;mysql without -u option&#34; width=&#34;620&#34; height=&#34;168&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42-1024x278.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42-300x82.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42-768x209.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42.png 1266w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So it seems that with sudo mysql, we can get access to root DB user without any other authentication other than the one prompted by sudo.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-going-on&#34;&gt;What is going on?&lt;/h2&gt;
+
+&lt;p&gt;To understand what is going on, let us look at the user table inside the mysql database. Once you have successfully logged into the MySQL client, you can execute the SQL query shown below.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1447 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27-1024x196.png&#34; alt=&#34;SQL query showing plugin&#34; width=&#34;620&#34; height=&#34;119&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27-1024x196.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27-300x57.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27-768x147.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27.png 1296w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The most important column here is the &lt;strong&gt;plugin&lt;/strong&gt; column. For root DB user, we can see that the plugin is &lt;strong&gt;unix_socket&lt;/strong&gt;. The plugin column indicates the pluggable authentication mechanism to authenticate the DB user. In case of root, the plugin of &lt;strong&gt;unix_socket &lt;/strong&gt;means that MySQL will authenticate based on the &lt;strong&gt;ID of the user creating the client side socket&lt;/strong&gt; for communicating with the MySQL server.&lt;/p&gt;
+
+&lt;p&gt;When you use &lt;strong&gt;sudo&lt;/strong&gt;, the client program runs with &lt;strong&gt;root &lt;/strong&gt;privilege. Therefore the client socket is created with &lt;strong&gt;root &lt;/strong&gt;privilege as well. The MySQL authentication cross checks the user ID of the client socket against the &lt;strong&gt;same DB user ID&lt;/strong&gt; and if the DB user is authenticated using unix_socket, it will allow connection to the MySQL client.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-is-this-useful&#34;&gt;How is this useful?&lt;/h2&gt;
+
+&lt;p&gt;This plugin mechanism is helpful when DB client programs are running on the same server as that of the DB server. If all users are allowed access using Unix sockets, only applications running locally can access the DB. This gives some basic protection against unauthorized remote access to the DB. Moreover local users can continue to use their Unix passwords instead of using yet another password to access their DB accounts.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Book Announcement and Launch discounts</title>
+      <link>http://reachsrirams.github.io/blogs/2016/10/26/book-announcement-launch-discounts/</link>
+      <pubDate>Wed, 26 Oct 2016 14:57:29 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/10/26/book-announcement-launch-discounts/</guid>
+      
+        <description>
+
+&lt;p&gt;My second book titled &amp;#8220;Software Defined Networking with OpenStack&amp;#8221; is almost ready to be available publicly. You can find the overview of the book below.&lt;/p&gt;
+
+&lt;p&gt;With OpenStack Summit going on in Barcelona, my publishers, Packt, have graciously announced pre-launch discounts for the new book. You can get the following discounts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;15% off on Print copies (code: SDNWOS15)&lt;/li&gt;
+&lt;li&gt;50% off on eBooks (code: SDNWOS50)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Both discounts available at &lt;a href=&#34;https://goo.gl/IIX7F5&#34;&gt;my publisher website&lt;/a&gt;. Discounts valid until Oct 28, 2016 (till end of the OpenStack Summit).&lt;/p&gt;
+
+&lt;h2 id=&#34;overview-of-the-book&#34;&gt;Overview of the book&lt;/h2&gt;
+
+&lt;p&gt;Networking is one the pillars of OpenStack and OpenStack Networking are designed to support programmability and Software-Defined Networks. OpenStack Networking has been evolving from simple APIs and functionality in Quantum to more complex capabilities in Neutron.&lt;/p&gt;
+
+&lt;p&gt;Armed with the basic knowledge, this book will help the readers to explore popular SDN technologies, namely, OpenDaylight (ODL), OpenContrail, Open Network Operating System (ONOS) and Open Virtual Network (OVN).&lt;/p&gt;
+
+&lt;p&gt;The first couple of chapters will provide an overview of OpenStack Networking and SDN in general. Thereafter a set of chapters are devoted to OpenDaylight (ODL), OpenContrail and their integration with OpenStack Networking. The book then introduces you to Open Network Operating System (ONOS) which is fast becoming a carrier grade SDN platform. We will conclude the book with overview of upcoming SDN projects within OpenStack namely OVN and Dragonflow.&lt;/p&gt;
+
+&lt;p&gt;By the end of the book, the readers will be familiar with SDN technologies and know how they can be leveraged in an OpenStack based cloud.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
       
     </item>
     
@@ -314,6 +664,98 @@
 &lt;/ol&gt;
 
 &lt;p&gt;My second book covers some very interesting and challenging (for me) topics. I foresee that it will continue to keep me busy (happily) so I will have to be more conservative with my goals now. I really hope to be successful with these two goals and other personal/professional plans I have for myself.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Mitaka on Ubuntu – install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/</link>
+      <pubDate>Wed, 06 Jul 2016 06:45:45 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/</guid>
+      
+        <description>
+
+&lt;p&gt;Mitaka is the most recent release of OpenStack and currently it is supports &lt;a href=&#34;http://docs.openstack.org/mitaka/install-guide-ubuntu/&#34;&gt;Ubuntu 14.04 LTS (trusty)&lt;/a&gt;. I would like to share scripts that can be used to install the Mitaka release of OpenStack on Ubuntu. As part of my blogging, book writing projects, I have had the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.&lt;/p&gt;
+
+&lt;h2 id=&#34;mitaka-install-scripts-on-github&#34;&gt;Mitaka install scripts on GitHub&lt;/h2&gt;
+
+&lt;p&gt;All the scripts are available as an open source package (Apache License). You can get the source code &lt;a href=&#34;https://goo.gl/wltgJg&#34;&gt;from my GitHub repository&lt;/a&gt;. I welcome you to fork the repo and enhance/extend it.&lt;/p&gt;
+
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;git&lt;/em&gt; binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.&lt;/p&gt;
+
+&lt;p&gt;If you are using VirtualBox, &lt;a href=&#34;http://goo.gl/VTJVmv&#34; target=&#34;_blank&#34;&gt;refer to this blog for Network settings&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;installation-steps&#34;&gt;Installation steps&lt;/h2&gt;
+
+&lt;p&gt;The GitHub repository includes details about the installation steps.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/07/Screenshot-2016-07-06-12.12.22.png&#34;&gt;&lt;img class=&#34;aligncenter size-medium wp-image-1419&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/07/Screenshot-2016-07-06-12.12.22-300x287.png&#34; alt=&#34;Mitaka installation steps&#34; width=&#34;300&#34; height=&#34;287&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/07/Screenshot-2016-07-06-12.12.22-300x287.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/07/Screenshot-2016-07-06-12.12.22-768x734.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/07/Screenshot-2016-07-06-12.12.22-1024x978.png 1024w&#34; sizes=&#34;(max-width: 300px) 100vw, 300px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;openstack-services-installed&#34;&gt;OpenStack services installed&lt;/h2&gt;
+
+&lt;p&gt;The following OpenStack services are installed as part these scripts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Keystone (Identity)&lt;/li&gt;
+&lt;li&gt;Glance (Image)&lt;/li&gt;
+&lt;li&gt;Nova (Compute)&lt;/li&gt;
+&lt;li&gt;Neutron (Networking)&lt;/li&gt;
+&lt;li&gt;Horizon (Dashboard)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I will be enhancing these scripts for Cinder, Heat and Ceilometer services.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>OpenStack Controller Logs – view using a browser</title>
+      <link>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</link>
+      <pubDate>Mon, 27 Jun 2016 18:22:07 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</guid>
+      
+        <description>
+
+&lt;p&gt;OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-a-browser-for-openstack-controller-logs&#34;&gt;Using a browser for OpenStack Controller Logs&lt;/h2&gt;
+
+&lt;p&gt;We can easily use browser tabs to view multiple logs simultaneously. Searching a log file is lot more user friendly on a browser. The best part of this solution is that you do not need to install additional software. OpenStack controller requires Apache web server for several purposes. We will show how to leverage the same web server to stream the logs.&lt;/p&gt;
+
+&lt;h2 id=&#34;configuring-apache&#34;&gt;Configuring Apache&lt;/h2&gt;
+
+&lt;p&gt;OpenStack uses Apache web server for different projects. We will leverage the same web server to display logs of different services.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Step 1&lt;/strong&gt; &amp;#8211; The first step is to create a directory under /var/www/html. This directory will be used as part of the URL on the web browser. For example if you create a directory called openstacklogs, then point your web browser to &amp;#8211; http://&amp;lt;horizon-controller-ip/openstacklogs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre class=&#34;lang:java decode:true &#34;&gt;sudo mkdir /var/www/html/openstacklogs&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Step 2&lt;/strong&gt; &amp;#8211; Give read and execute permissions to the log directories of OpenStack services. For example if you want to allow Nova and Neutron logs to be viewable using web browser, execute the steps below.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre class=&#34;lang:java decode:true &#34;&gt;sudo chmod a+rx /var/log/nova
+sudo chmod a+rx /var/log/neutron&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Step 3&lt;/strong&gt; &amp;#8211; Create symlinks for these log directories as shown below.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre class=&#34;lang:java decode:true &#34;&gt;sudo ln -s /var/log/nova /var/www/html/openstacklogs/nova
+sudo ln -s /var/log/neutron /var/www/html/openstacklogs/neutron&lt;/pre&gt;
+
+&lt;p&gt;These steps ensure that Apache is able to show the OpenStack Controller Logs as browsable content. You can now point your browser to http://&lt;horizon-controller-ip&gt;/openstacklogs. Here is screenshot of the same from my setup.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1407 size-medium&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21-300x189.png&#34; alt=&#34;OpenStack Controller Logs using Web Browser&#34; width=&#34;300&#34; height=&#34;189&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21-300x189.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21-768x484.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21.png 918w&#34; sizes=&#34;(max-width: 300px) 100vw, 300px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
       
     </item>
     
@@ -380,6 +822,228 @@
     </item>
     
     <item>
+      <title>PyCharm and OpenStack programming</title>
+      <link>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</link>
+      <pubDate>Sat, 02 Jan 2016 17:43:51 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</guid>
+      
+        <description>
+
+&lt;p&gt;OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the &lt;strong&gt;PyCharm IDE&lt;/strong&gt; from Jetbrains for your OpenStack programming. I will use the &lt;strong&gt;Neutron ML2 driver code from my book &lt;a href=&#34;http://goo.gl/TeXSYQ&#34;&gt;OpenStack Networking Cookbook&lt;/a&gt; to guide you&lt;/strong&gt; in setting up the PyCharm IDE.&lt;/p&gt;
+
+&lt;h2 id=&#34;pycharm-and-openstack-programming-8211-background&#34;&gt;PyCharm and OpenStack programming &amp;#8211; background&lt;/h2&gt;
+
+&lt;p&gt;DevStack provides a great test environment since it mimics a real OpenStack setup very well. DevStack includes development tools, but it is not the ideal development environment. Keeping development and test environment separate is a good practice. So it is better to write code in a non-DevStack environment and then deploy the unit tested code in DevStack for thorough testing. Moreover the benefits of using a visually-rich IDE such as PyCharm far outweigh the one-time effort to set it up.&lt;/p&gt;
+
+&lt;h2 id=&#34;pycharm-prerequisites-and-installation&#34;&gt;PyCharm prerequisites and installation&lt;/h2&gt;
+
+&lt;p&gt;In order to install and use PyCharm, you need to install Java (JRE) and Python 2.7. The PyCharm IDE is written in Java and hence it requires the JRE. But since the PyCharm IDE is intended from Python programming, you need the Python interpreter. OpenStack uses Python 2.7 so ensure that the correct version is installed.&lt;/p&gt;
+
+&lt;p&gt;The installation steps for Java (JRE), Python 2.7 and PyCharm IDE are fairly straight forward. Depending on your OS, you should be able to find the instructions easily for these.&lt;/p&gt;
+
+&lt;h2 id=&#34;create-a-new-pycharm-project-and-check-out-sample-ml2-driver-code&#34;&gt;Create a new PyCharm project and check out sample ML2 Driver code&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Once the IDE is started, click on New -&amp;gt; Project to create a new PyCharm project as shown in the screenshot below.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1363 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project-1024x612.png&#34; alt=&#34;PyCharm New Project&#34; width=&#34;620&#34; height=&#34;371&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project-1024x612.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project-300x179.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project-768x459.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project.png 1536w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In the next screen enter the project name (you may have to replace the word &amp;#8220;Untitled&amp;#8221;). For this blog, lets call the project &lt;strong&gt;neutron-plugin&lt;/strong&gt;. And then click on &amp;#8220;Create&amp;#8221; button at the bottom.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1364 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name-1024x604.png&#34; alt=&#34;PyCharm Project Name&#34; width=&#34;620&#34; height=&#34;366&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name-1024x604.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name-300x177.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name-768x453.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name.png 1540w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Once the project is created, PyCharm creates a directory for it under &amp;#8220;PyCharmProjects&amp;#8221; directory by default. This folder can be found in the home directory of the user.&lt;/li&gt;
+&lt;li&gt;Open a Terminal window (on Ubuntu) and change directory to the &lt;strong&gt;neutron-plugin&lt;/strong&gt; project as shown below. And then use &lt;strong&gt;git clone&lt;/strong&gt; command to fetch the sample ML2 driver code. &lt;strong&gt;The sample code is needed to show you how to resolve code dependencies.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1365 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone-1024x655.png&#34; alt=&#34;PyCharm ML2 Code Clone&#34; width=&#34;620&#34; height=&#34;397&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone-1024x655.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone-300x192.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone-768x491.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone.png 1504w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Once the code is checked out, PyCharm will automatically show the folder under the project. If you open any of the sample Python files (for example _ch10_mech_driver&lt;em&gt;subnet.py&lt;/em&gt;) you will see that the Python modules &lt;em&gt;imported&lt;/em&gt; in this file are shown as errors (&lt;em&gt;red underlines&lt;/em&gt;). This is because we have not resolved the dependencies yet. Refer to the screenshot below.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-4-Code-Error.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1386 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-4-Code-Error-1024x766.png&#34; alt=&#34;PyCharm-Blog-4-Code-Error&#34; width=&#34;620&#34; height=&#34;464&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-4-Code-Error-1024x766.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-4-Code-Error-300x224.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-4-Code-Error-768x575.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;check-out-dependent-packages&#34;&gt;Check out dependent packages&lt;/h2&gt;
+
+&lt;p&gt;As seen from the steps to create the project, the sample ML2 driver code is dependent on OpenStack Neutron and Oslo Logging code modules. Now we will see how to download these modules.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The first step is to check out OpenStack Neutron and Oslo Logging packages from Github using the &lt;strong&gt;git clone&lt;/strong&gt; command. Here is how it looks in Ubuntu&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-5-Dependency-Clone.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1367 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-5-Dependency-Clone-1024x576.png&#34; alt=&#34;PyCharm Dependency Clone&#34; width=&#34;620&#34; height=&#34;349&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-5-Dependency-Clone-1024x576.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-5-Dependency-Clone-300x169.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-5-Dependency-Clone-768x432.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In my case, the Neutron and Oslo modules were downloaded to the home directory. Here is a screenshot that shows the content of the download modules&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-6-Dependency-Directory.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1368 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-6-Dependency-Directory-1024x562.png&#34; alt=&#34;PyCharm Dependency Directory&#34; width=&#34;620&#34; height=&#34;340&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-6-Dependency-Directory-1024x562.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-6-Dependency-Directory-300x165.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-6-Dependency-Directory-768x421.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;configuring-pycharm-to-resolve-dependencies&#34;&gt;Configuring PyCharm to resolve dependencies&lt;/h2&gt;
+
+&lt;p&gt;Now that we have dowloaded the dependent modules, let me show the steps involved in configuring PyCharm to manage the dependencies. At the end of these steps you will see that &amp;#8220;import errors&amp;#8221; seen in our sample source code will be eliminated.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Click on File and then Settings menu item.&lt;/li&gt;
+&lt;li&gt;In the resulting dialog box, select &amp;#8220;Project Interpreter&amp;#8221; under &amp;#8220;Project: neutron-plugin&amp;#8221; as shown below. Then on the right hand side click the &amp;#8220;gear&amp;#8221; button.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-8-Project-Interpreter.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1370 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-8-Project-Interpreter-1024x528.png&#34; alt=&#34;PyCharm Project Interpreter&#34; width=&#34;620&#34; height=&#34;320&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-8-Project-Interpreter-1024x528.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-8-Project-Interpreter-300x155.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-8-Project-Interpreter-768x396.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Once you click on the &amp;#8220;gear&amp;#8221; button you will see several options &amp;#8211; click on &amp;#8220;More&amp;#8221;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1371 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More-1024x306.png&#34; alt=&#34;PyCharm Interpreter&#34; width=&#34;620&#34; height=&#34;185&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More-1024x306.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More-300x90.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More-768x230.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More.png 1398w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The resulting window shows all the project interpreters. Click on the &amp;#8220;Show paths for selected interpreter&amp;#8221; button as highlighted below. This will allow us to configure Python Paths for this interpreter (for this project).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1372 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path-1024x484.png&#34; alt=&#34;PyCharm Interpreter Path&#34; width=&#34;620&#34; height=&#34;293&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path-1024x484.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path-300x142.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path-768x363.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path.png 1336w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Click on the &amp;#8220;+&amp;#8221; sign and choose the folders/directories that contain the dependencies.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1373 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path-1024x507.png&#34; alt=&#34;PyCharm Interpreter Add Path&#34; width=&#34;620&#34; height=&#34;307&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path-1024x507.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path-300x149.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path-768x380.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path.png 1276w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For this blog I will select the Neutron and Oslo Logging module directories as shown below.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1375 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths-1024x578.png&#34; alt=&#34;PyCharm Add New Paths&#34; width=&#34;620&#34; height=&#34;350&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths-1024x578.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths-300x169.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths-768x434.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths.png 1264w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Click Ok and ensure that the Settings window is closed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-12-Save-Interpreter-Update.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1388 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-12-Save-Interpreter-Update-1024x736.png&#34; alt=&#34;PyCharm-Blog-12-Save-Interpreter-Update&#34; width=&#34;620&#34; height=&#34;446&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-12-Save-Interpreter-Update-1024x736.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-12-Save-Interpreter-Update-300x216.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-12-Save-Interpreter-Update-768x552.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;These steps complete the configuration of dependencies for our ML2 driver code. You may have to tweak these steps depending upon the kind of OpenStack programming you are doing.&lt;/p&gt;
+
+&lt;h2 id=&#34;resolution-of-code-dependencies&#34;&gt;Resolution of code dependencies&lt;/h2&gt;
+
+&lt;p&gt;Once the dependencies are configured, PyCharm will load the modules and resolve the code errors seen in our ML2 sample code. You should now see that the &amp;#8220;red underline&amp;#8221; for the &lt;em&gt;import&lt;/em&gt; statements are eliminated as shown below.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-14-Code-No-Error.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1376 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-14-Code-No-Error-1024x675.png&#34; alt=&#34;PyCharm Code No Error&#34; width=&#34;620&#34; height=&#34;409&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-14-Code-No-Error-1024x675.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-14-Code-No-Error-300x198.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-14-Code-No-Error-768x506.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Once the code errors are resolved, you as a developer can continue with the rest of your programming. The additional benefit of resolving dependency is that PyCharm will &lt;em&gt;auto-complete&lt;/em&gt; the code as you type characters into your IDE. It will also perform syntax checks and provide instant feedback in case of errors. This helps in avoiding many programming errors and will save time.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>ip vs. ifconfig – WILT</title>
+      <link>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</link>
+      <pubDate>Fri, 27 Nov 2015 06:54:27 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</guid>
+      
+        <description>
+
+&lt;p&gt;One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/08/tap-interfaces-linux-bridge/&#34;&gt;Tap interface&lt;/a&gt; etc).&lt;/p&gt;
+
+&lt;h2 id=&#34;the-ip-command-8211-replacement-for-ifconfig&#34;&gt;The ip Command &amp;#8211; replacement for ifconfig&lt;/h2&gt;
+
+&lt;p&gt;The ifconfig command is now being deprecated and the new kid on the block is the ip command.The ip command is part of the iproute2util package. The ip command consolidates many different networking commands into one. It is organized based on the networking stack &amp;#8211; &lt;em&gt;ip link&lt;/em&gt; (Layer 2), &lt;em&gt;ip addr&lt;/em&gt; (Layer 3). The most promising capability of the ip command is the support for Namespace. The ip netns command let us run commands inside the Network Namespace (netns).&lt;/p&gt;
+
+&lt;p&gt;Here is a quick comparison of commonly used ifconfig commands and how you can achieve the same with ip command.&lt;/p&gt;
+
+&lt;h2 id=&#34;viewing-details-of-all-network-interfaces&#34;&gt;Viewing details of all network interfaces&lt;/h2&gt;
+
+&lt;p&gt;To view both MAC address and IP address of all network interfaces use &amp;#8220;ip addr&amp;#8221; command. The same is achieved using &amp;#8220;ifconfig&amp;#8221; command also. However there is one key difference, the &amp;#8220;ifconfig&amp;#8221; command only shows the interfaces that are currently enabled. Note the missing &lt;strong&gt;eth2&lt;/strong&gt; in the ifconfig output below. The &amp;#8220;ip addr&amp;#8221; command shows interfaces that are disabled also. To do the same with &lt;em&gt;ifconfig&lt;/em&gt;, use the ifconfig with &amp;#8220;-a&amp;#8221; switch.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1334&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-1024x667.png&#34; alt=&#34;ip addr command output&#34; width=&#34;620&#34; height=&#34;404&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-1024x667.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-300x195.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-768x500.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1333 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-901x1024.png&#34; alt=&#34;ifconfig command output&#34; width=&#34;620&#34; height=&#34;705&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-901x1024.png 901w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-264x300.png 264w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-768x873.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1.png 1306w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&#34;viewing-information-for-a-specific-network-interface&#34;&gt;Viewing information for a specific network interface&lt;/h2&gt;
+
+&lt;p&gt;With both &amp;#8220;ip addr&amp;#8221; and &amp;#8220;ifconfig&amp;#8221; commands it is possible to view the details of a specific interface as shown below.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1337&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-1024x175.png&#34; alt=&#34;ip addr for a specific interface&#34; width=&#34;620&#34; height=&#34;106&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-1024x175.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-300x51.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-768x131.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1336&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-1024x304.png&#34; alt=&#34;ifconfig for a specific interface&#34; width=&#34;620&#34; height=&#34;184&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-1024x304.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-300x89.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-768x228.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0.png 1294w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;enable-or-disable-a-specific-network-interface&#34;&gt;Enable or Disable a specific network interface&lt;/h2&gt;
+
+&lt;p&gt;The &amp;#8220;ip link&amp;#8221; command can be used to enable or disable a specific network interface. The same can also be accomplished using &amp;#8220;ifconfig &lt;interfacename&gt; up&amp;#8221; or &amp;#8220;ifconfig &lt;interfacename&gt; down&amp;#8221; command.&lt;/p&gt;
+
+&lt;p&gt;The screenshot below shows an interface whose status is DOWN. Then the interface is enabled using the &amp;#8220;ip link&amp;#8221; command.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1339&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-1024x90.png&#34; alt=&#34;ip-link-down&#34; width=&#34;620&#34; height=&#34;54&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-1024x90.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-300x27.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-768x68.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1338&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-1024x106.png&#34; alt=&#34;ip-link-down-up-show&#34; width=&#34;620&#34; height=&#34;64&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-1024x106.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-300x31.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-768x80.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;viewing-neighbor-interface-information&#34;&gt;Viewing neighbor interface information&lt;/h2&gt;
+
+&lt;p&gt;Viewing the information of neighboring interfaces is possible using the &amp;#8220;ip neigh&amp;#8221; command. &lt;strong&gt;This is not supported by the ifconfig command&lt;/strong&gt;. Instead users will have to use commands related to ARP or utilities such as &lt;strong&gt;ethtool&lt;/strong&gt; and &lt;strong&gt;lldpctl&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1340&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-1024x307.png&#34; alt=&#34;View neighbor interface information&#34; width=&#34;620&#34; height=&#34;186&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-1024x307.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-300x90.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-768x231.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh.png 1166w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;##&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Announcing: OpenStack Networking Cookbook</title>
+      <link>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</link>
+      <pubDate>Fri, 23 Oct 2015 16:47:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</guid>
+      
+        <description>
+
+&lt;p&gt;My first publication &lt;a href=&#34;http://bit.ly/1NrKjty&#34;&gt;&amp;#8220;OpenStack Networking Cookbook&amp;#8221;&lt;/a&gt; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1323&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover-1024x614.png&#34; alt=&#34;OpenStack Networking Cookbook&#34; width=&#34;620&#34; height=&#34;372&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover-1024x614.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover-300x180.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover-768x460.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover.png 1308w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;openstack-networkng-cookbook-overview&#34;&gt;OpenStack Networkng Cookbook Overview&lt;/h2&gt;
+
+&lt;p&gt;The OpenStack Networking Cookbook provides 90 hands on recipes to perform basic to advanced OpenStack Networking operations and administration. The book starts with basic Neutron constructs such as Network, Subnet and Port. Neutron services like Router, Firewall and Load-balancers are then covered. The book also offers great introduction to Ceilometer, ML2 mechanism driver development and Heat templates. All this in an easy to understand Cookbook format.&lt;/p&gt;
+
+&lt;p&gt;The book is published by Packt Publishing who are leaders in technical book publications.&lt;/p&gt;
+
+&lt;p&gt;As part of the book release, we have published an &lt;a href=&#34;https://goo.gl/PihuCb&#34;&gt;overview of Ceilometer and its use in OpenStack Networking&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;discount-coupons&#34;&gt;Discount Coupons&lt;/h2&gt;
+
+&lt;p&gt;As part of the book launch and upcoming OpenStack Summit, our publishers (Packt Publishing) is giving great discounts on the OpenStack books. Here are the details:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Get e-books at 50% off using code: &lt;span style=&#34;text-decoration: underline;&#34;&gt;OpenStack50&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Get print books at 30% off using code: &lt;span style=&#34;text-decoration: underline;&#34;&gt;OpenStack30&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note: the codes are valid until Nov 15, 2015&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;openstack-summit-2015-8211-tokyo&#34;&gt;OpenStack Summit 2015 &amp;#8211; Tokyo&lt;/h2&gt;
+
+&lt;p&gt;The OpenStack Networking Cookbook is released in time for the OpenStack Summit 2015 in Tokyo. Along with two of my colleagues, I will be giving a talk at the Summit titled &lt;a href=&#34;https://goo.gl/LMpklQ&#34;&gt;&amp;#8220;Enhancing OpenStack FWaaS for real-world business needs&amp;#8221;.&lt;/a&gt; During the Summit we will also be sharing discount coupons for our book.&lt;/p&gt;
+
+&lt;h2 id=&#34;tweet-and-win&#34;&gt;Tweet and Win&lt;/h2&gt;
+
+&lt;p&gt;Use #LoveOpenStackTokyo to share your comments, experiences or ask questions during the OpenStack Summit days. You could win &lt;strong&gt;free e-books&lt;/strong&gt; from Packt.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>My goals for the second half of 2015</title>
       <link>http://reachsrirams.github.io/blogs/2015/07/05/my-goals-for-the-second-half-of-2015/</link>
       <pubDate>Sun, 05 Jul 2015 17:30:43 +0000</pubDate>
@@ -434,890 +1098,52 @@
     </item>
     
     <item>
-      <title>Using MAC table – Linux Bridge – WILT</title>
-      <link>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</link>
-      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
+      <title>Ports in OpenStack Neutron</title>
+      <link>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</link>
+      <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
+      <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
       
-        <description>&lt;p&gt;In an &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; title=&#34;Linux Bridge and Virtual Networking&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
+        <description>
 
-&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;OpenStack supports rich abstractions to handle &lt;a title=&#34;OpenStack Networking – an introduction&#34; href=&#34;http://www.innervoice.in/blogs/2014/04/07/openstack-networking/&#34; target=&#34;_blank&#34;&gt;virtual networking needs in a cloud&lt;/a&gt;. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.&lt;/p&gt;
 
-&lt;h2 id=&#34;mac-table-8211-background&#34;&gt;MAC Table &amp;#8211; Background&lt;/h2&gt;
+&lt;h2 id=&#34;why-are-ports-important&#34;&gt;Why are Ports important?&lt;/h2&gt;
 
-&lt;p&gt;Bridges and Switches forward packets by examining and learning MAC address from incoming packets. Linux bridges are no different from their hardware counterparts. And looking at the MAC table learnt by Linux bridges can provide useful insight into the flow of packets.&lt;/p&gt;
+&lt;p&gt;Ports in OpenStack networking are realized using interfaces (mostly virtual) on the underlying hypervisor. IP addresses used for virtual machines, routers etc are actually stored with the Port entities. Given that Ports represent entry and exit points for data traffic and also the associated configurations such as interface and IP address, they play an important role in OpenStack networking.&lt;/p&gt;
 
-&lt;p&gt;In cloud platforms like OpenStack, virtual machines (VMs) started by different tenants may get &lt;em&gt;scheduled&lt;/em&gt; on the same hardware server. It follows that these VMs will share the resources on that server including the network ports. Let us consider a scenario where Linux bridge is used for virtual networking (as Mechanism driver in OpenStack). Now if there was a problem with one of the network ports on a server, it will be good to know which VMs are impacted by it.&lt;/p&gt;
+&lt;h2 id=&#34;types-of-ports-in-openstack&#34;&gt;Types of Ports in OpenStack&lt;/h2&gt;
 
-&lt;p&gt;Since multiple Linux bridges may be present, one of the best ways to find out the affected VMs for a given physical network port, is by looking at the MAC table of the Linux bridge &lt;em&gt;that is bound to the failed network port&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;We will use the following virtual network topology to understand the different types of ports created in OpenStack.&lt;/p&gt;
 
-&lt;h2 id=&#34;interpreting-mac-table-8211-step-by-step-guide&#34;&gt;Interpreting MAC Table &amp;#8211; Step-by-Step guide&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1302&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1.png&#34; alt=&#34;Topology for OpenStack Ports&#34; width=&#34;599&#34; height=&#34;383&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1.png 599w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1-300x192.png 300w&#34; sizes=&#34;(max-width: 599px) 100vw, 599px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt;: If you have detected that &lt;em&gt;eth0&lt;/em&gt; interface is having a problem, then using &lt;em&gt;brctl show&lt;/em&gt; command you can list all the bridges and identify the Linux bridge bound to &lt;em&gt;eth0&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In the above picture, we have two Tenant Networks with each network having one virtual machine and a DHCP server. The two Networks are connected to each other using a Tenant Router. In addition, we will use an External Network and set it as the gateway on the Tenant Router so that virtual machines have Internet access. The corresponding OpenStack Network Topology looks like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1226&#34; alt=&#34;Step 1 - Identify the bridge for a given interface&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1.png&#34; width=&#34;719&#34; height=&#34;178&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1.png 719w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-1-300x74.png 300w&#34; sizes=&#34;(max-width: 719px) 100vw, 719px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1303 size-medium&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology-248x300.png&#34; alt=&#34;OpenStack Ports Network Topology&#34; width=&#34;248&#34; height=&#34;300&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology-248x300.png 248w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology.png 724w&#34; sizes=&#34;(max-width: 248px) 100vw, 248px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;: Next execute the command _brctl showmacs &lt;bridge_name&gt;_ with the bridge you identified in Step 1 to view the MAC table. In the output, each row represents MAC address learnt at each port of the Linux bridge. The important columns in the output are &amp;#8216;is local?&amp;#8217;, &amp;#8216;port no&amp;#8217; and &amp;#8216;mac addr&amp;#8217;.&lt;/p&gt;
+&lt;p&gt;To view the port types in your OpenStack setup, pay attention to the &amp;#8220;device_owner&amp;#8221; attribute of the port as shown the CLI output here.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1227&#34; alt=&#34;Step 2 - View MAC Table using brctl showmacs command&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2.png&#34; width=&#34;626&#34; height=&#34;205&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2.png 626w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-2-300x98.png 300w&#34; sizes=&#34;(max-width: 626px) 100vw, 626px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1304&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-1024x191.png&#34; alt=&#34;OpenStack Ports CLI Output&#34; width=&#34;620&#34; height=&#34;116&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-1024x191.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-300x56.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-768x143.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 3&lt;/strong&gt;: When a row (or MAC address) has &amp;#8216;is local&amp;#8217; as Y (means Yes), then it represents the &lt;em&gt;MAC address of an interface &lt;strong&gt;directly&lt;/strong&gt; &lt;strong&gt;on&lt;/strong&gt; the Linux Bridge&lt;/em&gt;&lt;strong&gt;. &lt;/strong&gt;You can confirm this with the MAC address of _eth0 _which is &lt;em&gt;bound&lt;/em&gt; to the Linux bridge (myvirtbridge in the screenshot below). The other interfaces with &amp;#8216;is local&amp;#8217; as Yes are the &lt;em&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/08/tap-interfaces-linux-bridge/&#34; title=&#34;Tap Interfaces and Linux Bridge&#34;&gt;tap interfaces&lt;/a&gt; directly on the Linux bridge&lt;/em&gt;. &lt;strong&gt;Make a note&lt;/strong&gt; of the &amp;#8216;port no&amp;#8217; for these tap interface MAC addresses (where &amp;#8216;is local&amp;#8217; is Yes).&lt;/p&gt;
+&lt;p&gt;Let us now see the different types of ports associated with this topology.&lt;/p&gt;
 
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1228&#34; title=&#34;Step 3 - Identify Port Numbers for Local Ports&#34; alt=&#34;Step 3 - Identify Port Numbers for Local Ports&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1.png&#34; width=&#34;451&#34; height=&#34;331&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1.png 644w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-1-300x220.png 300w&#34; sizes=&#34;(max-width: 451px) 100vw, 451px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;compute:nova&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;In this example, Port Number 1 belongs to the &lt;em&gt;eth0&lt;/em&gt; interface. And Ports 2 and 3 represent the Tap interfaces on the Linux bridge (myvirtbridge).&lt;/p&gt;
+&lt;p&gt;&amp;#8220;compute:nova&amp;#8221; indicates that the port is associated with a virtual machine. These ports are usually auto-created as part of the instance creation (via Nova). The &amp;#8220;compute&amp;#8221; part indicates that the port is created on compute nodes.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1230&#34; alt=&#34;Step 3 - Identify Port Numbers for Local Ports&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2.png&#34; width=&#34;612&#34; height=&#34;249&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2.png 612w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-3-2-300x122.png 300w&#34; sizes=&#34;(max-width: 612px) 100vw, 612px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;network:dhcp&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 4&lt;/strong&gt;: For each port number with a &amp;#8216;is local&amp;#8217; as Yes, you will find another entry in the MAC table _with the_ &lt;em&gt;same port number but with &amp;#8216;is local&amp;#8217; as No&lt;/em&gt;. These entries with &amp;#8216;is local&amp;#8217; as No represents the MAC address _learnt _from the incoming packets. Since we are looking at Port number for tap interfaces, the remote entities that are sending these packets are basically the &lt;em&gt;virtual interfaces&lt;/em&gt; inside virtual machines. In the picture below, for Local port 2, the non-local (remote) MAC address is &amp;#8220;52:54:00:81:ad:5a&amp;#8221;. This will be the MAC address of a virtual NIC of a VM. Similarly for local port 3.&lt;/p&gt;
+&lt;p&gt;&amp;#8220;network:dhcp&amp;#8221; indicates that the port is associated with a DHCP server. The word &amp;#8220;network&amp;#8221; imples that this port is created on the Network node. The DHCP port is created when the first virtual machine instance is started on the &lt;em&gt;corresponding&lt;/em&gt; network.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1232&#34; alt=&#34;Step 4 - Identify Remote MAC address for the corresponding Local MAC&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1.png&#34; width=&#34;596&#34; height=&#34;230&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1.png 596w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-4-1-300x116.png 300w&#34; sizes=&#34;(max-width: 596px) 100vw, 596px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;network:router_interface&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 5&lt;/strong&gt;: There are two ways to confirm that the _remote_ MAC addresses belong to VMs.&lt;/p&gt;
+&lt;p&gt;The &amp;#8220;network:router_interface&amp;#8221; represents the &amp;#8220;gateway&amp;#8221; IP interface for a tenant network and its VMs. This interface is associated to an OpenStack router (namespace). Ports of this type are created when a user does a &amp;#8220;Add Interface&amp;#8221; operation on a Router. You will see two such &amp;#8220;network:router_interface&amp;#8221; ports &amp;#8211; one for each Network in our example. Once again, this port type is also seen on the Network Node.&lt;/p&gt;
 
-&lt;ol&gt;
-&lt;li&gt;You can use the &lt;em&gt;ps -ef &lt;/em&gt; command and &lt;em&gt;grep&lt;/em&gt; for these remote MAC addresses.&lt;/li&gt;
-&lt;li&gt;Or you can login into the VMs and try the &lt;em&gt;ifconfig&lt;/em&gt; command _inside _the VM.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;network:router_gateway&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1233&#34; alt=&#34;Step 5 - Verify the MAC address of the VM&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5.png&#34; width=&#34;561&#34; height=&#34;401&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5.png 701w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/MAC-Table-Blog-5-300x214.png 300w&#34; sizes=&#34;(max-width: 561px) 100vw, 561px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;: As seen in the step by step guide, understanding MAC table output provides useful insights into the flow of packets in a Linux bridge. It can be a useful tool in troubleshooting networking problems (in addition to other tools).&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Goals for the first half of 2015</title>
-      <link>http://reachsrirams.github.io/blogs/2015/01/14/goals-first-half-2015/</link>
-      <pubDate>Wed, 14 Jan 2015 10:31:21 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2015/01/14/goals-first-half-2015/</guid>
-      
-        <description>&lt;p&gt;Here I am once again, with fresh blogging and learning goals for the first half of 2015. This time I am able to share my goals earlier than usual. In the past, I was delayed by almost 2 months. This is clearly a good start for me and I hope that the rest of the year, I am able to stick to a better cadence for my blogging.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;status-for-2014-second-half-goals&#34;&gt;Status for 2014 second half goals&lt;/h2&gt;
-
-&lt;p&gt;Here is my assessment of the goals I had set out for myself last year.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Write 2 blogs related to OpenStack: I am thinking about Open vSwitch and Neutron agents
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Score &amp;#8211; &lt;sup&gt;7&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Status &lt;/strong&gt; &amp;#8211; I did not blog specifically about these topics but I have blogged about Namespace usage in OpenStack and Neutron Components.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Write at least one blog about setting up OpenStack infrastructure
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Score &amp;#8211; &lt;sup&gt;8&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; &amp;#8211; I have blogged about home OpenStack setup. But I wish I had done a bit more. On my Github account I have posted some homegrown scripts for OpenStack installation. But there is still some work pending on that front. &lt;a href=&#34;https://github.com/reachsrirams/openstack-install-scripts&#34; target=&#34;_blank&#34;&gt;Here is the link to the Github project&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Create one YouTube video related to a networking concept.
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Score&lt;/strong&gt; &lt;strong&gt;&amp;#8211; 0/10&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Status &lt;/strong&gt;&amp;#8211; I could not complete this &amp;#8211; though I did create a video on a different topic.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;In isolation, it may appear that overall I am still lagging behind on my blogging goals. But there are other aspects that are very encouraging.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The blog readership is steady and much higher than it used to be earlier. I am averaging around 30 visitors per day.&lt;/li&gt;
-&lt;li&gt;I introduced a new series called WILT &amp;#8211; what I learnt today. This series allows me to blog about some odd ball topics just out of the blue.&lt;/li&gt;
-&lt;li&gt;And most importantly, I have a healthy pipeline of topics and ideas for the upcoming year.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;goals-for-first-half-2015&#34;&gt;Goals for first half 2015&lt;/h2&gt;
-
-&lt;p&gt;I will continue my focus on OpenStack for the coming 6 months and hopefully learn basics of Python along the way. Here are the goals for the first half of 2015:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Write 2 blogs related to OpenStack: this time I must blog about Open vSwitch and Neutron agents&lt;/li&gt;
-&lt;li&gt;Write 2 blogs in the WILT series&lt;/li&gt;
-&lt;li&gt;Create one YouTube video related to OpenStack or Networking&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I am setting realistic goals for 2015 so that I can meet them with a bit of stretch.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Comments&lt;/strong&gt; &amp;#8211; Do let me know what you think about these goals by leaving your comments below.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>OpenStack Neutron – the components</title>
-      <link>http://reachsrirams.github.io/blogs/2015/01/13/openstack-neutron-components/</link>
-      <pubDate>Tue, 13 Jan 2015 18:20:22 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2015/01/13/openstack-neutron-components/</guid>
-      
-        <description>&lt;p&gt;Neutron is the networking project within the OpenStack cloud platform. The purpose of OpenStack Neutron is to provide physical and virtual network resources to the instances (or virtual machines). Before you continue to read this article I would recommend that you read about &lt;a href=&#34;http://www.innervoice.in/blogs/2014/04/07/openstack-networking/&#34; title=&#34;OpenStack Networking – an introduction&#34;&gt;OpenStack networking concepts&lt;/a&gt;. To appreciate the architecture and the functionality of Neutron, it is important to understand the components that are part of Neutron.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;openstack-neutron-software-components&#34;&gt;OpenStack Neutron Software Components&lt;/h2&gt;
-
-&lt;h4 id=&#34;neutron-server&#34;&gt;Neutron Server&lt;/h4&gt;
-
-&lt;p&gt;The main software entity for Neutron is the neutron-server daemon. This is basically a python program which is started when you execute:&lt;/p&gt;
-
-&lt;pre&gt;# service neutron-server start&lt;/pre&gt;
-
-&lt;p&gt;This Neutron server daemon starts two critical components:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Neutron REST service&lt;/li&gt;
-&lt;li&gt;Neutron Plugin &amp;#8211; core and service plugin&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The Neutron RPC service is also started so that the neutron servers can communicate with the agents. And the RPC service actually loads the Neutron Plugin.&lt;/p&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1199&#34; alt=&#34;OpenStack Neutron Server Loading Steps&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png&#34; width=&#34;522&#34; height=&#34;373&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png 816w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps-300x214.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps-768x549.png 768w&#34; sizes=&#34;(max-width: 522px) 100vw, 522px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;h4 id=&#34;neutron-plugins&#34;&gt;Neutron Plugins&lt;/h4&gt;
-
-&lt;p&gt;Plugins in Neutron allow extension and/or customization of the pre-existing functionality in Neutron. Networking vendors can write plugins that ensures smooth inter-operability between OpenStack Neutron and vendor-specific software and hardware. With this approach a rich set of physical and virtual networking resources can be made available to the virtual machines instances.&lt;/p&gt;
-
-&lt;h4 id=&#34;neutron-agents&#34;&gt;Neutron Agents&lt;/h4&gt;
-
-&lt;p&gt;The agents are another set of critical components within Neutron. The main Neutron server (and the plugins) communicate with Neutron agents. The Neutron agents implement &lt;strong&gt;very specific networking functionality&lt;/strong&gt;. Examples include DHCP Agent, L3 Agent etc. Some agents may be specific to the plugin such as Linux Bridge Neutron Agent etc.&lt;/p&gt;
-
-&lt;p&gt;I will be blogging about Plugins and Agents in detail soon.&lt;/p&gt;
-
-&lt;h2 id=&#34;openstack-neutron-hardware-components&#34;&gt;OpenStack Neutron Hardware Components&lt;/h2&gt;
-
-&lt;p&gt;The following hardware components support one or more of the above mentioned software components.&lt;/p&gt;
-
-&lt;h4 id=&#34;controller-node&#34;&gt;Controller Node&lt;/h4&gt;
-
-&lt;p&gt;The main OpenStack Neutron server runs in the controller node. This means that Neutron API requests from Horizon (Dashboard) or the Neutron CLI, land on this server. As seen above, the plugins that do the main networking configurations also run on this server.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Physical network connectivity for Controller Node:&lt;/em&gt; Since the Neutron server needs to receive API requests and also needs to communicate with agents via RPC, it requires a minimum of &lt;strong&gt;one Ethernet interface (Management Network)&lt;/strong&gt; for this purpose.&lt;/p&gt;
-
-&lt;h4 id=&#34;compute-node&#34;&gt;Compute Node&lt;/h4&gt;
-
-&lt;p&gt;The compute node is where the instances or virtual machines are started. The main goal of OpenStack Neutron, within the compute node, is to provide networking resources for &amp;#8216;each&amp;#8217; instance. Since the core element of Neutron is to provide Layer-2 (L2) connectivity an instance, the L2 agent (depending on the plugin) runs on the compute node.&lt;/p&gt;
-
-&lt;p&gt;_Physical network connectivity for Compute Node: _The compute node may run agents and will respond to RPC messages from Neutron Server (Management Network). In addition it also needs to provide a dedicate interface for network traffic from the virtual machines (Data Network). Hence the Compute node requires &lt;strong&gt;two Ethernet interfaces&lt;/strong&gt;. **&lt;/p&gt;
-
-&lt;p&gt;**&lt;/p&gt;
-
-&lt;h4 id=&#34;networking-node&#34;&gt;Networking Node&lt;/h4&gt;
-
-&lt;p&gt;The networking node is a special node dedicated to provide several key networking capabilities. Since the instances or VMs run on the compute node, the main purpose of networking node is to provide &lt;strong&gt;networking services that span across virtual machines &amp;#8211; for example DHCP and Routing etc.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Physical network connectivity for Controller Node:&lt;/em&gt; Just like the Compute node, the network node needs two Ethernet Interfaces for Management and Data network. In addition, Networking Node can also provide to-and-fro Internet access for the virtual machines. It is recommended that a separate &lt;strong&gt;third Ethernet interface&lt;/strong&gt; be used for this purpose.&lt;/p&gt;
-
-&lt;p&gt;The following &lt;a href=&#34;http://docs.openstack.org/admin-guide-cloud/content/network-connectivity.html&#34; target=&#34;_blank&#34;&gt;diagram from the OpenStack Admin Guide&lt;/a&gt; clarifies the services and the network connectivity supported by these three physical components.&lt;/p&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1202&#34; alt=&#34;OpenStack Neutron Physical Network Diagram&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png&#34; width=&#34;622&#34; height=&#34;455&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png 778w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1-300x219.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1-768x562.png 768w&#34; sizes=&#34;(max-width: 622px) 100vw, 622px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;h4 id=&#34;physical-network&#34;&gt;Physical Network&lt;/h4&gt;
-
-&lt;p&gt;In real data centers, physical servers (nodes) are connected to switches and further these switches are connected to Routers. The capabilities of Neutron can be enhanced by using vendor specific plugins that can help leverage specialized networking equipment. In addition, the network topology of the data center, that hosts your OpenStack cloud will also play a role in the kind of capabilities OpenStack tenants can leverage. Even though physical networks are not tightly integrated with OpenStack Neutron, they nevertheless are instrumental in the cloud services available to tenants.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Linux Network Namespace – WILT</title>
-      <link>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</link>
-      <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</guid>
-      
-        <description>&lt;p&gt;In the next installment of &amp;#8220;What I learnt today&amp;#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a &lt;strong&gt;copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;This concept of supporting multiple instances of routing tables, networking devices is not very new. Most networking hardware vendors have supported the concept, albeit with different names such as &amp;#8220;virtual routing and forwarding&amp;#8221; or VRF. &lt;strong&gt;In Linux, the namespace concept is supported by &amp;#8220;_ip _&lt;em&gt;netns&amp;#8221;&lt;/em&gt; command.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;why-do-we-need-namespace-8211-the-cloud-scenario&#34;&gt;Why do we need namespace? &amp;#8211; The cloud scenario&lt;/h2&gt;
-
-&lt;p&gt;In private enterprises and even in our homes, we tend to use private IP addresses such as 192.168.XXX.XX. In a cloud environment (especially multi-tenancy), it is possible that more than one users use IP addresses that overlap with each other. It is important that cloud infrastructure services such as OpenStack allow overlapping IP addresses to co-exist without any problems. In OpenStack, Neutron uses Network Namespaces to provide the isolation between overlapping IP addresses.&lt;/p&gt;
-
-&lt;h2 id=&#34;namespace-in-openstack&#34;&gt;Namespace in OpenStack&lt;/h2&gt;
-
-&lt;p&gt;In OpenStack, users (Tenants) can create their &amp;#8216;networks&amp;#8217; with a IP range (subnet). Then they can create Virtual machine instances and associate them to this IP subnet. As part of these steps, a DHCP server is started for each network or subnet. The role of the DHCP server is to supply IP addresses and other useful infromation for &lt;strong&gt;their respective virtual machines&lt;/strong&gt;. The picture below describes this scenario.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1158&#34; alt=&#34;Namespace in OpenStack&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack.png&#34; width=&#34;647&#34; height=&#34;407&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack.png 647w, http://127.0.0.1/wordpress/wp-content/uploads/2014/12/Namespace-OpenStack-300x189.png 300w&#34; sizes=&#34;(max-width: 647px) 100vw, 647px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The DHCP server is started on the &amp;#8216;network node&amp;#8217; in OpenStack &amp;#8211; using &lt;em&gt;dnsmasq&lt;/em&gt; program. And to support multiple networks, multiple dnsmasq processes need to be started on the &lt;em&gt;same network node&lt;/em&gt;, and that too with different IP addresses. This is accomplished using network namespace.&lt;/p&gt;
-
-&lt;p&gt;Here is the snippet of code from &lt;a href=&#34;https://github.com/openstack/neutron/blob/master/neutron/agent/linux/dhcp.py&#34; target=&#34;_blank&#34;&gt;OpenStack Neutron source code for DHCP.&lt;/a&gt; In the spawn_process function, we can see at the end that &lt;em&gt;netns&lt;/em&gt; command is used to start the &lt;em&gt;dnsmasq&lt;/em&gt; process. The &amp;#8216;cmd&amp;#8217; variable is constructed using &lt;em&gt;dnsmasq&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1160&#34; alt=&#34;DHCP Namespace Command Neutron&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron.png&#34; width=&#34;652&#34; height=&#34;358&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron.png 931w, http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron-300x165.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/12/DHCP-Command-Neutron-768x422.png 768w&#34; sizes=&#34;(max-width: 652px) 100vw, 652px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&#34;the-ip-netns-command&#34;&gt;The &lt;em&gt;ip netns&lt;/em&gt; command&lt;/h2&gt;
-
-&lt;p&gt;One interesting tip about _ip netns _command is that  the &amp;#8216;exec&amp;#8217; sub-command lets you execute a specific &amp;#8216;shell&amp;#8217; command &lt;em&gt;on the specified namespace&lt;/em&gt;. With _ip netns exec &lt;namespacename&gt; &lt;strong&gt;bash&lt;/strong&gt;, _you can get a shell prompt specifically for the namespace. This will be useful in troubleshootign any networking problems. Commands and programs executed under the &amp;#8216;exec&amp;#8217; sub-command are aware of the &amp;#8216;isolate namespace&amp;#8217; only.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Goals for the second half of 2014</title>
-      <link>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</link>
-      <pubDate>Mon, 08 Sep 2014 07:48:13 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</guid>
-      
-        <description>&lt;p&gt;Here is my mid-year (I know I am off by couple of months) review of my blogging and learning goals for 2014. I will start off with my assessment of the first half of 2014 and then wrap with goals for the remaining four months of this year.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;status-of-2014-first-half-goals&#34;&gt;Status of 2014 first half goals&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Complete the Understanding Virtual Networks series &amp;#8211; Finish the introductory blogs about OpenStack Networking and Open vSwitch
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Status Update&lt;/strong&gt; &amp;#8211; The OpenStack networking blog was completed as per plan but I could not cover Open vSwitch in detail. But I did write a blog on &lt;a title=&#34;KVM and QEMU – do you know the connection?&#34; href=&#34;http://www.innervoice.in/blogs/2014/03/10/kvm-and-qemu/&#34; target=&#34;_blank&#34;&gt;KVM vs QEMU&lt;/a&gt; which has got very high hits. I also worked with a colleague of mine to start guest blogs on my website.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Score &amp;#8211; &lt;sup&gt;7&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt; &amp;#8211; This is mainly because there were some interesting blogs with lots of visits. But the area I really need to improve is writing regularly.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Write two &lt;a href=&#34;http://smallbusiness.chron.com/curate-blog-34682.html&#34;&gt;curated posts&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Score&lt;/strong&gt; &lt;strong&gt;&amp;#8211; 0/10&lt;/strong&gt; &amp;#8211; It should be obvious why I rated myself zero. I did not write any curated posts.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Publish two short YouTube videos
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Status Update &lt;/strong&gt;&amp;#8211; Shared my first unboxing video for Intel NUC (which will feature more in my future posts). I have the second video ready but not fully edited for sharing yet.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Score&lt;/strong&gt; &lt;strong&gt;&amp;#8211; &lt;sup&gt;6&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt; &amp;#8211; I have given one bonus point for finally publishing my own unboxing video.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Overall Assessment&lt;/strong&gt; &amp;#8211; overall I would say it was a mixed bag. My blogging was definitely more sporadic but the some of the content was unique and has helped increase the number of visits. This tells me that good content is the core ingredient of a good blog. Being consistent can only make it better.&lt;/p&gt;
-
-&lt;h3 id=&#34;goals-for-the-second-half-of-2014&#34;&gt;Goals for the second half of 2014&lt;/h3&gt;
-
-&lt;p&gt;Given the delay in working out my goals, I am left with less than 4 months till the end of 2014. Given my work and personal commitment, I have to plan a realistic set of goals for blogging. The theme will center around OpenStack and also delve into the nitty gritty of setting up OpenStack lab at home. So here are some goals I have planned:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Write 2 blogs related to OpenStack: I am thinking about Open vSwitch and Neutron agents&lt;/li&gt;
-&lt;li&gt;Write at least one blog about setting up OpenStack infrastructure&lt;/li&gt;
-&lt;li&gt;Create one YouTube video related to a networking concept.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Let me know what you think about these goals. If you have any specific idea or topic that you would like me to research and blog, please leave your comments.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>KVM and QEMU – do you know the connection?</title>
-      <link>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</link>
-      <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</guid>
-      
-        <description>&lt;p&gt;If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;kvm-and-qemu-8211-the-process-id-check&#34;&gt;KVM and QEMU &amp;#8211; the process ID check&lt;/h2&gt;
-
-&lt;p&gt;You can use &lt;em&gt;libvirt&lt;/em&gt; and the associated Virtual Machine Manager GUI to start a virtual machine. In the GUI, you can choose the &amp;#8216;Virt Type&amp;#8217; as either KVM or QEMU. I started a VM, once with QEMU as the Virt Type and once with KVM. In both cases, I did a _grep_ of the process ID to see if there was any difference. &lt;strong&gt;Note&lt;/strong&gt;: I used Ubuntu 13.10 for my experiments.&lt;/p&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1024&#34; alt=&#34;KVM and QEMU - VMM Select Virt Type&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png&#34; width=&#34;540&#34; height=&#34;533&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png 675w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM-300x296.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM-100x100.png 100w&#34; sizes=&#34;(max-width: 540px) 100vw, 540px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt; When I started the VM with KVM as the Virt Type the process ID details showed an interesting attribute &amp;#8220;accel=kvm&amp;#8221; as highlighted below.&lt;/p&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1025&#34; alt=&#34;QEMU using KVM Accelarator&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png&#34; width=&#34;755&#34; height=&#34;374&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png 944w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM-300x149.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM-768x381.png 768w&#34; sizes=&#34;(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;When I started the same Virtual Machine with QEMU as the Virt Type, the process ID showed &amp;#8220;accel=tcg&amp;#8221;.&lt;/p&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-1026&#34; alt=&#34;QEMU using TCG Accelarator&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png&#34; width=&#34;756&#34; height=&#34;373&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png 945w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG-300x148.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG-768x379.png 768w&#34; sizes=&#34;(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Note that in both the cases the same _binary_ is executed to start the VM, namely, _qemu-system-x86&lt;em&gt;64&lt;/em&gt;. The main difference is the acceleration type.&lt;/p&gt;
-
-&lt;h2 id=&#34;kvm-and-qemu-8211-understanding-hardware-acceleration&#34;&gt;KVM and QEMU &amp;#8211; understanding hardware acceleration&lt;/h2&gt;
-
-&lt;p&gt;To understand hardware acceleration, we must understand how Virtual Machine CPU works. In real hardware, the Operating System (OS) translates programs into instructions that are executed by the physical CPU. In a virtual machine, the same thing happens. However, the key difference is that the Virtual CPU is actually emulated (or virtualized) by the hypervisor. Therefore, the hypervisor software has to &lt;em&gt;translate the instructions meant for the Virtual CPU&lt;/em&gt; and convert it into instructions for the physical CPU. This translation has a big performance overhead.&lt;/p&gt;
-
-&lt;p&gt;To minimize this performance overhead, modern processors support &lt;em&gt;virtualization extensions&lt;/em&gt;. Intel support a technology called VT-x and the AMD equivalent is AMD-V. Using these technologies, a &lt;em&gt;slice of physical CPU&lt;/em&gt; can be directly mapped to the Virtual CPU. &lt;strong&gt;Hence the instructions meant for the Virtual CPU can be directly executed the physical CPU slice. &lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;KVM is the Linux kernel module&lt;/strong&gt; that enables this mapping of physical CPU to Virtual CPU. This mapping provides the hardware acceleration for Virtual Machine and boosts its performance. Moreover, QEMU uses this acceleration when Virt Type is chosen as KVM.&lt;/p&gt;
-
-&lt;p&gt;Then what is TCG? If your server CPU does not support virtualization extension, then it is the job of the emulator (or hypervisor) to execute the Virtual CPU instruction using translation. QEMU uses TCG or Tiny Code Generator to _optimally_ _translate and execute _the Virtual CPU instructions on the physical CPU.&lt;/p&gt;
-
-&lt;h2 id=&#34;kvm-and-qemu-8211-type-1-or-type-2-hypervisor&#34;&gt;KVM and QEMU &amp;#8211; Type 1 or Type 2 hypervisor&lt;/h2&gt;
-
-&lt;p&gt;The web pages of &lt;a href=&#34;http://www.linux-kvm.org/page/Main_Page&#34; target=&#34;_blank&#34;&gt;KVM &lt;/a&gt;and &lt;a href=&#34;http://wiki.qemu.org/Main_Page&#34; target=&#34;_blank&#34;&gt;QEMU&lt;/a&gt; clearly show that KVM needs QEMU to provide full hypervisor functionality. By itself, KVM is more of a virtualization infrastructure provider.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1038&#34; alt=&#34;KVM and QEMU relationship&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png&#34; width=&#34;1115&#34; height=&#34;413&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png 1115w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-300x111.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-768x284.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-1024x379.png 1024w&#34; sizes=&#34;(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;QEMU by itself is a Type-2 hypervisor. It intercepts the instructions meant for Virtual CPU and uses the host operating system to get those instructions executed on the physical CPU. &lt;strong&gt;When QEMU uses KVM for hardware acceleration, the combination becomes a Type-1 hypervisor.&lt;/strong&gt; This difference is quite clear from the description on the QEMU website.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1036&#34; alt=&#34;KVM and QEMU relationship&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png&#34; width=&#34;1086&#34; height=&#34;415&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png 1086w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-300x115.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-768x293.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-1024x391.png 1024w&#34; sizes=&#34;(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;kvm-and-qemu-8211-the-x86-dependency&#34;&gt;KVM and QEMU &amp;#8211; the x86 dependency&lt;/h2&gt;
-
-&lt;p&gt;Since KVM is really a &lt;em&gt;driver&lt;/em&gt; for the physical CPU capabilities, it is very tightly associated with the CPU architecture (the x86 architecture). This means that the benefits of hardware acceleration will be available only if the Virtual Machine CPU also uses the same architecture (x86).&lt;/p&gt;
-
-&lt;p&gt;If a VM needs to run Power PC CPU but the hypervisor server has an Intel CPU, then KVM will not work. You must use QEMU as the Virt Type and live with the performance overhead.&lt;/p&gt;
-
-&lt;h2 id=&#34;kvm-and-qemu-8211-the-conclusion&#34;&gt;KVM and QEMU &amp;#8211; the conclusion&lt;/h2&gt;
-
-&lt;p&gt;Based on the discussion above, it is quite clear that QEMU plays a very critical role in Linux based Open Source virtualization solutions. &lt;strong&gt;For all practical applications, QEMU needs KVM&amp;#8217;s performance boost.&lt;/strong&gt; However, it is clear that **KVM by itself cannot provide the complete virtualization solution. It needs QEMU.&lt;/p&gt;
-
-&lt;p&gt;**&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Goals for the first half of 2014</title>
-      <link>http://reachsrirams.github.io/blogs/2014/02/16/goals-first-half-2014/</link>
-      <pubDate>Sun, 16 Feb 2014 16:15:16 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2014/02/16/goals-first-half-2014/</guid>
-      
-        <description>&lt;p&gt;Like previous years, I want to continue the habit of sharing my goals around blogging and learning experiments. Clearly, this update for the first half of 2014 is already late. In addition, I did slip up on the important goals of 2013.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;status-of-2013-goals&#34;&gt;Status of 2013 Goals&lt;/h2&gt;
-
-&lt;p&gt;Here is my assessment of the goals I had set myself in the second half of 2014.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Complete the blog series on Understanding Virtual Networks
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Status Update:&lt;/strong&gt; I completed the blogs related to Linux based Virtual Networking.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Coming soon: &lt;/strong&gt;The blog on VMware based Virtual Networking is just around the corner (belatedly)&lt;/li&gt;
-&lt;li&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;strong&gt;Pending&lt;/strong&gt;: OpenStack networking and Open vSwitch&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Score: 5/10&lt;/strong&gt;. I should have completed this. There is absolutely no excuse for missing this goal.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Complete the permalink SEO change for this blog
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Status Update: &lt;/strong&gt;The permalink changes are still pending.&lt;/li&gt;
-&lt;li&gt;This is an important goal but has wider impact. In order to switch-over to new permalink structure on my blog, I need to make sure that old style permalinks are reachable. I need some time to test all the changes so have been delaying this task.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Score: 0/10&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Reading up on E-book publishing with focus on Leanpub.com, Amazon.com, Google Play Books
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Status Update:&lt;/strong&gt; Finished my reading of Leanpub and Amazon. But Google Play was more of a cursory glance.&lt;/li&gt;
-&lt;li&gt;Though I have read through these resources, I have not yet finalized a strategy or goal for E-book publishing&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;7&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Overall assessment: &lt;/strong&gt;Looking back at 2013, I clearly missed several goals. Though I tasted &lt;a href=&#34;http://www.innervoice.in/blogs/2014/02/14/2000-views-youtube-video/&#34; title=&#34;Over 2000 views of my YouTube Video&#34;&gt;some success with unplanned goals&lt;/a&gt;, I am disappointed that I missed the goal that was closest to my heart.&lt;/p&gt;
-
-&lt;h2 id=&#34;below-content&#34;&gt;Goals for 2014 first half&lt;/h2&gt;
-
-&lt;div&gt;
-  And here is what I have planned for the first half of 2014 (really the remaining 4 months)
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;ol&gt;
-    &lt;li&gt;
-      Complete the Understanding Virtual Networks series &lt;ul&gt;
-        &lt;li&gt;
-          Finish the introductory blogs about OpenStack Networking and Open vSwitch
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    
-    &lt;li&gt;
-      Write &lt;strong&gt;two&lt;/strong&gt; &lt;a href=&#34;http://smallbusiness.chron.com/curate-blog-34682.html&#34;&gt;curated posts&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      Publish &lt;strong&gt;two &lt;/strong&gt;short YouTube videos
-    &lt;/li&gt;
-  &lt;/ol&gt;
-  
-  &lt;p&gt;
-    Given that I have about 4 months for these goals and that work pressure will be high during this time, I believe the goals are challenging yet achievable. I hope that in 2014, I become more systematic and consistent with my blogging by using techniques such as curated content.
-  &lt;/p&gt;
-  
-  &lt;p&gt;
-    Please share your thoughts and suggestions to help me become a more regular and effective blogger.
-  &lt;/p&gt;
-&lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Tap Interfaces and Linux Bridge</title>
-      <link>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</link>
-      <pubDate>Sun, 08 Dec 2013 06:56:00 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</guid>
-      
-        <description>&lt;p&gt;In the &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/02/linux-bridge-virtual-networking/&#34;&gt;previous blog of this series&lt;/a&gt; we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;physical-vs-virtual-networking&#34;&gt;Physical vs. Virtual Networking&lt;/h2&gt;
-
-&lt;p&gt;The network data traffic is handled by the physical Ethernet ports on physical machines. Similarly for virtual machines this traffic needs to be handled by the &lt;em&gt;virtual ethernet ports&lt;/em&gt;. Eventually this traffic from virtual ports needs to be sent to the physical network for external connectivity. How does this happen? As seen in the image below the following components are key for physical networking:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Ethernet Port on the server &amp;#8211; commonly called pNIC (physical NIC)&lt;/li&gt;
-&lt;li&gt;RJ45 Cable&lt;/li&gt;
-&lt;li&gt;Ethernet Port on the physical switch&lt;/li&gt;
-&lt;li&gt;Uplink Port on the physical switch &amp;#8211; connects to external network.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-944&#34; alt=&#34;Physical Network Components&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network.png&#34; width=&#34;645&#34; height=&#34;253&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network.png 806w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network-300x118.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network-768x301.png 768w&#34; sizes=&#34;(max-width: 645px) 100vw, 645px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Since the goal of virtualization is to emulate _physical entities_ in software, it must support a construct where &amp;#8220;a virtual machine&amp;#8217;s virtual Ethernet port is connected to a virtual switch&amp;#8221;.&lt;/p&gt;
-
-&lt;h2 id=&#34;switch-ports&#34;&gt;Switch Ports&lt;/h2&gt;
-
-&lt;p&gt;As mentioned in my previous post, Linux bridge is really a switch implemented inside Linux kernel. And like any switch, it requires &lt;em&gt;ports&lt;/em&gt; or _interfaces_ to carry data traffic in and out of the switch. We have also seen how to add a physical interface to the bridge. Linux bridge also supports &lt;em&gt;virtual ports&lt;/em&gt;. Since virtual ports are actually software entities,  other software entities can use them to send Ethernet frames to the &lt;em&gt;virtual switch&lt;/em&gt; for further processing. For Ethernet traffic, these &lt;span style=&#34;text-decoration: underline;&#34;&gt;Linux virtual ports are called tap&lt;em&gt; &lt;/em&gt;&lt;/span&gt;&lt;span style=&#34;text-decoration: underline;&#34;&gt;interfaces.&lt;/span&gt; Tap interfaces can be added to a Linux bridge just like physical interfaces. With this approach a Linux bridge can forward packets from virtualized world to a physical world (and vice-versa).&lt;/p&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-945&#34; alt=&#34;Virtual Network Components with tap interfaces&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk.png&#34; width=&#34;621&#34; height=&#34;371&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk.png 887w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk-300x179.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk-768x459.png 768w&#34; sizes=&#34;(max-width: 621px) 100vw, 621px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;As seen in the image below, when virtualization comes into the picture, the following components play a key role in networking:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Ethernet Port on VM (emulates the pNIC) &amp;#8211; commonly knows as vNIC (Virtual NIC). Virtual port is &lt;em&gt;emulated&lt;/em&gt; with help from KVM/QEMU.&lt;/li&gt;
-&lt;li&gt;Virtual RJ45 Cable &amp;#8211; we will see how this is created.&lt;/li&gt;
-&lt;li&gt;Ethernet Port on Virtual Switch &amp;#8211; for Linux Bridge, this is represented by the &lt;em&gt;tap interface&lt;/em&gt; since it connects to a vNIC.&lt;/li&gt;
-&lt;li&gt;Uplink Port on the Virtual Switch &amp;#8211; this is usually the &lt;em&gt;interface&lt;/em&gt; that represent the pNIC. In Linux world eth0, eth1 etc are the software interfaces that represent the physical ethernet port.&lt;/li&gt;
-&lt;li&gt;In case of a physical server, the Uplink port on physical switch provided &lt;em&gt;external network connectivity&lt;/em&gt;. In case of virtual machines, the Uplink port on virtual switch provides &lt;em&gt;external network connectivity&lt;/em&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;tap-interfaces-8211-why-do-we-need-them&#34;&gt;Tap interfaces &amp;#8211; Why do we need them?&lt;/h2&gt;
-
-&lt;p&gt;Like their physical counterparts, virtual machines network ports can only process Ethernet frames. In non-virtualized environments, the physical NIC interface will receive and process the Ethernet frames. It will strip out the Ethernet related overhead bytes and forward the payload (usually IP packets) further up to the OS. With virtualization however, this will not work since the virtual NICs would expect Ethernet frames. This is where tap interfaces come into picture. Tap interfaces are special software entities which tell the Linux bridge to forward Ethernet frames as it is. In other words, the virtual machines connected to tap interfaces will be able to receive raw Ethernet frames. And due to this virtual machines can continue to emulate physical machines from a networking perspective.&lt;/p&gt;
-
-&lt;h2 id=&#34;is-there-a-virtual-rj45-cable-as-well&#34;&gt;Is there a virtual RJ45 cable as well?&lt;/h2&gt;
-
-&lt;p&gt;The short answer is no. But there is a need for connecting a virtual Ethernet port of a VM to the &lt;em&gt;tap&lt;/em&gt; interface on a Linux bridge. This connection is achieved programmatically. Applications such as libvirt create a &amp;#8216;file descriptor&amp;#8217; using the tap interface. When Linux bridge sends Ethernet frames to a &lt;em&gt;tap&lt;/em&gt; interface, it actually is sending the bytes to a file descriptor. Emulators like QEMU, read the bytes from this file descriptor and pass it onto the &amp;#8216;guest operating system&amp;#8217; inside the VM, via the virtual network port on the VM. &lt;strong&gt;Note: &lt;/strong&gt;Tap interfaces are listed as part of the _ifconfig_ Linux command.&lt;/p&gt;
-
-&lt;h3 id=&#34;further-reading-8211-a-href-http-backreference-org-2010-03-26-tuntap-interface-tutorial-target-blank-tun-tap-interface-tutorial-a&#34;&gt;&lt;strong&gt;Further Reading &amp;#8211; &lt;/strong&gt;&lt;a href=&#34;http://backreference.org/2010/03/26/tuntap-interface-tutorial/&#34; target=&#34;_blank&#34;&gt;Tun/Tap interface tutorial&lt;/a&gt;&lt;/h3&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Linux Bridge and Virtual Networking</title>
-      <link>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</link>
-      <pubDate>Mon, 02 Dec 2013 18:00:47 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</guid>
-      
-        <description>&lt;p&gt;Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;linux-bridge-8211-the-basics&#34;&gt;Linux Bridge &amp;#8211; The Basics&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/08/16/understanding-virtual-networks-the-basics/&#34; target=&#34;_blank&#34;&gt;Virtual networking requires the presence of a virtual switch &lt;/a&gt;inside a server/hypervisor. Even though it is called a bridge, &lt;span style=&#34;text-decoration: underline;&#34;&gt;the Linux bridge is really a virtual switch&lt;/span&gt; and used with KVM/QEMU hypervisor. Linux Bridge is a kernel module, first introduced in 2.2 kernel (circa 2000). And it is administered using &lt;em&gt;brctl&lt;/em&gt; command on Linux.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-simple-use-case&#34;&gt;The Simple Use Case&lt;/h2&gt;
-
-&lt;p&gt;Now we will delve a bit more into Linux bridge by looking at a very basic use case. Let us say that you want to create a VM on your KVM-enabled Linux server (host). Among other things, this VM will be configured with one virtual NIC. In order to give Internet connectivity to this VM, we will have to associate the virtual NIC of the VM to the physical NIC of the server. This &lt;em&gt;association&lt;/em&gt; is facilitated by the Linux bridge. Here is a picture of what we want to accomplish:&lt;/p&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase.png&#34;&gt;&lt;img class=&#34; wp-image-907  aligncenter&#34; alt=&#34;Simple Use Case for Linux Bridge&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase.png&#34; width=&#34;743&#34; height=&#34;175&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase.png 1238w, http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase-300x71.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase-768x181.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase-1024x241.png 1024w&#34; sizes=&#34;(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;The above picture is based on my home Ubuntu laptop running KVM. I am using the wireless connection so that the laptop itself has network connectivity. But to illustrate Linux bridge capability, I will create a VM and associate it to my wired NIC port on the same laptop. The newly created VM will get its IP address etc (via DHCP) from the router in the middle.&lt;/p&gt;
-
-&lt;h2 id=&#34;step-by-step-guide&#34;&gt;Step-by-step guide&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Step &amp;#8211; 1: &lt;/strong&gt;The first step is to create a Linux bridge using the &lt;em&gt;brctl&lt;/em&gt; command. &lt;strong&gt;Note:&lt;/strong&gt; for more ways to create Linux bridges (depends on you distro) &amp;#8211; &lt;a href=&#34;http://xmodulo.com/2013/04/how-to-configure-linux-bridge-interface.html&#34; target=&#34;_blank&#34;&gt;check this out&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre&gt;# sudo brctl addbr kvmbr0&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;Step &amp;#8211; 2: &lt;/strong&gt;The next step is to associate the physical NIC of the server (eth0) to this bridge. &lt;strong&gt;Note:&lt;/strong&gt;&amp;#8211; prior to this step ensure that the physical NIC does not have any IP address configured.&lt;/p&gt;
-
-&lt;pre&gt;# sudo brctl addif kvmbr0 eth0&lt;/pre&gt;
-
-&lt;p&gt;At the end of these two steps, the network configuration would look something like this. Note that the &lt;em&gt;kvmbr0&lt;/em&gt; Linux bridge has only one interface at this time (eth0).&lt;/p&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-915&#34; alt=&#34;Linux Bridge Interface Config Sample&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config.png&#34; width=&#34;507&#34; height=&#34;324&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config.png 724w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config-300x192.png 300w&#34; sizes=&#34;(max-width: 507px) 100vw, 507px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Step &amp;#8211; 3:&lt;/strong&gt; The next step is to create a Virtual Machine and ensure that it uses the Linux bridge created above for the virtual networking. For this blog, I will demonstrate this step using &amp;#8220;Virtual Machine Manager&amp;#8221; (VMM) which is a GUI for &lt;em&gt;libvirt&lt;/em&gt;. Here is a screenshot on how you can associate the Linux Bridge to a VM.**&lt;/p&gt;
-
-&lt;p&gt;**&lt;/p&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-918&#34; alt=&#34;Associate Linux Bridge to a VM&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager.png&#34; width=&#34;386&#34; height=&#34;405&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager.png 552w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager-286x300.png 286w&#34; sizes=&#34;(max-width: 386px) 100vw, 386px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Once the virtual machine is created and booted up, you will see that the virtual machine has external network connectivity.&lt;/p&gt;
-
-&lt;h2 id=&#34;let-us-connect-the-interfaces&#34;&gt;Let us connect the interfaces&lt;/h2&gt;
-
-&lt;p&gt;The output of _brctl_ &lt;em&gt;show&lt;/em&gt; command shows that there is another interface on the _kvmbr0_ Linux bridge. This interface &lt;strong&gt;&lt;em&gt;vnet0&lt;/em&gt; is a virtual interface created by libvirt&lt;/strong&gt; (VMM) as seen in the screenshot here. This virtual interface is also called a &lt;strong&gt;&lt;em&gt;tap interface&lt;/em&gt;&lt;/strong&gt;. You can see from the PS command that the _KVM/QEMU _command that started the VM, uses a &lt;em&gt;tap&lt;/em&gt; interface as a network device. &lt;em&gt;More about this in the next post.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-929&#34; alt=&#34;Linux Bridge with Virtual Interface&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28.png&#34; width=&#34;633&#34; height=&#34;412&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28.png 904w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28-300x195.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28-768x500.png 768w&#34; sizes=&#34;(max-width: 633px) 100vw, 633px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Now just like you connect an Ethernet (RJ-45) cable from a physical NIC to an port (interface) on a physical switch, the VM&amp;#8217;s virtual NIC is connected to this virtual _tap_ interface on the Linux bridge. The below screenshot highlights the relationship between the VM&amp;#8217;s virtual NIC and the Linux Bridge tap interface.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;The first thing to notice is the similarities in the MAC address of vnet0 (on the host server) and the eth0 (virtual NIC in the VM).&lt;/li&gt;
-&lt;li&gt;The next giveaway is the data transmitted and received on each of the interface. Since there is a direct 1-1 relationship, the TX bytes of the VM NIC matches the RX bytes of _vnet0. _And vice-versa.&lt;/li&gt;
-&lt;li&gt;Finally, we can see that the Virtual NIC has been configured with IP address and gateway etc. This configuration is done using the DHCP server on my physical router. This implies that virtual NIC has external network connectivity.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24.png&#34;&gt;&lt;img class=&#34;aligncenter  wp-image-930&#34; alt=&#34;VM NIC to Tap Interface relationship&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24.png&#34; width=&#34;820&#34; height=&#34;461&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24.png 1366w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24-300x169.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24-768x432.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24-1024x576.png 1024w&#34; sizes=&#34;(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;To summarize:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;We created a Linux bridge and added a physical NIC interface of the host.&lt;/li&gt;
-&lt;li&gt;Then while creating a VM, we specified the Linux bridge to be used for virtual networking.&lt;/li&gt;
-&lt;li&gt;The Virtual Machine Manager (libvirt GUI) did some behind-the-scene work to associate the Virtual NIC to the Linux bridge and in turn to the Physical NIC.&lt;/li&gt;
-&lt;li&gt;We then observed how the VM&amp;#8217;s virtual NIC is associated to the virtual &lt;em&gt;tap&lt;/em&gt; interface on the host. And how the tap interface is added to the Linux bridge.&lt;/li&gt;
-&lt;li&gt;This shows that the traffic will flow from the VM&amp;#8217;s virtual NIC to the &lt;em&gt;vnet0&lt;/em&gt; tap interface, then onto the Linux bridge (virtual switch) which will send it out on the other virtual switch interface (eth0) on the host.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In the next blog post, we will understand what happened behind-the-scene.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Goals for 2013 – Status Update</title>
-      <link>http://reachsrirams.github.io/blogs/2013/09/01/goals-for-2013-status-update/</link>
-      <pubDate>Sun, 01 Sep 2013 07:10:14 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2013/09/01/goals-for-2013-status-update/</guid>
-      
-        <description>&lt;p&gt;At the beginning of the year, I had set myself &lt;a href=&#34;http://www.innervoice.in/blogs/2013/01/01/goals-for-2013/&#34;&gt;few goals&lt;/a&gt; related to my blogging and learning activities. This belated mid-year review of those goals already gives an indication of how I have performed against the goals I set for myself.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;status-and-score-for-2013-1st-half-goals&#34;&gt;Status and Score for 2013 1st half goals&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Optimize my WordPress install for mobile viewing and better SEO
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Status Update&lt;/strong&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Mobile version completed. I use Tiga wordpress theme which is Mobile friendly. It provides just enough features that I want.&lt;/li&gt;
-&lt;li&gt;Better SEO &amp;#8211; 50% complete. The main goal here was to fix the permalinks of my blog posts. I have completed this for one of my two blogs.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Overall score &amp;#8211; &lt;sup&gt;7&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;. I certainly could have done better. But I am happy that I kept with a large number of WordPress updates so far this year.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Complete the blog series on Understanding Virtual Networks
-
-&lt;ul&gt;
-&lt;li&gt;The pending items are technology intensive topics such as Linux Bridges, Open vSwitch, VMware Virtual Networking and OpenStack Quantum&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Status Update&lt;/strong&gt;
-
-&lt;ul&gt;
-&lt;li&gt;As mentioned in my blog about goals, significant amount hands-on learning and experimentation was required for this blog series.&lt;/li&gt;
-&lt;li&gt;While I am happy to say that my knowledge of these areas has grown leaps and bounds, I have failed badly in translating the knowledge into blogs.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Overall Score &amp;#8211; &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Understand E-Book publishing concepts.
-
-&lt;ul&gt;
-&lt;li&gt;I have started reading up on leanpub.com. I also want to explore the technology and business model behind publishing E-Books.&lt;/li&gt;
-&lt;li&gt;The plan is to convert a blog series into an E-Book.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Status Update&lt;/strong&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The scores will be lower for this goal since I hardly spent any time in the last 6 months.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Overall Score &amp;#8211; 0/10&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;the-positives&#34;&gt;The positives&lt;/h2&gt;
-
-&lt;p&gt;It is quite obvious that I have lagged behind my goals. But there are some key positives during the last six months, that I would like to highlight:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Through video blogging I have found a new medium to share my knowledge and I believe this will be a compelling platform for sharing. I created two YouTube videos in the last six months.&lt;/li&gt;
-&lt;li&gt;Technical skill update &amp;#8211; thanks to my work at Juniper, I have been on a continuous learning curve in some exciting technology areas. This has kept me happily and heavily occupied.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;the-goals-for-rest-of-2013&#34;&gt;The goals for rest of 2013&lt;/h2&gt;
-
-&lt;p&gt;Since none of the goals I set earlier have been fully complete, I will persist with the same goals.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Complete the blog series on Understanding Virtual Networks &amp;#8211; enough said !&lt;/li&gt;
-&lt;li&gt;Complete the permalink SEO change for this blog&lt;/li&gt;
-&lt;li&gt;Reading up on E-book publishing with focus on:
-
-&lt;ul&gt;
-&lt;li&gt;Leanpub.com&lt;/li&gt;
-&lt;li&gt;Amazon.com&lt;/li&gt;
-&lt;li&gt;Google Play Books&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Goals for 2013</title>
-      <link>http://reachsrirams.github.io/blogs/2013/01/01/goals-for-2013/</link>
-      <pubDate>Tue, 01 Jan 2013 13:00:28 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2013/01/01/goals-for-2013/</guid>
-      
-        <description>&lt;p&gt;Before I share my goals for the first half of 2013, here is an assessment of my 2012 goals. Around mid 2012, I had set out with some goals to learn a JavaScript, CSS and HTML5 as part of UTM URL Generator project. You can check out &lt;a href=&#34;http://www.innervoice.in/blogs/2012/06/29/how-i-am-learning-javascript-and-css/&#34;&gt;those goals here&lt;/a&gt;. Around November I reworked some of the &lt;a href=&#34;http://www.innervoice.in/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/&#34; target=&#34;_blank&#34;&gt;milestones of that project&lt;/a&gt; and completed most of it recently. The main intention of the UTM URL Generator project was to learn the basics of few technologies.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;And my assessment is that I learnt what I set out to learn. Clearly by sharing my goals with a broad audience I felt accountable and hence was able to focus and get the results that I wanted. In more specific technical terms, I also learnt about HTML5 Local Storage, JQuery, classes in JavaScript, Bookmarklet and Media Query. Here are the blogs related to this project:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/11/14/4-important-css-concepts-i-learnt/&#34;&gt;http://www.innervoice.in/blogs/2012/11/14/4-important-css-concepts-i-learnt/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/02/bookmarklets-for-convenience/&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/02/bookmarklets-for-convenience/&#34;&gt;http://www.innervoice.in/blogs/2012/12/02/bookmarklets-for-convenience/&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/24/html5-local-storage-url-generator-project/&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/24/html5-local-storage-url-generator-project/&#34;&gt;http://www.innervoice.in/blogs/2012/12/24/html5-local-storage-url-generator-project/&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/27/html5-local-storage-tips-and-tricks/&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2012/12/27/html5-local-storage-tips-and-tricks/&#34;&gt;http://www.innervoice.in/blogs/2012/12/27/html5-local-storage-tips-and-tricks/&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;goals-for-2013&#34;&gt;Goals for 2013&lt;/h3&gt;
-
-&lt;p&gt;So I am going to continue the tradition of declaring my goals for 2013. Instead of setting targets for the whole year, I am going to work on few goals for the first half of 2013. So here they are:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Optimize my WordPress install for mobile viewing and better SEO&lt;/li&gt;
-&lt;li&gt;Complete the blog series on Understanding Virtual Networks
-
-&lt;ul&gt;
-&lt;li&gt;The pending items are technology intensive topics such as Linux Bridges, Open vSwitch, VMware Virtual Networking and OpenStack Quantum&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Understand E-Book publishing concepts.
-
-&lt;ul&gt;
-&lt;li&gt;I have started reading up on leanpub.com. I also want to explore the technology and business model behind publishing E-Books.&lt;/li&gt;
-&lt;li&gt;The plan is to convert a blog series into an E-Book.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;So those are the goals for the first half of 2013. They may be just three goals but given the workload at office and certain other personal commitments, I believe these goals will be more than a handful. The Virtual Networking series would require a good amount of hands-on experimentation and authoring effort.&lt;/p&gt;
-
-&lt;p&gt;Besides these, I will continue blog on and off on other topics of relevance and interest. The implicit goal is to be more consistent with my blogging.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>HTML5 Local Storage – 5 Useful Tips</title>
-      <link>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</link>
-      <pubDate>Thu, 27 Dec 2012 13:30:45 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</guid>
-      
-        <description>&lt;p&gt;HTML5 Local Storage is a browser based &lt;em&gt;key-value database&lt;/em&gt; that is available for client side applications. Java programmers (like me) will find that  HTML5 Local Storage is very similar to HashMap (or Hashtable). It is important to remember that Local Storage is available to client side applications even across browser restarts. In that context, Local Storage is similar to cookies. &lt;strong&gt;But unlike cookies, Local Storage is not accessible to the server side applications. &lt;/strong&gt;Also cookies provide very limited storage (4 KB).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Here is an example of the two most important methods of &lt;em&gt;localStorage&lt;/em&gt; object.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;bar&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;JavaScript language allows several other ways to access localStorage.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;storeValue&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;For more introductory material &lt;a href=&#34;http://diveintohtml5.info/storage.html&#34;&gt;check this out&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;tip-1-pay-attention-to-the-url&#34;&gt;Tip - 1 - Pay attention to the URL&lt;/h3&gt;
-
-&lt;p&gt;Browsers persist HTML5 Local Storage on a per domain basis. So a web application can only access Local Storage defined for its domain. Not just the domain but subdomain and HTTP vs HTTPS are also used to identify the domain. For example, a key-value stored in Local Storage for &lt;a href=&#34;http://www.mysite.com&#34;&gt;http://www.mysite.com&lt;/a&gt; is not available &lt;a href=&#34;https://www.mysite.com&#34;&gt;https://www.mysite.com&lt;/a&gt;. So if you want to share client side data between applications on different domain or sub-domains, you need to use re-directs.&lt;/p&gt;
-
-&lt;p&gt;On the other hand if you host multiple web applications on the same domain (hosted as sub-directories) then all your web applications share the information stored in Local Storage. While this could be useful sometimes, care must be taken to avoid one application from over-writing the values of another application. It is good to identify the key along with application name or other identifiers.&lt;/p&gt;
-
-&lt;h3 id=&#34;tip-2-size-does-matter&#34;&gt;Tip - 2 - Size does matter&lt;/h3&gt;
-
-&lt;p&gt;The HTML5 specification has &lt;em&gt;arbitrarily&lt;/em&gt; fixed the maximum storage size &lt;em&gt;per domain&lt;/em&gt; to 5 MB. This includes keys as well as values. While  5 MB worth of client side data is quite a bit, ensure that you handle the exception QUOTA_EXCEEDED_ERR and probably cleanup the storage.&lt;/p&gt;
-
-&lt;h3 id=&#34;tip-3-store-and-retrieve-data-types&#34;&gt;Tip - 3 - Store and retrieve data types&lt;/h3&gt;
-
-&lt;p&gt;Local Storage supports only string values to be persisted. When you call &lt;em&gt;setItem&lt;/em&gt; method, it internally converts the value object to String and persists it. So additional steps need to be taken to store and retrieve objects of different data types. Fortunately we can use JSON parsing for this purpose.&lt;/p&gt;
-
-&lt;p&gt;The technique is to use &lt;em&gt;JSON.stringify()&lt;/em&gt; and &lt;em&gt;JSON.parse()&lt;/em&gt; functions to perform this conversion automatically. JavaScript allows us to add newer methods to existing objects. So it is advisable to incorporate this technique into the _standard localStorage object _itself. This can done as follows:&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;Storage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;prototype&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setObject&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-&lt;span class=&#34;nx&#34;&gt;Storage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;prototype&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getObject&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;With the above code you can invoke&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getObject&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setObject&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;obj&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The above code is courtesy - &lt;a href=&#34;http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage&#34;&gt;http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;tip-4-store-multiple-values-for-a-single-key&#34;&gt;Tip - 4 - Store multiple values for a single key&lt;/h3&gt;
-
-&lt;p&gt;If you want to store multiple values for a single key, then this tip is very useful. I borrowed this technique from &lt;a href=&#34;http://paperkilledrock.com/2010/05/html5-localstorage-part-two/&#34;&gt;http://paperkilledrock.com/2010/05/html5-localstorage-part-two/&lt;/a&gt;. Here is what you need to do:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Create an array and &lt;em&gt;push&lt;/em&gt; different values into it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Stringify the array using the &lt;em&gt;join&lt;/em&gt; method by specifying a &lt;em&gt;separator&lt;/em&gt;. Note choose a separator that is unlikely to appear in your values.&lt;/li&gt;
-&lt;li&gt;Persist this string into Local Storage.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;k&#34;&gt;try&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;join&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//store the item in the database
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;catch&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;QUOTA_EXCEEDED_ERR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;nx&#34;&gt;alert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Quota exceeded!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;While retrieving fetch the concatenated String from Local Storage and use &lt;em&gt;String.split()&lt;/em&gt; to parse the different values.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;valueFromStore&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// get the String from Local Storage
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;valueFromStore&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// get an Array back
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&#34;tip-5-always-check-for-browser-support&#34;&gt;Tip - 5 - Always check for Browser Support&lt;/h3&gt;
-
-&lt;p&gt;A very large number of modern browsers support Local Storage but as a web application developer you may still encounter browsers that do not support many HTML5 constructs and certainly not Local Storage. So you are well advised to check whether your browser supports Local Storage or not. While there are many ways to check, I strongly recommend Modernizr API (why re-invent the wheel).&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Modernizr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;localstorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;c1&#34;&gt;// localStorage is supported
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;c1&#34;&gt;// localStorage not supported
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;p&gt;For a Router, the External Network represents the &amp;#8220;gateway&amp;#8221; to the outside world (Internet). So a special port of type &amp;#8220;network:router_gateway&amp;#8221; is created for this. This port is created with a user does &amp;#8220;Set Gateway&amp;#8221; operation on a Router and resides on the Network node.&lt;/p&gt;
+</description>
       
     </item>
     

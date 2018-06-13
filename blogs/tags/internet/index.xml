@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Internet on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/internet/</link>
+    <description>Recent content in Internet on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 07 Jul 2013 09:02:53 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/internet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Networking Concepts – the fundamentals</title>
+      <link>http://reachsrirams.github.io/blogs/2013/07/07/fundamental-networking-concepts/</link>
+      <pubDate>Sun, 07 Jul 2013 09:02:53 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/07/07/fundamental-networking-concepts/</guid>
+      <description>&lt;p&gt;In my first YouTube video, I discuss 3 networking concepts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;line-height: 13px;&#34;&gt;Default Gateway&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;DNS Server&lt;/li&gt;
+&lt;li&gt;Subnet Mask&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

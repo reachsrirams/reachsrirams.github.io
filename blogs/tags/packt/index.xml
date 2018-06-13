@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Packt on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/packt/</link>
+    <description>Recent content in Packt on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 Oct 2015 16:47:23 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/packt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Announcing: OpenStack Networking Cookbook</title>
+      <link>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</link>
+      <pubDate>Fri, 23 Oct 2015 16:47:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</guid>
+      <description>My first publication &amp;#8220;OpenStack Networking Cookbook&amp;#8221; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,10 +6,65 @@
     <description>Recent content in Networking on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Aug 2012 18:01:24 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2015 16:47:23 +0000</lastBuildDate>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Announcing: OpenStack Networking Cookbook</title>
+      <link>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</link>
+      <pubDate>Fri, 23 Oct 2015 16:47:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</guid>
+      <description>My first publication &amp;#8220;OpenStack Networking Cookbook&amp;#8221; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.</description>
+    </item>
+    
+    <item>
+      <title>Ports in OpenStack Neutron</title>
+      <link>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</link>
+      <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
+      <description>OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+Why are Ports important?</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Neutron Plugins and Agents</title>
+      <link>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</link>
+      <pubDate>Tue, 31 Mar 2015 16:55:40 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</guid>
+      <description>I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
+OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services.</description>
+    </item>
+    
+    <item>
+      <title>Networking Nuggets – Hub vs Bridge vs Switch</title>
+      <link>http://reachsrirams.github.io/blogs/2013/07/14/networking-nuggets-1/</link>
+      <pubDate>Sun, 14 Jul 2013 19:28:32 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/07/14/networking-nuggets-1/</guid>
+      <description>&lt;p&gt;Here is an overview of three basic networking devices &amp;#8211; Hub, Bridge and a Switch. This blog and the related &lt;a href=&#34;#youtubevideo&#34;&gt;YouTube video&lt;/a&gt; will be useful for upcoming topics related to virtual networking such as Linux Bridge and Open vSwitch. &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Networking Concepts – the fundamentals</title>
+      <link>http://reachsrirams.github.io/blogs/2013/07/07/fundamental-networking-concepts/</link>
+      <pubDate>Sun, 07 Jul 2013 09:02:53 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/07/07/fundamental-networking-concepts/</guid>
+      <description>&lt;p&gt;In my first YouTube video, I discuss 3 networking concepts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;line-height: 13px;&#34;&gt;Default Gateway&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;DNS Server&lt;/li&gt;
+&lt;li&gt;Subnet Mask&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Understanding Virtual Networks – Ports and VLAN</title>

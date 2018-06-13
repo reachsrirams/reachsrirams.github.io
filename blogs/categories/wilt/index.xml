@@ -6,10 +6,29 @@
     <description>Recent content in Wilt on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Dec 2014 18:05:29 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Nov 2016 16:44:06 +0000</lastBuildDate>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/categories/wilt/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WILT – mysql, root and sudo</title>
+      <link>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</link>
+      <pubDate>Sun, 13 Nov 2016 16:44:06 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</guid>
+      <description>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;#8220;unix socket&amp;#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user.</description>
+    </item>
+    
+    <item>
+      <title>ip vs. ifconfig – WILT</title>
+      <link>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</link>
+      <pubDate>Fri, 27 Nov 2015 06:54:27 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</guid>
+      <description>One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc).</description>
+    </item>
     
     <item>
       <title>Linux Network Namespace – WILT</title>

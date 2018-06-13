@@ -34,6 +34,110 @@
     </item>
     
     <item>
+      <title>Ocata release install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/</link>
+      <pubDate>Sat, 03 Jun 2017 02:39:12 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/</guid>
+      <description>Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects</description>
+    </item>
+    
+    <item>
+      <title>Newton release install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</link>
+      <pubDate>Tue, 02 May 2017 05:07:42 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</guid>
+      <description>Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Horizon: extending the dashboard – Part 2</title>
+      <link>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</link>
+      <pubDate>Sun, 22 Jan 2017 17:42:35 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</guid>
+      <description>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;#8220;ports&amp;#8221; in your OpenStack based cloud.
+Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Horizon: extending the dashboard – Part 1</title>
+      <link>http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/</link>
+      <pubDate>Tue, 27 Dec 2016 10:31:44 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/</guid>
+      <description>OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&amp;#8217;s needs.
+OpenStack Horizon Background Horizon is a Django based web application and is hosted using an Apache web server.</description>
+    </item>
+    
+    <item>
+      <title>WILT – mysql, root and sudo</title>
+      <link>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</link>
+      <pubDate>Sun, 13 Nov 2016 16:44:06 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</guid>
+      <description>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;#8220;unix socket&amp;#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user.</description>
+    </item>
+    
+    <item>
+      <title>Mitaka on Ubuntu – install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/</link>
+      <pubDate>Wed, 06 Jul 2016 06:45:45 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/</guid>
+      <description>Mitaka is the most recent release of OpenStack and currently it is supports Ubuntu 14.04 LTS (trusty). I would like to share scripts that can be used to install the Mitaka release of OpenStack on Ubuntu. As part of my blogging, book writing projects, I have had the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Controller Logs – view using a browser</title>
+      <link>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</link>
+      <pubDate>Mon, 27 Jun 2016 18:22:07 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</guid>
+      <description>OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.</description>
+    </item>
+    
+    <item>
+      <title>PyCharm and OpenStack programming</title>
+      <link>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</link>
+      <pubDate>Sat, 02 Jan 2016 17:43:51 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</guid>
+      <description>OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the PyCharm IDE from Jetbrains for your OpenStack programming. I will use the Neutron ML2 driver code from my book OpenStack Networking Cookbook to guide you in setting up the PyCharm IDE.</description>
+    </item>
+    
+    <item>
+      <title>Announcing: OpenStack Networking Cookbook</title>
+      <link>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</link>
+      <pubDate>Fri, 23 Oct 2015 16:47:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</guid>
+      <description>My first publication &amp;#8220;OpenStack Networking Cookbook&amp;#8221; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.</description>
+    </item>
+    
+    <item>
+      <title>Ports in OpenStack Neutron</title>
+      <link>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</link>
+      <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
+      <description>OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+Why are Ports important?</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Neutron Plugins and Agents</title>
+      <link>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</link>
+      <pubDate>Tue, 31 Mar 2015 16:55:40 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</guid>
+      <description>I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
+OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services.</description>
+    </item>
+    
+    <item>
       <title>Using MAC table – Linux Bridge – WILT</title>
       <link>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</link>
       <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
@@ -100,58 +204,13 @@
     </item>
     
     <item>
-      <title>HTML5 Local Storage – 5 Useful Tips</title>
-      <link>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</link>
-      <pubDate>Thu, 27 Dec 2012 13:30:45 +0000</pubDate>
+      <title>Using SL4J and SimpleLogger with Servlets</title>
+      <link>http://reachsrirams.github.io/blogs/2013/11/18/using-slf4j-servlets/</link>
+      <pubDate>Mon, 18 Nov 2013 16:07:04 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</guid>
-      <description>&lt;p&gt;HTML5 Local Storage is a browser based &lt;em&gt;key-value database&lt;/em&gt; that is available for client side applications. Java programmers (like me) will find that  HTML5 Local Storage is very similar to HashMap (or Hashtable). It is important to remember that Local Storage is available to client side applications even across browser restarts. In that context, Local Storage is similar to cookies. &lt;strong&gt;But unlike cookies, Local Storage is not accessible to the server side applications. &lt;/strong&gt;Also cookies provide very limited storage (4 KB).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>HTML5 Local Storage based preferences for the URL Generator project</title>
-      <link>http://reachsrirams.github.io/blogs/2012/12/24/html5-local-storage-url-generator-project/</link>
-      <pubDate>Mon, 24 Dec 2012 16:45:58 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2012/12/24/html5-local-storage-url-generator-project/</guid>
-      <description>&lt;p&gt;The release 2 (R2) of my URL Generator Project is now ready. You can check it out at the &lt;a href=&#34;http://www.innervoice.in/tools/urlgen/&#34;&gt;usual location&lt;/a&gt;. I am happy to share that this revision was completed on time as per my &lt;a href=&#34;http://www.innervoice.in/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/&#34;&gt;revised project plan&lt;/a&gt;. Of course the announcement was delayed a bit. The main additions to this version of the URL generator are HTML5 based Local Storage, a simple usage of Object-oriented JavaScript techniques and jQuery.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Understanding Virtual Networks – Ports and VLAN</title>
-      <link>http://reachsrirams.github.io/blogs/2012/08/30/understanding-virtual-networks-ports-and-vlan/</link>
-      <pubDate>Thu, 30 Aug 2012 18:01:24 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2012/08/30/understanding-virtual-networks-ports-and-vlan/</guid>
-      <description>&lt;p&gt;In the &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2012/08/16/understanding-virtual-networks-the-basics/&#34;&gt;previous post&lt;/a&gt; we looked at the fundamental building blocks of physical and virtual networks. Now let us look at two key concepts in physical and virtual networks. They are Ports and VLAN.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Understanding Virtual Networks – The Basics</title>
-      <link>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/</link>
-      <pubDate>Thu, 16 Aug 2012 04:35:41 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks-the-basics/</guid>
-      <description>&lt;p&gt;In order understand Virtual Networking let us start with the simplest network that many of us operate every day – our home network. The picture below captures what a typical home network looks like. I am sure most of us use wireless rather than wired networks at home but the underlying concepts are very much alike.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Understanding Virtual Networks</title>
-      <link>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks/</link>
-      <pubDate>Thu, 16 Aug 2012 04:34:57 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2012/08/16/understanding-virtual-networks/</guid>
-      <description>&lt;p&gt;Upcoming technologies like OpenFlow and SDN are altering the networking landscape very quickly. The underlying drivers are Cloud Computing and Virtualization. Servers, Storage and Networking make up the trinity for effective Cloud computing strategy. Servers and Storage Virtualization has helped drive the adoption of flexible cloud services already. Now it is time for Network Virtualization.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>http://reachsrirams.github.io/blogs/2013/11/18/using-slf4j-servlets/</guid>
+      <description>We saw in my previous blog that SLF4J and SimpleLogger support the most critical logging requirements with ease. In this blog, we will see how to use SLF4J in a Servlets based application.
+The general practice is to initialize logging related objects and parameters at the startup of an application. In case of Servlets, any of the servlet in the Web Application can be invoked due to user action. So we need to use a different technique for initializing logging related objects.</description>
     </item>
     
   </channel>

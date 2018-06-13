@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>VirtualBox networking settings for OpenStack - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="The best way to learn OpenStack is by installing, running and playing with it directly. While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.
+In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="VirtualBox networking settings for OpenStack" />
+<meta property="og:description" content="The best way to learn OpenStack is by installing, running and playing with it directly. While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.
+In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/" />
+
+
+
+<meta property="article:published_time" content="2015-06-14T14:58:44&#43;00:00"/>
+
+<meta property="article:modified_time" content="2015-06-14T14:58:44&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="VirtualBox networking settings for OpenStack">
+<meta itemprop="description" content="The best way to learn OpenStack is by installing, running and playing with it directly. While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.
+In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation.">
+
+
+<meta itemprop="datePublished" content="2015-06-14T14:58:44&#43;00:00" />
+<meta itemprop="dateModified" content="2015-06-14T14:58:44&#43;00:00" />
+<meta itemprop="wordCount" content="513">
+
+
+
+<meta itemprop="keywords" content="OpenStack,virtualbox," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VirtualBox networking settings for OpenStack"/>
+<meta name="twitter:description" content="The best way to learn OpenStack is by installing, running and playing with it directly. While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.
+In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 1em 2em;
+		margin: 0 2em 1em;
+	}
+	.content-wrapper {
+		padding: 1em 0 1px;
+	}
+	.post-header {
+		font-size: 1.0em;
+		font-weight: 600;
+	}
+	.post-content {
+		font-size: 16px;
+	}
+	.logo {
+		font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">VirtualBox networking settings for OpenStack</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2015-06-14 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/networking/"> Networking </a>
+            
+              <a href="/blogs/categories/virtualization/"> Virtualization </a>
+            
+          </div>
+        <span class="more-meta"> 513 words </span>
+        <span class="more-meta"> 3 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#virtualbox-network-settings-for-controller-node">VirtualBox Network settings for Controller Node</a></li>
+<li><a href="#virtualbox-network-settings-for-compute-node">VirtualBox Network settings for Compute Node</a></li>
+<li><a href="#why-the-additional-interface">Why the additional interface</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>The best way to learn OpenStack is by installing, running and playing with it directly. While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.</p>
+
+<p>In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation. I will be focusing <strong>only on the networking aspects when using VirtualBox</strong>. I will also share some tips that are important in this deployment. This blog will not cover the steps to install and create a virtual machine using VirtualBox.</p>
+
+<p>We will consider a two-node OpenStack setup with one node acting as API Server and Network Node (generally called Controller) and the second node acting as Compute node. We will also assume that VM instances require External network (Internet) access. The physical connectivity between the two nodes should be as follows:</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/06/VirtualBox-OpenStack-Networking.png"><img class="aligncenter size-full wp-image-1277" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/06/VirtualBox-OpenStack-Networking.png" alt="VirtualBox OpenStack Networking" width="769" height="714" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/06/VirtualBox-OpenStack-Networking.png 769w, http://127.0.0.1/wordpress/wp-content/uploads/2015/06/VirtualBox-OpenStack-Networking-300x279.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/06/VirtualBox-OpenStack-Networking-768x713.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+<p>As you can see you need at least three network interfaces on the controller node and two on the compute node. But since we are going to run these as virtual box instances, I recommend an additional interface. And shortly I will explain why the additional interface is useful. The tables below shows how each interface or adapter needs to be configured on Virtual Box.</p>
+
+<h2 id="virtualbox-network-settings-for-controller-node">VirtualBox Network settings for Controller Node</h2>
+
+<p>[table id=9 /]</p>
+
+<h2 id="virtualbox-network-settings-for-compute-node">VirtualBox Network settings for Compute Node</h2>
+
+<p>[table id=10 /]</p>
+
+<p><strong>Tip:</strong> it is important to enable Promiscuous mode on <em>eth1</em>, the data traffic interfaces on both compute and controller node. Without this setting packets will not reach from OpenStack tenant VMs (that will be started inside the compute node), to the OpenStack controller.</p>
+
+<h2 id="why-the-additional-interface">Why the additional interface</h2>
+
+<p>The additional interface is very useful if you are running your virtual box instances on a laptop. Let us see why?</p>
+
+<ol>
+<li>The <em>eth0</em> interface on the OpenStack nodes is used for API requests and responses. Typically, it is also used to access the Horizon GUI or to execute CLI via SSH.</li>
+<li>In the settings above, the eth0 is realized using VirtualBox &#8220;Host-only&#8221; adapter. This ensures that all virtual machines on that &#8220;Host-only&#8221; network <strong>and</strong> the host laptop are able to talk to each other.</li>
+<li>We could have used either a <strong>bridge adapter</strong> or <strong>NAT</strong>. But both approaches have drawbacks. If your laptop was without network connectivity, bridge adapter will not work. And with NAT you will need Port forwarding to be configured to access Horizon/SSH on the VM. This is cumbersome. So host-only network is the best option for <em>eth0</em>.</li>
+<li>But the VM instances also need Internet access. So I recommend an <em>additional interface</em> of type NAT_ _just to accomplish that.</li>
+</ol>
+
+<p>In short, we have assigned separate network interfaces for Management Network and for Internet access for the OpenStack nodes (VirtualBox VMs).</p>
+
+<p>Here are some useful links to learn more about VirtualBox Networking:</p>
+
+<ol>
+<li><a href="https://www.virtualbox.org/manual/ch06.html" target="_blank">VirtualBox Networking Manual</a></li>
+<li><a href="http://catlingmindswipe.blogspot.in/2012/06/how-to-virtualbox-networking-part-two.html" target="_blank">How-to: VirtualBox Networking Part Two &#8211; NAT and Bridged</a></li>
+<li><a href="http://catlingmindswipe.blogspot.in/2012/06/how-to-virtualbox-networking-part-three.html" target="_blank">How-to: VirtualBox Networking Part Three &#8211; Host-only and Internal</a></li>
+</ol>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/openstack/">OpenStack</a>
+          
+          <a href="/blogs/tags/virtualbox/">virtualbox</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2015/07/04/ports-in-openstack-neutron/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Ports in OpenStack Neutron</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2015/03/31/openstack-neutron-plugins-and-agents/">
+            <span class="next-text nav-default">OpenStack Neutron Plugins and Agents</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

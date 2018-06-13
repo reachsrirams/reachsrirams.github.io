@@ -56,6 +56,24 @@
     </item>
     
     <item>
+      <title>Ocata release install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/</link>
+      <pubDate>Sat, 03 Jun 2017 02:39:12 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/</guid>
+      <description>Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects</description>
+    </item>
+    
+    <item>
+      <title>Newton release install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</link>
+      <pubDate>Tue, 02 May 2017 05:07:42 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</guid>
+      <description>Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.</description>
+    </item>
+    
+    <item>
       <title>Goals for the first half of 2017</title>
       <link>http://reachsrirams.github.io/blogs/2017/02/02/goals-first-half-2017/</link>
       <pubDate>Thu, 02 Feb 2017 04:10:53 +0000</pubDate>
@@ -64,6 +82,47 @@
       <description>&lt;p&gt;First of all a very happy new year to all the readers. The fact that this blog comes more than a month into 2017 should give you hints on what sort of goals I have planned for 2017 first half. I will start with an assessment of the second half of 2016.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Horizon: extending the dashboard – Part 2</title>
+      <link>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</link>
+      <pubDate>Sun, 22 Jan 2017 17:42:35 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</guid>
+      <description>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;#8220;ports&amp;#8221; in your OpenStack based cloud.
+Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Horizon: extending the dashboard – Part 1</title>
+      <link>http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/</link>
+      <pubDate>Tue, 27 Dec 2016 10:31:44 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/</guid>
+      <description>OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&amp;#8217;s needs.
+OpenStack Horizon Background Horizon is a Django based web application and is hosted using an Apache web server.</description>
+    </item>
+    
+    <item>
+      <title>WILT – mysql, root and sudo</title>
+      <link>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</link>
+      <pubDate>Sun, 13 Nov 2016 16:44:06 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</guid>
+      <description>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;#8220;unix socket&amp;#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user.</description>
+    </item>
+    
+    <item>
+      <title>Book Announcement and Launch discounts</title>
+      <link>http://reachsrirams.github.io/blogs/2016/10/26/book-announcement-launch-discounts/</link>
+      <pubDate>Wed, 26 Oct 2016 14:57:29 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/10/26/book-announcement-launch-discounts/</guid>
+      <description>My second book titled &amp;#8220;Software Defined Networking with OpenStack&amp;#8221; is almost ready to be available publicly. You can find the overview of the book below.
+With OpenStack Summit going on in Barcelona, my publishers, Packt, have graciously announced pre-launch discounts for the new book. You can get the following discounts:
+ 15% off on Print copies (code: SDNWOS15) 50% off on eBooks (code: SDNWOS50)  Both discounts available at my publisher website.</description>
     </item>
     
     <item>
@@ -78,6 +137,24 @@
     </item>
     
     <item>
+      <title>Mitaka on Ubuntu – install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/</link>
+      <pubDate>Wed, 06 Jul 2016 06:45:45 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/</guid>
+      <description>Mitaka is the most recent release of OpenStack and currently it is supports Ubuntu 14.04 LTS (trusty). I would like to share scripts that can be used to install the Mitaka release of OpenStack on Ubuntu. As part of my blogging, book writing projects, I have had the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Controller Logs – view using a browser</title>
+      <link>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</link>
+      <pubDate>Mon, 27 Jun 2016 18:22:07 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</guid>
+      <description>OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.</description>
+    </item>
+    
+    <item>
       <title>Goals for the first half of 2016</title>
       <link>http://reachsrirams.github.io/blogs/2016/02/01/goals-for-the-first-half-of-2016/</link>
       <pubDate>Mon, 01 Feb 2016 05:17:20 +0000</pubDate>
@@ -86,6 +163,33 @@
       <description>&lt;p&gt;I am late by a month in sharing my blogging and learning goals for the first half of 2016. Let&amp;rsquo;s start with a review of the second half of 2015.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PyCharm and OpenStack programming</title>
+      <link>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</link>
+      <pubDate>Sat, 02 Jan 2016 17:43:51 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</guid>
+      <description>OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the PyCharm IDE from Jetbrains for your OpenStack programming. I will use the Neutron ML2 driver code from my book OpenStack Networking Cookbook to guide you in setting up the PyCharm IDE.</description>
+    </item>
+    
+    <item>
+      <title>ip vs. ifconfig – WILT</title>
+      <link>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</link>
+      <pubDate>Fri, 27 Nov 2015 06:54:27 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</guid>
+      <description>One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc).</description>
+    </item>
+    
+    <item>
+      <title>Announcing: OpenStack Networking Cookbook</title>
+      <link>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</link>
+      <pubDate>Fri, 23 Oct 2015 16:47:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</guid>
+      <description>My first publication &amp;#8220;OpenStack Networking Cookbook&amp;#8221; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.</description>
     </item>
     
     <item>
@@ -100,135 +204,13 @@
     </item>
     
     <item>
-      <title>Using MAC table – Linux Bridge – WILT</title>
-      <link>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</link>
-      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
+      <title>Ports in OpenStack Neutron</title>
+      <link>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</link>
+      <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
-      <description>&lt;p&gt;In an &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; title=&#34;Linux Bridge and Virtual Networking&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Goals for the first half of 2015</title>
-      <link>http://reachsrirams.github.io/blogs/2015/01/14/goals-first-half-2015/</link>
-      <pubDate>Wed, 14 Jan 2015 10:31:21 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2015/01/14/goals-first-half-2015/</guid>
-      <description>&lt;p&gt;Here I am once again, with fresh blogging and learning goals for the first half of 2015. This time I am able to share my goals earlier than usual. In the past, I was delayed by almost 2 months. This is clearly a good start for me and I hope that the rest of the year, I am able to stick to a better cadence for my blogging.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>OpenStack Neutron – the components</title>
-      <link>http://reachsrirams.github.io/blogs/2015/01/13/openstack-neutron-components/</link>
-      <pubDate>Tue, 13 Jan 2015 18:20:22 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2015/01/13/openstack-neutron-components/</guid>
-      <description>&lt;p&gt;Neutron is the networking project within the OpenStack cloud platform. The purpose of OpenStack Neutron is to provide physical and virtual network resources to the instances (or virtual machines). Before you continue to read this article I would recommend that you read about &lt;a href=&#34;http://www.innervoice.in/blogs/2014/04/07/openstack-networking/&#34; title=&#34;OpenStack Networking – an introduction&#34;&gt;OpenStack networking concepts&lt;/a&gt;. To appreciate the architecture and the functionality of Neutron, it is important to understand the components that are part of Neutron.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Linux Network Namespace – WILT</title>
-      <link>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</link>
-      <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</guid>
-      <description>&lt;p&gt;In the next installment of &amp;#8220;What I learnt today&amp;#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a &lt;strong&gt;copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Goals for the second half of 2014</title>
-      <link>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</link>
-      <pubDate>Mon, 08 Sep 2014 07:48:13 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</guid>
-      <description>&lt;p&gt;Here is my mid-year (I know I am off by couple of months) review of my blogging and learning goals for 2014. I will start off with my assessment of the first half of 2014 and then wrap with goals for the remaining four months of this year.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>KVM and QEMU – do you know the connection?</title>
-      <link>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</link>
-      <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</guid>
-      <description>&lt;p&gt;If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Goals for the first half of 2014</title>
-      <link>http://reachsrirams.github.io/blogs/2014/02/16/goals-first-half-2014/</link>
-      <pubDate>Sun, 16 Feb 2014 16:15:16 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2014/02/16/goals-first-half-2014/</guid>
-      <description>&lt;p&gt;Like previous years, I want to continue the habit of sharing my goals around blogging and learning experiments. Clearly, this update for the first half of 2014 is already late. In addition, I did slip up on the important goals of 2013.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Tap Interfaces and Linux Bridge</title>
-      <link>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</link>
-      <pubDate>Sun, 08 Dec 2013 06:56:00 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</guid>
-      <description>&lt;p&gt;In the &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/02/linux-bridge-virtual-networking/&#34;&gt;previous blog of this series&lt;/a&gt; we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Linux Bridge and Virtual Networking</title>
-      <link>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</link>
-      <pubDate>Mon, 02 Dec 2013 18:00:47 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2013/12/02/linux-bridge-virtual-networking/</guid>
-      <description>&lt;p&gt;Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Goals for 2013 – Status Update</title>
-      <link>http://reachsrirams.github.io/blogs/2013/09/01/goals-for-2013-status-update/</link>
-      <pubDate>Sun, 01 Sep 2013 07:10:14 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2013/09/01/goals-for-2013-status-update/</guid>
-      <description>&lt;p&gt;At the beginning of the year, I had set myself &lt;a href=&#34;http://www.innervoice.in/blogs/2013/01/01/goals-for-2013/&#34;&gt;few goals&lt;/a&gt; related to my blogging and learning activities. This belated mid-year review of those goals already gives an indication of how I have performed against the goals I set for myself.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Goals for 2013</title>
-      <link>http://reachsrirams.github.io/blogs/2013/01/01/goals-for-2013/</link>
-      <pubDate>Tue, 01 Jan 2013 13:00:28 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2013/01/01/goals-for-2013/</guid>
-      <description>&lt;p&gt;Before I share my goals for the first half of 2013, here is an assessment of my 2012 goals. Around mid 2012, I had set out with some goals to learn a JavaScript, CSS and HTML5 as part of UTM URL Generator project. You can check out &lt;a href=&#34;http://www.innervoice.in/blogs/2012/06/29/how-i-am-learning-javascript-and-css/&#34;&gt;those goals here&lt;/a&gt;. Around November I reworked some of the &lt;a href=&#34;http://www.innervoice.in/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/&#34; target=&#34;_blank&#34;&gt;milestones of that project&lt;/a&gt; and completed most of it recently. The main intention of the UTM URL Generator project was to learn the basics of few technologies.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>HTML5 Local Storage – 5 Useful Tips</title>
-      <link>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</link>
-      <pubDate>Thu, 27 Dec 2012 13:30:45 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2012/12/27/html5-local-storage-tips-and-tricks/</guid>
-      <description>&lt;p&gt;HTML5 Local Storage is a browser based &lt;em&gt;key-value database&lt;/em&gt; that is available for client side applications. Java programmers (like me) will find that  HTML5 Local Storage is very similar to HashMap (or Hashtable). It is important to remember that Local Storage is available to client side applications even across browser restarts. In that context, Local Storage is similar to cookies. &lt;strong&gt;But unlike cookies, Local Storage is not accessible to the server side applications. &lt;/strong&gt;Also cookies provide very limited storage (4 KB).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
+      <description>OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+Why are Ports important?</description>
     </item>
     
   </channel>

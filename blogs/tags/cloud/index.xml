@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/cloud/</link>
+    <description>Recent content in Cloud on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Dec 2016 10:31:44 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenStack Horizon: extending the dashboard – Part 1</title>
+      <link>http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/</link>
+      <pubDate>Tue, 27 Dec 2016 10:31:44 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/</guid>
+      <description>OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&amp;#8217;s needs.
+OpenStack Horizon Background Horizon is a Django based web application and is hosted using an Apache web server.</description>
+    </item>
+    
+  </channel>
+</rss>

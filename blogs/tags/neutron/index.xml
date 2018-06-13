@@ -6,10 +6,58 @@
     <description>Recent content in Neutron on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 08 Sep 2014 07:48:13 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 May 2017 05:07:42 +0000</lastBuildDate>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/tags/neutron/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Newton release install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</link>
+      <pubDate>Tue, 02 May 2017 05:07:42 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</guid>
+      <description>Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Horizon: extending the dashboard – Part 2</title>
+      <link>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</link>
+      <pubDate>Sun, 22 Jan 2017 17:42:35 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</guid>
+      <description>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;#8220;ports&amp;#8221; in your OpenStack based cloud.
+Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard.</description>
+    </item>
+    
+    <item>
+      <title>Announcing: OpenStack Networking Cookbook</title>
+      <link>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</link>
+      <pubDate>Fri, 23 Oct 2015 16:47:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</guid>
+      <description>My first publication &amp;#8220;OpenStack Networking Cookbook&amp;#8221; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.</description>
+    </item>
+    
+    <item>
+      <title>Ports in OpenStack Neutron</title>
+      <link>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</link>
+      <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
+      <description>OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+Why are Ports important?</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Neutron Plugins and Agents</title>
+      <link>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</link>
+      <pubDate>Tue, 31 Mar 2015 16:55:40 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</guid>
+      <description>I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
+OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services.</description>
+    </item>
     
     <item>
       <title>Goals for the second half of 2014</title>

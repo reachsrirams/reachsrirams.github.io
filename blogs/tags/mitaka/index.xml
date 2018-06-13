@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mitaka on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/mitaka/</link>
+    <description>Recent content in Mitaka on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 06 Jul 2016 06:45:45 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/mitaka/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mitaka on Ubuntu – install scripts for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/</link>
+      <pubDate>Wed, 06 Jul 2016 06:45:45 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/</guid>
+      <description>Mitaka is the most recent release of OpenStack and currently it is supports Ubuntu 14.04 LTS (trusty). I would like to share scripts that can be used to install the Mitaka release of OpenStack on Ubuntu. As part of my blogging, book writing projects, I have had the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PyCharm and OpenStack programming - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the PyCharm IDE from Jetbrains for your OpenStack programming. I will use the Neutron ML2 driver code from my book OpenStack Networking Cookbook to guide you in setting up the PyCharm IDE." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="PyCharm and OpenStack programming" />
+<meta property="og:description" content="OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the PyCharm IDE from Jetbrains for your OpenStack programming. I will use the Neutron ML2 driver code from my book OpenStack Networking Cookbook to guide you in setting up the PyCharm IDE." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/" />
+
+
+
+<meta property="article:published_time" content="2016-01-02T17:43:51&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-01-02T17:43:51&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="PyCharm and OpenStack programming">
+<meta itemprop="description" content="OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the PyCharm IDE from Jetbrains for your OpenStack programming. I will use the Neutron ML2 driver code from my book OpenStack Networking Cookbook to guide you in setting up the PyCharm IDE.">
+
+
+<meta itemprop="datePublished" content="2016-01-02T17:43:51&#43;00:00" />
+<meta itemprop="dateModified" content="2016-01-02T17:43:51&#43;00:00" />
+<meta itemprop="wordCount" content="847">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PyCharm and OpenStack programming"/>
+<meta name="twitter:description" content="OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the PyCharm IDE from Jetbrains for your OpenStack programming. I will use the Neutron ML2 driver code from my book OpenStack Networking Cookbook to guide you in setting up the PyCharm IDE."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 1em 2em;
+		margin: 0 2em 1em;
+	}
+	.content-wrapper {
+		padding: 1em 0 1px;
+	}
+	.post-header {
+		font-size: 1.0em;
+		font-weight: 600;
+	}
+	.post-content {
+		font-size: 16px;
+	}
+	.logo {
+		font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">PyCharm and OpenStack programming</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2016-01-02 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/programming/"> Programming </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+          </div>
+        <span class="more-meta"> 847 words </span>
+        <span class="more-meta"> 4 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#pycharm-and-openstack-programming-8211-background">PyCharm and OpenStack programming &#8211; background</a></li>
+<li><a href="#pycharm-prerequisites-and-installation">PyCharm prerequisites and installation</a></li>
+<li><a href="#create-a-new-pycharm-project-and-check-out-sample-ml2-driver-code">Create a new PyCharm project and check out sample ML2 Driver code</a></li>
+<li><a href="#check-out-dependent-packages">Check out dependent packages</a></li>
+<li><a href="#configuring-pycharm-to-resolve-dependencies">Configuring PyCharm to resolve dependencies</a></li>
+<li><a href="#resolution-of-code-dependencies">Resolution of code dependencies</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the <strong>PyCharm IDE</strong> from Jetbrains for your OpenStack programming. I will use the <strong>Neutron ML2 driver code from my book <a href="http://goo.gl/TeXSYQ">OpenStack Networking Cookbook</a> to guide you</strong> in setting up the PyCharm IDE.</p>
+
+<h2 id="pycharm-and-openstack-programming-8211-background">PyCharm and OpenStack programming &#8211; background</h2>
+
+<p>DevStack provides a great test environment since it mimics a real OpenStack setup very well. DevStack includes development tools, but it is not the ideal development environment. Keeping development and test environment separate is a good practice. So it is better to write code in a non-DevStack environment and then deploy the unit tested code in DevStack for thorough testing. Moreover the benefits of using a visually-rich IDE such as PyCharm far outweigh the one-time effort to set it up.</p>
+
+<h2 id="pycharm-prerequisites-and-installation">PyCharm prerequisites and installation</h2>
+
+<p>In order to install and use PyCharm, you need to install Java (JRE) and Python 2.7. The PyCharm IDE is written in Java and hence it requires the JRE. But since the PyCharm IDE is intended from Python programming, you need the Python interpreter. OpenStack uses Python 2.7 so ensure that the correct version is installed.</p>
+
+<p>The installation steps for Java (JRE), Python 2.7 and PyCharm IDE are fairly straight forward. Depending on your OS, you should be able to find the instructions easily for these.</p>
+
+<h2 id="create-a-new-pycharm-project-and-check-out-sample-ml2-driver-code">Create a new PyCharm project and check out sample ML2 Driver code</h2>
+
+<ul>
+<li>Once the IDE is started, click on New -&gt; Project to create a new PyCharm project as shown in the screenshot below.</li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project.png"><img class="aligncenter wp-image-1363 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project-1024x612.png" alt="PyCharm New Project" width="620" height="371" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project-1024x612.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project-300x179.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project-768x459.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-1-New-Project.png 1536w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<ul>
+<li>In the next screen enter the project name (you may have to replace the word &#8220;Untitled&#8221;). For this blog, lets call the project <strong>neutron-plugin</strong>. And then click on &#8220;Create&#8221; button at the bottom.</li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name.png"><img class="aligncenter wp-image-1364 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name-1024x604.png" alt="PyCharm Project Name" width="620" height="366" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name-1024x604.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name-300x177.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name-768x453.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-2-Project-Name.png 1540w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<ul>
+<li>Once the project is created, PyCharm creates a directory for it under &#8220;PyCharmProjects&#8221; directory by default. This folder can be found in the home directory of the user.</li>
+<li>Open a Terminal window (on Ubuntu) and change directory to the <strong>neutron-plugin</strong> project as shown below. And then use <strong>git clone</strong> command to fetch the sample ML2 driver code. <strong>The sample code is needed to show you how to resolve code dependencies.</strong></li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone.png"><img class="aligncenter wp-image-1365 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone-1024x655.png" alt="PyCharm ML2 Code Clone" width="620" height="397" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone-1024x655.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone-300x192.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone-768x491.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-3-ML2-Code-Clone.png 1504w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<ul>
+<li>Once the code is checked out, PyCharm will automatically show the folder under the project. If you open any of the sample Python files (for example _ch10_mech_driver<em>subnet.py</em>) you will see that the Python modules <em>imported</em> in this file are shown as errors (<em>red underlines</em>). This is because we have not resolved the dependencies yet. Refer to the screenshot below.</li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-4-Code-Error.png"><img class="aligncenter wp-image-1386 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-4-Code-Error-1024x766.png" alt="PyCharm-Blog-4-Code-Error" width="620" height="464" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-4-Code-Error-1024x766.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-4-Code-Error-300x224.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-4-Code-Error-768x575.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<h2 id="check-out-dependent-packages">Check out dependent packages</h2>
+
+<p>As seen from the steps to create the project, the sample ML2 driver code is dependent on OpenStack Neutron and Oslo Logging code modules. Now we will see how to download these modules.</p>
+
+<ul>
+<li>The first step is to check out OpenStack Neutron and Oslo Logging packages from Github using the <strong>git clone</strong> command. Here is how it looks in Ubuntu</li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-5-Dependency-Clone.png"><img class="aligncenter wp-image-1367 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-5-Dependency-Clone-1024x576.png" alt="PyCharm Dependency Clone" width="620" height="349" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-5-Dependency-Clone-1024x576.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-5-Dependency-Clone-300x169.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-5-Dependency-Clone-768x432.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<p>&nbsp;</p>
+
+<ul>
+<li>In my case, the Neutron and Oslo modules were downloaded to the home directory. Here is a screenshot that shows the content of the download modules</li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-6-Dependency-Directory.png"><img class="aligncenter wp-image-1368 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-6-Dependency-Directory-1024x562.png" alt="PyCharm Dependency Directory" width="620" height="340" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-6-Dependency-Directory-1024x562.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-6-Dependency-Directory-300x165.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-6-Dependency-Directory-768x421.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<h2 id="configuring-pycharm-to-resolve-dependencies">Configuring PyCharm to resolve dependencies</h2>
+
+<p>Now that we have dowloaded the dependent modules, let me show the steps involved in configuring PyCharm to manage the dependencies. At the end of these steps you will see that &#8220;import errors&#8221; seen in our sample source code will be eliminated.</p>
+
+<ul>
+<li>Click on File and then Settings menu item.</li>
+<li>In the resulting dialog box, select &#8220;Project Interpreter&#8221; under &#8220;Project: neutron-plugin&#8221; as shown below. Then on the right hand side click the &#8220;gear&#8221; button.</li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-8-Project-Interpreter.png"><img class="aligncenter wp-image-1370 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-8-Project-Interpreter-1024x528.png" alt="PyCharm Project Interpreter" width="620" height="320" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-8-Project-Interpreter-1024x528.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-8-Project-Interpreter-300x155.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-8-Project-Interpreter-768x396.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<ul>
+<li>Once you click on the &#8220;gear&#8221; button you will see several options &#8211; click on &#8220;More&#8221;</li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More.png"><img class="aligncenter wp-image-1371 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More-1024x306.png" alt="PyCharm Interpreter" width="620" height="185" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More-1024x306.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More-300x90.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More-768x230.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-9-Interpreter-More.png 1398w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<ul>
+<li>The resulting window shows all the project interpreters. Click on the &#8220;Show paths for selected interpreter&#8221; button as highlighted below. This will allow us to configure Python Paths for this interpreter (for this project).</li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path.png"><img class="aligncenter wp-image-1372 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path-1024x484.png" alt="PyCharm Interpreter Path" width="620" height="293" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path-1024x484.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path-300x142.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path-768x363.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-10-Interpreter-Path.png 1336w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<ul>
+<li>Click on the &#8220;+&#8221; sign and choose the folders/directories that contain the dependencies.</li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path.png"><img class="aligncenter wp-image-1373 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path-1024x507.png" alt="PyCharm Interpreter Add Path" width="620" height="307" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path-1024x507.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path-300x149.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path-768x380.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-11-Add-Path.png 1276w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<ul>
+<li>For this blog I will select the Neutron and Oslo Logging module directories as shown below.</li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths.png"><img class="aligncenter wp-image-1375 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths-1024x578.png" alt="PyCharm Add New Paths" width="620" height="350" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths-1024x578.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths-300x169.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths-768x434.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-13-Add-New-Paths.png 1264w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<ul>
+<li>Click Ok and ensure that the Settings window is closed.</li>
+</ul>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-12-Save-Interpreter-Update.png"><img class="aligncenter wp-image-1388 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-12-Save-Interpreter-Update-1024x736.png" alt="PyCharm-Blog-12-Save-Interpreter-Update" width="620" height="446" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-12-Save-Interpreter-Update-1024x736.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-12-Save-Interpreter-Update-300x216.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-12-Save-Interpreter-Update-768x552.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<p>These steps complete the configuration of dependencies for our ML2 driver code. You may have to tweak these steps depending upon the kind of OpenStack programming you are doing.</p>
+
+<h2 id="resolution-of-code-dependencies">Resolution of code dependencies</h2>
+
+<p>Once the dependencies are configured, PyCharm will load the modules and resolve the code errors seen in our ML2 sample code. You should now see that the &#8220;red underline&#8221; for the <em>import</em> statements are eliminated as shown below.</p>
+
+<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-14-Code-No-Error.png"><img class="aligncenter wp-image-1376 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-14-Code-No-Error-1024x675.png" alt="PyCharm Code No Error" width="620" height="409" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-14-Code-No-Error-1024x675.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-14-Code-No-Error-300x198.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/01/PyCharm-Blog-14-Code-No-Error-768x506.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Once the code errors are resolved, you as a developer can continue with the rest of your programming. The additional benefit of resolving dependency is that PyCharm will <em>auto-complete</em> the code as you type characters into your IDE. It will also perform syntax checks and provide instant feedback in case of errors. This helps in avoiding many programming errors and will save time.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2016/02/01/goals-for-the-first-half-of-2016/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Goals for the first half of 2016</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2015/11/27/ip-vs-ifconfig-wilt/">
+            <span class="next-text nav-default">ip vs. ifconfig – WILT</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

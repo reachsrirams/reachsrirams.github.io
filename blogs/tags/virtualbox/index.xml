@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualbox on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/virtualbox/</link>
+    <description>Recent content in Virtualbox on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 14 Jun 2015 14:58:44 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VirtualBox networking settings for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</link>
+      <pubDate>Sun, 14 Jun 2015 14:58:44 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</guid>
+      <description>The best way to learn OpenStack is by installing, running and playing with it directly. While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.
+In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation.</description>
+    </item>
+    
+  </channel>
+</rss>

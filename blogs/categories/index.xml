@@ -6,14 +6,24 @@
     <description>Recent content in Categories on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Fri, 23 Oct 2015 16:47:23 +0000</lastBuildDate>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Book Review</title>
+      <link>http://reachsrirams.github.io/blogs/categories/book-review/</link>
+      <pubDate>Fri, 23 Oct 2015 16:47:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/categories/book-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cloud Computing</title>
       <link>http://reachsrirams.github.io/blogs/categories/cloud-computing/</link>
-      <pubDate>Tue, 13 Jan 2015 18:20:22 +0000</pubDate>
+      <pubDate>Sat, 03 Jun 2017 02:39:12 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/categories/cloud-computing/</guid>
       <description></description>
@@ -29,9 +39,18 @@
     </item>
     
     <item>
+      <title>Management</title>
+      <link>http://reachsrirams.github.io/blogs/categories/management/</link>
+      <pubDate>Mon, 07 Jan 2013 03:00:47 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/categories/management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Networking</title>
       <link>http://reachsrirams.github.io/blogs/categories/networking/</link>
-      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
+      <pubDate>Sun, 22 Jan 2017 17:42:35 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/categories/networking/</guid>
       <description></description>
@@ -65,6 +84,15 @@
     </item>
     
     <item>
+      <title>Tech Nuggets</title>
+      <link>http://reachsrirams.github.io/blogs/categories/tech-nuggets/</link>
+      <pubDate>Sun, 13 Nov 2016 16:44:06 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/categories/tech-nuggets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Technology</title>
       <link>http://reachsrirams.github.io/blogs/categories/technology/</link>
       <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
@@ -74,9 +102,18 @@
     </item>
     
     <item>
+      <title>User Experience</title>
+      <link>http://reachsrirams.github.io/blogs/categories/user-experience/</link>
+      <pubDate>Sun, 08 Sep 2013 18:12:53 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/categories/user-experience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Virtualization</title>
       <link>http://reachsrirams.github.io/blogs/categories/virtualization/</link>
-      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
+      <pubDate>Sun, 14 Jun 2015 14:58:44 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/categories/virtualization/</guid>
       <description></description>
@@ -85,7 +122,7 @@
     <item>
       <title>Wilt</title>
       <link>http://reachsrirams.github.io/blogs/categories/wilt/</link>
-      <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
+      <pubDate>Sun, 13 Nov 2016 16:44:06 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/categories/wilt/</guid>
       <description></description>
