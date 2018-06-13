@@ -77,7 +77,20 @@
 
 &lt;p&gt;Docker Compose is a tool to build and coordinate multi-container applications. You use a YAML file to define different containers and any relationship between them. Docker Compose uses this YAML file to start those containers. We can continue to use the Dockerfile as a building block for Docker Compose.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/docker-compose-yaml/#main&#34; target=&#34;_blank&#34; rel=&#34;attachment wp-att-1581 noopener&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1581&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/docker-compose-yaml-460x300.png&#34; alt=&#34;docker compose YAML&#34; width=&#34;500&#34; height=&#34;447&#34; /&gt;&lt;/a&gt;&lt;a style=&#34;font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 12px; font-family: &#39;Open Sans&#39;, sans-serif; color: #488cde;&#34; href=&#34;http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/docker-compose-code/#main&#34; target=&#34;_blank&#34; rel=&#34;attachment wp-att-1580 noopener&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1580&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/docker-compose-code-460x300.png&#34; alt=&#34;docker compose code&#34; width=&#34;449&#34; height=&#34;252&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://reachsrirams.github.io/blogs/blogs/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2017/docker-compose-yaml.png&#34; alt=&#34;Docker Compose YAML&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2017/docker-compose-yaml.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Docker Compose YAML&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 
 &lt;p&gt;As you can see from the GitHub repository, I have two containers defined in my &lt;em&gt;docker-compose.yml&lt;/em&gt; file. The YAML file shows that the two &amp;#8220;services&amp;#8221; are &lt;em&gt;built&lt;/em&gt; using the Dockerfile specified for each of the containers. The steps in two Dockerfiles are fairly straightforward. They create an Ubuntu based container, install the necessary software packages and copy a few files to configure nginx and NodeJS.&lt;/p&gt;
 
@@ -85,7 +98,20 @@
 
 &lt;p&gt;In the previous blog, we showed that nginx is used to serve static HTML files and to forward (proxy) the API requests to NodeJS. Here is the screenshot of the file I use for nginx configuration.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/nginx-conf/#main&#34; rel=&#34;attachment wp-att-1586&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1586&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf.png&#34; alt=&#34;Nginx Config File&#34; width=&#34;560&#34; height=&#34;479&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf.png 560w, http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf-300x257.png 300w&#34; sizes=&#34;(max-width: 560px) 100vw, 560px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2017/nginx-conf.png&#34; alt=&#34;Docker Compose YAML&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2017/nginx-conf.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Docker Compose YAML&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 
 &lt;p&gt;This config file configures nginx to listen on port 80 for HTTP requests. If the requests comes to a root folder &amp;#8216;/&amp;#8217;, it is redirected to the Application represented by &amp;#8220;/app&amp;#8221; on the same &lt;em&gt;host&lt;/em&gt;. However if the request is for API represented by &amp;#8220;/app/api&amp;#8221; URI, then nginx will &lt;em&gt;proxy&lt;/em&gt; the request to &amp;#8220;API Server&amp;#8221; on port 9090. If you look at the Dockerfile for the NodeJS container, you will see that it is listening on port 9090. The key thing here is the keyword &lt;em&gt;apiserver&lt;/em&gt;. &lt;strong&gt;How does nginx know what is the IP address for the NodeJS container?&lt;/strong&gt;&lt;/p&gt;
 
@@ -95,16 +121,33 @@
 
 &lt;p&gt;The YAML file has a stanza for the GUI container as follows:&lt;/p&gt;
 
-&lt;pre class=&#34;&#34;&gt;links:
-    - api:apiserver&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-YAML&#34; data-lang=&#34;YAML&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-YAML&#34; data-lang=&#34;YAML&#34;&gt;links&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;-&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;api&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;apiserver&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;p&gt;The keyword, &lt;em&gt;api,&lt;/em&gt; refers to the &amp;#8220;container&amp;#8221; mentioned earlier in the YAML file.&lt;/p&gt;
 
-&lt;pre class=&#34;&#34;&gt;services:
-    - api:
-        build: api-container&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-YAML&#34; data-lang=&#34;YAML&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-YAML&#34; data-lang=&#34;YAML&#34;&gt;services&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;-&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;api&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;build&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;api-container&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-&lt;p&gt;The effect of this &lt;em&gt;link&lt;/em&gt; is that Docker will take the IP address of the container named &lt;em&gt;api&lt;/em&gt; and map it to the host name &lt;em&gt;apiserver&lt;/em&gt; inside the GUI container. The _/etc/hosts _file is used for this purpose.&lt;/p&gt;
+&lt;p&gt;The effect of this &lt;em&gt;link&lt;/em&gt; is that Docker will take the IP address of the container named &lt;em&gt;api&lt;/em&gt; and map it to the host name &lt;em&gt;apiserver&lt;/em&gt; inside the GUI container. The &lt;em&gt;/etc/hosts&lt;/em&gt; file is used for this purpose.&lt;/p&gt;
 
 &lt;p&gt;In  real world scenarios it is common to have container distributed across servers in a datacenter. Therefore IP address may not be known upfront and may also change over the course of time. Docker Links provide a crucial capability to ensure that containers are able to communicate with one another using host names and let Docker &lt;em&gt;orchestrate&lt;/em&gt; the mapping of host names to IP addresses.&lt;/p&gt;</description>
       
@@ -131,9 +174,19 @@
 
 &lt;h3 id=&#34;solution-in-depth-8211-deploying-using-docker&#34;&gt;Solution in depth &amp;#8211; deploying using Docker&lt;/h3&gt;
 
-&lt;p&gt;For this Docker learning exercise we will deploy two containers &amp;#8211; one running nginx and another running NodeJS. The ngnix server will handle &lt;em&gt;all&lt;/em&gt; incoming HTTP/S requests. However it will &lt;em&gt;proxy&lt;/em&gt; the REST API requests to the NodeJS process and handle the UI pages itself.&lt;/p&gt;
+&lt;p&gt;For this Docker learning exercise we will deploy two containers - one running nginx and another running NodeJS. The ngnix server will handle &lt;em&gt;all&lt;/em&gt; incoming HTTP/S requests. However it will &lt;em&gt;proxy&lt;/em&gt; the REST API requests to the NodeJS process and handle the UI pages itself.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://www.innervoice.in/blogs/2017/11/19/using-docker-nginx-nodejs/docker-nginx-nodejs-1/#main&#34; rel=&#34;attachment wp-att-1572&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1572&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/Docker-nginx-NodeJS-1-1.png&#34; alt=&#34;&#34; width=&#34;603&#34; height=&#34;436&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/11/Docker-nginx-NodeJS-1-1.png 603w, http://127.0.0.1/wordpress/wp-content/uploads/2017/11/Docker-nginx-NodeJS-1-1-300x217.png 300w&#34; sizes=&#34;(max-width: 603px) 100vw, 603px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://reachsrirams.github.io/blogs/blogs/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2017/Docker-nginx-NodeJS-1-1.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2017/Docker-nginx-NodeJS-1-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 
 &lt;h3 id=&#34;the-code&#34;&gt;The Code&lt;/h3&gt;
 
@@ -157,7 +210,7 @@
 &lt;h2 id=&#34;status-of-2017-first-half-goals&#34;&gt;Status of 2017 first half goals&lt;/h2&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Enhance my OpenStack install scripts for _Newton_ and _Ocata _release. Newton release is already out and Ocata should release around May-mid
+&lt;li&gt;Enhance my OpenStack install scripts for &lt;em&gt;Newton&lt;/em&gt; and &lt;em&gt;Ocata&lt;/em&gt; release. Newton release is already out and Ocata should release around May-mid
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;9&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
@@ -208,10 +261,10 @@
 &lt;p&gt;I am going to carry forward a simple goal for several reasons. I want to manage this before June-end that is 5 months away. I need time to explore ideas for yet another book. And finally I am working on some personal projects that will improve my writing skills in general. So here is the only goal for 2017 first half:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Enhance my OpenStack install scripts for _Newton_ and _Ocata _release. Newton release is already out and Ocata should release around May-mid.&lt;/li&gt;
+&lt;li&gt;Enhance my OpenStack install scripts for &lt;em&gt;Newton&lt;/em&gt; and &lt;em&gt;Ocata&lt;/em&gt; release. Newton release is already out and Ocata should release around May-mid.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;This is still an aggressive goal &amp;#8211; espeacially for Ocata.&lt;/p&gt;</description>
+&lt;p&gt;This is still an aggressive goal - espeacially for Ocata.&lt;/p&gt;</description>
       
     </item>
     
@@ -222,7 +275,7 @@
       
       <guid>http://reachsrirams.github.io/blogs/2016/07/06/goals-for-second-half-of-2016/</guid>
       
-        <description>&lt;p&gt;It is that time of the year again &amp;#8211; time to share my blogging and learning goals for the second half of 2016. Let’s start with a review of the first half of 2016.&lt;/p&gt;
+        <description>&lt;p&gt;It is that time of the year again - time to share my blogging and learning goals for the second half of 2016. Let’s start with a review of the first half of 2016.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
@@ -239,7 +292,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;10&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: I exceeded this goal and completed &lt;a href=&#34;http://www.innervoice.in/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/&#34; target=&#34;_blank&#34;&gt;scripting even for Mitaka release of OpenStack.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: I exceeded this goal and completed &lt;a href=&#34;http://www.innervoice.in/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack&#34;&gt;scripting even for Mitaka release of OpenStack&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Write a management related blog on LinkedIn
 
@@ -249,7 +302,7 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;This is clearly not what I had planned for. And no excuses for not being able to meet my goals. While I exceeded one of the goals and wrote another blog related to &lt;a href=&#34;http://www.innervoice.in/blogs/2016/06/27/openstack-controller-logs-view-using-browser/&#34; target=&#34;_blank&#34;&gt;viewing logs using browser&lt;/a&gt;, I must admit that I did not execute on my plans properly.&lt;/p&gt;
+&lt;p&gt;This is clearly not what I had planned for. And no excuses for not being able to meet my goals. While I exceeded one of the goals and wrote another blog related to &lt;a href=&#34;http://www.innervoice.in/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack&#34;&gt;viewing logs using browser&lt;/a&gt;, I must admit that I did not execute on my plans properly.&lt;/p&gt;
 
 &lt;h2 id=&#34;goals-for-the-second-half-of-2016&#34;&gt;Goals for the second half of 2016&lt;/h2&gt;
 
@@ -271,7 +324,7 @@
       
       <guid>http://reachsrirams.github.io/blogs/2016/02/01/goals-for-the-first-half-of-2016/</guid>
       
-        <description>&lt;p&gt;I am late by a month in sharing my blogging and learning goals for the first half of 2016. Let&amp;#8217;s start with a review of the second half of 2015.&lt;/p&gt;
+        <description>&lt;p&gt;I am late by a month in sharing my blogging and learning goals for the first half of 2016. Let&amp;rsquo;s start with a review of the second half of 2015.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
@@ -282,7 +335,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Score:&lt;/strong&gt; &lt;strong&gt;&lt;sup&gt;10&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Status:&lt;/strong&gt; I published a YouTube video on &lt;a href=&#34;https://goo.gl/wkJnjv&#34; target=&#34;_blank&#34;&gt;OpenStack Neutron Ports.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status:&lt;/strong&gt; I published a YouTube video on &lt;a href=&#34;https://goo.gl/wkJnjv&#34;&gt;OpenStack Neutron Ports&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Build and blog about a small OpenStack GUI related idea – this could be 1-2 blogs
 
@@ -306,11 +359,11 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Score: &lt;sup&gt;10&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Status: &lt;/strong&gt;Published the &lt;a href=&#34;http://www.innervoice.in/blogs/2015/11/27/ip-vs-ifconfig-wilt/&#34; target=&#34;_blank&#34;&gt;ip vs ipconfig WILT blog.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status: &lt;/strong&gt;Published the &lt;a href=&#34;http://www.innervoice.in/blogs/2015/11/27/ip-vs-ifconfig-wilt&#34;&gt;ip vs ipconfig WILT blog&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;If you look at the goals alone, it is clearly a mixed bag. I should have stretched a bit more completed more of the goals I set for myself. But considering the fact that I co-authored a &lt;a href=&#34;https://goo.gl/nCw8pc&#34; target=&#34;_blank&#34;&gt;book on OpenStack&lt;/a&gt; and spoke at the &lt;a href=&#34;https://goo.gl/JYGcFo&#34; target=&#34;_blank&#34;&gt;OpenStack Summit in Tokyo&lt;/a&gt;, I am happy with the accomplishments.&lt;/p&gt;
+&lt;p&gt;If you look at the goals alone, it is clearly a mixed bag. I should have stretched a bit more completed more of the goals I set for myself. But considering the fact that I co-authored a &lt;a href=&#34;https://goo.gl/nCw8pc&#34;&gt;book on OpenStack&lt;/a&gt; and spoke at the &lt;a href=&#34;https://goo.gl/JYGcFo&#34;&gt;OpenStack Summit in Tokyo&lt;/a&gt;, I am happy with the accomplishments.&lt;/p&gt;
 
 &lt;h2 id=&#34;goals-for-the-first-half-of-2016&#34;&gt;Goals for the first half of 2016&lt;/h2&gt;
 
@@ -318,13 +371,11 @@
 
 &lt;ol&gt;
 &lt;li&gt;Build and blog about a small OpenStack GUI related idea – this could be 1-2 blogs&lt;/li&gt;
-&lt;li&gt;Release the installation scripts for _Liberty_ release of OpenStack on GitHub&lt;/li&gt;
+&lt;li&gt;Release the installation scripts for &lt;em&gt;Liberty&lt;/em&gt; release of OpenStack on GitHub&lt;/li&gt;
 &lt;li&gt;Write a management related blog on LinkedIn&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Given that only 5 months are left, I believe the goals above are reasonable taking into account personal and professional workload. I have carried forward these goals for a while and I am determined to complete them this time, so that I can pursue some fresh ideas for the second half of 2016&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
+&lt;p&gt;Given that only 5 months are left, I believe the goals above are reasonable taking into account personal and professional workload. I have carried forward these goals for a while and I am determined to complete them this time, so that I can pursue some fresh ideas for the second half of 2016.&lt;/p&gt;</description>
       
     </item>
     
@@ -1089,48 +1140,93 @@
 
 &lt;p&gt;Here is an example of the two most important methods of &lt;em&gt;localStorage&lt;/em&gt; object.&lt;/p&gt;
 
-&lt;pre class=&#34;lang:js decode:true&#34;&gt;localStorage.setItem(&#34;foo&#34;, &#34;bar&#34;);
-localStorage.getItem(&#34;foo&#34;);&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;bar&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;p&gt;JavaScript language allows several other ways to access localStorage.&lt;/p&gt;
 
-&lt;pre class=&#34;lang:js decode:true&#34;&gt;var storeValue = localStorage[&#34;foo&#34;];&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;storeValue&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-&lt;p&gt;For more introductory material please read &amp;#8211; &lt;a href=&#34;http://diveintohtml5.info/storage.html&#34;&gt;http://diveintohtml5.info/storage.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more introductory material &lt;a href=&#34;http://diveintohtml5.info/storage.html&#34;&gt;check this out&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;tip-8211-1-8211-pay-attention-to-the-url&#34;&gt;Tip &amp;#8211; 1 &amp;#8211; Pay attention to the URL&lt;/h3&gt;
+&lt;h3 id=&#34;tip-1-pay-attention-to-the-url&#34;&gt;Tip - 1 - Pay attention to the URL&lt;/h3&gt;
 
 &lt;p&gt;Browsers persist HTML5 Local Storage on a per domain basis. So a web application can only access Local Storage defined for its domain. Not just the domain but subdomain and HTTP vs HTTPS are also used to identify the domain. For example, a key-value stored in Local Storage for &lt;a href=&#34;http://www.mysite.com&#34;&gt;http://www.mysite.com&lt;/a&gt; is not available &lt;a href=&#34;https://www.mysite.com&#34;&gt;https://www.mysite.com&lt;/a&gt;. So if you want to share client side data between applications on different domain or sub-domains, you need to use re-directs.&lt;/p&gt;
 
 &lt;p&gt;On the other hand if you host multiple web applications on the same domain (hosted as sub-directories) then all your web applications share the information stored in Local Storage. While this could be useful sometimes, care must be taken to avoid one application from over-writing the values of another application. It is good to identify the key along with application name or other identifiers.&lt;/p&gt;
 
-&lt;h3 id=&#34;tip-8211-2-8211-size-does-matter&#34;&gt;Tip &amp;#8211; 2 &amp;#8211; Size does matter&lt;/h3&gt;
+&lt;h3 id=&#34;tip-2-size-does-matter&#34;&gt;Tip - 2 - Size does matter&lt;/h3&gt;
 
 &lt;p&gt;The HTML5 specification has &lt;em&gt;arbitrarily&lt;/em&gt; fixed the maximum storage size &lt;em&gt;per domain&lt;/em&gt; to 5 MB. This includes keys as well as values. While  5 MB worth of client side data is quite a bit, ensure that you handle the exception QUOTA_EXCEEDED_ERR and probably cleanup the storage.&lt;/p&gt;
 
-&lt;h3 id=&#34;tip-8211-3-8211-store-and-retrieve-data-types&#34;&gt;Tip &amp;#8211; 3 &amp;#8211; Store and retrieve data types&lt;/h3&gt;
+&lt;h3 id=&#34;tip-3-store-and-retrieve-data-types&#34;&gt;Tip - 3 - Store and retrieve data types&lt;/h3&gt;
 
 &lt;p&gt;Local Storage supports only string values to be persisted. When you call &lt;em&gt;setItem&lt;/em&gt; method, it internally converts the value object to String and persists it. So additional steps need to be taken to store and retrieve objects of different data types. Fortunately we can use JSON parsing for this purpose.&lt;/p&gt;
 
 &lt;p&gt;The technique is to use &lt;em&gt;JSON.stringify()&lt;/em&gt; and &lt;em&gt;JSON.parse()&lt;/em&gt; functions to perform this conversion automatically. JavaScript allows us to add newer methods to existing objects. So it is advisable to incorporate this technique into the _standard localStorage object _itself. This can done as follows:&lt;/p&gt;
 
-&lt;pre class=&#34;lang:js decode:true&#34;&gt;Storage.prototype.setObject = function(key, value) {
-    this.setItem(key, JSON.stringify(value));
-}
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;Storage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;prototype&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setObject&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 
-Storage.prototype.getObject = function(key) {
-    var value = this.getItem(key);
-    return value &amp;&amp; JSON.parse(value);
-}&lt;/pre&gt;
+&lt;span class=&#34;nx&#34;&gt;Storage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;prototype&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getObject&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;p&gt;With the above code you can invoke&lt;/p&gt;
 
-&lt;pre class=&#34;lang:js decode:true&#34;&gt;localStorage.getObject(&#34;foo&#34;);
-localStorage.setObject(&#34;foo&#34;, obj);&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getObject&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setObject&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;obj&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-&lt;p&gt;The above code is courtesy &amp;#8211; &lt;a href=&#34;http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage&#34;&gt;http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The above code is courtesy - &lt;a href=&#34;http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage&#34;&gt;http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;tip-8211-4-8211-store-multiple-values-for-a-single-key&#34;&gt;Tip &amp;#8211; 4 &amp;#8211; Store multiple values for a single key&lt;/h3&gt;
+&lt;h3 id=&#34;tip-4-store-multiple-values-for-a-single-key&#34;&gt;Tip - 4 - Store multiple values for a single key&lt;/h3&gt;
 
 &lt;p&gt;If you want to store multiple values for a single key, then this tip is very useful. I borrowed this technique from &lt;a href=&#34;http://paperkilledrock.com/2010/05/html5-localstorage-part-two/&#34;&gt;http://paperkilledrock.com/2010/05/html5-localstorage-part-two/&lt;/a&gt;. Here is what you need to do:&lt;/p&gt;
 
@@ -1138,42 +1234,90 @@ localStorage.setObject(&#34;foo&#34;, obj);&lt;/pre&gt;
 &lt;li&gt;Create an array and &lt;em&gt;push&lt;/em&gt; different values into it.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre class=&#34;lang:js decode:true&#34;&gt;var values = new Array();
-values.push(value1);
-values.push(value2);
-values.push(value3);&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Stringify the array using the &lt;em&gt;join&lt;/em&gt; method by specifying a &lt;em&gt;separator&lt;/em&gt;. Note choose a separator that is unlikely to appear in your values.&lt;/li&gt;
 &lt;li&gt;Persist this string into Local Storage.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre class=&#34;lang:js decode:true&#34;&gt;try {
-    localStorage.setItem(key, values.join(&#34;;&#34;)); //store the item in the database
-} catch (e) {
-    if (e == QUOTA_EXCEEDED_ERR) {
-        alert(&#34;Quota exceeded!&#34;);
-    }
-}&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;k&#34;&gt;try&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;join&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//store the item in the database
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;catch&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;QUOTA_EXCEEDED_ERR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;alert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Quota exceeded!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;While retrieving fetch the concatenated String from Local Storage and use &lt;em&gt;String.split()&lt;/em&gt; to parse the different values.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre class=&#34;lang:js decode:true&#34;&gt;var valueFromStore = localStorage.getItem(key); // get the String from Local Storage
-var values = valueFromStore.split(&#34;;&#34;); // get an Array back&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;valueFromStore&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;localStorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// get the String from Local Storage
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;valueFromStore&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// get an Array back
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-&lt;h3 id=&#34;tip-8211-5-8211-always-check-for-browser-support&#34;&gt;Tip &amp;#8211; 5 &amp;#8211; Always check for Browser Support&lt;/h3&gt;
+&lt;h3 id=&#34;tip-5-always-check-for-browser-support&#34;&gt;Tip - 5 - Always check for Browser Support&lt;/h3&gt;
 
 &lt;p&gt;A very large number of modern browsers support Local Storage but as a web application developer you may still encounter browsers that do not support many HTML5 constructs and certainly not Local Storage. So you are well advised to check whether your browser supports Local Storage or not. While there are many ways to check, I strongly recommend Modernizr API (why re-invent the wheel).&lt;/p&gt;
 
-&lt;pre class=&#34;lang:js decode:true&#34;&gt;if (Modernizr.localstorage) {
-  // localStorage is supported
-} else {
-  // localStorage not supported
-}&lt;/pre&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Modernizr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;localstorage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;// localStorage is supported
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;// localStorage not supported
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
       
     </item>
     

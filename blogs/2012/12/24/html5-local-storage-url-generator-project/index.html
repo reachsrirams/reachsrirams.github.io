@@ -350,31 +350,31 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>The release 2 (R2) of my URL Generator Project is now ready. You can check it out at the <a href="http://www.innervoice.in/tools/urlgen/" target="_blank">usual location</a>. I am happy to share that this revision was completed on time as per my <a href="http://www.innervoice.in/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/" target="_blank">revised project plan</a>. Of course the announcement was delayed a bit. The main additions to this version of the URL generator are HTML5 based Local Storage, a simple usage of Object-oriented JavaScript techniques and jQuery.</p>
+      <p>The release 2 (R2) of my URL Generator Project is now ready. You can check it out at the <a href="http://www.innervoice.in/tools/urlgen/">usual location</a>. I am happy to share that this revision was completed on time as per my <a href="http://www.innervoice.in/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/">revised project plan</a>. Of course the announcement was delayed a bit. The main additions to this version of the URL generator are HTML5 based Local Storage, a simple usage of Object-oriented JavaScript techniques and jQuery.</p>
 
 <p></p>
 
 <h3 id="storing-preferences-using-html5-local-storage">Storing preferences using HTML5 Local Storage</h3>
 
-<p>The UTM URL generator page has several settings such as check boxes for UTM medium, fields for UTM category and source. The main goal was to persist user selections as his _<strong>preferences</strong>_ and load the saved preferences when the user revisits. The common technique is to use cookies but with the I felt that HTML5 local storage provided a much simpler API for this purpose.</p>
+<p>The UTM URL generator page has several settings such as check boxes for UTM medium, fields for UTM category and source. The main goal was to persist user selections as his <em><strong>preferences</strong></em> and load the saved preferences when the user revisits. The common technique is to use cookies but with the I felt that HTML5 local storage provided a much simpler API for this purpose.</p>
 
 <h4 id="what-happens">What happens?</h4>
 
 <p>When user visits the tool web page, the HTML5 Local Storage database is queries for the preference information. If nothing is found, default values are returned. The page is then initialized with values based on the preference. Subsequent changes due to user interaction results in updating of the preference in the Local Storage.</p>
 
-<p>You can read more about HTML5 Local Storage <a href="http://blog.yjl.im/2010/05/localstorage-primitive-types-and-json.html" target="_blank">here</a>, especially the techniques to manage non-string values.</p>
+<p>You can read more about HTML5 Local Storage <a href="http://blog.yjl.im/2010/05/localstorage-primitive-types-and-json.html">here</a>, especially the techniques to manage non-string values.</p>
 
 <h3 id="object-oriented-javascript">Object Oriented JavaScript</h3>
 
 <p>The preferences based on local storage required several get and set functions as well as validations. In order to have a clean separation I created a JavaScript class called <em><strong>PreferenceManager</strong></em>. This is my first class in JavaScript and for a Java language enthusiast this is an important milestone. There are many ways to define <strong><em>classes</em></strong> in JavaScript. But I opted for the <em><strong>prototype</strong></em> based approach since the code seemed more organized and cohesive with this approach.</p>
 
-<p>The source code for the _<strong>PreferenceManager</strong> _class <a href="http://innervoice.in/tools/urlgen/r2/utm.pref.mgr.js" target="_blank">can be found here.</a></p>
+<p>The source code for the <em><strong>PreferenceManager</strong></em> class <a href="http://innervoice.in/tools/urlgen/r2/utm.pref.mgr.js">can be found here</a>.</p>
 
 <h3 id="using-jquery-for-code-cleanup">Using jQuery for code cleanup</h3>
 
-<p>Lastly I used jQuery to perform get and set on the actual form components. For example, check whether a checkbox is _<strong>checked</strong> _or not. Until this version, I had utility functions that effectively called getElementById() methods which had bloated the code. With jQuery, I was able to reduce the number of functions as well as number of lines of code.</p>
+<p>Lastly I used jQuery to perform get and set on the actual form components. For example, check whether a checkbox is <em><strong>checked</strong> </em> or not. Until this version, I had utility functions that effectively called getElementById() methods which had bloated the code. With jQuery, I was able to reduce the number of functions as well as number of lines of code.</p>
 
-<p>The usage of jQuery <a href="http://www.innervoice.in/tools/urlgen/r2/urlgen.js" target="_blank">can be found here</a>.</p>
+<p>The usage of jQuery <a href="http://www.innervoice.in/tools/urlgen/r2/urlgen.js">can be found here</a>.</p>
     </div>
 
     

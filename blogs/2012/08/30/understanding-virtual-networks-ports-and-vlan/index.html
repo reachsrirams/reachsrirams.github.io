@@ -90,7 +90,7 @@
 
 <meta itemprop="datePublished" content="2012-08-30T18:01:24&#43;00:00" />
 <meta itemprop="dateModified" content="2012-08-30T18:01:24&#43;00:00" />
-<meta itemprop="wordCount" content="893">
+<meta itemprop="wordCount" content="894">
 
 
 
@@ -323,7 +323,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/virtualization/"> Virtualization </a>
             
           </div>
-        <span class="more-meta"> 893 words </span>
+        <span class="more-meta"> 894 words </span>
         <span class="more-meta"> 5 min read </span>
       </div>
     </header>
@@ -339,7 +339,7 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>In the <a href="http://www.innervoice.in/blogs/2012/08/16/understanding-virtual-networks-the-basics/?utm_campaign=promote_blog&utm_medium=allpurpose&utm_source=innervoice.in" target="_blank">previous post</a> we looked at the fundamental building blocks of physical and virtual networks. Now let us look at two key concepts in physical and virtual networks. They are Ports and VLAN.</p>
+      <p>In the <a href="/blogs/2012/08/16/understanding-virtual-networks-the-basics/">previous post</a> we looked at the fundamental building blocks of physical and virtual networks. Now let us look at two key concepts in physical and virtual networks. They are Ports and VLAN.</p>
 
 <p></p>
 
@@ -361,16 +361,22 @@ if (!doNotTrack) {
 <li><strong>Virtual Switch Ports</strong>: Similar to physical switch ports, a virtual switch port exists as a software entity on a virtual switch.  As both virtual NIC (vNIC) and virtual port are software entities, the underlying software maintains an association between the two. This association represent the _virtual cables_ that connect vNIC to a virtual switch port.</li>
 </ul>
 
-<div>
-  The picture below captures the two types of switch ports. All the ports on the virtual switch are called virtual ports. Similarly ports on physical switches are called physical switch ports. The blue arrows that connect pNIC to a physical switch port are real cables, whereas the red arrows connect a vNIC to virtual switch ports are associations maintained in software.
+<p>The picture below captures the two types of switch ports. All the ports on the virtual switch are called virtual ports. Similarly ports on physical switches are called physical switch ports. The blue arrows that connect pNIC to a physical switch port are real cables, whereas the red arrows connect a vNIC to virtual switch ports are associations maintained in software.</p>
+
+
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2012/Physical-And-Virtual-Ports.png" alt="Physical And Virtual Ports"/>
+    </div>
+    <a href="/blogs/images/2012/Physical-And-Virtual-Ports.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Physical And Virtual Ports</p>
+      </figcaption>
+  </figure>
 </div>
 
-<div>
-</div>
-
-<div>
-  <figure id="attachment_437" style="width: 642px" class="wp-caption aligncenter"><a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/Physical-And-Virtual-Ports.png"><img class=" wp-image-437  " title="Physical And Virtual Ports" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/Physical-And-Virtual-Ports.png" alt="" width="642" height="284" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/Physical-And-Virtual-Ports.png 1003w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/Physical-And-Virtual-Ports-300x133.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/Physical-And-Virtual-Ports-768x340.png 768w" sizes="(max-width: 642px) 100vw, 642px" /></a><figcaption class="wp-caption-text">Physical And Virtual Ports</figcaption></figure>
-</div>
 
 <p><strong>Why are Ports important?</strong></p>
 
@@ -382,19 +388,30 @@ if (!doNotTrack) {
 <li>Once again ports are the entities that provide the ability regulate/control data traffic. For example a user may want to throttle the amount data being sent into a switch port. Network administrators may want to restrict the _type_ of data traffic using firewalls. All these example are realized by configuring ports.</li>
 </ol>
 
-<hr />
-
 <p><strong>What is VLAN?</strong></p>
 
 <p>VLAN stands for Virtual LAN or Virtual Local Area Network.</p>
 
 <p>In order to understand the concept of VLAN let us look at the analogy of hard disk partitioning. We partition hard disks on a computer into several logical partitions. The main purpose is to organize the disk space as well as to ensure that corruption/exhaustion of one logical partition does not impact another partition.</p>
 
-<p>Similarly in L2/Ethernet networks, VLAN give us the capability to partition a L2/Ethernet into multiple logical L2/Ethernet networks. This allows us to ensure that traffic from one VLAN does not mix with traffic from another VLAN. As seen in the picture below, the traffic from Device 2 on Switch 1 can only reach Device 4 on Switch 2, because the corresponding physical switch ports are on the same VLAN.<figure id="attachment_447" style="width: 709px" class="wp-caption aligncenter"></p>
+<p>Similarly in L2/Ethernet networks, VLAN give us the capability to partition a L2/Ethernet into multiple logical L2/Ethernet networks. This allows us to ensure that traffic from one VLAN does not mix with traffic from another VLAN. As seen in the picture below, the traffic from Device 2 on Switch 1 can only reach Device 4 on Switch 2, because the corresponding physical switch ports are on the same VLAN.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VLAN_Basics.png"><img class="size-full wp-image-447" title="VLAN Basics" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VLAN_Basics.png" alt="VLAN Basics" width="709" height="448" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VLAN_Basics.png 709w, http://127.0.0.1/wordpress/wp-content/uploads/2012/08/VLAN_Basics-300x190.png 300w" sizes="(max-width: 709px) 100vw, 709px" /></a><figcaption class="wp-caption-text">VLAN Basics</figcaption></figure></p>
 
-<p><a href="http://goo.gl/OhVY7" target="_blank">A great overview of VLAN can be found here.</a></p>
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2012/VLAN_Basics.png" alt="VLAN Basics"/>
+    </div>
+    <a href="/blogs/images/2012/VLAN_Basics.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>VLAN Basics</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p><a href="http://goo.gl/OhVY7">A great overview of VLAN can be found here.</a></p>
 
 <p><strong>Why do we need VLAN?</strong></p>
 
@@ -405,17 +422,13 @@ if (!doNotTrack) {
 <li>In normal Layer 2 operation flooding of L2 frames can happen for various reasons. By segmenting the physical network with VLAN, the impact of flooding can be well regulated.</li>
 </ol>
 
-<div>
-  <em>Further reading: </em><a href="http://goo.gl/dVkro" target="_blank">Why we need VLAN?</a>
-</div>
+<p><em>Further reading:</em> <a href="http://goo.gl/dVkro">Why we need VLAN?</a></p>
 
 <p><strong>Why is VLAN important for Virtual Networks?</strong></p>
 
 <p>Virtual networks share many characteristics of physical networks hence it is logical to see that VLAN is important for virtual networks as well.</p>
 
 <p>The advent of cloud computing has only increased the importance of VLAN. In Infrastructure as a Service (IaaS) products such as Amazon EC2, Rackspace etc virtual machines are created and deleted all the time. In addition, users who request virtual machines expect that the traffic intended for their virtual machines is not shared with virtual machines belonging to other users of the cloud service. Hence there is a strong argument in favour of network segmentation in a cloud infrastructure. VLAN provide a simple and well established solution for this segmentation.</p>
-
-<hr />
 
 <p><strong>Relationship between Ports and VLAN</strong></p>
 

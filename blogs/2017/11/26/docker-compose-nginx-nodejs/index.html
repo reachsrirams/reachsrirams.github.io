@@ -90,7 +90,7 @@
 
 <meta itemprop="datePublished" content="2017-11-26T05:15:30&#43;00:00" />
 <meta itemprop="dateModified" content="2017-11-26T05:15:30&#43;00:00" />
-<meta itemprop="wordCount" content="527">
+<meta itemprop="wordCount" content="532">
 
 
 
@@ -319,7 +319,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/technology/"> Technology </a>
             
           </div>
-        <span class="more-meta"> 527 words </span>
+        <span class="more-meta"> 532 words </span>
         <span class="more-meta"> 3 min read </span>
       </div>
     </header>
@@ -357,7 +357,20 @@ if (!doNotTrack) {
 
 <p>Docker Compose is a tool to build and coordinate multi-container applications. You use a YAML file to define different containers and any relationship between them. Docker Compose uses this YAML file to start those containers. We can continue to use the Dockerfile as a building block for Docker Compose.</p>
 
-<p><a href="http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/docker-compose-yaml/#main" target="_blank" rel="attachment wp-att-1581 noopener"><img class="aligncenter wp-image-1581" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/11/docker-compose-yaml-460x300.png" alt="docker compose YAML" width="500" height="447" /></a><a style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 12px; font-family: 'Open Sans', sans-serif; color: #488cde;" href="http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/docker-compose-code/#main" target="_blank" rel="attachment wp-att-1580 noopener"><img class="aligncenter wp-image-1580" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/11/docker-compose-code-460x300.png" alt="docker compose code" width="449" height="252" /></a></p>
+
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2017/docker-compose-yaml.png" alt="Docker Compose YAML"/>
+    </div>
+    <a href="/blogs/images/2017/docker-compose-yaml.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Docker Compose YAML</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>As you can see from the GitHub repository, I have two containers defined in my <em>docker-compose.yml</em> file. The YAML file shows that the two &#8220;services&#8221; are <em>built</em> using the Dockerfile specified for each of the containers. The steps in two Dockerfiles are fairly straightforward. They create an Ubuntu based container, install the necessary software packages and copy a few files to configure nginx and NodeJS.</p>
 
@@ -365,7 +378,20 @@ if (!doNotTrack) {
 
 <p>In the previous blog, we showed that nginx is used to serve static HTML files and to forward (proxy) the API requests to NodeJS. Here is the screenshot of the file I use for nginx configuration.</p>
 
-<p><a href="http://www.innervoice.in/blogs/2017/11/26/docker-compose-nginx-nodejs/nginx-conf/#main" rel="attachment wp-att-1586"><img class="aligncenter size-full wp-image-1586" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf.png" alt="Nginx Config File" width="560" height="479" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf.png 560w, http://127.0.0.1/wordpress/wp-content/uploads/2017/11/nginx-conf-300x257.png 300w" sizes="(max-width: 560px) 100vw, 560px" /></a></p>
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2017/nginx-conf.png" alt="Docker Compose YAML"/>
+    </div>
+    <a href="/blogs/images/2017/nginx-conf.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Docker Compose YAML</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>This config file configures nginx to listen on port 80 for HTTP requests. If the requests comes to a root folder &#8216;/&#8217;, it is redirected to the Application represented by &#8220;/app&#8221; on the same <em>host</em>. However if the request is for API represented by &#8220;/app/api&#8221; URI, then nginx will <em>proxy</em> the request to &#8220;API Server&#8221; on port 9090. If you look at the Dockerfile for the NodeJS container, you will see that it is listening on port 9090. The key thing here is the keyword <em>apiserver</em>. <strong>How does nginx know what is the IP address for the NodeJS container?</strong></p>
 
@@ -375,16 +401,33 @@ if (!doNotTrack) {
 
 <p>The YAML file has a stanza for the GUI container as follows:</p>
 
-<pre class="">links:
-    - api:apiserver</pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-YAML" data-lang="YAML">links<span class="p">:</span><span class="w">
+</span><span class="w">    </span>-<span class="w"> </span>api<span class="p">:</span>apiserver</code></pre></td></tr></table>
+</div>
+</div>
 
 <p>The keyword, <em>api,</em> refers to the &#8220;container&#8221; mentioned earlier in the YAML file.</p>
 
-<pre class="">services:
-    - api:
-        build: api-container</pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-YAML" data-lang="YAML">services<span class="p">:</span><span class="w">
+</span><span class="w">    </span>-<span class="w"> </span>api<span class="p">:</span><span class="w">
+</span><span class="w">        </span>build<span class="p">:</span><span class="w"> </span>api-container</code></pre></td></tr></table>
+</div>
+</div>
 
-<p>The effect of this <em>link</em> is that Docker will take the IP address of the container named <em>api</em> and map it to the host name <em>apiserver</em> inside the GUI container. The _/etc/hosts _file is used for this purpose.</p>
+<p>The effect of this <em>link</em> is that Docker will take the IP address of the container named <em>api</em> and map it to the host name <em>apiserver</em> inside the GUI container. The <em>/etc/hosts</em> file is used for this purpose.</p>
 
 <p>In  real world scenarios it is common to have container distributed across servers in a datacenter. Therefore IP address may not be known upfront and may also change over the course of time. Docker Links provide a crucial capability to ensure that containers are able to communicate with one another using host names and let Docker <em>orchestrate</em> the mapping of host names to IP addresses.</p>
     </div>

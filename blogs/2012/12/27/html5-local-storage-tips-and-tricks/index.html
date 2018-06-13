@@ -90,7 +90,7 @@
 
 <meta itemprop="datePublished" content="2012-12-27T13:30:45&#43;00:00" />
 <meta itemprop="dateModified" content="2012-12-27T13:30:45&#43;00:00" />
-<meta itemprop="wordCount" content="695">
+<meta itemprop="wordCount" content="732">
 
 
 
@@ -319,7 +319,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/technology/"> Technology </a>
             
           </div>
-        <span class="more-meta"> 695 words </span>
+        <span class="more-meta"> 732 words </span>
         <span class="more-meta"> 4 min read </span>
       </div>
     </header>
@@ -335,11 +335,11 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#tip-8211-1-8211-pay-attention-to-the-url">Tip &#8211; 1 &#8211; Pay attention to the URL</a></li>
-<li><a href="#tip-8211-2-8211-size-does-matter">Tip &#8211; 2 &#8211; Size does matter</a></li>
-<li><a href="#tip-8211-3-8211-store-and-retrieve-data-types">Tip &#8211; 3 &#8211; Store and retrieve data types</a></li>
-<li><a href="#tip-8211-4-8211-store-multiple-values-for-a-single-key">Tip &#8211; 4 &#8211; Store multiple values for a single key</a></li>
-<li><a href="#tip-8211-5-8211-always-check-for-browser-support">Tip &#8211; 5 &#8211; Always check for Browser Support</a></li>
+<li><a href="#tip-1-pay-attention-to-the-url">Tip - 1 - Pay attention to the URL</a></li>
+<li><a href="#tip-2-size-does-matter">Tip - 2 - Size does matter</a></li>
+<li><a href="#tip-3-store-and-retrieve-data-types">Tip - 3 - Store and retrieve data types</a></li>
+<li><a href="#tip-4-store-multiple-values-for-a-single-key">Tip - 4 - Store multiple values for a single key</a></li>
+<li><a href="#tip-5-always-check-for-browser-support">Tip - 5 - Always check for Browser Support</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -355,48 +355,93 @@ if (!doNotTrack) {
 
 <p>Here is an example of the two most important methods of <em>localStorage</em> object.</p>
 
-<pre class="lang:js decode:true">localStorage.setItem("foo", "bar");
-localStorage.getItem("foo");</pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">,</span> <span class="s2">&#34;bar&#34;</span><span class="p">);</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 
 <p>JavaScript language allows several other ways to access localStorage.</p>
 
-<pre class="lang:js decode:true">var storeValue = localStorage["foo"];</pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">var</span> <span class="nx">storeValue</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">[</span><span class="s2">&#34;foo&#34;</span><span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 
-<p>For more introductory material please read &#8211; <a href="http://diveintohtml5.info/storage.html">http://diveintohtml5.info/storage.html</a>.</p>
+<p>For more introductory material <a href="http://diveintohtml5.info/storage.html">check this out</a>.</p>
 
-<h3 id="tip-8211-1-8211-pay-attention-to-the-url">Tip &#8211; 1 &#8211; Pay attention to the URL</h3>
+<h3 id="tip-1-pay-attention-to-the-url">Tip - 1 - Pay attention to the URL</h3>
 
 <p>Browsers persist HTML5 Local Storage on a per domain basis. So a web application can only access Local Storage defined for its domain. Not just the domain but subdomain and HTTP vs HTTPS are also used to identify the domain. For example, a key-value stored in Local Storage for <a href="http://www.mysite.com">http://www.mysite.com</a> is not available <a href="https://www.mysite.com">https://www.mysite.com</a>. So if you want to share client side data between applications on different domain or sub-domains, you need to use re-directs.</p>
 
 <p>On the other hand if you host multiple web applications on the same domain (hosted as sub-directories) then all your web applications share the information stored in Local Storage. While this could be useful sometimes, care must be taken to avoid one application from over-writing the values of another application. It is good to identify the key along with application name or other identifiers.</p>
 
-<h3 id="tip-8211-2-8211-size-does-matter">Tip &#8211; 2 &#8211; Size does matter</h3>
+<h3 id="tip-2-size-does-matter">Tip - 2 - Size does matter</h3>
 
 <p>The HTML5 specification has <em>arbitrarily</em> fixed the maximum storage size <em>per domain</em> to 5 MB. This includes keys as well as values. While  5 MB worth of client side data is quite a bit, ensure that you handle the exception QUOTA_EXCEEDED_ERR and probably cleanup the storage.</p>
 
-<h3 id="tip-8211-3-8211-store-and-retrieve-data-types">Tip &#8211; 3 &#8211; Store and retrieve data types</h3>
+<h3 id="tip-3-store-and-retrieve-data-types">Tip - 3 - Store and retrieve data types</h3>
 
 <p>Local Storage supports only string values to be persisted. When you call <em>setItem</em> method, it internally converts the value object to String and persists it. So additional steps need to be taken to store and retrieve objects of different data types. Fortunately we can use JSON parsing for this purpose.</p>
 
 <p>The technique is to use <em>JSON.stringify()</em> and <em>JSON.parse()</em> functions to perform this conversion automatically. JavaScript allows us to add newer methods to existing objects. So it is advisable to incorporate this technique into the _standard localStorage object _itself. This can done as follows:</p>
 
-<pre class="lang:js decode:true">Storage.prototype.setObject = function(key, value) {
-    this.setItem(key, JSON.stringify(value));
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">Storage</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setObject</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+<span class="p">}</span>
 
-Storage.prototype.getObject = function(key) {
-    var value = this.getItem(key);
-    return value && JSON.parse(value);
-}</pre>
+<span class="nx">Storage</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getObject</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 
 <p>With the above code you can invoke</p>
 
-<pre class="lang:js decode:true">localStorage.getObject("foo");
-localStorage.setObject("foo", obj);</pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getObject</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">);</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setObject</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">,</span> <span class="nx">obj</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 
-<p>The above code is courtesy &#8211; <a href="http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage">http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage</a></p>
+<p>The above code is courtesy - <a href="http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage">http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage</a></p>
 
-<h3 id="tip-8211-4-8211-store-multiple-values-for-a-single-key">Tip &#8211; 4 &#8211; Store multiple values for a single key</h3>
+<h3 id="tip-4-store-multiple-values-for-a-single-key">Tip - 4 - Store multiple values for a single key</h3>
 
 <p>If you want to store multiple values for a single key, then this tip is very useful. I borrowed this technique from <a href="http://paperkilledrock.com/2010/05/html5-localstorage-part-two/">http://paperkilledrock.com/2010/05/html5-localstorage-part-two/</a>. Here is what you need to do:</p>
 
@@ -404,42 +449,90 @@ localStorage.setObject("foo", obj);</pre>
 <li>Create an array and <em>push</em> different values into it.</li>
 </ul>
 
-<pre class="lang:js decode:true">var values = new Array();
-values.push(value1);
-values.push(value2);
-values.push(value3);</pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+<span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">value1</span><span class="p">);</span>
+<span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">value2</span><span class="p">);</span>
+<span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">value3</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 
 <ul>
 <li>Stringify the array using the <em>join</em> method by specifying a <em>separator</em>. Note choose a separator that is unlikely to appear in your values.</li>
 <li>Persist this string into Local Storage.</li>
 </ul>
 
-<pre class="lang:js decode:true">try {
-    localStorage.setItem(key, values.join(";")); //store the item in the database
-} catch (e) {
-    if (e == QUOTA_EXCEEDED_ERR) {
-        alert("Quota exceeded!");
-    }
-}</pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="k">try</span> <span class="p">{</span>
+	<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">values</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&#34;;&#34;</span><span class="p">));</span> <span class="c1">//store the item in the database
+</span><span class="c1"></span><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">e</span> <span class="o">==</span> <span class="nx">QUOTA_EXCEEDED_ERR</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;Quota exceeded!&#34;</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 
 <ul>
 <li>While retrieving fetch the concatenated String from Local Storage and use <em>String.split()</em> to parse the different values.</li>
 </ul>
 
-<pre class="lang:js decode:true">var valueFromStore = localStorage.getItem(key); // get the String from Local Storage
-var values = valueFromStore.split(";"); // get an Array back</pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">var</span> <span class="nx">valueFromStore</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span> <span class="c1">// get the String from Local Storage
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="nx">valueFromStore</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;;&#34;</span><span class="p">);</span> <span class="c1">// get an Array back
+</span><span class="c1"></span></code></pre></td></tr></table>
+</div>
+</div>
 
-<h3 id="tip-8211-5-8211-always-check-for-browser-support">Tip &#8211; 5 &#8211; Always check for Browser Support</h3>
+<h3 id="tip-5-always-check-for-browser-support">Tip - 5 - Always check for Browser Support</h3>
 
 <p>A very large number of modern browsers support Local Storage but as a web application developer you may still encounter browsers that do not support many HTML5 constructs and certainly not Local Storage. So you are well advised to check whether your browser supports Local Storage or not. While there are many ways to check, I strongly recommend Modernizr API (why re-invent the wheel).</p>
 
-<pre class="lang:js decode:true">if (Modernizr.localstorage) {
-  // localStorage is supported
-} else {
-  // localStorage not supported
-}</pre>
-
-<p>&nbsp;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="k">if</span> <span class="p">(</span><span class="nx">Modernizr</span><span class="p">.</span><span class="nx">localstorage</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// localStorage is supported
+</span><span class="c1"></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// localStorage not supported
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
