@@ -17,8 +17,20 @@
       <pubDate>Tue, 31 Mar 2015 16:55:40 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</guid>
-      <description>I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
-OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services.</description>
+      <description>&lt;p&gt;I briefly talked about OpenStack Neutron plugins and agents in &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2015/01/13/openstack-neutron-components/&#34;&gt;my blog about OpenStack Neutron components&lt;/a&gt;. In this blog, let us go a step further and understand the roles of plugins and the agents.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Networking – an introduction</title>
+      <link>http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/</link>
+      <pubDate>Sun, 06 Apr 2014 19:56:02 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/</guid>
+      <description>&lt;p&gt;I continue the series on virtual networking with an overview of OpenStack networking concepts. OpenStack is an open source project with an aim to create a scalable cloud operating platform. The primary goal of this software platform is to help build public and private clouds. Specifically it allows users to build and operate infrastructure as a service or &lt;strong&gt;IaaS&lt;/strong&gt; clouds.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

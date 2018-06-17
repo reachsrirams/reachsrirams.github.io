@@ -158,12 +158,12 @@ if (!doNotTrack) {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/">
+        <a href="http://reachsrirams.github.io/">
           Home
         </a>
       </li><li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/post/">
-          Archives
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
         </a>
       </li><li class="mobile-menu-item">
         <a href="http://reachsrirams.github.io/blogs/tags/">
@@ -256,7 +256,10 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
           
 
         
@@ -267,7 +270,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
           
 
         
@@ -335,9 +338,9 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#docker-compose-8211-background">Docker Compose &#8211; background</a></li>
+<li><a href="#docker-compose-background">Docker Compose - background</a></li>
 <li><a href="#nginx-proxy">nginx Proxy</a></li>
-<li><a href="#docker-8211-links">Docker &#8211; links</a></li>
+<li><a href="#docker-links">Docker - links</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -353,7 +356,7 @@ if (!doNotTrack) {
 
 <p>Acknowledgement: I was inspired by <a href="http://schempy.com/2015/08/25/docker_nginx_nodejs/">this blog</a> and wanted to take it further using Docker Compose.</p>
 
-<h3 id="docker-compose-8211-background">Docker Compose &#8211; background</h3>
+<h3 id="docker-compose-background">Docker Compose - background</h3>
 
 <p>Docker Compose is a tool to build and coordinate multi-container applications. You use a YAML file to define different containers and any relationship between them. Docker Compose uses this YAML file to start those containers. We can continue to use the Dockerfile as a building block for Docker Compose.</p>
 
@@ -372,7 +375,7 @@ if (!doNotTrack) {
 </div>
 
 
-<p>As you can see from the GitHub repository, I have two containers defined in my <em>docker-compose.yml</em> file. The YAML file shows that the two &#8220;services&#8221; are <em>built</em> using the Dockerfile specified for each of the containers. The steps in two Dockerfiles are fairly straightforward. They create an Ubuntu based container, install the necessary software packages and copy a few files to configure nginx and NodeJS.</p>
+<p>As you can see from the GitHub repository, I have two containers defined in my <em>docker-compose.yml</em> file. The YAML file shows that the two &ldquo;services&rdquo; are <em>built</em> using the Dockerfile specified for each of the containers. The steps in two Dockerfiles are fairly straightforward. They create an Ubuntu based container, install the necessary software packages and copy a few files to configure nginx and NodeJS.</p>
 
 <h3 id="nginx-proxy">nginx Proxy</h3>
 
@@ -393,9 +396,9 @@ if (!doNotTrack) {
 </div>
 
 
-<p>This config file configures nginx to listen on port 80 for HTTP requests. If the requests comes to a root folder &#8216;/&#8217;, it is redirected to the Application represented by &#8220;/app&#8221; on the same <em>host</em>. However if the request is for API represented by &#8220;/app/api&#8221; URI, then nginx will <em>proxy</em> the request to &#8220;API Server&#8221; on port 9090. If you look at the Dockerfile for the NodeJS container, you will see that it is listening on port 9090. The key thing here is the keyword <em>apiserver</em>. <strong>How does nginx know what is the IP address for the NodeJS container?</strong></p>
+<p>This config file configures nginx to listen on port 80 for HTTP requests. If the requests comes to a root folder &amp;&ldquo;/&rdquo;, it is redirected to the Application represented by &ldquo;/app&rdquo; on the same <em>host</em>. However if the request is for API represented by &ldquo;/app/api&rdquo; URI, then nginx will <em>proxy</em> the request to &ldquo;API Server&rdquo; on port 9090. If you look at the Dockerfile for the NodeJS container, you will see that it is listening on port 9090. The key thing here is the keyword <em>apiserver</em>. <strong>How does nginx know what is the IP address for the NodeJS container?</strong></p>
 
-<h3 id="docker-8211-links">Docker &#8211; links</h3>
+<h3 id="docker-links">Docker - links</h3>
 
 <p>Links are important concepts that help Docker containers communicate with one another. It is a good practice to use host names instead of hard-coding IP addresses when one container needs to communicate with another. But host names and IP addresses have to be mapped automatically. This is where the concept of Link comes into picture.</p>
 
@@ -412,7 +415,7 @@ if (!doNotTrack) {
 </div>
 </div>
 
-<p>The keyword, <em>api,</em> refers to the &#8220;container&#8221; mentioned earlier in the YAML file.</p>
+<p>The keyword, <em>api,</em> refers to the &ldquo;container&rdquo; mentioned earlier in the YAML file.</p>
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

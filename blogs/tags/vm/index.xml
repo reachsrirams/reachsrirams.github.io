@@ -17,17 +17,28 @@
       <pubDate>Tue, 31 Mar 2015 16:55:40 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</guid>
-      <description>I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
-OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services.</description>
+      <description>&lt;p&gt;I briefly talked about OpenStack Neutron plugins and agents in &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2015/01/13/openstack-neutron-components/&#34;&gt;my blog about OpenStack Neutron components&lt;/a&gt;. In this blog, let us go a step further and understand the roles of plugins and the agents.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Using MAC table – Linux Bridge – WILT</title>
-      <link>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</link>
-      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
+      <title>Setting up OpenStack at home</title>
+      <link>http://reachsrirams.github.io/blogs/2014/11/13/setting-openstack-home/</link>
+      <pubDate>Thu, 13 Nov 2014 18:26:12 +0000</pubDate>
       
-      <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
-      <description>&lt;p&gt;In an &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; title=&#34;Linux Bridge and Virtual Networking&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
+      <guid>http://reachsrirams.github.io/blogs/2014/11/13/setting-openstack-home/</guid>
+      <description>The goal of this blog is to share some details about how I have setup a cost-effective OpenStack Lab at home. For most enthusiasts, DevStack is the preferred way to experiment with OpenStack. But I wanted something more realistic for my experiments.
+OpenStack is intended for multi-tenant, distributed and highly scalable cloud. To appreciate its architecture I needed to move beyond DevStack. With a more realistic setup, you can understand how the distributed OpenStack components interact with each other.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Networking – an introduction</title>
+      <link>http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/</link>
+      <pubDate>Sun, 06 Apr 2014 19:56:02 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/</guid>
+      <description>&lt;p&gt;I continue the series on virtual networking with an overview of OpenStack networking concepts. OpenStack is an open source project with an aim to create a scalable cloud operating platform. The primary goal of this software platform is to help build public and private clouds. Specifically it allows users to build and operate infrastructure as a service or &lt;strong&gt;IaaS&lt;/strong&gt; clouds.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -38,7 +49,7 @@ OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for 
       <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</guid>
-      <description>&lt;p&gt;If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).&lt;/p&gt;
+      <description>&lt;p&gt;If you were to ask someone &amp;ldquo;what is the most popular open source hypervisor&amp;rdquo; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

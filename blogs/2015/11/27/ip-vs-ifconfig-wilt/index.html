@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Sriram S" />
-  <meta name="description" content="One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc)." />
+  <meta name="description" content="One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc). " />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -58,7 +58,8 @@
 
 
 <meta property="og:title" content="ip vs. ifconfig – WILT" />
-<meta property="og:description" content="One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc)." />
+<meta property="og:description" content="One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc).
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/" />
 
@@ -79,19 +80,21 @@
 
 
 <meta itemprop="name" content="ip vs. ifconfig – WILT">
-<meta itemprop="description" content="One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc).">
+<meta itemprop="description" content="One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc).
+">
 
 
 <meta itemprop="datePublished" content="2015-11-27T06:54:27&#43;00:00" />
 <meta itemprop="dateModified" content="2015-11-27T06:54:27&#43;00:00" />
-<meta itemprop="wordCount" content="384">
+<meta itemprop="wordCount" content="405">
 
 
 
-<meta itemprop="keywords" content="ifconfig,ip,Linux,Namespace," />
+<meta itemprop="keywords" content="ifconfig,ip,Linux,Namespace,tap interface,Virtual Network," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ip vs. ifconfig – WILT"/>
-<meta name="twitter:description" content="One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc)."/>
+<meta name="twitter:description" content="One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc).
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -150,12 +153,12 @@ if (!doNotTrack) {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/">
+        <a href="http://reachsrirams.github.io/">
           Home
         </a>
       </li><li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/post/">
-          Archives
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
         </a>
       </li><li class="mobile-menu-item">
         <a href="http://reachsrirams.github.io/blogs/tags/">
@@ -248,7 +251,10 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
           
 
         
@@ -259,7 +265,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
           
 
         
@@ -311,7 +317,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/wilt/"> WILT </a>
             
           </div>
-        <span class="more-meta"> 384 words </span>
+        <span class="more-meta"> 405 words </span>
         <span class="more-meta"> 2 min read </span>
       </div>
     </header>
@@ -325,7 +331,7 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#the-ip-command-8211-replacement-for-ifconfig">The ip Command &#8211; replacement for ifconfig</a></li>
+<li><a href="#the-ip-command-replacement-for-ifconfig">The ip Command - replacement for ifconfig</a></li>
 <li><a href="#viewing-details-of-all-network-interfaces">Viewing details of all network interfaces</a></li>
 <li><a href="#viewing-information-for-a-specific-network-interface">Viewing information for a specific network interface</a></li>
 <li><a href="#enable-or-disable-a-specific-network-interface">Enable or Disable a specific network interface</a></li>
@@ -338,54 +344,130 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      
+      <p>One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like <a href="/blogs/2013/12/08/tap-interfaces-linux-bridge/">Tap interface</a> etc).
+</p>
 
-<p>One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like <a href="http://www.innervoice.in/blogs/2013/12/08/tap-interfaces-linux-bridge/">Tap interface</a> etc).</p>
+<h2 id="the-ip-command-replacement-for-ifconfig">The ip Command - replacement for ifconfig</h2>
 
-<h2 id="the-ip-command-8211-replacement-for-ifconfig">The ip Command &#8211; replacement for ifconfig</h2>
-
-<p>The ifconfig command is now being deprecated and the new kid on the block is the ip command.The ip command is part of the iproute2util package. The ip command consolidates many different networking commands into one. It is organized based on the networking stack &#8211; <em>ip link</em> (Layer 2), <em>ip addr</em> (Layer 3). The most promising capability of the ip command is the support for Namespace. The ip netns command let us run commands inside the Network Namespace (netns).</p>
+<p>The ifconfig command is now being deprecated and the new kid on the block is the ip command.The ip command is part of the iproute2util package. The ip command consolidates many different networking commands into one. It is organized based on the networking stack - <em>ip link</em> (Layer 2), <em>ip addr</em> (Layer 3). The most promising capability of the ip command is the support for Namespace. The ip netns command let us run commands inside the Network Namespace (netns).</p>
 
 <p>Here is a quick comparison of commonly used ifconfig commands and how you can achieve the same with ip command.</p>
 
 <h2 id="viewing-details-of-all-network-interfaces">Viewing details of all network interfaces</h2>
 
-<p>To view both MAC address and IP address of all network interfaces use &#8220;ip addr&#8221; command. The same is achieved using &#8220;ifconfig&#8221; command also. However there is one key difference, the &#8220;ifconfig&#8221; command only shows the interfaces that are currently enabled. Note the missing <strong>eth2</strong> in the ifconfig output below. The &#8220;ip addr&#8221; command shows interfaces that are disabled also. To do the same with <em>ifconfig</em>, use the ifconfig with &#8220;-a&#8221; switch.</p>
+<p>To view both MAC address and IP address of all network interfaces use &ldquo;ip addr&rdquo; command. The same is achieved using &ldquo;ifconfig&rdquo; command also. However there is one key difference, the &ldquo;ifconfig&rdquo; command only shows the interfaces that are currently enabled. Note the missing <strong>eth2</strong> in the ifconfig output below. The &ldquo;ip addr&rdquo; command shows interfaces that are disabled also. To do the same with <em>ifconfig</em>, use the ifconfig with &ldquo;-a&rdquo; switch.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1.png"><img class="aligncenter size-large wp-image-1334" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-1024x667.png" alt="ip addr command output" width="620" height="404" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-1024x667.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-300x195.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-768x500.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1.png"><img class="aligncenter wp-image-1333 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-901x1024.png" alt="ifconfig command output" width="620" height="705" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-901x1024.png 901w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-264x300.png 264w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-768x873.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1.png 1306w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/ip-addr-1.png" alt="ip addr command output"/>
+    </div>
+    <a href="/blogs/images/2015/ip-addr-1.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>ip addr command output</p>
+      </figcaption>
+  </figure>
+</div>
 
-<p>&nbsp;</p>
+
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/ifconfig-1.png" alt="ifconfig command output"/>
+    </div>
+    <a href="/blogs/images/2015/ifconfig-1.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>ifconfig command output</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <h2 id="viewing-information-for-a-specific-network-interface">Viewing information for a specific network interface</h2>
 
-<p>With both &#8220;ip addr&#8221; and &#8220;ifconfig&#8221; commands it is possible to view the details of a specific interface as shown below.</p>
+<p>With both &ldquo;ip addr&rdquo; and &ldquo;ifconfig&rdquo; commands it is possible to view the details of a specific interface as shown below.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0.png"><img class="aligncenter size-large wp-image-1337" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-1024x175.png" alt="ip addr for a specific interface" width="620" height="106" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-1024x175.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-300x51.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-768x131.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0.png"><img class="aligncenter size-large wp-image-1336" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-1024x304.png" alt="ifconfig for a specific interface" width="620" height="184" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-1024x304.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-300x89.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-768x228.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0.png 1294w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/ip-addr-show.png" alt="ip addr for a specific interface"/>
+    </div>
+    <a href="/blogs/images/2015/ip-addr-show.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>ip addr for a specific interface</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/ifconfig-eth0.png" alt="ifconfig for a specific interface"/>
+    </div>
+    <a href="/blogs/images/2015/ifconfig-eth0.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>ifconfig for a specific interface</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <h2 id="enable-or-disable-a-specific-network-interface">Enable or Disable a specific network interface</h2>
 
-<p>The &#8220;ip link&#8221; command can be used to enable or disable a specific network interface. The same can also be accomplished using &#8220;ifconfig <interfacename> up&#8221; or &#8220;ifconfig <interfacename> down&#8221; command.</p>
+<p>The &ldquo;ip link&rdquo; command can be used to enable or disable a specific network interface. The same can also be accomplished using &ldquo;ifconfig <em>interfacename</em> up&rdquo; or &rdquo;ifconfig <em>interfacename</em> down&rdquo; command.</p>
 
-<p>The screenshot below shows an interface whose status is DOWN. Then the interface is enabled using the &#8220;ip link&#8221; command.</p>
+<p>The screenshot below shows an interface whose status is DOWN. Then the interface is enabled using the &ldquo;ip link&rdquo; command.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down.png"><img class="aligncenter size-large wp-image-1339" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-1024x90.png" alt="ip-link-down" width="620" height="54" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-1024x90.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-300x27.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-768x68.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down.png"><img class="aligncenter size-large wp-image-1338" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-1024x106.png" alt="ip-link-down-up-show" width="620" height="64" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-1024x106.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-300x31.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-768x80.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/ip-link-down.png" alt="ip-link-down"/>
+    </div>
+    <a href="/blogs/images/2015/ip-link-down.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/ip-link-down-up-show.png" alt="ip-link-down-up-show"/>
+    </div>
+    <a href="/blogs/images/2015/ip-link-down-up-show.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
 
 <h2 id="viewing-neighbor-interface-information">Viewing neighbor interface information</h2>
 
-<p>Viewing the information of neighboring interfaces is possible using the &#8220;ip neigh&#8221; command. <strong>This is not supported by the ifconfig command</strong>. Instead users will have to use commands related to ARP or utilities such as <strong>ethtool</strong> and <strong>lldpctl</strong>.</p>
+<p>Viewing the information of neighboring interfaces is possible using the &ldquo;ip neigh&rdquo; command. <strong>This is not supported by the ifconfig command</strong>. Instead users will have to use commands related to ARP or utilities such as <strong>ethtool</strong> and <strong>lldpctl</strong>.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh.png"><img class="aligncenter size-large wp-image-1340" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-1024x307.png" alt="View neighbor interface information" width="620" height="186" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-1024x307.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-300x90.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-768x231.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh.png 1166w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
 
-<p>&nbsp;</p>
 
-<p>##</p>
-
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/ip-neigh.png" alt="View neighbor interface information"/>
+    </div>
+    <a href="/blogs/images/2015/ip-neigh.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>View neighbor interface information</p>
+      </figcaption>
+  </figure>
+</div>
     </div>
 
     
@@ -404,6 +486,10 @@ if (!doNotTrack) {
           <a href="/blogs/tags/linux/">Linux</a>
           
           <a href="/blogs/tags/namespace/">Namespace</a>
+          
+          <a href="/blogs/tags/tap-interface/">tap interface</a>
+          
+          <a href="/blogs/tags/virtual-network/">Virtual Network</a>
           
         </div>
 

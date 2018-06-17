@@ -90,7 +90,7 @@
 
 <meta itemprop="datePublished" content="2015-01-13T18:20:22&#43;00:00" />
 <meta itemprop="dateModified" content="2015-01-13T18:20:22&#43;00:00" />
-<meta itemprop="wordCount" content="682">
+<meta itemprop="wordCount" content="689">
 
 
 
@@ -158,12 +158,12 @@ if (!doNotTrack) {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/">
+        <a href="http://reachsrirams.github.io/">
           Home
         </a>
       </li><li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/post/">
-          Archives
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
         </a>
       </li><li class="mobile-menu-item">
         <a href="http://reachsrirams.github.io/blogs/tags/">
@@ -256,7 +256,10 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
           
 
         
@@ -267,7 +270,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
           
 
         
@@ -320,8 +323,16 @@ if (!doNotTrack) {
             
               <a href="/blogs/categories/technology/"> Technology </a>
             
+              <a href="/blogs/categories/openstack/"> OpenStack </a>
+            
+              <a href="/blogs/categories/neutron/"> Neutron </a>
+            
+              <a href="/blogs/categories/virtual-network/"> Virtual Network </a>
+            
+              <a href="/blogs/categories/virtual-switch/"> Virtual Switch </a>
+            
           </div>
-        <span class="more-meta"> 682 words </span>
+        <span class="more-meta"> 689 words </span>
         <span class="more-meta"> 4 min read </span>
       </div>
     </header>
@@ -337,22 +348,16 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#openstack-neutron-software-components">OpenStack Neutron Software Components</a>
 <ul>
-<li>
-<ul>
 <li><a href="#neutron-server">Neutron Server</a></li>
 <li><a href="#neutron-plugins">Neutron Plugins</a></li>
 <li><a href="#neutron-agents">Neutron Agents</a></li>
 </ul></li>
-</ul></li>
 <li><a href="#openstack-neutron-hardware-components">OpenStack Neutron Hardware Components</a>
-<ul>
-<li>
 <ul>
 <li><a href="#controller-node">Controller Node</a></li>
 <li><a href="#compute-node">Compute Node</a></li>
 <li><a href="#networking-node">Networking Node</a></li>
 <li><a href="#physical-network">Physical Network</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -362,13 +367,13 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>Neutron is the networking project within the OpenStack cloud platform. The purpose of OpenStack Neutron is to provide physical and virtual network resources to the instances (or virtual machines). Before you continue to read this article I would recommend that you read about <a href="http://www.innervoice.in/blogs/2014/04/07/openstack-networking/" title="OpenStack Networking – an introduction">OpenStack networking concepts</a>. To appreciate the architecture and the functionality of Neutron, it is important to understand the components that are part of Neutron.</p>
+      <p>Neutron is the networking project within the OpenStack cloud platform. The purpose of OpenStack Neutron is to provide physical and virtual network resources to the instances (or virtual machines). Before you continue to read this article I would recommend that you read about <a href="/blogs/2014/04/06/openstack-networking/">OpenStack networking concepts</a>. To appreciate the architecture and the functionality of Neutron, it is important to understand the components that are part of Neutron.</p>
 
 <p></p>
 
 <h2 id="openstack-neutron-software-components">OpenStack Neutron Software Components</h2>
 
-<h4 id="neutron-server">Neutron Server</h4>
+<h3 id="neutron-server">Neutron Server</h3>
 
 <p>The main software entity for Neutron is the neutron-server daemon. This is basically a python program which is started when you execute:</p>
 
@@ -378,20 +383,31 @@ if (!doNotTrack) {
 
 <ul>
 <li>Neutron REST service</li>
-<li>Neutron Plugin &#8211; core and service plugin</li>
+<li>Neutron Plugin - core and service plugin</li>
 </ul>
 
 <p>The Neutron RPC service is also started so that the neutron servers can communicate with the agents. And the RPC service actually loads the Neutron Plugin.</p>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png"><img class="aligncenter  wp-image-1199" alt="OpenStack Neutron Server Loading Steps" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png" width="522" height="373" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps.png 816w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps-300x214.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-Server-Loading-Steps-768x549.png 768w" sizes="(max-width: 522px) 100vw, 522px" /></a>
-</p>
 
-<h4 id="neutron-plugins">Neutron Plugins</h4>
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/Neutron-Server-Loading-Steps.png" alt="OpenStack Neutron Server Loading Steps"/>
+    </div>
+    <a href="/blogs/images/2015/Neutron-Server-Loading-Steps.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>OpenStack Neutron Server Loading Steps</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<h3 id="neutron-plugins">Neutron Plugins</h3>
 
 <p>Plugins in Neutron allow extension and/or customization of the pre-existing functionality in Neutron. Networking vendors can write plugins that ensures smooth inter-operability between OpenStack Neutron and vendor-specific software and hardware. With this approach a rich set of physical and virtual networking resources can be made available to the virtual machines instances.</p>
 
-<h4 id="neutron-agents">Neutron Agents</h4>
+<h3 id="neutron-agents">Neutron Agents</h3>
 
 <p>The agents are another set of critical components within Neutron. The main Neutron server (and the plugins) communicate with Neutron agents. The Neutron agents implement <strong>very specific networking functionality</strong>. Examples include DHCP Agent, L3 Agent etc. Some agents may be specific to the plugin such as Linux Bridge Neutron Agent etc.</p>
 
@@ -401,35 +417,42 @@ if (!doNotTrack) {
 
 <p>The following hardware components support one or more of the above mentioned software components.</p>
 
-<h4 id="controller-node">Controller Node</h4>
+<h3 id="controller-node">Controller Node</h3>
 
 <p>The main OpenStack Neutron server runs in the controller node. This means that Neutron API requests from Horizon (Dashboard) or the Neutron CLI, land on this server. As seen above, the plugins that do the main networking configurations also run on this server.</p>
 
 <p><em>Physical network connectivity for Controller Node:</em> Since the Neutron server needs to receive API requests and also needs to communicate with agents via RPC, it requires a minimum of <strong>one Ethernet interface (Management Network)</strong> for this purpose.</p>
 
-<h4 id="compute-node">Compute Node</h4>
+<h3 id="compute-node">Compute Node</h3>
 
-<p>The compute node is where the instances or virtual machines are started. The main goal of OpenStack Neutron, within the compute node, is to provide networking resources for &#8216;each&#8217; instance. Since the core element of Neutron is to provide Layer-2 (L2) connectivity an instance, the L2 agent (depending on the plugin) runs on the compute node.</p>
+<p>The compute node is where the instances or virtual machines are started. The main goal of OpenStack Neutron, within the compute node, is to provide networking resources for &lsquo;each&rsquo; instance. Since the core element of Neutron is to provide Layer-2 (L2) connectivity an instance, the L2 agent (depending on the plugin) runs on the compute node.</p>
 
-<p>_Physical network connectivity for Compute Node: _The compute node may run agents and will respond to RPC messages from Neutron Server (Management Network). In addition it also needs to provide a dedicate interface for network traffic from the virtual machines (Data Network). Hence the Compute node requires <strong>two Ethernet interfaces</strong>. **</p>
+<p>_Physical network connectivity for Compute Node: _The compute node may run agents and will respond to RPC messages from Neutron Server (Management Network). In addition it also needs to provide a dedicate interface for network traffic from the virtual machines (Data Network). Hence the Compute node requires <strong>two Ethernet interfaces</strong>. </p>
 
-<p>**</p>
+<h3 id="networking-node">Networking Node</h3>
 
-<h4 id="networking-node">Networking Node</h4>
-
-<p>The networking node is a special node dedicated to provide several key networking capabilities. Since the instances or VMs run on the compute node, the main purpose of networking node is to provide <strong>networking services that span across virtual machines &#8211; for example DHCP and Routing etc.</strong></p>
+<p>The networking node is a special node dedicated to provide several key networking capabilities. Since the instances or VMs run on the compute node, the main purpose of networking node is to provide <strong>networking services that span across virtual machines - for example DHCP and Routing etc.</strong></p>
 
 <p><em>Physical network connectivity for Controller Node:</em> Just like the Compute node, the network node needs two Ethernet Interfaces for Management and Data network. In addition, Networking Node can also provide to-and-fro Internet access for the virtual machines. It is recommended that a separate <strong>third Ethernet interface</strong> be used for this purpose.</p>
 
-<p>The following <a href="http://docs.openstack.org/admin-guide-cloud/content/network-connectivity.html" target="_blank">diagram from the OpenStack Admin Guide</a> clarifies the services and the network connectivity supported by these three physical components.</p>
+<p>The following <a href="&quot;http://docs.openstack.org/admin-guide-cloud/content/network-connectivity.html">diagram from the OpenStack Admin Guide</a> clarifies the services and the network connectivity supported by these three physical components.</p>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png"><img class="aligncenter  wp-image-1202" alt="OpenStack Neutron Physical Network Diagram" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png" width="622" height="455" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1.png 778w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1-300x219.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/01/Neutron-PhysNet-Diagram-1-768x562.png 768w" sizes="(max-width: 622px) 100vw, 622px" /></a>
-</p>
 
-<p>&nbsp;</p>
 
-<h4 id="physical-network">Physical Network</h4>
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/Neutron-PhysNet-Diagram-1.png" alt="OpenStack Neutron Physical Network Diagram"/>
+    </div>
+    <a href="/blogs/images/2015/Neutron-PhysNet-Diagram-1.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>OpenStack Neutron Physical Network Diagram</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<h3 id="physical-network">Physical Network</h3>
 
 <p>In real data centers, physical servers (nodes) are connected to switches and further these switches are connected to Routers. The capabilities of Neutron can be enhanced by using vendor specific plugins that can help leverage specialized networking equipment. In addition, the network topology of the data center, that hosts your OpenStack cloud will also play a role in the kind of capabilities OpenStack tenants can leverage. Even though physical networks are not tightly integrated with OpenStack Neutron, they nevertheless are instrumental in the cloud services available to tenants.</p>
     </div>
@@ -452,8 +475,8 @@ if (!doNotTrack) {
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="/blogs/2014/12/17/linux-network-namespace-wilt/">
-            <span class="next-text nav-default">Linux Network Namespace – WILT</span>
+          <a class="next" href="/blogs/2014/12/31/use-google-calendar-to-remind-reading/">
+            <span class="next-text nav-default">Use Google Calendar to remind you to read</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

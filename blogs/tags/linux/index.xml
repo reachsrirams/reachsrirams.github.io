@@ -17,7 +17,8 @@
       <pubDate>Fri, 27 Nov 2015 06:54:27 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</guid>
-      <description>One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like Tap interface etc).</description>
+      <description>&lt;p&gt;One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/08/tap-interfaces-linux-bridge/&#34;&gt;Tap interface&lt;/a&gt; etc).
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,9 +27,18 @@
       <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</guid>
-      <description>&lt;p&gt;In the next installment of &amp;#8220;What I learnt today&amp;#8221; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a &lt;strong&gt;copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;p&gt;In the next installment of &amp;ldquo;What I learnt today&amp;rdquo; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a &lt;strong&gt;copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What I learnt today (WILT) – less command</title>
+      <link>http://reachsrirams.github.io/blogs/2014/11/28/what-i-learnt-today-less/</link>
+      <pubDate>Fri, 28 Nov 2014 09:10:00 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/11/28/what-i-learnt-today-less/</guid>
+      <description>This is the first blog in a new series that I have wanted to start for a while. The series will be called WILT which stands for What I Learnt Today. In our day to day life, especially at work, we all learn something or at least aspire to learn something. In this series of short blogs, I will share some interesting topics that I come across in my workplace.</description>
     </item>
     
     <item>
@@ -37,7 +47,7 @@
       <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</guid>
-      <description>&lt;p&gt;If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).&lt;/p&gt;
+      <description>&lt;p&gt;If you were to ask someone &amp;ldquo;what is the most popular open source hypervisor&amp;rdquo; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

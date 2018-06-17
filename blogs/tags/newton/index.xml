@@ -17,7 +17,7 @@
       <pubDate>Tue, 02 May 2017 05:07:42 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</guid>
-      <description>Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.</description>
+      <description>Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;rsquo;s latest release.</description>
     </item>
     
   </channel>

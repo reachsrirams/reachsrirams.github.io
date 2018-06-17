@@ -17,8 +17,8 @@
       <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
-      <description>OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
-Why are Ports important?</description>
+      <description>&lt;p&gt;OpenStack supports rich abstractions to handle &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2014/04/06/openstack-networking/&#34;&gt;virtual networking needs in a cloud&lt;/a&gt;. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,7 +27,18 @@ Why are Ports important?</description>
       <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
-      <description>&lt;p&gt;In an &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; title=&#34;Linux Bridge and Virtual Networking&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
+      <description>&lt;p&gt;In an &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/02/linux-bridge-virtual-networking/&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Wired and Wireless network on Ubuntu for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2014/06/29/wired-wireless-network-ubuntu-openstack/</link>
+      <pubDate>Sun, 29 Jun 2014 18:16:37 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/06/29/wired-wireless-network-ubuntu-openstack/</guid>
+      <description>&lt;p&gt;In data center and cloud environment, servers used for hosting the virtual machines usually have more than one wired networking interfaces. In fact there are multiple Ethernet interfaces on each server. It is common practice to use one of the interface for &amp;lsquo;managing&amp;rsquo; the host itself. This interface is usually accessible from corporate networks and administrators will use this interface for doing SSH into the server. The other interfaces are usually used for virtual machine traffic or storage traffic.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -38,7 +49,7 @@ Why are Ports important?</description>
       <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</guid>
-      <description>&lt;p&gt;If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).&lt;/p&gt;
+      <description>&lt;p&gt;If you were to ask someone &amp;ldquo;what is the most popular open source hypervisor&amp;rdquo; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

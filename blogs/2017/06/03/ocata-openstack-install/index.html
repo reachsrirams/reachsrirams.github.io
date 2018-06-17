@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Sriram S" />
-  <meta name="description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects" />
+  <meta name="description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&amp;rsquo;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -58,7 +58,7 @@
 
 
 <meta property="og:title" content="Ocata release install scripts for OpenStack" />
-<meta property="og:description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects" />
+<meta property="og:description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&rsquo;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2017/06/03/ocata-openstack-install/" />
 
@@ -79,19 +79,19 @@
 
 
 <meta itemprop="name" content="Ocata release install scripts for OpenStack">
-<meta itemprop="description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects">
+<meta itemprop="description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&rsquo;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects">
 
 
 <meta itemprop="datePublished" content="2017-06-03T02:39:12&#43;00:00" />
 <meta itemprop="dateModified" content="2017-06-03T02:39:12&#43;00:00" />
-<meta itemprop="wordCount" content="504">
+<meta itemprop="wordCount" content="252">
 
 
 
 <meta itemprop="keywords" content="Cells,Nova,Ocata,OpenStack,Placement," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ocata release install scripts for OpenStack"/>
-<meta name="twitter:description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects"/>
+<meta name="twitter:description" content="Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the Ocata is the most recent release of OpenStack. I would like to share scripts that can be used to install the server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&rsquo;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -150,12 +150,12 @@ if (!doNotTrack) {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/">
+        <a href="http://reachsrirams.github.io/">
           Home
         </a>
       </li><li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/post/">
-          Archives
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
         </a>
       </li><li class="mobile-menu-item">
         <a href="http://reachsrirams.github.io/blogs/tags/">
@@ -248,7 +248,10 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
           
 
         
@@ -259,7 +262,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
           
 
         
@@ -311,8 +314,8 @@ if (!doNotTrack) {
               <a href="/blogs/categories/technology/"> Technology </a>
             
           </div>
-        <span class="more-meta"> 504 words </span>
-        <span class="more-meta"> 3 min read </span>
+        <span class="more-meta"> 252 words </span>
+        <span class="more-meta"> 2 min read </span>
       </div>
     </header>
 
@@ -326,15 +329,10 @@ if (!doNotTrack) {
 <li>
 <ul>
 <li><a href="#openstack-services-installed">OpenStack services installed</a></li>
-<li><a href="#what-8217-s-new-in-ocata-in-terms-of-installation">What&#8217;s new in Ocata in terms of Installation?</a></li>
+<li><a href="#what-s-new-in-ocata-in-terms-of-installation">What&rsquo;s new in Ocata in terms of Installation?</a></li>
 <li><a href="#ocata-install-scripts-on-github">Ocata install scripts on GitHub</a></li>
 <li><a href="#prerequisites">Prerequisites</a></li>
 <li><a href="#installation-steps">Installation steps</a></li>
-<li><a href="#openstack-services-installed-1">OpenStack services installed</a></li>
-<li><a href="#what-8217-s-new-in-ocata-in-terms-of-installation-1">What&#8217;s new in Ocata in terms of Installation?</a></li>
-<li><a href="#ocata-install-scripts-on-github-1">Ocata install scripts on GitHub</a></li>
-<li><a href="#prerequisites-1">Prerequisites</a></li>
-<li><a href="#installation-steps-1">Installation steps</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -345,7 +343,7 @@ if (!doNotTrack) {
     <div class="post-content">
       
 
-<p>Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the <a href="https://goo.gl/A8JmlO">Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the</a> server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects</p>
+<p>Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the <a href="https://goo.gl/A8JmlO">Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the</a> server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&rsquo;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects</p>
 
 <h2 id="openstack-services-installed">OpenStack services installed</h2>
 
@@ -359,67 +357,40 @@ if (!doNotTrack) {
 <li>Horizon (Dashboard)</li>
 </ul>
 
-<h2 id="what-8217-s-new-in-ocata-in-terms-of-installation">What&#8217;s new in Ocata in terms of Installation?</h2>
+<h2 id="what-s-new-in-ocata-in-terms-of-installation">What&rsquo;s new in Ocata in terms of Installation?</h2>
 
 <p>Here are some changes in the installation steps of OpenStack Ocata release with respect to the above services.</p>
 
 <ol>
 <li>Nova now supports Cells. Cells allow grouping of Nova services in a hierarchical manner. This in turn can provide more scalability.</li>
-<li>Nova has also started using Placement API &#8211; this is a new way of doing instance scheduling or placement of workloads.</li>
+<li>Nova has also started using Placement API - this is a new way of doing instance scheduling or placement of workloads.</li>
 </ol>
 
 <h2 id="ocata-install-scripts-on-github">Ocata install scripts on GitHub</h2>
 
-<p>All the scripts are available as an open source package (Apache License). You can get the source code <a href="https://goo.gl/A8JmlO" target="_blank">from my GitHub repository</a>. I welcome you to fork the repo and enhance/extend it.</p>
+<p>All the scripts are available as an open source package (Apache License). You can get the source code <a href="https://goo.gl/A8JmlO">from my GitHub repository</a>. I welcome you to fork the repo and enhance/extend it.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
 <p><em>git</em> binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.</p>
 
-<p>If you are using VirtualBox, <a href="http://goo.gl/VTJVmv" target="_blank">refer to this blog for Network settings</a>.</p>
+<p>If you are using VirtualBox, <a href="http://goo.gl/VTJVmv">refer to this blog for Network settings</a>.</p>
 
 <h2 id="installation-steps">Installation steps</h2>
 
-<p>The GitHub repository includes details about the installation steps.[Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the <a href="https://goo.gl/A8JmlO">Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the</a> server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects</p>
+<p>The GitHub repository includes details about the installation steps.</p>
 
-<h2 id="openstack-services-installed-1">OpenStack services installed</h2>
 
-<p>The following OpenStack services are installed as part these scripts:</p>
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2017/Screenshot-2017-06-03-08.01.41.png" />
+    </div>
+    <a href="/blogs/images/2017/Screenshot-2017-06-03-08.01.41.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
 
-<ul>
-<li>Keystone (Identity)</li>
-<li>Glance (Image)</li>
-<li>Nova (Compute)</li>
-<li>Neutron (Networking)</li>
-<li>Horizon (Dashboard)</li>
-</ul>
-
-<h2 id="what-8217-s-new-in-ocata-in-terms-of-installation-1">What&#8217;s new in Ocata in terms of Installation?</h2>
-
-<p>Here are some changes in the installation steps of OpenStack Ocata release with respect to the above services.</p>
-
-<ol>
-<li>Nova now supports Cells. Cells allow grouping of Nova services in a hierarchical manner. This in turn can provide more scalability.</li>
-<li>Nova has also started using Placement API &#8211; this is a new way of doing instance scheduling or placement of workloads.</li>
-</ol>
-
-<h2 id="ocata-install-scripts-on-github-1">Ocata install scripts on GitHub</h2>
-
-<p>All the scripts are available as an open source package (Apache License). You can get the source code <a href="https://goo.gl/A8JmlO" target="_blank">from my GitHub repository</a>. I welcome you to fork the repo and enhance/extend it.</p>
-
-<h2 id="prerequisites-1">Prerequisites</h2>
-
-<p><em>git</em> binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.</p>
-
-<p>If you are using VirtualBox, <a href="http://goo.gl/VTJVmv" target="_blank">refer to this blog for Network settings</a>.</p>
-
-<h2 id="installation-steps-1">Installation steps</h2>
-
-<p>The GitHub repository includes details about the installation steps.]<a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02.png">2</a></p>
-
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41.png"><img class="aligncenter wp-image-1497 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-1024x887.png" alt="Ocata Install Notes" width="620" height="537" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-1024x887.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-300x260.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-768x666.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
-
-<p>##</p>
 
     </div>
 

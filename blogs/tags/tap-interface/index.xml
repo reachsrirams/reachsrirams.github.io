@@ -6,10 +6,20 @@
     <description>Recent content in Tap Interface on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Jan 2015 16:19:23 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2015 06:54:27 +0000</lastBuildDate>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/tags/tap-interface/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ip vs. ifconfig – WILT</title>
+      <link>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</link>
+      <pubDate>Fri, 27 Nov 2015 06:54:27 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</guid>
+      <description>&lt;p&gt;One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/08/tap-interfaces-linux-bridge/&#34;&gt;Tap interface&lt;/a&gt; etc).
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Using MAC table – Linux Bridge – WILT</title>
@@ -17,7 +27,7 @@
       <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
-      <description>&lt;p&gt;In an &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; title=&#34;Linux Bridge and Virtual Networking&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
+      <description>&lt;p&gt;In an &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/02/linux-bridge-virtual-networking/&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

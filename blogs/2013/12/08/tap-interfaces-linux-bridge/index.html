@@ -90,11 +90,11 @@
 
 <meta itemprop="datePublished" content="2013-12-08T06:56:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-12-08T06:56:00&#43;00:00" />
-<meta itemprop="wordCount" content="695">
+<meta itemprop="wordCount" content="704">
 
 
 
-<meta itemprop="keywords" content="bridge,ethernet,interface,Linux,Linux Bridge,NIC,tap,Virtualization,VM," />
+<meta itemprop="keywords" content="bridge,ethernet,interface,Linux,Linux Bridge,NIC,tap,Virtualization,VM,Virtual Switch,vswitch,Virtual Network," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tap Interfaces and Linux Bridge"/>
 <meta name="twitter:description" content="In the previous blog of this series we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.
@@ -158,12 +158,12 @@ if (!doNotTrack) {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/">
+        <a href="http://reachsrirams.github.io/">
           Home
         </a>
       </li><li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/post/">
-          Archives
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
         </a>
       </li><li class="mobile-menu-item">
         <a href="http://reachsrirams.github.io/blogs/tags/">
@@ -256,7 +256,10 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
           
 
         
@@ -267,7 +270,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
           
 
         
@@ -321,7 +324,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/virtualization/"> Virtualization </a>
             
           </div>
-        <span class="more-meta"> 695 words </span>
+        <span class="more-meta"> 704 words </span>
         <span class="more-meta"> 4 min read </span>
       </div>
     </header>
@@ -337,10 +340,10 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#physical-vs-virtual-networking">Physical vs. Virtual Networking</a></li>
 <li><a href="#switch-ports">Switch Ports</a></li>
-<li><a href="#tap-interfaces-8211-why-do-we-need-them">Tap interfaces &#8211; Why do we need them?</a></li>
+<li><a href="#tap-interfaces-why-do-we-need-them">Tap interfaces - Why do we need them?</a></li>
 <li><a href="#is-there-a-virtual-rj45-cable-as-well">Is there a virtual RJ45 cable as well?</a>
 <ul>
-<li><a href="#further-reading-8211-a-href-http-backreference-org-2010-03-26-tuntap-interface-tutorial-target-blank-tun-tap-interface-tutorial-a"><strong>Further Reading &#8211; </strong><a href="http://backreference.org/2010/03/26/tuntap-interface-tutorial/" target="_blank">Tun/Tap interface tutorial</a></a></li>
+<li><a href="#further-reading-a-href-http-backreference-org-2010-03-26-tuntap-interface-tutorial-target-blank-tun-tap-interface-tutorial-a"><strong>Further Reading - </strong><a href="http://backreference.org/2010/03/26/tuntap-interface-tutorial/" target="_blank">Tun/Tap interface tutorial</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -359,45 +362,67 @@ if (!doNotTrack) {
 <p>The network data traffic is handled by the physical Ethernet ports on physical machines. Similarly for virtual machines this traffic needs to be handled by the <em>virtual ethernet ports</em>. Eventually this traffic from virtual ports needs to be sent to the physical network for external connectivity. How does this happen? As seen in the image below the following components are key for physical networking:</p>
 
 <ol>
-<li>Ethernet Port on the server &#8211; commonly called pNIC (physical NIC)</li>
+<li>Ethernet Port on the server - commonly called pNIC (physical NIC)</li>
 <li>RJ45 Cable</li>
 <li>Ethernet Port on the physical switch</li>
-<li>Uplink Port on the physical switch &#8211; connects to external network.</li>
+<li>Uplink Port on the physical switch - connects to external network.</li>
 </ol>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network.png"><img class="aligncenter  wp-image-944" alt="Physical Network Components" src="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network.png" width="645" height="253" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network.png 806w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network-300x118.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Physical-Network-768x301.png 768w" sizes="(max-width: 645px) 100vw, 645px" /></a>
-</p>
 
-<p>Since the goal of virtualization is to emulate _physical entities_ in software, it must support a construct where &#8220;a virtual machine&#8217;s virtual Ethernet port is connected to a virtual switch&#8221;.</p>
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2013/Physical-Network.png" alt="Physical Network Components"/>
+    </div>
+    <a href="/blogs/images/2013/Physical-Network.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Physical Network Components</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>Since the goal of virtualization is to emulate _physical entities_ in software, it must support a construct where &lsquo;a virtual machine&rdquo;s virtual Ethernet port is connected to a virtual switch&rsquo;.</p>
 
 <h2 id="switch-ports">Switch Ports</h2>
 
-<p>As mentioned in my previous post, Linux bridge is really a switch implemented inside Linux kernel. And like any switch, it requires <em>ports</em> or _interfaces_ to carry data traffic in and out of the switch. We have also seen how to add a physical interface to the bridge. Linux bridge also supports <em>virtual ports</em>. Since virtual ports are actually software entities,  other software entities can use them to send Ethernet frames to the <em>virtual switch</em> for further processing. For Ethernet traffic, these <span style="text-decoration: underline;">Linux virtual ports are called tap<em> </em></span><span style="text-decoration: underline;">interfaces.</span> Tap interfaces can be added to a Linux bridge just like physical interfaces. With this approach a Linux bridge can forward packets from virtualized world to a physical world (and vice-versa).</p>
+<p>As mentioned in my previous post, Linux bridge is really a switch implemented inside Linux kernel. And like any switch, it requires <em>ports</em> or _interfaces_ to carry data traffic in and out of the switch. We have also seen how to add a physical interface to the bridge. Linux bridge also supports <em>virtual ports</em>. Since virtual ports are actually software entities,  other software entities can use them to send Ethernet frames to the <em>virtual switch</em> for further processing. For Ethernet traffic, these <strong>Linux virtual ports are called tap interfaces</strong>. Tap interfaces can be added to a Linux bridge just like physical interfaces. With this approach a Linux bridge can forward packets from virtualized world to a physical world (and vice-versa).</p>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk.png"><img class="aligncenter  wp-image-945" alt="Virtual Network Components with tap interfaces" src="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk.png" width="621" height="371" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk.png 887w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk-300x179.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/VirtualNetwotk-768x459.png 768w" sizes="(max-width: 621px) 100vw, 621px" /></a>
-</p>
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2013/VirtualNetwork.png" alt="Virtual Network Components with tap interfaces"/>
+    </div>
+    <a href="/blogs/images/2013/VirtualNetwork.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Virtual Network Components with tap interfaces</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>As seen in the image below, when virtualization comes into the picture, the following components play a key role in networking:</p>
 
 <ol>
-<li>Ethernet Port on VM (emulates the pNIC) &#8211; commonly knows as vNIC (Virtual NIC). Virtual port is <em>emulated</em> with help from KVM/QEMU.</li>
-<li>Virtual RJ45 Cable &#8211; we will see how this is created.</li>
-<li>Ethernet Port on Virtual Switch &#8211; for Linux Bridge, this is represented by the <em>tap interface</em> since it connects to a vNIC.</li>
-<li>Uplink Port on the Virtual Switch &#8211; this is usually the <em>interface</em> that represent the pNIC. In Linux world eth0, eth1 etc are the software interfaces that represent the physical ethernet port.</li>
+<li>Ethernet Port on VM (emulates the pNIC) - commonly knows as vNIC (Virtual NIC). Virtual port is <em>emulated</em> with help from KVM/QEMU.</li>
+<li>Virtual RJ45 Cable - we will see how this is created.</li>
+<li>Ethernet Port on Virtual Switch - for Linux Bridge, this is represented by the <em>tap interface</em> since it connects to a vNIC.</li>
+<li>Uplink Port on the Virtual Switch - this is usually the <em>interface</em> that represent the pNIC. In Linux world eth0, eth1 etc are the software interfaces that represent the physical ethernet port.</li>
 <li>In case of a physical server, the Uplink port on physical switch provided <em>external network connectivity</em>. In case of virtual machines, the Uplink port on virtual switch provides <em>external network connectivity</em>.</li>
 </ol>
 
-<h2 id="tap-interfaces-8211-why-do-we-need-them">Tap interfaces &#8211; Why do we need them?</h2>
+<h2 id="tap-interfaces-why-do-we-need-them">Tap interfaces - Why do we need them?</h2>
 
 <p>Like their physical counterparts, virtual machines network ports can only process Ethernet frames. In non-virtualized environments, the physical NIC interface will receive and process the Ethernet frames. It will strip out the Ethernet related overhead bytes and forward the payload (usually IP packets) further up to the OS. With virtualization however, this will not work since the virtual NICs would expect Ethernet frames. This is where tap interfaces come into picture. Tap interfaces are special software entities which tell the Linux bridge to forward Ethernet frames as it is. In other words, the virtual machines connected to tap interfaces will be able to receive raw Ethernet frames. And due to this virtual machines can continue to emulate physical machines from a networking perspective.</p>
 
 <h2 id="is-there-a-virtual-rj45-cable-as-well">Is there a virtual RJ45 cable as well?</h2>
 
-<p>The short answer is no. But there is a need for connecting a virtual Ethernet port of a VM to the <em>tap</em> interface on a Linux bridge. This connection is achieved programmatically. Applications such as libvirt create a &#8216;file descriptor&#8217; using the tap interface. When Linux bridge sends Ethernet frames to a <em>tap</em> interface, it actually is sending the bytes to a file descriptor. Emulators like QEMU, read the bytes from this file descriptor and pass it onto the &#8216;guest operating system&#8217; inside the VM, via the virtual network port on the VM. <strong>Note: </strong>Tap interfaces are listed as part of the _ifconfig_ Linux command.</p>
+<p>The short answer is no. But there is a need for connecting a virtual Ethernet port of a VM to the <em>tap</em> interface on a Linux bridge. This connection is achieved programmatically. Applications such as libvirt create a &ldquo;file descriptor&rdquo; using the tap interface. When Linux bridge sends Ethernet frames to a <em>tap</em> interface, it actually is sending the bytes to a file descriptor. Emulators like QEMU, read the bytes from this file descriptor and pass it onto the &ldquo;guest operating system&rdquo; inside the VM, via the virtual network port on the VM. <strong>Note: </strong>Tap interfaces are listed as part of the _ifconfig_ Linux command.</p>
 
-<h3 id="further-reading-8211-a-href-http-backreference-org-2010-03-26-tuntap-interface-tutorial-target-blank-tun-tap-interface-tutorial-a"><strong>Further Reading &#8211; </strong><a href="http://backreference.org/2010/03/26/tuntap-interface-tutorial/" target="_blank">Tun/Tap interface tutorial</a></h3>
+<h3 id="further-reading-a-href-http-backreference-org-2010-03-26-tuntap-interface-tutorial-target-blank-tun-tap-interface-tutorial-a"><strong>Further Reading - </strong><a href="http://backreference.org/2010/03/26/tuntap-interface-tutorial/" target="_blank">Tun/Tap interface tutorial</a></h3>
     </div>
 
     
@@ -426,6 +451,12 @@ if (!doNotTrack) {
           <a href="/blogs/tags/virtualization/">Virtualization</a>
           
           <a href="/blogs/tags/vm/">VM</a>
+          
+          <a href="/blogs/tags/virtual-switch/">Virtual Switch</a>
+          
+          <a href="/blogs/tags/vswitch/">vswitch</a>
+          
+          <a href="/blogs/tags/virtual-network/">Virtual Network</a>
           
         </div>
 

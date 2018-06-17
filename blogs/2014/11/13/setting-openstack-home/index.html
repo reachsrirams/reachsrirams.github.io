@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Setting up OpenStack at home - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="The goal of this blog is to share some details about how I have setup a cost-effective OpenStack Lab at home. For most enthusiasts, DevStack is the preferred way to experiment with OpenStack. But I wanted something more realistic for my experiments.
+OpenStack is intended for multi-tenant, distributed and highly scalable cloud. To appreciate its architecture I needed to move beyond DevStack. With a more realistic setup, you can understand how the distributed OpenStack components interact with each other." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2014/11/13/setting-openstack-home/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Setting up OpenStack at home" />
+<meta property="og:description" content="The goal of this blog is to share some details about how I have setup a cost-effective OpenStack Lab at home. For most enthusiasts, DevStack is the preferred way to experiment with OpenStack. But I wanted something more realistic for my experiments.
+OpenStack is intended for multi-tenant, distributed and highly scalable cloud. To appreciate its architecture I needed to move beyond DevStack. With a more realistic setup, you can understand how the distributed OpenStack components interact with each other." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2014/11/13/setting-openstack-home/" />
+
+
+
+<meta property="article:published_time" content="2014-11-13T18:26:12&#43;00:00"/>
+
+<meta property="article:modified_time" content="2014-11-13T18:26:12&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Setting up OpenStack at home">
+<meta itemprop="description" content="The goal of this blog is to share some details about how I have setup a cost-effective OpenStack Lab at home. For most enthusiasts, DevStack is the preferred way to experiment with OpenStack. But I wanted something more realistic for my experiments.
+OpenStack is intended for multi-tenant, distributed and highly scalable cloud. To appreciate its architecture I needed to move beyond DevStack. With a more realistic setup, you can understand how the distributed OpenStack components interact with each other.">
+
+
+<meta itemprop="datePublished" content="2014-11-13T18:26:12&#43;00:00" />
+<meta itemprop="dateModified" content="2014-11-13T18:26:12&#43;00:00" />
+<meta itemprop="wordCount" content="653">
+
+
+
+<meta itemprop="keywords" content="Controller,ethernet,iBall,Network,NUC,OpenStack,switch,VM," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setting up OpenStack at home"/>
+<meta name="twitter:description" content="The goal of this blog is to share some details about how I have setup a cost-effective OpenStack Lab at home. For most enthusiasts, DevStack is the preferred way to experiment with OpenStack. But I wanted something more realistic for my experiments.
+OpenStack is intended for multi-tenant, distributed and highly scalable cloud. To appreciate its architecture I needed to move beyond DevStack. With a more realistic setup, you can understand how the distributed OpenStack components interact with each other."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 1em 2em;
+		margin: 0 2em 1em;
+	}
+	.content-wrapper {
+		padding: 1em 0 1px;
+	}
+	.post-header {
+		font-size: 1.0em;
+		font-weight: 600;
+	}
+	.post-content {
+		font-size: 16px;
+	}
+	.logo {
+		font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Setting up OpenStack at home</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2014-11-13 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/networking/"> Networking </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+          </div>
+        <span class="more-meta"> 653 words </span>
+        <span class="more-meta"> 4 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#the-openstack-setup">The OpenStack Setup</a>
+<ul>
+<li><a href="#network-for-vm-to-vm-traffic">Network for VM-to-VM Traffic</a></li>
+<li><a href="#network-for-management-traffic">Network for Management Traffic</a></li>
+</ul></li>
+<li><a href="#about-the-controller-vm">About the Controller VM</a></li>
+<li><a href="#why-do-we-need-the-physical-switch">Why do we need the physical switch?</a>
+<ul>
+<li><a href="#key-hardware-components">Key hardware components</a></li>
+</ul></li>
+<li><a href="#conclusion">****Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>The goal of this blog is to share some details about how I have setup a cost-effective OpenStack Lab at home. For most enthusiasts, DevStack is the preferred way to experiment with OpenStack. But I wanted something more realistic for my experiments.</p>
+
+<p>OpenStack is intended for multi-tenant, distributed and highly scalable cloud. To appreciate its architecture I needed to move beyond DevStack. With a more realistic setup, you can understand how the distributed OpenStack components interact with each other. If you are developing applications for the OpenStack platform, they need to be developed and tested in more realistic setups than DevStack.</p>
+
+<p><strong>And the biggest reason is to explore OpenStack&#8217;s networking functionality in a more practical way</strong>.</p>
+
+<h2 id="the-openstack-setup">The OpenStack Setup</h2>
+
+<p>The picture below describes the setup. At this time, I have one dedicated compute node (based on <a href="http://goo.gl/TAadUy">Intel NUC</a>). And I am reusing an existing laptop for the controller/API node. The key component in this setup is the networking.</p>
+
+
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2014/Home-OpenStack-Network.png" alt="Home OpenStack Network"/>
+    </div>
+    <a href="/blogs/images/2014/Home-OpenStack-Network.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Home OpenStack Network</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<h3 id="network-for-vm-to-vm-traffic">Network for VM-to-VM Traffic</h3>
+
+<p>It is common practice to give a dedicated network for carrying data traffic from the VMs in a data center. I have used the Ethernet interface on the NUC along with an Ethernet switch (<a href="http://goo.gl/MbO1Pu">iBall</a>) to create this as a wired network.</p>
+
+<h3 id="network-for-management-traffic">Network for Management Traffic</h3>
+
+<p>We also need another network, commonly called management network, to be able to do SSH into each host. This network will also be used by the Controller to communicate with agents on the Compute Node. It is also essential that this network is connected to the Internet, so that I could download software packages. Hence I am using the wireless interfaces on these hosts and my home wireless network to create the management network.</p>
+
+<h2 id="about-the-controller-vm">About the Controller VM</h2>
+
+<p>The controller VM in the above diagram runs <strong>two important</strong> networking components (in addition to several others). You can use your existing DevStack setup as a controller <em>provided</em> it is connected to two network interfaces. This is required because the networking services such as Gateway and Router run on the Controller VM (in the above topology). And these services require access to management network as well as the VM traffic network.</p>
+
+<p>I strongly recommend that the controller be run as a DevStack VM using Virtual Box. This is because VirtualBox supports “bridged adapter” seamlessly.</p>
+
+<p>Since we need two network interfaces for the Controller VM, I created two virtual Network Adapters in the Virtual Box settings. These virtual adapters were “attached to Bridged Adpater”. For one I selected the wireless interface on the host and for the other I selected the Ethernet interface on the host.</p>
+
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2014/Screenshot-2014-11-13-22.43.20.png" alt="Virtual Box Adapter Setting"/>
+    </div>
+    <a href="/blogs/images/2014/Screenshot-2014-11-13-22.43.20.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<h2 id="why-do-we-need-the-physical-switch">Why do we need the physical switch?</h2>
+
+<p>While home wifi network provides one physical network, we need another physical network that has switching capability. In real-world scenarios, OpenStack tenants require traffic isolation. This is accomplished in a simple manner using VLAN. So the main role for the physical switch is to provide network isolation using VLAN. Further advanced networking can also be experimented using additional wireless routers (spares if you have one).</p>
+
+<h3 id="key-hardware-components">Key hardware components</h3>
+
+<ul>
+<li><a href="http://goo.gl/TAadUy">Intel NUC Celeron Kit – DN2820FYKH</a>
+
+<ul>
+<li>This is the cheapest model with built-in wireless</li>
+<li>Only HDD and Low-voltage RAM is required</li>
+<li>You can watch my unboxing video <a href="https://www.youtube.com/watch?v=kS6VrfzPZhA&amp;list=UUWjITWhWP_xpUOl01YaGVdg">here</a>.</li>
+<li>You use the HDD from any spare USB drive (2.5 inch) to save costs.</li>
+</ul></li>
+<li><a href="http://goo.gl/MbO1Pu">iBall Baton managed switch</a>
+
+<ul>
+<li>Low cost Ethernet switch with VLAN functionality</li>
+<li>There is no DHCP capability</li>
+<li>Good for our purpose</li>
+</ul></li>
+</ul>
+
+<h2 id="conclusion">****Conclusion</h2>
+
+<p>The NUC (above model) is available for around INR 9000 on Flipkart.com. Depending on the amount of RAM and the HDD, you can expect an overall cost in the range of INR 14000 to 16000. The iBall switch should be available for less than INR 3000. I believe these are nominal prices for getting a robust home OpenStack setup with fairly rich networking capabilities. And I am hopeful of developing a much deeper and meaningful understanding of OpenStack using this setup.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/controller/">Controller</a>
+          
+          <a href="/blogs/tags/ethernet/">ethernet</a>
+          
+          <a href="/blogs/tags/iball/">iBall</a>
+          
+          <a href="/blogs/tags/network/">Network</a>
+          
+          <a href="/blogs/tags/nuc/">NUC</a>
+          
+          <a href="/blogs/tags/openstack/">OpenStack</a>
+          
+          <a href="/blogs/tags/switch/">switch</a>
+          
+          <a href="/blogs/tags/vm/">VM</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2014/11/28/what-i-learnt-today-less/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">What I learnt today (WILT) – less command</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2014/09/08/goals-second-half-2014/">
+            <span class="next-text nav-default">Goals for the second half of 2014</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

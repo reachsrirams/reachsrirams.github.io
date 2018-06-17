@@ -20,5 +20,26 @@
       <description>OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.</description>
     </item>
     
+    <item>
+      <title>VirtualBox networking settings for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</link>
+      <pubDate>Sun, 14 Jun 2015 14:58:44 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</guid>
+      <description>&lt;p&gt;The best way to learn OpenStack is by installing, running and playing with it directly. In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation. I will be focusing &lt;strong&gt;only on the networking aspects when using VirtualBox&lt;/strong&gt;. I will also share some tips that are important in this deployment. This blog will not cover the steps to install and create a virtual machine using VirtualBox.
+
+While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting up OpenStack at home</title>
+      <link>http://reachsrirams.github.io/blogs/2014/11/13/setting-openstack-home/</link>
+      <pubDate>Thu, 13 Nov 2014 18:26:12 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/11/13/setting-openstack-home/</guid>
+      <description>The goal of this blog is to share some details about how I have setup a cost-effective OpenStack Lab at home. For most enthusiasts, DevStack is the preferred way to experiment with OpenStack. But I wanted something more realistic for my experiments.
+OpenStack is intended for multi-tenant, distributed and highly scalable cloud. To appreciate its architecture I needed to move beyond DevStack. With a more realistic setup, you can understand how the distributed OpenStack components interact with each other.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -6,21 +6,10 @@
     <description>Recent content in Mac on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Jan 2015 16:19:23 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jul 2013 19:28:32 +0000</lastBuildDate>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Using MAC table – Linux Bridge – WILT</title>
-      <link>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</link>
-      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
-      
-      <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
-      <description>&lt;p&gt;In an &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; title=&#34;Linux Bridge and Virtual Networking&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Networking Nuggets – Hub vs Bridge vs Switch</title>

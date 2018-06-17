@@ -73,7 +73,7 @@
 
 &lt;p&gt;Acknowledgement: I was inspired by &lt;a href=&#34;http://schempy.com/2015/08/25/docker_nginx_nodejs/&#34;&gt;this blog&lt;/a&gt; and wanted to take it further using Docker Compose.&lt;/p&gt;
 
-&lt;h3 id=&#34;docker-compose-8211-background&#34;&gt;Docker Compose &amp;#8211; background&lt;/h3&gt;
+&lt;h3 id=&#34;docker-compose-background&#34;&gt;Docker Compose - background&lt;/h3&gt;
 
 &lt;p&gt;Docker Compose is a tool to build and coordinate multi-container applications. You use a YAML file to define different containers and any relationship between them. Docker Compose uses this YAML file to start those containers. We can continue to use the Dockerfile as a building block for Docker Compose.&lt;/p&gt;
 
@@ -92,7 +92,7 @@
 &lt;/div&gt;
 
 
-&lt;p&gt;As you can see from the GitHub repository, I have two containers defined in my &lt;em&gt;docker-compose.yml&lt;/em&gt; file. The YAML file shows that the two &amp;#8220;services&amp;#8221; are &lt;em&gt;built&lt;/em&gt; using the Dockerfile specified for each of the containers. The steps in two Dockerfiles are fairly straightforward. They create an Ubuntu based container, install the necessary software packages and copy a few files to configure nginx and NodeJS.&lt;/p&gt;
+&lt;p&gt;As you can see from the GitHub repository, I have two containers defined in my &lt;em&gt;docker-compose.yml&lt;/em&gt; file. The YAML file shows that the two &amp;ldquo;services&amp;rdquo; are &lt;em&gt;built&lt;/em&gt; using the Dockerfile specified for each of the containers. The steps in two Dockerfiles are fairly straightforward. They create an Ubuntu based container, install the necessary software packages and copy a few files to configure nginx and NodeJS.&lt;/p&gt;
 
 &lt;h3 id=&#34;nginx-proxy&#34;&gt;nginx Proxy&lt;/h3&gt;
 
@@ -113,9 +113,9 @@
 &lt;/div&gt;
 
 
-&lt;p&gt;This config file configures nginx to listen on port 80 for HTTP requests. If the requests comes to a root folder &amp;#8216;/&amp;#8217;, it is redirected to the Application represented by &amp;#8220;/app&amp;#8221; on the same &lt;em&gt;host&lt;/em&gt;. However if the request is for API represented by &amp;#8220;/app/api&amp;#8221; URI, then nginx will &lt;em&gt;proxy&lt;/em&gt; the request to &amp;#8220;API Server&amp;#8221; on port 9090. If you look at the Dockerfile for the NodeJS container, you will see that it is listening on port 9090. The key thing here is the keyword &lt;em&gt;apiserver&lt;/em&gt;. &lt;strong&gt;How does nginx know what is the IP address for the NodeJS container?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This config file configures nginx to listen on port 80 for HTTP requests. If the requests comes to a root folder &amp;amp;&amp;ldquo;/&amp;rdquo;, it is redirected to the Application represented by &amp;ldquo;/app&amp;rdquo; on the same &lt;em&gt;host&lt;/em&gt;. However if the request is for API represented by &amp;ldquo;/app/api&amp;rdquo; URI, then nginx will &lt;em&gt;proxy&lt;/em&gt; the request to &amp;ldquo;API Server&amp;rdquo; on port 9090. If you look at the Dockerfile for the NodeJS container, you will see that it is listening on port 9090. The key thing here is the keyword &lt;em&gt;apiserver&lt;/em&gt;. &lt;strong&gt;How does nginx know what is the IP address for the NodeJS container?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;docker-8211-links&#34;&gt;Docker &amp;#8211; links&lt;/h3&gt;
+&lt;h3 id=&#34;docker-links&#34;&gt;Docker - links&lt;/h3&gt;
 
 &lt;p&gt;Links are important concepts that help Docker containers communicate with one another. It is a good practice to use host names instead of hard-coding IP addresses when one container needs to communicate with another. But host names and IP addresses have to be mapped automatically. This is where the concept of Link comes into picture.&lt;/p&gt;
 
@@ -132,7 +132,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;The keyword, &lt;em&gt;api,&lt;/em&gt; refers to the &amp;#8220;container&amp;#8221; mentioned earlier in the YAML file.&lt;/p&gt;
+&lt;p&gt;The keyword, &lt;em&gt;api,&lt;/em&gt; refers to the &amp;ldquo;container&amp;rdquo; mentioned earlier in the YAML file.&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -172,7 +172,7 @@
 
 &lt;p&gt;While standard web servers can serve static HTML pages, the REST API processing requires web servers to support programming languages. Depending on the language the web servers for handling REST APIs can by built using NodeJS (JavaScript) or Bottle/Flask (Python) for example. But tools like NodeJS and Bottle etc do not support standard web server features like caching, proxying etc, which are useful for static web pages. So the common solution is to use both regular web servers like apache or nginx (proxy) for web pages and use NodeJS etc for REST APIs.&lt;/p&gt;
 
-&lt;h3 id=&#34;solution-in-depth-8211-deploying-using-docker&#34;&gt;Solution in depth &amp;#8211; deploying using Docker&lt;/h3&gt;
+&lt;h3 id=&#34;solution-in-depth-deploying-using-docker&#34;&gt;Solution in depth - deploying using Docker&lt;/h3&gt;
 
 &lt;p&gt;For this Docker learning exercise we will deploy two containers - one running nginx and another running NodeJS. The ngnix server will handle &lt;em&gt;all&lt;/em&gt; incoming HTTP/S requests. However it will &lt;em&gt;proxy&lt;/em&gt; the REST API requests to the NodeJS process and handle the UI pages itself.&lt;/p&gt;
 
@@ -235,7 +235,7 @@
       
         <description>
 
-&lt;p&gt;Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the &lt;a href=&#34;https://goo.gl/A8JmlO&#34;&gt;Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the&lt;/a&gt; server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects&lt;/p&gt;
+&lt;p&gt;Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the &lt;a href=&#34;https://goo.gl/A8JmlO&#34;&gt;Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the&lt;/a&gt; server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&amp;rsquo;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects&lt;/p&gt;
 
 &lt;h2 id=&#34;openstack-services-installed&#34;&gt;OpenStack services installed&lt;/h2&gt;
 
@@ -249,67 +249,40 @@
 &lt;li&gt;Horizon (Dashboard)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;what-8217-s-new-in-ocata-in-terms-of-installation&#34;&gt;What&amp;#8217;s new in Ocata in terms of Installation?&lt;/h2&gt;
+&lt;h2 id=&#34;what-s-new-in-ocata-in-terms-of-installation&#34;&gt;What&amp;rsquo;s new in Ocata in terms of Installation?&lt;/h2&gt;
 
 &lt;p&gt;Here are some changes in the installation steps of OpenStack Ocata release with respect to the above services.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Nova now supports Cells. Cells allow grouping of Nova services in a hierarchical manner. This in turn can provide more scalability.&lt;/li&gt;
-&lt;li&gt;Nova has also started using Placement API &amp;#8211; this is a new way of doing instance scheduling or placement of workloads.&lt;/li&gt;
+&lt;li&gt;Nova has also started using Placement API - this is a new way of doing instance scheduling or placement of workloads.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;ocata-install-scripts-on-github&#34;&gt;Ocata install scripts on GitHub&lt;/h2&gt;
 
-&lt;p&gt;All the scripts are available as an open source package (Apache License). You can get the source code &lt;a href=&#34;https://goo.gl/A8JmlO&#34; target=&#34;_blank&#34;&gt;from my GitHub repository&lt;/a&gt;. I welcome you to fork the repo and enhance/extend it.&lt;/p&gt;
+&lt;p&gt;All the scripts are available as an open source package (Apache License). You can get the source code &lt;a href=&#34;https://goo.gl/A8JmlO&#34;&gt;from my GitHub repository&lt;/a&gt;. I welcome you to fork the repo and enhance/extend it.&lt;/p&gt;
 
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;git&lt;/em&gt; binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.&lt;/p&gt;
 
-&lt;p&gt;If you are using VirtualBox, &lt;a href=&#34;http://goo.gl/VTJVmv&#34; target=&#34;_blank&#34;&gt;refer to this blog for Network settings&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are using VirtualBox, &lt;a href=&#34;http://goo.gl/VTJVmv&#34;&gt;refer to this blog for Network settings&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;installation-steps&#34;&gt;Installation steps&lt;/h2&gt;
 
-&lt;p&gt;The GitHub repository includes details about the installation steps.[Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the &lt;a href=&#34;https://goo.gl/A8JmlO&#34;&gt;Ocata is the most recent release of OpenStack.  I would like to share scripts that can be used to install the&lt;/a&gt; server as per the installation guide. This is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release. I have been developing these scripts to help me with my blogging and personal learning projects&lt;/p&gt;
+&lt;p&gt;The GitHub repository includes details about the installation steps.&lt;/p&gt;
 
-&lt;h2 id=&#34;openstack-services-installed-1&#34;&gt;OpenStack services installed&lt;/h2&gt;
 
-&lt;p&gt;The following OpenStack services are installed as part these scripts:&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://reachsrirams.github.io/blogs/blogs/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2017/Screenshot-2017-06-03-08.01.41.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2017/Screenshot-2017-06-03-08.01.41.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Keystone (Identity)&lt;/li&gt;
-&lt;li&gt;Glance (Image)&lt;/li&gt;
-&lt;li&gt;Nova (Compute)&lt;/li&gt;
-&lt;li&gt;Neutron (Networking)&lt;/li&gt;
-&lt;li&gt;Horizon (Dashboard)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;what-8217-s-new-in-ocata-in-terms-of-installation-1&#34;&gt;What&amp;#8217;s new in Ocata in terms of Installation?&lt;/h2&gt;
-
-&lt;p&gt;Here are some changes in the installation steps of OpenStack Ocata release with respect to the above services.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Nova now supports Cells. Cells allow grouping of Nova services in a hierarchical manner. This in turn can provide more scalability.&lt;/li&gt;
-&lt;li&gt;Nova has also started using Placement API &amp;#8211; this is a new way of doing instance scheduling or placement of workloads.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;ocata-install-scripts-on-github-1&#34;&gt;Ocata install scripts on GitHub&lt;/h2&gt;
-
-&lt;p&gt;All the scripts are available as an open source package (Apache License). You can get the source code &lt;a href=&#34;https://goo.gl/A8JmlO&#34; target=&#34;_blank&#34;&gt;from my GitHub repository&lt;/a&gt;. I welcome you to fork the repo and enhance/extend it.&lt;/p&gt;
-
-&lt;h2 id=&#34;prerequisites-1&#34;&gt;Prerequisites&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;git&lt;/em&gt; binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.&lt;/p&gt;
-
-&lt;p&gt;If you are using VirtualBox, &lt;a href=&#34;http://goo.gl/VTJVmv&#34; target=&#34;_blank&#34;&gt;refer to this blog for Network settings&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;installation-steps-1&#34;&gt;Installation steps&lt;/h2&gt;
-
-&lt;p&gt;The GitHub repository includes details about the installation steps.]&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02.png&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1497 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-1024x887.png&#34; alt=&#34;Ocata Install Notes&#34; width=&#34;620&#34; height=&#34;537&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-1024x887.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-300x260.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/06/Screenshot-2017-06-03-08.01.41-768x666.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;##&lt;/p&gt;
 </description>
       
     </item>
@@ -323,7 +296,7 @@
       
         <description>
 
-&lt;p&gt;Newton is one the recent releases of OpenStack.  I would like to share scripts that can be used to install the &lt;a href=&#34;https://docs.openstack.org/newton/install-guide-ubuntu/&#34;&gt;Newton release of OpenStack on Ubuntu 16.04 as per the installation guide&lt;/a&gt;. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.&lt;/p&gt;
+&lt;p&gt;Newton is one the recent releases of OpenStack.  I would like to share scripts that can be used to install the &lt;a href=&#34;https://docs.openstack.org/newton/install-guide-ubuntu/&#34;&gt;Newton release of OpenStack on Ubuntu 16.04 as per the installation guide&lt;/a&gt;. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;rsquo;s latest release.&lt;/p&gt;
 
 &lt;h2 id=&#34;openstack-services-installed&#34;&gt;OpenStack services installed&lt;/h2&gt;
 
@@ -337,7 +310,7 @@
 &lt;li&gt;Horizon (Dashboard)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;what-8217-s-new-in-newton-in-terms-of-installation&#34;&gt;What&amp;#8217;s new in Newton in terms of Installation?&lt;/h2&gt;
+&lt;h2 id=&#34;what-s-new-in-newton-in-terms-of-installation&#34;&gt;What&amp;rsquo;s new in Newton in terms of Installation?&lt;/h2&gt;
 
 &lt;p&gt;Here are some changes in the installation steps of OpenStack Newton release.&lt;/p&gt;
 
@@ -347,26 +320,34 @@
 &lt;li&gt;For Nova and Neutron, the OSLO configuration steps are not required&lt;/li&gt;
 &lt;li&gt;The rabbitmq configuration steps are different in Newton release&lt;/li&gt;
 &lt;li&gt;For Neutron Linux Bridge agent, the bridge name must be &lt;em&gt;provider&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Important&lt;/strong&gt; &amp;#8211; Newton release does not ship with any Flavors for instances. This means that users need to create at least one flavor before they can spawn their first VM instance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Important&lt;/strong&gt; - Newton release does not ship with any Flavors for instances. This means that users need to create at least one flavor before they can spawn their first VM instance.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;newton-install-scripts-on-github&#34;&gt;Newton install scripts on GitHub&lt;/h2&gt;
 
-&lt;p&gt;All the scripts are available as an open source package (Apache License). You can get the source code &lt;a href=&#34;https://goo.gl/Jac2bv&#34; target=&#34;_blank&#34;&gt;from my GitHub repository&lt;/a&gt;. I welcome you to fork the repo and enhance/extend it.&lt;/p&gt;
+&lt;p&gt;All the scripts are available as an open source package (Apache License). You can get the source code &lt;a href=&#34;https://goo.gl/Jac2bv&#34;&gt;from my GitHub repository&lt;/a&gt;. I welcome you to fork the repo and enhance/extend it.&lt;/p&gt;
 
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;git&lt;/em&gt; binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.&lt;/p&gt;
 
-&lt;p&gt;If you are using VirtualBox, &lt;a href=&#34;http://goo.gl/VTJVmv&#34; target=&#34;_blank&#34;&gt;refer to this blog for Network settings&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are using VirtualBox, &lt;a href=&#34;http://goo.gl/VTJVmv&#34;&gt;refer to this blog for Network settings.&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;installation-steps&#34;&gt;Installation steps&lt;/h2&gt;
 
 &lt;p&gt;The GitHub repository includes details about the installation steps.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1492&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-1024x887.png&#34; alt=&#34;OpenStack Newton install scripts&#34; width=&#34;620&#34; height=&#34;537&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-1024x887.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-300x260.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-768x665.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://reachsrirams.github.io/blogs/blogs/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2017/Screenshot-2017-05-02-10.24.02.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2017/Screenshot-2017-05-02-10.24.02.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 
 &lt;h2 id=&#34;next-steps&#34;&gt;Next steps&lt;/h2&gt;
 
@@ -950,54 +931,130 @@ sudo ln -s /var/log/neutron /var/www/html/openstacklogs/neutron&lt;/pre&gt;
       
       <guid>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</guid>
       
-        <description>
+        <description>&lt;p&gt;One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/08/tap-interfaces-linux-bridge/&#34;&gt;Tap interface&lt;/a&gt; etc).
+&lt;/p&gt;
 
-&lt;p&gt;One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/08/tap-interfaces-linux-bridge/&#34;&gt;Tap interface&lt;/a&gt; etc).&lt;/p&gt;
+&lt;h2 id=&#34;the-ip-command-replacement-for-ifconfig&#34;&gt;The ip Command - replacement for ifconfig&lt;/h2&gt;
 
-&lt;h2 id=&#34;the-ip-command-8211-replacement-for-ifconfig&#34;&gt;The ip Command &amp;#8211; replacement for ifconfig&lt;/h2&gt;
-
-&lt;p&gt;The ifconfig command is now being deprecated and the new kid on the block is the ip command.The ip command is part of the iproute2util package. The ip command consolidates many different networking commands into one. It is organized based on the networking stack &amp;#8211; &lt;em&gt;ip link&lt;/em&gt; (Layer 2), &lt;em&gt;ip addr&lt;/em&gt; (Layer 3). The most promising capability of the ip command is the support for Namespace. The ip netns command let us run commands inside the Network Namespace (netns).&lt;/p&gt;
+&lt;p&gt;The ifconfig command is now being deprecated and the new kid on the block is the ip command.The ip command is part of the iproute2util package. The ip command consolidates many different networking commands into one. It is organized based on the networking stack - &lt;em&gt;ip link&lt;/em&gt; (Layer 2), &lt;em&gt;ip addr&lt;/em&gt; (Layer 3). The most promising capability of the ip command is the support for Namespace. The ip netns command let us run commands inside the Network Namespace (netns).&lt;/p&gt;
 
 &lt;p&gt;Here is a quick comparison of commonly used ifconfig commands and how you can achieve the same with ip command.&lt;/p&gt;
 
 &lt;h2 id=&#34;viewing-details-of-all-network-interfaces&#34;&gt;Viewing details of all network interfaces&lt;/h2&gt;
 
-&lt;p&gt;To view both MAC address and IP address of all network interfaces use &amp;#8220;ip addr&amp;#8221; command. The same is achieved using &amp;#8220;ifconfig&amp;#8221; command also. However there is one key difference, the &amp;#8220;ifconfig&amp;#8221; command only shows the interfaces that are currently enabled. Note the missing &lt;strong&gt;eth2&lt;/strong&gt; in the ifconfig output below. The &amp;#8220;ip addr&amp;#8221; command shows interfaces that are disabled also. To do the same with &lt;em&gt;ifconfig&lt;/em&gt;, use the ifconfig with &amp;#8220;-a&amp;#8221; switch.&lt;/p&gt;
+&lt;p&gt;To view both MAC address and IP address of all network interfaces use &amp;ldquo;ip addr&amp;rdquo; command. The same is achieved using &amp;ldquo;ifconfig&amp;rdquo; command also. However there is one key difference, the &amp;ldquo;ifconfig&amp;rdquo; command only shows the interfaces that are currently enabled. Note the missing &lt;strong&gt;eth2&lt;/strong&gt; in the ifconfig output below. The &amp;ldquo;ip addr&amp;rdquo; command shows interfaces that are disabled also. To do the same with &lt;em&gt;ifconfig&lt;/em&gt;, use the ifconfig with &amp;ldquo;-a&amp;rdquo; switch.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1334&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-1024x667.png&#34; alt=&#34;ip addr command output&#34; width=&#34;620&#34; height=&#34;404&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-1024x667.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-300x195.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-1-768x500.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1333 size-large&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-901x1024.png&#34; alt=&#34;ifconfig command output&#34; width=&#34;620&#34; height=&#34;705&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-901x1024.png 901w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-264x300.png 264w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1-768x873.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-1.png 1306w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://reachsrirams.github.io/blogs/blogs/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ip-addr-1.png&#34; alt=&#34;ip addr command output&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ip-addr-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;ip addr command output&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ifconfig-1.png&#34; alt=&#34;ifconfig command output&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ifconfig-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;ifconfig command output&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 
 &lt;h2 id=&#34;viewing-information-for-a-specific-network-interface&#34;&gt;Viewing information for a specific network interface&lt;/h2&gt;
 
-&lt;p&gt;With both &amp;#8220;ip addr&amp;#8221; and &amp;#8220;ifconfig&amp;#8221; commands it is possible to view the details of a specific interface as shown below.&lt;/p&gt;
+&lt;p&gt;With both &amp;ldquo;ip addr&amp;rdquo; and &amp;ldquo;ifconfig&amp;rdquo; commands it is possible to view the details of a specific interface as shown below.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1337&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-1024x175.png&#34; alt=&#34;ip addr for a specific interface&#34; width=&#34;620&#34; height=&#34;106&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-1024x175.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-300x51.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-addr-show-768x131.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1336&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-1024x304.png&#34; alt=&#34;ifconfig for a specific interface&#34; width=&#34;620&#34; height=&#34;184&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-1024x304.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-300x89.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0-768x228.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ifconfig-eth0.png 1294w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ip-addr-show.png&#34; alt=&#34;ip addr for a specific interface&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ip-addr-show.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;ip addr for a specific interface&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ifconfig-eth0.png&#34; alt=&#34;ifconfig for a specific interface&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ifconfig-eth0.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;ifconfig for a specific interface&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 
 &lt;h2 id=&#34;enable-or-disable-a-specific-network-interface&#34;&gt;Enable or Disable a specific network interface&lt;/h2&gt;
 
-&lt;p&gt;The &amp;#8220;ip link&amp;#8221; command can be used to enable or disable a specific network interface. The same can also be accomplished using &amp;#8220;ifconfig &lt;interfacename&gt; up&amp;#8221; or &amp;#8220;ifconfig &lt;interfacename&gt; down&amp;#8221; command.&lt;/p&gt;
+&lt;p&gt;The &amp;ldquo;ip link&amp;rdquo; command can be used to enable or disable a specific network interface. The same can also be accomplished using &amp;ldquo;ifconfig &lt;em&gt;interfacename&lt;/em&gt; up&amp;rdquo; or &amp;rdquo;ifconfig &lt;em&gt;interfacename&lt;/em&gt; down&amp;rdquo; command.&lt;/p&gt;
 
-&lt;p&gt;The screenshot below shows an interface whose status is DOWN. Then the interface is enabled using the &amp;#8220;ip link&amp;#8221; command.&lt;/p&gt;
+&lt;p&gt;The screenshot below shows an interface whose status is DOWN. Then the interface is enabled using the &amp;ldquo;ip link&amp;rdquo; command.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1339&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-1024x90.png&#34; alt=&#34;ip-link-down&#34; width=&#34;620&#34; height=&#34;54&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-1024x90.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-300x27.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-768x68.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1338&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-1024x106.png&#34; alt=&#34;ip-link-down-up-show&#34; width=&#34;620&#34; height=&#34;64&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-1024x106.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-300x31.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-link-down-up-show-768x80.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ip-link-down.png&#34; alt=&#34;ip-link-down&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ip-link-down.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ip-link-down-up-show.png&#34; alt=&#34;ip-link-down-up-show&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ip-link-down-up-show.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 
 &lt;h2 id=&#34;viewing-neighbor-interface-information&#34;&gt;Viewing neighbor interface information&lt;/h2&gt;
 
-&lt;p&gt;Viewing the information of neighboring interfaces is possible using the &amp;#8220;ip neigh&amp;#8221; command. &lt;strong&gt;This is not supported by the ifconfig command&lt;/strong&gt;. Instead users will have to use commands related to ARP or utilities such as &lt;strong&gt;ethtool&lt;/strong&gt; and &lt;strong&gt;lldpctl&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Viewing the information of neighboring interfaces is possible using the &amp;ldquo;ip neigh&amp;rdquo; command. &lt;strong&gt;This is not supported by the ifconfig command&lt;/strong&gt;. Instead users will have to use commands related to ARP or utilities such as &lt;strong&gt;ethtool&lt;/strong&gt; and &lt;strong&gt;lldpctl&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1340&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-1024x307.png&#34; alt=&#34;View neighbor interface information&#34; width=&#34;620&#34; height=&#34;186&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-1024x307.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-300x90.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh-768x231.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2015/11/ip-neigh.png 1166w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;p&gt;##&lt;/p&gt;
-</description>
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ip-neigh.png&#34; alt=&#34;View neighbor interface information&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/ip-neigh.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;View neighbor interface information&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</description>
       
     </item>
     
@@ -1008,11 +1065,23 @@ sudo ln -s /var/log/neutron /var/www/html/openstacklogs/neutron&lt;/pre&gt;
       
       <guid>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</guid>
       
-        <description>
+        <description>&lt;p&gt;My first publication &lt;strong&gt;&lt;a href=&#34;http://bit.ly/1NrKjty&#34;&gt;OpenStack Networking Cookbook&lt;/a&gt;&lt;/strong&gt; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.
+&lt;/p&gt;
 
-&lt;p&gt;My first publication &lt;a href=&#34;http://bit.ly/1NrKjty&#34;&gt;&amp;#8220;OpenStack Networking Cookbook&amp;#8221;&lt;/a&gt; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1323&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover-1024x614.png&#34; alt=&#34;OpenStack Networking Cookbook&#34; width=&#34;620&#34; height=&#34;372&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover-1024x614.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover-300x180.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover-768x460.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2015/10/Book-Full-Cover.png 1308w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://reachsrirams.github.io/blogs/blogs/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/Book-Full-Cover.png&#34; alt=&#34;OpenStack Networking Cookbook&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/Book-Full-Cover.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;OpenStack Networking Cookbook&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 
 &lt;h2 id=&#34;openstack-networkng-cookbook-overview&#34;&gt;OpenStack Networkng Cookbook Overview&lt;/h2&gt;
 
@@ -1026,20 +1095,19 @@ sudo ln -s /var/log/neutron /var/www/html/openstacklogs/neutron&lt;/pre&gt;
 
 &lt;p&gt;As part of the book launch and upcoming OpenStack Summit, our publishers (Packt Publishing) is giving great discounts on the OpenStack books. Here are the details:&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Get e-books at 50% off using code: &lt;span style=&#34;text-decoration: underline;&#34;&gt;OpenStack50&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Get e-books at 50% off using code: &lt;em&gt;OpenStack50&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Get print books at 30% off using code: &lt;span style=&#34;text-decoration: underline;&#34;&gt;OpenStack30&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Get print books at 30% off using code: &lt;em&gt;OpenStack30&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note: the codes are valid until Nov 15, 2015&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;openstack-summit-2015-8211-tokyo&#34;&gt;OpenStack Summit 2015 &amp;#8211; Tokyo&lt;/h2&gt;
+&lt;h2 id=&#34;openstack-summit-2015-tokyo&#34;&gt;OpenStack Summit 2015 - Tokyo&lt;/h2&gt;
 
-&lt;p&gt;The OpenStack Networking Cookbook is released in time for the OpenStack Summit 2015 in Tokyo. Along with two of my colleagues, I will be giving a talk at the Summit titled &lt;a href=&#34;https://goo.gl/LMpklQ&#34;&gt;&amp;#8220;Enhancing OpenStack FWaaS for real-world business needs&amp;#8221;.&lt;/a&gt; During the Summit we will also be sharing discount coupons for our book.&lt;/p&gt;
+&lt;p&gt;The OpenStack Networking Cookbook is released in time for the OpenStack Summit 2015 in Tokyo. Along with two of my colleagues, I will be giving a talk at the Summit titled &lt;strong&gt;&lt;a href=&#34;https://goo.gl/LMpklQ&#34;&gt;Enhancing OpenStack FWaaS for real-world business needs&lt;/a&gt;&lt;/strong&gt;. During the Summit we will also be sharing discount coupons for our book.&lt;/p&gt;
 
 &lt;h2 id=&#34;tweet-and-win&#34;&gt;Tweet and Win&lt;/h2&gt;
 
-&lt;p&gt;Use #LoveOpenStackTokyo to share your comments, experiences or ask questions during the OpenStack Summit days. You could win &lt;strong&gt;free e-books&lt;/strong&gt; from Packt.&lt;/p&gt;
-</description>
+&lt;p&gt;Use #LoveOpenStackTokyo to share your comments, experiences or ask questions during the OpenStack Summit days. You could win &lt;strong&gt;free e-books&lt;/strong&gt; from Packt.&lt;/p&gt;</description>
       
     </item>
     
@@ -1104,9 +1172,8 @@ sudo ln -s /var/log/neutron /var/www/html/openstacklogs/neutron&lt;/pre&gt;
       
       <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
       
-        <description>
-
-&lt;p&gt;OpenStack supports rich abstractions to handle &lt;a title=&#34;OpenStack Networking – an introduction&#34; href=&#34;http://www.innervoice.in/blogs/2014/04/07/openstack-networking/&#34; target=&#34;_blank&#34;&gt;virtual networking needs in a cloud&lt;/a&gt;. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.&lt;/p&gt;
+        <description>&lt;p&gt;OpenStack supports rich abstractions to handle &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2014/04/06/openstack-networking/&#34;&gt;virtual networking needs in a cloud&lt;/a&gt;. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+&lt;/p&gt;
 
 &lt;h2 id=&#34;why-are-ports-important&#34;&gt;Why are Ports important?&lt;/h2&gt;
 
@@ -1116,34 +1183,72 @@ sudo ln -s /var/log/neutron /var/www/html/openstacklogs/neutron&lt;/pre&gt;
 
 &lt;p&gt;We will use the following virtual network topology to understand the different types of ports created in OpenStack.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1.png&#34;&gt;&lt;img class=&#34;aligncenter size-full wp-image-1302&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1.png&#34; alt=&#34;Topology for OpenStack Ports&#34; width=&#34;599&#34; height=&#34;383&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1.png 599w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1-300x192.png 300w&#34; sizes=&#34;(max-width: 599px) 100vw, 599px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://reachsrirams.github.io/blogs/blogs/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/Topology-OpenStack-Ports-1.png&#34; alt=&#34;Topology for OpenStack Ports&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/Topology-OpenStack-Ports-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Topology for OpenStack Ports&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 
 &lt;p&gt;In the above picture, we have two Tenant Networks with each network having one virtual machine and a DHCP server. The two Networks are connected to each other using a Tenant Router. In addition, we will use an External Network and set it as the gateway on the Tenant Router so that virtual machines have Internet access. The corresponding OpenStack Network Topology looks like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology.png&#34;&gt;&lt;img class=&#34;aligncenter wp-image-1303 size-medium&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology-248x300.png&#34; alt=&#34;OpenStack Ports Network Topology&#34; width=&#34;248&#34; height=&#34;300&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology-248x300.png 248w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology.png 724w&#34; sizes=&#34;(max-width: 248px) 100vw, 248px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;To view the port types in your OpenStack setup, pay attention to the &amp;#8220;device_owner&amp;#8221; attribute of the port as shown the CLI output here.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output.png&#34;&gt;&lt;img class=&#34;aligncenter size-large wp-image-1304&#34; src=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-1024x191.png&#34; alt=&#34;OpenStack Ports CLI Output&#34; width=&#34;620&#34; height=&#34;116&#34; srcset=&#34;http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-1024x191.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-300x56.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-768x143.png 768w&#34; sizes=&#34;(max-width: 620px) 100vw, 620px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/OpenStack-Ports-Network-Topology.png&#34; alt=&#34;OpenStack Ports Network Topology&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/OpenStack-Ports-Network-Topology.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;OpenStack Ports Network Topology&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;To view the port types in your OpenStack setup, pay attention to the &amp;lsquo;device_owner&amp;rsquo; attribute of the port as shown the CLI output here.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure class=&#34;center&#34; itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/OpenStack-Ports-CLI-Output.png&#34; alt=&#34;OpenStack Ports CLI Output&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/images/2015/OpenStack-Ports-CLI-Output.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;OpenStack Ports CLI Output&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
 
 &lt;p&gt;Let us now see the different types of ports associated with this topology.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;compute:nova&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;#8220;compute:nova&amp;#8221; indicates that the port is associated with a virtual machine. These ports are usually auto-created as part of the instance creation (via Nova). The &amp;#8220;compute&amp;#8221; part indicates that the port is created on compute nodes.&lt;/p&gt;
+&lt;p&gt;&amp;lsquo;compute:nova&amp;rsquo; indicates that the port is associated with a virtual machine. These ports are usually auto-created as part of the instance creation (via Nova). The &amp;lsquo;compute&amp;rsquo; part indicates that the port is created on compute nodes.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;network:dhcp&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;#8220;network:dhcp&amp;#8221; indicates that the port is associated with a DHCP server. The word &amp;#8220;network&amp;#8221; imples that this port is created on the Network node. The DHCP port is created when the first virtual machine instance is started on the &lt;em&gt;corresponding&lt;/em&gt; network.&lt;/p&gt;
+&lt;p&gt;&amp;lsquo;network:dhcp&amp;rsquo; indicates that the port is associated with a DHCP server. The word &amp;lsquo;network&amp;rsquo; imples that this port is created on the Network node. The DHCP port is created when the first virtual machine instance is started on the &lt;em&gt;corresponding&lt;/em&gt; network.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;network:router_interface&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;The &amp;#8220;network:router_interface&amp;#8221; represents the &amp;#8220;gateway&amp;#8221; IP interface for a tenant network and its VMs. This interface is associated to an OpenStack router (namespace). Ports of this type are created when a user does a &amp;#8220;Add Interface&amp;#8221; operation on a Router. You will see two such &amp;#8220;network:router_interface&amp;#8221; ports &amp;#8211; one for each Network in our example. Once again, this port type is also seen on the Network Node.&lt;/p&gt;
+&lt;p&gt;The &amp;lsquo;network:router_interface&amp;rsquo; represents the &amp;lsquo;gateway&amp;rsquo; IP interface for a tenant network and its VMs. This interface is associated to an OpenStack router (namespace). Ports of this type are created when a user does a &amp;lsquo;Add Interface&amp;rsquo; operation on a Router. You will see two such &amp;lsquo;network:router_interface&amp;rsquo; ports - one for each Network in our example. Once again, this port type is also seen on the Network Node.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;network:router_gateway&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;For a Router, the External Network represents the &amp;#8220;gateway&amp;#8221; to the outside world (Internet). So a special port of type &amp;#8220;network:router_gateway&amp;#8221; is created for this. This port is created with a user does &amp;#8220;Set Gateway&amp;#8221; operation on a Router and resides on the Network node.&lt;/p&gt;
-</description>
+&lt;p&gt;For a Router, the External Network represents the &amp;lsquo;gateway&amp;rsquo; to the outside world (Internet). So a special port of type &amp;lsquo;network:router_gateway&amp;rsquo; is created for this. This port is created with a user does &amp;lsquo;Set Gateway&amp;rsquo; operation on a Router and resides on the Network node.&lt;/p&gt;</description>
       
     </item>
     

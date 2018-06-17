@@ -17,7 +17,7 @@
       <pubDate>Tue, 02 May 2017 05:07:42 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/</guid>
-      <description>Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.</description>
+      <description>Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;rsquo;s latest release.</description>
     </item>
     
     <item>
@@ -36,7 +36,8 @@ Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboar
       <pubDate>Fri, 23 Oct 2015 16:47:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</guid>
-      <description>My first publication &amp;#8220;OpenStack Networking Cookbook&amp;#8221; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.</description>
+      <description>&lt;p&gt;My first publication &lt;strong&gt;&lt;a href=&#34;http://bit.ly/1NrKjty&#34;&gt;OpenStack Networking Cookbook&lt;/a&gt;&lt;/strong&gt; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,8 +46,29 @@ Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboar
       <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
-      <description>OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
-Why are Ports important?</description>
+      <description>&lt;p&gt;OpenStack supports rich abstractions to handle &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2014/04/06/openstack-networking/&#34;&gt;virtual networking needs in a cloud&lt;/a&gt;. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ports in OpenStack Neutron</title>
+      <link>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</link>
+      <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
+      <description>&lt;p&gt;OpenStack supports rich abstractions to handle &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2014/04/06/openstack-networking/&#34;&gt;virtual networking needs in a cloud&lt;/a&gt;. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>VirtualBox networking settings for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</link>
+      <pubDate>Sun, 14 Jun 2015 14:58:44 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</guid>
+      <description>&lt;p&gt;The best way to learn OpenStack is by installing, running and playing with it directly. In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation. I will be focusing &lt;strong&gt;only on the networking aspects when using VirtualBox&lt;/strong&gt;. I will also share some tips that are important in this deployment. This blog will not cover the steps to install and create a virtual machine using VirtualBox.
+
+While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -55,8 +77,9 @@ Why are Ports important?</description>
       <pubDate>Tue, 31 Mar 2015 16:55:40 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</guid>
-      <description>I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
-OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services.</description>
+      <description>&lt;p&gt;I briefly talked about OpenStack Neutron plugins and agents in &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2015/01/13/openstack-neutron-components/&#34;&gt;my blog about OpenStack Neutron components&lt;/a&gt;. In this blog, let us go a step further and understand the roles of plugins and the agents.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -66,6 +89,17 @@ OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for 
       
       <guid>http://reachsrirams.github.io/blogs/2014/09/08/goals-second-half-2014/</guid>
       <description>&lt;p&gt;Here is my mid-year (I know I am off by couple of months) review of my blogging and learning goals for 2014. I will start off with my assessment of the first half of 2014 and then wrap with goals for the remaining four months of this year.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Networking – an introduction</title>
+      <link>http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/</link>
+      <pubDate>Sun, 06 Apr 2014 19:56:02 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/</guid>
+      <description>&lt;p&gt;I continue the series on virtual networking with an overview of OpenStack networking concepts. OpenStack is an open source project with an aim to create a scalable cloud operating platform. The primary goal of this software platform is to help build public and private clouds. Specifically it allows users to build and operate infrastructure as a service or &lt;strong&gt;IaaS&lt;/strong&gt; clouds.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

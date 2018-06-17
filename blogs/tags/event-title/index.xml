@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Event Title on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/event-title/</link>
+    <description>Recent content in Event Title on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 31 Dec 2014 09:38:31 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/event-title/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Use Google Calendar to remind you to read</title>
+      <link>http://reachsrirams.github.io/blogs/2014/12/31/use-google-calendar-to-remind-reading/</link>
+      <pubDate>Wed, 31 Dec 2014 09:38:31 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/12/31/use-google-calendar-to-remind-reading/</guid>
+      <description>Have you come across a situation when you want to continue reading an interesting online article but do not have enough time? Have you felt the need to add a &amp;#8220;reminder to read it later&amp;#8221; and block out specific time on your calendar? If the answer to these questions is a Yes, then I will show a simple way to do this using Google Calendar.
+Before I give a step by step guide to adding a URL to Google Calendar, here are some details about the solution:</description>
+    </item>
+    
+  </channel>
+</rss>

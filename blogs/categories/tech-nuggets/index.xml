@@ -36,8 +36,68 @@ MariaDB Install and root user In some earlier versions of MySQL as well as Maria
       <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
-      <description>OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
-Why are Ports important?</description>
+      <description>&lt;p&gt;OpenStack supports rich abstractions to handle &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2014/04/06/openstack-networking/&#34;&gt;virtual networking needs in a cloud&lt;/a&gt;. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Use Google Calendar to remind you to read</title>
+      <link>http://reachsrirams.github.io/blogs/2014/12/31/use-google-calendar-to-remind-reading/</link>
+      <pubDate>Wed, 31 Dec 2014 09:38:31 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/12/31/use-google-calendar-to-remind-reading/</guid>
+      <description>Have you come across a situation when you want to continue reading an interesting online article but do not have enough time? Have you felt the need to add a &amp;#8220;reminder to read it later&amp;#8221; and block out specific time on your calendar? If the answer to these questions is a Yes, then I will show a simple way to do this using Google Calendar.
+Before I give a step by step guide to adding a URL to Google Calendar, here are some details about the solution:</description>
+    </item>
+    
+    <item>
+      <title>What I learnt today (WILT) – less command</title>
+      <link>http://reachsrirams.github.io/blogs/2014/11/28/what-i-learnt-today-less/</link>
+      <pubDate>Fri, 28 Nov 2014 09:10:00 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/11/28/what-i-learnt-today-less/</guid>
+      <description>This is the first blog in a new series that I have wanted to start for a while. The series will be called WILT which stands for What I Learnt Today. In our day to day life, especially at work, we all learn something or at least aspire to learn something. In this series of short blogs, I will share some interesting topics that I come across in my workplace.</description>
+    </item>
+    
+    <item>
+      <title>Wired and Wireless network on Ubuntu for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2014/06/29/wired-wireless-network-ubuntu-openstack/</link>
+      <pubDate>Sun, 29 Jun 2014 18:16:37 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/06/29/wired-wireless-network-ubuntu-openstack/</guid>
+      <description>&lt;p&gt;In data center and cloud environment, servers used for hosting the virtual machines usually have more than one wired networking interfaces. In fact there are multiple Ethernet interfaces on each server. It is common practice to use one of the interface for &amp;lsquo;managing&amp;rsquo; the host itself. This interface is usually accessible from corporate networks and administrators will use this interface for doing SSH into the server. The other interfaces are usually used for virtual machine traffic or storage traffic.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Intel NUC DN2820FYKH Review</title>
+      <link>http://reachsrirams.github.io/blogs/2014/06/09/intel-nuc-dn2820fykh-review/</link>
+      <pubDate>Mon, 09 Jun 2014 05:46:04 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/06/09/intel-nuc-dn2820fykh-review/</guid>
+      <description>Most of us have &amp;#8216;cloud storage&amp;#8217; accounts to keep our important files backed up in a central location and yet be accessible across devices. But these accounts have limits unless you are willing to shell out more money. Also the network traffic for big files will eat up into your monthly broadband quota (especially in India). Therefore it is still common to have a &amp;#8220;backup&amp;#8221; store at home. Most people are probably using USB hard disk drives for this.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Networking – an introduction</title>
+      <link>http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/</link>
+      <pubDate>Sun, 06 Apr 2014 19:56:02 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/</guid>
+      <description>&lt;p&gt;I continue the series on virtual networking with an overview of OpenStack networking concepts. OpenStack is an open source project with an aim to create a scalable cloud operating platform. The primary goal of this software platform is to help build public and private clouds. Specifically it allows users to build and operate infrastructure as a service or &lt;strong&gt;IaaS&lt;/strong&gt; clouds.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introduction to VMware Virtual Networking</title>
+      <link>http://reachsrirams.github.io/blogs/2014/02/16/introduction-vmware-virtual-networking/</link>
+      <pubDate>Sun, 16 Feb 2014 18:15:07 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/02/16/introduction-vmware-virtual-networking/</guid>
+      <description>In the previous blog we saw how Linux supports virtual networking using bridges. VMware vSphere is the most popular hypervisor brand in the world and it is natural that it also supports virtual networking. In fact vSphere supports some very advanced networking functions, that are not available in most of the other hypervisors.
+Let me introduce the key elements of VMware virtual networking. After reading this blog, I recommend that you read the official guide about virtual networking.</description>
     </item>
     
     <item>
@@ -57,6 +117,30 @@ The general understanding is that the statements below the default log level wi
       
       <guid>http://reachsrirams.github.io/blogs/2013/07/14/networking-nuggets-1/</guid>
       <description>&lt;p&gt;Here is an overview of three basic networking devices &amp;#8211; Hub, Bridge and a Switch. This blog and the related &lt;a href=&#34;#youtubevideo&#34;&gt;YouTube video&lt;/a&gt; will be useful for upcoming topics related to virtual networking such as Linux Bridge and Open vSwitch. &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Changes to my URL Generator Project Milestones</title>
+      <link>http://reachsrirams.github.io/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/</link>
+      <pubDate>Fri, 16 Nov 2012 15:48:38 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/11/16/changes-to-my-url-generator-project-milestones/</guid>
+      <description>&lt;p&gt;Today I want to announce some changes in the milestones and roadmap of my URL Generator Project.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>4 Important CSS Concepts I learnt</title>
+      <link>http://reachsrirams.github.io/blogs/2012/11/14/4-important-css-concepts-i-learnt/</link>
+      <pubDate>Wed, 14 Nov 2012 07:05:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/11/14/4-important-css-concepts-i-learnt/</guid>
+      <description>&lt;p&gt;As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.
+
+&lt;p lang=&#34;en-US&#34;&gt;
+  &lt;span style=&#34;text-decoration: underline;&#34;&gt;&lt;strong&gt;CSS Box Model&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;</description>
     </item>
     
   </channel>

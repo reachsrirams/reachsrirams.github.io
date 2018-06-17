@@ -26,7 +26,8 @@
 
 <meta name="author" content="Sriram S" />
   <meta name="description" content="I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
-OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services." />
+
+" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -60,7 +61,8 @@ OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for 
 
 <meta property="og:title" content="OpenStack Neutron Plugins and Agents" />
 <meta property="og:description" content="I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
-OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services." />
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/" />
 
@@ -82,20 +84,22 @@ OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for 
 
 <meta itemprop="name" content="OpenStack Neutron Plugins and Agents">
 <meta itemprop="description" content="I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
-OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services.">
+
+">
 
 
 <meta itemprop="datePublished" content="2015-03-31T16:55:40&#43;00:00" />
 <meta itemprop="dateModified" content="2015-03-31T16:55:40&#43;00:00" />
-<meta itemprop="wordCount" content="519">
+<meta itemprop="wordCount" content="523">
 
 
 
-<meta itemprop="keywords" content="Agents,Networking,Neutron,OpenStack,OVS,Plugin,VM," />
+<meta itemprop="keywords" content="Agents,Networking,Neutron,OpenStack,OVS,Plugin,VM,Virtual Network," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OpenStack Neutron Plugins and Agents"/>
 <meta name="twitter:description" content="I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
-OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services."/>
+
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -154,12 +158,12 @@ if (!doNotTrack) {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/">
+        <a href="http://reachsrirams.github.io/">
           Home
         </a>
       </li><li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/post/">
-          Archives
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
         </a>
       </li><li class="mobile-menu-item">
         <a href="http://reachsrirams.github.io/blogs/tags/">
@@ -252,7 +256,10 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
           
 
         
@@ -263,7 +270,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
           
 
         
@@ -317,7 +324,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/technology/"> Technology </a>
             
           </div>
-        <span class="more-meta"> 519 words </span>
+        <span class="more-meta"> 523 words </span>
         <span class="more-meta"> 3 min read </span>
       </div>
     </header>
@@ -337,7 +344,7 @@ if (!doNotTrack) {
 <li><a href="#ml2-the-most-important-core-plugin">ML2 – the most important core plugin</a></li>
 </ul></li>
 <li><a href="#openstack-neutron-agents">OpenStack Neutron Agents</a></li>
-<li><a href="#an-example-8211-open-vswitch-ovs-plugin-and-agent">An example &#8211; Open vSwitch (OVS) Plugin and Agent</a></li>
+<li><a href="#an-example-open-vswitch-ovs-plugin-and-agent">An example - Open vSwitch (OVS) Plugin and Agent</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -346,9 +353,9 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      
+      <p>I briefly talked about OpenStack Neutron plugins and agents in <a href="/blogs/2015/01/13/openstack-neutron-components/">my blog about OpenStack Neutron components</a>. In this blog, let us go a step further and understand the roles of plugins and the agents.</p>
 
-<p>I briefly talked about OpenStack Neutron plugins and agents in <a title="OpenStack Neutron – the components" href="http://www.innervoice.in/blogs/2015/01/13/openstack-neutron-components/" target="_blank">my blog about OpenStack Neutron components</a>. In this blog, let us go a step further and understand the roles of plugins and the agents.</p>
+<p></p>
 
 <h2 id="openstack-neutron-plugins-why-do-we-need-them">OpenStack Neutron Plugins – why do we need them?</h2>
 
@@ -374,14 +381,26 @@ if (!doNotTrack) {
 
 <p>Since Agents are responsible for the implementation of networking, they are closely associated to specific technologies and the corresponding plugins.</p>
 
-<h2 id="an-example-8211-open-vswitch-ovs-plugin-and-agent">An example &#8211; Open vSwitch (OVS) Plugin and Agent</h2>
+<h2 id="an-example-open-vswitch-ovs-plugin-and-agent">An example - Open vSwitch (OVS) Plugin and Agent</h2>
 
 <p>The picture below shows a simplified view of the interaction of plugins and agents with rest of the components in OpenStack Networking.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/03/Plugin-Agents.jpg"><img class="aligncenter wp-image-1262 size-full" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/03/Plugin-Agents.jpg" alt="Neutron Plugins Agents Interaction" width="807" height="737" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/03/Plugin-Agents.jpg 807w, http://127.0.0.1/wordpress/wp-content/uploads/2015/03/Plugin-Agents-300x274.jpg 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/03/Plugin-Agents-768x701.jpg 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/Plugin-Agents.jpg" alt="Neutron Plugins Agents Interaction"/>
+    </div>
+    <a href="/blogs/images/2015/Plugin-Agents.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Neutron Plugins Agents Interaction</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>As shown in the picture above, Neutron receives an API request (due to operations done on Horizon or CLI). The API server invokes the ML2 plugin to processes the request. The ML2 plugin has already loaded the OVS Mechanism driver and passes the request related information to the OVS driver. The OVS driver creates an RPC message using the information available in the request. The RPC message is <strong>cast</strong> to a particular OVS agent running on a compute node. This OVS agent receives the RPC message and proceeds to configure the local instance of OVS switch.</p>
-
     </div>
 
     
@@ -406,6 +425,8 @@ if (!doNotTrack) {
           <a href="/blogs/tags/plugin/">Plugin</a>
           
           <a href="/blogs/tags/vm/">VM</a>
+          
+          <a href="/blogs/tags/virtual-network/">Virtual Network</a>
           
         </div>
 

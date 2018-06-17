@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/shell/</link>
+    <description>Recent content in Shell on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 28 Nov 2014 09:10:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What I learnt today (WILT) – less command</title>
+      <link>http://reachsrirams.github.io/blogs/2014/11/28/what-i-learnt-today-less/</link>
+      <pubDate>Fri, 28 Nov 2014 09:10:00 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/11/28/what-i-learnt-today-less/</guid>
+      <description>This is the first blog in a new series that I have wanted to start for a while. The series will be called WILT which stands for What I Learnt Today. In our day to day life, especially at work, we all learn something or at least aspire to learn something. In this series of short blogs, I will share some interesting topics that I come across in my workplace.</description>
+    </item>
+    
+  </channel>
+</rss>

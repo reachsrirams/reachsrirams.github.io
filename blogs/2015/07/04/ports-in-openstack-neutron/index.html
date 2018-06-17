@@ -25,8 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Sriram S" />
-  <meta name="description" content="OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
-Why are Ports important?" />
+  <meta name="description" content="OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well. " />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -60,7 +59,7 @@ Why are Ports important?" />
 
 <meta property="og:title" content="Ports in OpenStack Neutron" />
 <meta property="og:description" content="OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
-Why are Ports important?" />
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/" />
 
@@ -82,20 +81,20 @@ Why are Ports important?" />
 
 <meta itemprop="name" content="Ports in OpenStack Neutron">
 <meta itemprop="description" content="OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
-Why are Ports important?">
+">
 
 
 <meta itemprop="datePublished" content="2015-07-04T18:55:10&#43;00:00" />
 <meta itemprop="dateModified" content="2015-07-04T18:55:10&#43;00:00" />
-<meta itemprop="wordCount" content="449">
+<meta itemprop="wordCount" content="461">
 
 
 
-<meta itemprop="keywords" content="Network,Networking,Neutron,OpenStack,OpenStack Neutron,ports,router,Subnet,Virtualization," />
+<meta itemprop="keywords" content="Network,Networking,Neutron,OpenStack,Neutron,ports,router,Subnet,Virtualization," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ports in OpenStack Neutron"/>
 <meta name="twitter:description" content="OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
-Why are Ports important?"/>
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -154,12 +153,12 @@ if (!doNotTrack) {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/">
+        <a href="http://reachsrirams.github.io/">
           Home
         </a>
       </li><li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/post/">
-          Archives
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
         </a>
       </li><li class="mobile-menu-item">
         <a href="http://reachsrirams.github.io/blogs/tags/">
@@ -252,7 +251,10 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
           
 
         
@@ -263,7 +265,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
           
 
         
@@ -319,7 +321,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/technology/"> Technology </a>
             
           </div>
-        <span class="more-meta"> 449 words </span>
+        <span class="more-meta"> 461 words </span>
         <span class="more-meta"> 3 min read </span>
       </div>
     </header>
@@ -343,9 +345,8 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      
-
-<p>OpenStack supports rich abstractions to handle <a title="OpenStack Networking – an introduction" href="http://www.innervoice.in/blogs/2014/04/07/openstack-networking/" target="_blank">virtual networking needs in a cloud</a>. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.</p>
+      <p>OpenStack supports rich abstractions to handle <a href="/blogs/2014/04/06/openstack-networking/">virtual networking needs in a cloud</a>. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+</p>
 
 <h2 id="why-are-ports-important">Why are Ports important?</h2>
 
@@ -355,34 +356,72 @@ if (!doNotTrack) {
 
 <p>We will use the following virtual network topology to understand the different types of ports created in OpenStack.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1.png"><img class="aligncenter size-full wp-image-1302" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1.png" alt="Topology for OpenStack Ports" width="599" height="383" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1.png 599w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/Topology-OpenStack-Ports-1-300x192.png 300w" sizes="(max-width: 599px) 100vw, 599px" /></a></p>
+
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/Topology-OpenStack-Ports-1.png" alt="Topology for OpenStack Ports"/>
+    </div>
+    <a href="/blogs/images/2015/Topology-OpenStack-Ports-1.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Topology for OpenStack Ports</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>In the above picture, we have two Tenant Networks with each network having one virtual machine and a DHCP server. The two Networks are connected to each other using a Tenant Router. In addition, we will use an External Network and set it as the gateway on the Tenant Router so that virtual machines have Internet access. The corresponding OpenStack Network Topology looks like this:</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology.png"><img class="aligncenter wp-image-1303 size-medium" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology-248x300.png" alt="OpenStack Ports Network Topology" width="248" height="300" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology-248x300.png 248w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-Network-Topology.png 724w" sizes="(max-width: 248px) 100vw, 248px" /></a></p>
 
-<p>To view the port types in your OpenStack setup, pay attention to the &#8220;device_owner&#8221; attribute of the port as shown the CLI output here.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output.png"><img class="aligncenter size-large wp-image-1304" src="http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-1024x191.png" alt="OpenStack Ports CLI Output" width="620" height="116" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-1024x191.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-300x56.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2015/07/OpenStack-Ports-CLI-Output-768x143.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/OpenStack-Ports-Network-Topology.png" alt="OpenStack Ports Network Topology"/>
+    </div>
+    <a href="/blogs/images/2015/OpenStack-Ports-Network-Topology.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>OpenStack Ports Network Topology</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>To view the port types in your OpenStack setup, pay attention to the &lsquo;device_owner&rsquo; attribute of the port as shown the CLI output here.</p>
+
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2015/OpenStack-Ports-CLI-Output.png" alt="OpenStack Ports CLI Output"/>
+    </div>
+    <a href="/blogs/images/2015/OpenStack-Ports-CLI-Output.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>OpenStack Ports CLI Output</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>Let us now see the different types of ports associated with this topology.</p>
 
 <p><strong>compute:nova</strong></p>
 
-<p>&#8220;compute:nova&#8221; indicates that the port is associated with a virtual machine. These ports are usually auto-created as part of the instance creation (via Nova). The &#8220;compute&#8221; part indicates that the port is created on compute nodes.</p>
+<p>&lsquo;compute:nova&rsquo; indicates that the port is associated with a virtual machine. These ports are usually auto-created as part of the instance creation (via Nova). The &lsquo;compute&rsquo; part indicates that the port is created on compute nodes.</p>
 
 <p><strong>network:dhcp</strong></p>
 
-<p>&#8220;network:dhcp&#8221; indicates that the port is associated with a DHCP server. The word &#8220;network&#8221; imples that this port is created on the Network node. The DHCP port is created when the first virtual machine instance is started on the <em>corresponding</em> network.</p>
+<p>&lsquo;network:dhcp&rsquo; indicates that the port is associated with a DHCP server. The word &lsquo;network&rsquo; imples that this port is created on the Network node. The DHCP port is created when the first virtual machine instance is started on the <em>corresponding</em> network.</p>
 
 <p><strong>network:router_interface</strong></p>
 
-<p>The &#8220;network:router_interface&#8221; represents the &#8220;gateway&#8221; IP interface for a tenant network and its VMs. This interface is associated to an OpenStack router (namespace). Ports of this type are created when a user does a &#8220;Add Interface&#8221; operation on a Router. You will see two such &#8220;network:router_interface&#8221; ports &#8211; one for each Network in our example. Once again, this port type is also seen on the Network Node.</p>
+<p>The &lsquo;network:router_interface&rsquo; represents the &lsquo;gateway&rsquo; IP interface for a tenant network and its VMs. This interface is associated to an OpenStack router (namespace). Ports of this type are created when a user does a &lsquo;Add Interface&rsquo; operation on a Router. You will see two such &lsquo;network:router_interface&rsquo; ports - one for each Network in our example. Once again, this port type is also seen on the Network Node.</p>
 
 <p><strong>network:router_gateway</strong></p>
 
-<p>For a Router, the External Network represents the &#8220;gateway&#8221; to the outside world (Internet). So a special port of type &#8220;network:router_gateway&#8221; is created for this. This port is created with a user does &#8220;Set Gateway&#8221; operation on a Router and resides on the Network node.</p>
-
+<p>For a Router, the External Network represents the &lsquo;gateway&rsquo; to the outside world (Internet). So a special port of type &lsquo;network:router_gateway&rsquo; is created for this. This port is created with a user does &lsquo;Set Gateway&rsquo; operation on a Router and resides on the Network node.</p>
     </div>
 
     
@@ -402,7 +441,7 @@ if (!doNotTrack) {
           
           <a href="/blogs/tags/openstack/">OpenStack</a>
           
-          <a href="/blogs/tags/openstack-neutron/">OpenStack Neutron</a>
+          <a href="/blogs/tags/neutron/">Neutron</a>
           
           <a href="/blogs/tags/ports/">ports</a>
           

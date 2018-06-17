@@ -6,10 +6,96 @@
     <description>Recent content in Virtual Network on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Dec 2013 18:00:47 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2015 06:54:27 +0000</lastBuildDate>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/tags/virtual-network/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ip vs. ifconfig – WILT</title>
+      <link>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</link>
+      <pubDate>Fri, 27 Nov 2015 06:54:27 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/11/27/ip-vs-ifconfig-wilt/</guid>
+      <description>&lt;p&gt;One of the most popular networking command in Linux is the ifconfig command. It lets you see (and configure) IP address for network interface. It also shows the MAC address for each interface. The MAC address and the IP address viewing is probably the most common reason for using the ifconfig command. In addition the ifconfig command works with physical network interface (like eth0..) and virtual network interface (like &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/08/tap-interfaces-linux-bridge/&#34;&gt;Tap interface&lt;/a&gt; etc).
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>VirtualBox networking settings for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</link>
+      <pubDate>Sun, 14 Jun 2015 14:58:44 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</guid>
+      <description>&lt;p&gt;The best way to learn OpenStack is by installing, running and playing with it directly. In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation. I will be focusing &lt;strong&gt;only on the networking aspects when using VirtualBox&lt;/strong&gt;. I will also share some tips that are important in this deployment. This blog will not cover the steps to install and create a virtual machine using VirtualBox.
+
+While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Neutron Plugins and Agents</title>
+      <link>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</link>
+      <pubDate>Tue, 31 Mar 2015 16:55:40 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</guid>
+      <description>&lt;p&gt;I briefly talked about OpenStack Neutron plugins and agents in &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2015/01/13/openstack-neutron-components/&#34;&gt;my blog about OpenStack Neutron components&lt;/a&gt;. In this blog, let us go a step further and understand the roles of plugins and the agents.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using MAC table – Linux Bridge – WILT</title>
+      <link>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</link>
+      <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
+      <description>&lt;p&gt;In an &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/02/linux-bridge-virtual-networking/&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Wired and Wireless network on Ubuntu for OpenStack</title>
+      <link>http://reachsrirams.github.io/blogs/2014/06/29/wired-wireless-network-ubuntu-openstack/</link>
+      <pubDate>Sun, 29 Jun 2014 18:16:37 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/06/29/wired-wireless-network-ubuntu-openstack/</guid>
+      <description>&lt;p&gt;In data center and cloud environment, servers used for hosting the virtual machines usually have more than one wired networking interfaces. In fact there are multiple Ethernet interfaces on each server. It is common practice to use one of the interface for &amp;lsquo;managing&amp;rsquo; the host itself. This interface is usually accessible from corporate networks and administrators will use this interface for doing SSH into the server. The other interfaces are usually used for virtual machine traffic or storage traffic.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Networking – an introduction</title>
+      <link>http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/</link>
+      <pubDate>Sun, 06 Apr 2014 19:56:02 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/</guid>
+      <description>&lt;p&gt;I continue the series on virtual networking with an overview of OpenStack networking concepts. OpenStack is an open source project with an aim to create a scalable cloud operating platform. The primary goal of this software platform is to help build public and private clouds. Specifically it allows users to build and operate infrastructure as a service or &lt;strong&gt;IaaS&lt;/strong&gt; clouds.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introduction to VMware Virtual Networking</title>
+      <link>http://reachsrirams.github.io/blogs/2014/02/16/introduction-vmware-virtual-networking/</link>
+      <pubDate>Sun, 16 Feb 2014 18:15:07 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/02/16/introduction-vmware-virtual-networking/</guid>
+      <description>In the previous blog we saw how Linux supports virtual networking using bridges. VMware vSphere is the most popular hypervisor brand in the world and it is natural that it also supports virtual networking. In fact vSphere supports some very advanced networking functions, that are not available in most of the other hypervisors.
+Let me introduce the key elements of VMware virtual networking. After reading this blog, I recommend that you read the official guide about virtual networking.</description>
+    </item>
+    
+    <item>
+      <title>Tap Interfaces and Linux Bridge</title>
+      <link>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</link>
+      <pubDate>Sun, 08 Dec 2013 06:56:00 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2013/12/08/tap-interfaces-linux-bridge/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/02/linux-bridge-virtual-networking/&#34;&gt;previous blog of this series&lt;/a&gt; we saw that using Linux bridge we can connect a virtual Ethernet port of a VM to the physical Ethernet port of the hypervisor server. Let us now focus a bit more on these virtual ports to see what happens behind the scenes to make virtual networking actually work.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Linux Bridge and Virtual Networking</title>

@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Sriram S" />
-  <meta name="description" content="If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).
+  <meta name="description" content="If you were to ask someone &amp;ldquo;what is the most popular open source hypervisor&amp;rdquo; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).
 
 " />
 
@@ -60,7 +60,7 @@
 
 
 <meta property="og:title" content="KVM and QEMU – do you know the connection?" />
-<meta property="og:description" content="If you were to ask someone &#8220;what is the most popular open source hypervisor&#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).
+<meta property="og:description" content="If you were to ask someone &ldquo;what is the most popular open source hypervisor&rdquo; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).
 
 " />
 <meta property="og:type" content="article" />
@@ -83,21 +83,21 @@
 
 
 <meta itemprop="name" content="KVM and QEMU – do you know the connection?">
-<meta itemprop="description" content="If you were to ask someone &#8220;what is the most popular open source hypervisor&#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).
+<meta itemprop="description" content="If you were to ask someone &ldquo;what is the most popular open source hypervisor&rdquo; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).
 
 ">
 
 
 <meta itemprop="datePublished" content="2014-03-09T18:58:23&#43;00:00" />
 <meta itemprop="dateModified" content="2014-03-09T18:58:23&#43;00:00" />
-<meta itemprop="wordCount" content="697">
+<meta itemprop="wordCount" content="720">
 
 
 
-<meta itemprop="keywords" content="CPU,Hypervisor,KVM,Linux,QEMU,Virtualization,VM,VT-x,x86," />
+<meta itemprop="keywords" content="Hypervisor,KVM,Linux,QEMU,Virtualization,VM," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="KVM and QEMU – do you know the connection?"/>
-<meta name="twitter:description" content="If you were to ask someone &#8220;what is the most popular open source hypervisor&#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).
+<meta name="twitter:description" content="If you were to ask someone &ldquo;what is the most popular open source hypervisor&rdquo; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).
 
 "/>
 
@@ -158,12 +158,12 @@ if (!doNotTrack) {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/">
+        <a href="http://reachsrirams.github.io/">
           Home
         </a>
       </li><li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/post/">
-          Archives
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
         </a>
       </li><li class="mobile-menu-item">
         <a href="http://reachsrirams.github.io/blogs/tags/">
@@ -256,7 +256,10 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
           
 
         
@@ -267,7 +270,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
           
 
         
@@ -319,7 +322,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/virtualization/"> Virtualization </a>
             
           </div>
-        <span class="more-meta"> 697 words </span>
+        <span class="more-meta"> 720 words </span>
         <span class="more-meta"> 4 min read </span>
       </div>
     </header>
@@ -333,11 +336,11 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#kvm-and-qemu-8211-the-process-id-check">KVM and QEMU &#8211; the process ID check</a></li>
-<li><a href="#kvm-and-qemu-8211-understanding-hardware-acceleration">KVM and QEMU &#8211; understanding hardware acceleration</a></li>
-<li><a href="#kvm-and-qemu-8211-type-1-or-type-2-hypervisor">KVM and QEMU &#8211; Type 1 or Type 2 hypervisor</a></li>
-<li><a href="#kvm-and-qemu-8211-the-x86-dependency">KVM and QEMU &#8211; the x86 dependency</a></li>
-<li><a href="#kvm-and-qemu-8211-the-conclusion">KVM and QEMU &#8211; the conclusion</a></li>
+<li><a href="#kvm-and-qemu-the-process-id-check">KVM and QEMU - the process ID check</a></li>
+<li><a href="#kvm-and-qemu-understanding-hardware-acceleration">KVM and QEMU - understanding hardware acceleration</a></li>
+<li><a href="#kvm-and-qemu-type-1-or-type-2-hypervisor">KVM and QEMU - Type 1 or Type 2 hypervisor</a></li>
+<li><a href="#kvm-and-qemu-the-x86-dependency">KVM and QEMU - the x86 dependency</a></li>
+<li><a href="#kvm-and-qemu-the-conclusion">KVM and QEMU - the conclusion</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -346,33 +349,66 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>If you were to ask someone &#8220;what is the most popular open source hypervisor&#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).</p>
+      <p>If you were to ask someone &ldquo;what is the most popular open source hypervisor&rdquo; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).</p>
 
 <p></p>
 
-<h2 id="kvm-and-qemu-8211-the-process-id-check">KVM and QEMU &#8211; the process ID check</h2>
+<h2 id="kvm-and-qemu-the-process-id-check">KVM and QEMU - the process ID check</h2>
 
-<p>You can use <em>libvirt</em> and the associated Virtual Machine Manager GUI to start a virtual machine. In the GUI, you can choose the &#8216;Virt Type&#8217; as either KVM or QEMU. I started a VM, once with QEMU as the Virt Type and once with KVM. In both cases, I did a _grep_ of the process ID to see if there was any difference. <strong>Note</strong>: I used Ubuntu 13.10 for my experiments.</p>
+<p>You can use <em>libvirt</em> and the associated Virtual Machine Manager GUI to start a virtual machine. In the GUI, you can choose the &lsquo;Virt Type&rsquo; as either KVM or QEMU. I started a VM, once with QEMU as the Virt Type and once with KVM. In both cases, I did a _grep_ of the process ID to see if there was any difference. <strong>Note</strong>: I used Ubuntu 13.10 for my experiments.</p>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png"><img class="aligncenter  wp-image-1024" alt="KVM and QEMU - VMM Select Virt Type" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png" width="540" height="533" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM.png 675w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM-300x296.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/VMM-Screenshot-QEMU-KVM-100x100.png 100w" sizes="(max-width: 540px) 100vw, 540px" /></a>
-</p>
 
-<p> When I started the VM with KVM as the Virt Type the process ID details showed an interesting attribute &#8220;accel=kvm&#8221; as highlighted below.</p>
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2014/VMM-Screenshot-QEMU-KVM.png" alt="KVM and QEMU - VMM Select Virt Type"/>
+    </div>
+    <a href="/blogs/images/2014/VMM-Screenshot-QEMU-KVM.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>KVM and QEMU - VMM Select Virt Type</p>
+      </figcaption>
+  </figure>
+</div>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png"><img class="aligncenter  wp-image-1025" alt="QEMU using KVM Accelarator" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png" width="755" height="374" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM.png 944w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM-300x149.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_KVM-768x381.png 768w" sizes="(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px" /></a>
-</p>
 
-<p>When I started the same Virtual Machine with QEMU as the Virt Type, the process ID showed &#8220;accel=tcg&#8221;.</p>
+<p> When I started the VM with KVM as the Virt Type the process ID details showed an interesting attribute &ldquo;accel=kvm&rdquo; as highlighted below.</p>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png"><img class="aligncenter  wp-image-1026" alt="QEMU using TCG Accelarator" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png" width="756" height="373" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG.png 945w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG-300x148.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU_TCG-768x379.png 768w" sizes="(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px" /></a>
-</p>
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2014/QEMU_KVM.png" alt="QEMU using KVM Accelarator"/>
+    </div>
+    <a href="/blogs/images/2014/QEMU_KVM.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>QEMU using KVM Accelarator</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>When I started the same Virtual Machine with QEMU as the Virt Type, the process ID showed &ldquo;accel=tcg&rdquo;.</p>
+
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2014/QEMU_TCG.png" alt="QEMU using TCG Accelarator"/>
+    </div>
+    <a href="/blogs/images/2014/QEMU_TCG.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>QEMU using TCG Accelarator</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>Note that in both the cases the same _binary_ is executed to start the VM, namely, _qemu-system-x86<em>64</em>. The main difference is the acceleration type.</p>
 
-<h2 id="kvm-and-qemu-8211-understanding-hardware-acceleration">KVM and QEMU &#8211; understanding hardware acceleration</h2>
+<h2 id="kvm-and-qemu-understanding-hardware-acceleration">KVM and QEMU - understanding hardware acceleration</h2>
 
 <p>To understand hardware acceleration, we must understand how Virtual Machine CPU works. In real hardware, the Operating System (OS) translates programs into instructions that are executed by the physical CPU. In a virtual machine, the same thing happens. However, the key difference is that the Virtual CPU is actually emulated (or virtualized) by the hypervisor. Therefore, the hypervisor software has to <em>translate the instructions meant for the Virtual CPU</em> and convert it into instructions for the physical CPU. This translation has a big performance overhead.</p>
 
@@ -382,27 +418,51 @@ if (!doNotTrack) {
 
 <p>Then what is TCG? If your server CPU does not support virtualization extension, then it is the job of the emulator (or hypervisor) to execute the Virtual CPU instruction using translation. QEMU uses TCG or Tiny Code Generator to _optimally_ _translate and execute _the Virtual CPU instructions on the physical CPU.</p>
 
-<h2 id="kvm-and-qemu-8211-type-1-or-type-2-hypervisor">KVM and QEMU &#8211; Type 1 or Type 2 hypervisor</h2>
+<h2 id="kvm-and-qemu-type-1-or-type-2-hypervisor">KVM and QEMU - Type 1 or Type 2 hypervisor</h2>
 
-<p>The web pages of <a href="http://www.linux-kvm.org/page/Main_Page" target="_blank">KVM </a>and <a href="http://wiki.qemu.org/Main_Page" target="_blank">QEMU</a> clearly show that KVM needs QEMU to provide full hypervisor functionality. By itself, KVM is more of a virtualization infrastructure provider.</p>
+<p>The web pages of <a href="http://www.linux-kvm.org/page/Main_Page">KVM</a> and <a href="http://wiki.qemu.org/Main_Page">QEMU</a> clearly show that KVM needs QEMU to provide full hypervisor functionality. By itself, KVM is more of a virtualization infrastructure provider.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png"><img class="aligncenter size-full wp-image-1038" alt="KVM and QEMU relationship" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png" width="1115" height="413" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro.png 1115w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-300x111.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-768x284.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/KVM-Intro-1024x379.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2014/KVM-Intro.png" alt="KVM and QEMU relationship"/>
+    </div>
+    <a href="/blogs/images/2014/KVM-Intro.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>KVM and QEMU relationship</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>QEMU by itself is a Type-2 hypervisor. It intercepts the instructions meant for Virtual CPU and uses the host operating system to get those instructions executed on the physical CPU. <strong>When QEMU uses KVM for hardware acceleration, the combination becomes a Type-1 hypervisor.</strong> This difference is quite clear from the description on the QEMU website.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png"><img class="aligncenter size-full wp-image-1036" alt="KVM and QEMU relationship" src="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png" width="1086" height="415" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro.png 1086w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-300x115.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-768x293.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2014/03/QEMU-Intro-1024x391.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
 
-<h2 id="kvm-and-qemu-8211-the-x86-dependency">KVM and QEMU &#8211; the x86 dependency</h2>
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2014/QEMU-Intro.png" alt="KVM and QEMU relationship"/>
+    </div>
+    <a href="/blogs/images/2014/QEMU-Intro.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>KVM and QEMU relationship</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<h2 id="kvm-and-qemu-the-x86-dependency">KVM and QEMU - the x86 dependency</h2>
 
 <p>Since KVM is really a <em>driver</em> for the physical CPU capabilities, it is very tightly associated with the CPU architecture (the x86 architecture). This means that the benefits of hardware acceleration will be available only if the Virtual Machine CPU also uses the same architecture (x86).</p>
 
 <p>If a VM needs to run Power PC CPU but the hypervisor server has an Intel CPU, then KVM will not work. You must use QEMU as the Virt Type and live with the performance overhead.</p>
 
-<h2 id="kvm-and-qemu-8211-the-conclusion">KVM and QEMU &#8211; the conclusion</h2>
+<h2 id="kvm-and-qemu-the-conclusion">KVM and QEMU - the conclusion</h2>
 
-<p>Based on the discussion above, it is quite clear that QEMU plays a very critical role in Linux based Open Source virtualization solutions. <strong>For all practical applications, QEMU needs KVM&#8217;s performance boost.</strong> However, it is clear that **KVM by itself cannot provide the complete virtualization solution. It needs QEMU.</p>
-
-<p>**</p>
+<p>Based on the discussion above, it is quite clear that QEMU plays a very critical role in Linux based Open Source virtualization solutions. <strong>For all practical applications, QEMU needs KVM&rsquo;s performance boost.</strong> However, it is clear that **KVM by itself cannot provide the complete virtualization solution. It needs QEMU.</p>
     </div>
 
     
@@ -413,8 +473,6 @@ if (!doNotTrack) {
 
     <footer class="post-footer">
       <div class="post-tags">
-          
-          <a href="/blogs/tags/cpu/">CPU</a>
           
           <a href="/blogs/tags/hypervisor/">Hypervisor</a>
           
@@ -428,23 +486,19 @@ if (!doNotTrack) {
           
           <a href="/blogs/tags/vm/">VM</a>
           
-          <a href="/blogs/tags/vt-x/">VT-x</a>
-          
-          <a href="/blogs/tags/x86/">x86</a>
-          
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/blogs/2014/09/08/goals-second-half-2014/">
+          <a class="prev" href="/blogs/2014/04/06/openstack-networking/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Goals for the second half of 2014</span>
+            <span class="prev-text nav-default">OpenStack Networking – an introduction</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="/blogs/2014/02/16/goals-first-half-2014/">
-            <span class="next-text nav-default">Goals for the first half of 2014</span>
+          <a class="next" href="/blogs/2014/02/16/introduction-vmware-virtual-networking/">
+            <span class="next-text nav-default">Introduction to VMware Virtual Networking</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

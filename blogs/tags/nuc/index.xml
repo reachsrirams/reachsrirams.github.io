@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nuc on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/nuc/</link>
+    <description>Recent content in Nuc on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 13 Nov 2014 18:26:12 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/nuc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up OpenStack at home</title>
+      <link>http://reachsrirams.github.io/blogs/2014/11/13/setting-openstack-home/</link>
+      <pubDate>Thu, 13 Nov 2014 18:26:12 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/11/13/setting-openstack-home/</guid>
+      <description>The goal of this blog is to share some details about how I have setup a cost-effective OpenStack Lab at home. For most enthusiasts, DevStack is the preferred way to experiment with OpenStack. But I wanted something more realistic for my experiments.
+OpenStack is intended for multi-tenant, distributed and highly scalable cloud. To appreciate its architecture I needed to move beyond DevStack. With a more realistic setup, you can understand how the distributed OpenStack components interact with each other.</description>
+    </item>
+    
+  </channel>
+</rss>

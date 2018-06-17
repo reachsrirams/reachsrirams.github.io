@@ -6,10 +6,20 @@
     <description>Recent content in User Experience on Sriram S - Innervoice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 08 Sep 2013 18:12:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 Dec 2014 09:38:31 +0000</lastBuildDate>
     
 	<atom:link href="http://reachsrirams.github.io/blogs/categories/user-experience/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Use Google Calendar to remind you to read</title>
+      <link>http://reachsrirams.github.io/blogs/2014/12/31/use-google-calendar-to-remind-reading/</link>
+      <pubDate>Wed, 31 Dec 2014 09:38:31 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/12/31/use-google-calendar-to-remind-reading/</guid>
+      <description>Have you come across a situation when you want to continue reading an interesting online article but do not have enough time? Have you felt the need to add a &amp;#8220;reminder to read it later&amp;#8221; and block out specific time on your calendar? If the answer to these questions is a Yes, then I will show a simple way to do this using Google Calendar.
+Before I give a step by step guide to adding a URL to Google Calendar, here are some details about the solution:</description>
+    </item>
     
     <item>
       <title>Usability of Social Commenting</title>
@@ -17,8 +27,9 @@
       <pubDate>Sun, 08 Sep 2013 18:12:53 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2013/09/08/usability-social-commenting/</guid>
-      <description>One of the biggest differentiation for various social networks is their usability. Let us look at some real world examples of how usability of social commenting can be improved with a simple solution.
-How does social commenting work? Let us take the game of cricket as an example. While a match is going on, it is common to do a live blog of the game. Fans and followers have the opportunity to participate by sharing their views and comments.</description>
+      <description>&lt;p&gt;One of the biggest differentiation for various social networks is their usability. Let us look at some real world examples of how usability of social commenting can be improved with a simple solution.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

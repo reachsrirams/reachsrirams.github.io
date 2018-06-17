@@ -17,7 +17,8 @@
       <pubDate>Fri, 23 Oct 2015 16:47:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/10/23/openstack-networking-cookbook/</guid>
-      <description>My first publication &amp;#8220;OpenStack Networking Cookbook&amp;#8221; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.</description>
+      <description>&lt;p&gt;My first publication &lt;strong&gt;&lt;a href=&#34;http://bit.ly/1NrKjty&#34;&gt;OpenStack Networking Cookbook&lt;/a&gt;&lt;/strong&gt; is now available for purchase. It is available as a printed book as well as e-book. OpenStack is a rapidly evolving cloud platform and Networking (Neutron) is one of its critical components. The current trends of SDN and NFV make OpenStack Networking even more exciting and complex. I have co-authored the book with a colleague and the overall experience of writing a book was very satisfying.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,8 +27,8 @@
       <pubDate>Sat, 04 Jul 2015 18:55:10 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/07/04/ports-in-openstack-neutron/</guid>
-      <description>OpenStack supports rich abstractions to handle virtual networking needs in a cloud. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
-Why are Ports important?</description>
+      <description>&lt;p&gt;OpenStack supports rich abstractions to handle &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2014/04/06/openstack-networking/&#34;&gt;virtual networking needs in a cloud&lt;/a&gt;. As a user the most visible entities are the Network, Subnets, Routers, Firewall etc. But if we consider ingress and egress points for data traffic, the most critical entity is the Port. OpenStack Neutron Ports are usually created automatically as part of other user operations. However the CLI allows users to create Ports independently as well.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -36,8 +37,9 @@ Why are Ports important?</description>
       <pubDate>Tue, 31 Mar 2015 16:55:40 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/03/31/openstack-neutron-plugins-and-agents/</guid>
-      <description>I briefly talked about OpenStack Neutron plugins and agents in my blog about OpenStack Neutron components. In this blog, let us go a step further and understand the roles of plugins and the agents.
-OpenStack Neutron Plugins – why do we need them? Networking in OpenStack (for VM instances) is very similar to networking in the real world. VM instances require Layer 2 (L2) network connectivity minimally. Additionally instances may also require routing, firewall and load-balancing services.</description>
+      <description>&lt;p&gt;I briefly talked about OpenStack Neutron plugins and agents in &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2015/01/13/openstack-neutron-components/&#34;&gt;my blog about OpenStack Neutron components&lt;/a&gt;. In this blog, let us go a step further and understand the roles of plugins and the agents.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

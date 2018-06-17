@@ -17,8 +17,9 @@
       <pubDate>Sun, 14 Jun 2015 14:58:44 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</guid>
-      <description>The best way to learn OpenStack is by installing, running and playing with it directly. While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.
-In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation.</description>
+      <description>&lt;p&gt;The best way to learn OpenStack is by installing, running and playing with it directly. In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation. I will be focusing &lt;strong&gt;only on the networking aspects when using VirtualBox&lt;/strong&gt;. I will also share some tips that are important in this deployment. This blog will not cover the steps to install and create a virtual machine using VirtualBox.
+
+While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.&lt;/p&gt;</description>
     </item>
     
   </channel>

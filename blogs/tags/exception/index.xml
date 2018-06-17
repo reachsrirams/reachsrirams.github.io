@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exception on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/exception/</link>
+    <description>Recent content in Exception on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 17 Mar 2012 14:13:50 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/exception/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java 7: Catching and handling multiple Exceptions</title>
+      <link>http://reachsrirams.github.io/blogs/2012/03/17/java-7-catching-and-handling-multiple-exceptions/</link>
+      <pubDate>Sat, 17 Mar 2012 14:13:50 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/03/17/java-7-catching-and-handling-multiple-exceptions/</guid>
+      <description>&lt;p&gt;If you write networking or IO oriented programs using Java, there will be several situations where the code on the server will catch multiple exceptions. Most of the times the exceptions are logged, sometimes they are logged and re-thrown.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

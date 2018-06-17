@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Css Reset on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/css-reset/</link>
+    <description>Recent content in Css Reset on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 14 Nov 2012 07:05:23 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/css-reset/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>4 Important CSS Concepts I learnt</title>
+      <link>http://reachsrirams.github.io/blogs/2012/11/14/4-important-css-concepts-i-learnt/</link>
+      <pubDate>Wed, 14 Nov 2012 07:05:23 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/11/14/4-important-css-concepts-i-learnt/</guid>
+      <description>&lt;p&gt;As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.
+
+&lt;p lang=&#34;en-US&#34;&gt;
+  &lt;span style=&#34;text-decoration: underline;&#34;&gt;&lt;strong&gt;CSS Box Model&lt;/strong&gt;&lt;/span&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

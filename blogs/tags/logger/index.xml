@@ -34,5 +34,16 @@ The general practice is to initialize logging related objects and parameters at 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Java 7: Catching and handling multiple Exceptions</title>
+      <link>http://reachsrirams.github.io/blogs/2012/03/17/java-7-catching-and-handling-multiple-exceptions/</link>
+      <pubDate>Sat, 17 Mar 2012 14:13:50 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2012/03/17/java-7-catching-and-handling-multiple-exceptions/</guid>
+      <description>&lt;p&gt;If you write networking or IO oriented programs using Java, there will be several situations where the code on the server will catch multiple exceptions. Most of the times the exceptions are logged, sometimes they are logged and re-thrown.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

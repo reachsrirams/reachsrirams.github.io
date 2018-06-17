@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>OpenStack Networking – an introduction - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="I continue the series on virtual networking with an overview of OpenStack networking concepts. OpenStack is an open source project with an aim to create a scalable cloud operating platform. The primary goal of this software platform is to help build public and private clouds. Specifically it allows users to build and operate infrastructure as a service or IaaS clouds.
+
+" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="OpenStack Networking – an introduction" />
+<meta property="og:description" content="I continue the series on virtual networking with an overview of OpenStack networking concepts. OpenStack is an open source project with an aim to create a scalable cloud operating platform. The primary goal of this software platform is to help build public and private clouds. Specifically it allows users to build and operate infrastructure as a service or IaaS clouds.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2014/04/06/openstack-networking/" />
+
+
+
+<meta property="article:published_time" content="2014-04-06T19:56:02&#43;00:00"/>
+
+<meta property="article:modified_time" content="2014-04-06T19:56:02&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="OpenStack Networking – an introduction">
+<meta itemprop="description" content="I continue the series on virtual networking with an overview of OpenStack networking concepts. OpenStack is an open source project with an aim to create a scalable cloud operating platform. The primary goal of this software platform is to help build public and private clouds. Specifically it allows users to build and operate infrastructure as a service or IaaS clouds.
+
+">
+
+
+<meta itemprop="datePublished" content="2014-04-06T19:56:02&#43;00:00" />
+<meta itemprop="dateModified" content="2014-04-06T19:56:02&#43;00:00" />
+<meta itemprop="wordCount" content="821">
+
+
+
+<meta itemprop="keywords" content="Horizon,Network,Neutron,Nova,OpenStack,Plugin,Virtual Network,Virtual Switch,VLAN,VM," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OpenStack Networking – an introduction"/>
+<meta name="twitter:description" content="I continue the series on virtual networking with an overview of OpenStack networking concepts. OpenStack is an open source project with an aim to create a scalable cloud operating platform. The primary goal of this software platform is to help build public and private clouds. Specifically it allows users to build and operate infrastructure as a service or IaaS clouds.
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 1em 2em;
+		margin: 0 2em 1em;
+	}
+	.content-wrapper {
+		padding: 1em 0 1px;
+	}
+	.post-header {
+		font-size: 1.0em;
+		font-weight: 600;
+	}
+	.post-content {
+		font-size: 16px;
+	}
+	.logo {
+		font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">OpenStack Networking – an introduction</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2014-04-06 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/cloud-computing/"> Cloud Computing </a>
+            
+              <a href="/blogs/categories/networking/"> Networking </a>
+            
+              <a href="/blogs/categories/tech-nuggets/"> Tech Nuggets </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+          </div>
+        <span class="more-meta"> 821 words </span>
+        <span class="more-meta"> 4 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#so-what-does-networking-have-to-do-with-openstack">So what does networking have to do with OpenStack?</a></li>
+<li><a href="#how-openstack-supports-physical-and-virtual-network-configuration">How OpenStack supports physical and virtual network configuration?</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>I continue the series on virtual networking with an overview of OpenStack networking concepts. OpenStack is an open source project with an aim to create a scalable cloud operating platform. The primary goal of this software platform is to help build public and private clouds. Specifically it allows users to build and operate infrastructure as a service or <strong>IaaS</strong> clouds.</p>
+
+<p></p>
+
+<h2 id="so-what-does-networking-have-to-do-with-openstack">So what does networking have to do with OpenStack?</h2>
+
+<p>The real idea behind IaaS is to help users <em>create a collection of virtual machines <strong>along with the network connectivity between the virtual machines</strong></em>.</p>
+
+<p>Traditionally, to bring up a new application, the IT team will order some physical servers and networking devices such as switches, firewall etc. The physical servers are connected using these physical networking devices into a topology that meets the requirements of the application.</p>
+
+<p>In a virtualized environment, using IaaS clouds, it is possible to setup the same application using virtual machines. In addition, virtual networking can be used to connect these virtual machines. Moreover, the virtual machines are themselves running on physical servers (hypervisor servers) and those hypervisor servers are in turn connected to physical network device.</p>
+
+<p>Therefore, platforms such as <strong>OpenStack have the capability to support virtual networking as well as physical networking configurations</strong>. This means that in addition to supporting technologies like Linux bridge or VMware virtual switches for virtual networking, <strong>OpenStack should also have hooks to provision the physical networks</strong>.</p>
+
+<p>An IaaS must allow different users to create isolated network of virtual machines. But these virtual machines and the networks will be instantiated on the shared physical devices. These concepts can be understood using a picture.</p>
+
+
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2014/Multiple-Virtual-Networks-VLAN.png" alt="OpenStack Networking"/>
+    </div>
+    <a href="/blogs/images/2014/Multiple-Virtual-Networks-VLAN.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>OpenStack Networking</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>In the diagram above, two OpenStack users (also referred to as Tenants), create virtual machines for their own purposes. The VMs for each tenant are color coded. In order to keep their virtual network traffic isolated, they are assigned different VLANs by OpenStack. And these VLANs must be provisioned on both physical and virtual networks to provide full isolation of traffic. Note: OpenStack supports several other techniques for isolation of traffic, in addition to VLAN.</p>
+
+<h2 id="how-openstack-supports-physical-and-virtual-network-configuration">How OpenStack supports physical and virtual network configuration?</h2>
+
+<p>Lets take a quick look at the steps an OpenStack user takes to create a network and few virtual machines.</p>
+
+<ul>
+<li>Step 1 - User logs into the OpenStack GUI (Horizon Dashboard).</li>
+<li>Step 2 - User creates a network. The OpenStack Network is a software entity that represents the <em>whole network of virtual machines</em>.</li>
+<li>Step 3 - User creates an instance. The instance is a term used to represent virtual machines. During this step, the user is asked to <em>choose the network</em> that he would like to associate with the virtual machines.</li>
+</ul>
+
+<p>If you notice, the user is not asked to choose the hypervisor host or the physical switch or the VLANs for traffic isolation. In order to handle the above user actions, different OpenStack services interact behind the screen.</p>
+
+<p>Networking in OpenStack is supported by the ‘Neutron’ service. The creation and booting up of virtual machine is carried out by Nova service. Let us know look at how these services interact to configure the physical and virtual networks.</p>
+
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2014/OpenStack-Networking-Workflow.png" alt="OpenStack Networking Workflow"/>
+    </div>
+    <a href="/blogs/images/2014/OpenStack-Networking-Workflow.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>OpenStack Networking Workflow</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>In Step 2, the user creates a Network. The UI Service (Horizon) forwards the request to Neutron which creates the entries in the database and also <em>associates a VLAN</em> for this network.</p>
+
+<p>In Step 3, the user creates one or more virtual machines. The Horizon service sends the request to Nova which looks at different compute nodes and creates the VM on the least loaded compute server. Nova then sends a message to <strong><em>create port</em></strong> on the network for each virtual machine. Nova also sends the network name as part of this message. This ‘create port’ action is equivalent to plugging a network cable between a server and the adjacent switch.</p>
+
+<p>Note: as part of this step, the VLANs have to be configured on the virtual switches as well as the physical switches.</p>
+
+<p>Neutron supports the concept of plugins (in newer release the terminology has changed) which eventually handle <em>all the provisioning requests</em>. These plugins are capable of supporting different virtual networking technologies such as Linux bridge or Open vSwitch (OVS).</p>
+
+<p>In addition, different physical networking vendors have developed their own plugins, which can be used to configure the physical network with VLANs etc.</p>
+
+<p>The ‘create network’ and ‘create port’ are the most important OpenStack networking API calls. There are many other important APIs and objects in Neutron. We will go deeper into OpenStack networking in subsequent blogs.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>We have seen the need for cloud platforms such as OpenStack to support physical and virtual network configurations in order to support IaaS functionality. Since a cloud system can be built with networking equipment from different vendors, OpenStack networking service (Neutron) supports the concept of plugins. With plugins, Neutron can focus on provide crucial IaaS related networking functionality and delegate vendor-specific configurations to plugins.</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/horizon/">Horizon</a>
+          
+          <a href="/blogs/tags/network/">Network</a>
+          
+          <a href="/blogs/tags/neutron/">Neutron</a>
+          
+          <a href="/blogs/tags/nova/">Nova</a>
+          
+          <a href="/blogs/tags/openstack/">OpenStack</a>
+          
+          <a href="/blogs/tags/plugin/">Plugin</a>
+          
+          <a href="/blogs/tags/virtual-network/">Virtual Network</a>
+          
+          <a href="/blogs/tags/virtual-switch/">Virtual Switch</a>
+          
+          <a href="/blogs/tags/vlan/">VLAN</a>
+          
+          <a href="/blogs/tags/vm/">VM</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2014/06/09/intel-nuc-dn2820fykh-review/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Intel NUC DN2820FYKH Review</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2014/03/09/kvm-and-qemu/">
+            <span class="next-text nav-default">KVM and QEMU – do you know the connection?</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

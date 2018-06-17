@@ -158,12 +158,12 @@ if (!doNotTrack) {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/">
+        <a href="http://reachsrirams.github.io/">
           Home
         </a>
       </li><li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/post/">
-          Archives
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
         </a>
       </li><li class="mobile-menu-item">
         <a href="http://reachsrirams.github.io/blogs/tags/">
@@ -256,7 +256,10 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
           
 
         
@@ -267,7 +270,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
           
 
         
@@ -337,7 +340,7 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#problem-description">Problem description</a></li>
 <li><a href="#solution-overview">Solution overview</a></li>
-<li><a href="#solution-in-depth-8211-deploying-using-docker">Solution in depth &#8211; deploying using Docker</a></li>
+<li><a href="#solution-in-depth-deploying-using-docker">Solution in depth - deploying using Docker</a></li>
 <li><a href="#the-code">The Code</a></li>
 </ul></li>
 </ul></li>
@@ -360,7 +363,7 @@ if (!doNotTrack) {
 
 <p>While standard web servers can serve static HTML pages, the REST API processing requires web servers to support programming languages. Depending on the language the web servers for handling REST APIs can by built using NodeJS (JavaScript) or Bottle/Flask (Python) for example. But tools like NodeJS and Bottle etc do not support standard web server features like caching, proxying etc, which are useful for static web pages. So the common solution is to use both regular web servers like apache or nginx (proxy) for web pages and use NodeJS etc for REST APIs.</p>
 
-<h3 id="solution-in-depth-8211-deploying-using-docker">Solution in depth &#8211; deploying using Docker</h3>
+<h3 id="solution-in-depth-deploying-using-docker">Solution in depth - deploying using Docker</h3>
 
 <p>For this Docker learning exercise we will deploy two containers - one running nginx and another running NodeJS. The ngnix server will handle <em>all</em> incoming HTTP/S requests. However it will <em>proxy</em> the REST API requests to the NodeJS process and handle the UI pages itself.</p>
 

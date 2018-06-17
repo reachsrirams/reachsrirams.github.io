@@ -17,8 +17,9 @@
       <pubDate>Sun, 14 Jun 2015 14:58:44 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/</guid>
-      <description>The best way to learn OpenStack is by installing, running and playing with it directly. While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.
-In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation.</description>
+      <description>&lt;p&gt;The best way to learn OpenStack is by installing, running and playing with it directly. In this blog, I will share the details of the VirtualBox based multi-node OpenStack installation. I will be focusing &lt;strong&gt;only on the networking aspects when using VirtualBox&lt;/strong&gt;. I will also share some tips that are important in this deployment. This blog will not cover the steps to install and create a virtual machine using VirtualBox.
+
+While most people use DevStack to accomplish this I prefer to setup a multi-node installation. This is important for me because much of my work related to OpenStack revolves around Networking. Another reason is that a multi-node installation is what real users of OpenStack will also be deploying.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,7 +28,7 @@ In this blog, I will share the details of the VirtualBox based multi-node OpenSt
       <pubDate>Mon, 26 Jan 2015 16:19:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2015/01/26/using-mac-table-linux-bridge-wilt/</guid>
-      <description>&lt;p&gt;In an &lt;a href=&#34;http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/&#34; title=&#34;Linux Bridge and Virtual Networking&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
+      <description>&lt;p&gt;In an &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2013/12/02/linux-bridge-virtual-networking/&#34;&gt;earlier blog&lt;/a&gt;, I have talked about Linux bridge based virtual networking. Recently as part of a comment on my blog, I learnt how to view and interpret the MAC table of Linux bridge. In this installment of WILT (What I Learnt Today) series, I will share how MAC Table can be used for troubleshooting Linux bridges.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -38,9 +39,19 @@ In this blog, I will share the details of the VirtualBox based multi-node OpenSt
       <pubDate>Sun, 09 Mar 2014 18:58:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2014/03/09/kvm-and-qemu/</guid>
-      <description>&lt;p&gt;If you were to ask someone &amp;#8220;what is the most popular open source hypervisor&amp;#8221; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).&lt;/p&gt;
+      <description>&lt;p&gt;If you were to ask someone &amp;ldquo;what is the most popular open source hypervisor&amp;rdquo; chances are that the answer will be KVM. Indeed KVM (or Kernel-based Virtual Machine) has played a key role in the open source Linux based virtualization environment. However is it really a hypervisor? Moreover, can KVM by itself run virtual machines? We will delve more into such questions in this blog. We will also understand the relationship between KVM and QEMU (Quick EMUlator).&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introduction to VMware Virtual Networking</title>
+      <link>http://reachsrirams.github.io/blogs/2014/02/16/introduction-vmware-virtual-networking/</link>
+      <pubDate>Sun, 16 Feb 2014 18:15:07 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2014/02/16/introduction-vmware-virtual-networking/</guid>
+      <description>In the previous blog we saw how Linux supports virtual networking using bridges. VMware vSphere is the most popular hypervisor brand in the world and it is natural that it also supports virtual networking. In fact vSphere supports some very advanced networking functions, that are not available in most of the other hypervisors.
+Let me introduce the key elements of VMware virtual networking. After reading this blog, I recommend that you read the official guide about virtual networking.</description>
     </item>
     
     <item>

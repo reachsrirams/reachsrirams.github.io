@@ -90,11 +90,11 @@
 
 <meta itemprop="datePublished" content="2013-12-02T18:00:47&#43;00:00" />
 <meta itemprop="dateModified" content="2013-12-02T18:00:47&#43;00:00" />
-<meta itemprop="wordCount" content="833">
+<meta itemprop="wordCount" content="860">
 
 
 
-<meta itemprop="keywords" content="brctl,eth0,ethernet,interface,libvirt,Linux,Linux Bridge,NIC,tap,virtual network,Virtualization,VM," />
+<meta itemprop="keywords" content="brctl,ethernet,interface,libvirt,Linux,Linux Bridge,NIC,tap,virtual network,Virtualization,VM,Virtual Switch,vswitch," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux Bridge and Virtual Networking"/>
 <meta name="twitter:description" content="Software defined networking (SDN) is the current wave sweeping the networking industry. And one of the key enablers of SDN is virtual networking. While SDN and virtual networking are in vogue these days, the support for virtual networking is not a recent development. And Linux bridge has been the pioneer in this regard.
@@ -158,12 +158,12 @@ if (!doNotTrack) {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/">
+        <a href="http://reachsrirams.github.io/">
           Home
         </a>
       </li><li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/post/">
-          Archives
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
         </a>
       </li><li class="mobile-menu-item">
         <a href="http://reachsrirams.github.io/blogs/tags/">
@@ -256,7 +256,10 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
           
 
         
@@ -267,7 +270,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
           
 
         
@@ -321,8 +324,8 @@ if (!doNotTrack) {
               <a href="/blogs/categories/virtualization/"> Virtualization </a>
             
           </div>
-        <span class="more-meta"> 833 words </span>
-        <span class="more-meta"> 4 min read </span>
+        <span class="more-meta"> 860 words </span>
+        <span class="more-meta"> 5 min read </span>
       </div>
     </header>
 
@@ -335,7 +338,7 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#linux-bridge-8211-the-basics">Linux Bridge &#8211; The Basics</a></li>
+<li><a href="#linux-bridge-the-basics">Linux Bridge - The Basics</a></li>
 <li><a href="#the-simple-use-case">The Simple Use Case</a></li>
 <li><a href="#step-by-step-guide">Step-by-step guide</a></li>
 <li><a href="#let-us-connect-the-interfaces">Let us connect the interfaces</a></li>
@@ -351,43 +354,74 @@ if (!doNotTrack) {
 
 <p></p>
 
-<h2 id="linux-bridge-8211-the-basics">Linux Bridge &#8211; The Basics</h2>
+<h2 id="linux-bridge-the-basics">Linux Bridge - The Basics</h2>
 
-<p><a href="http://www.innervoice.in/blogs/2012/08/16/understanding-virtual-networks-the-basics/" target="_blank">Virtual networking requires the presence of a virtual switch </a>inside a server/hypervisor. Even though it is called a bridge, <span style="text-decoration: underline;">the Linux bridge is really a virtual switch</span> and used with KVM/QEMU hypervisor. Linux Bridge is a kernel module, first introduced in 2.2 kernel (circa 2000). And it is administered using <em>brctl</em> command on Linux.</p>
+<p><a href="/blogs/2012/08/16/understanding-virtual-networks-the-basics/">Virtual networking requires the presence of a virtual switch</a> inside a server/hypervisor. Even though it is called a bridge, <em><strong>the Linux bridge is really a virtual switch</strong></em> and used with KVM/QEMU hypervisor. Linux Bridge is a kernel module, first introduced in 2.2 kernel (circa 2000). And it is administered using <em>brctl</em> command on Linux.</p>
 
 <h2 id="the-simple-use-case">The Simple Use Case</h2>
 
 <p>Now we will delve a bit more into Linux bridge by looking at a very basic use case. Let us say that you want to create a VM on your KVM-enabled Linux server (host). Among other things, this VM will be configured with one virtual NIC. In order to give Internet connectivity to this VM, we will have to associate the virtual NIC of the VM to the physical NIC of the server. This <em>association</em> is facilitated by the Linux bridge. Here is a picture of what we want to accomplish:</p>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase.png"><img class=" wp-image-907  aligncenter" alt="Simple Use Case for Linux Bridge" src="http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase.png" width="743" height="175" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase.png 1238w, http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase-300x71.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase-768x181.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2013/11/Linux-Bridge-Simple-UseCase-1024x241.png 1024w" sizes="(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px" /></a>
-</p>
+
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2013/Linux-Bridge-Simple-UseCase.png" alt="Simple Use Case for Linux Bridge"/>
+    </div>
+    <a href="/blogs/images/2013/Linux-Bridge-Simple-UseCase.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Simple Use Case for Linux Bridge</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>The above picture is based on my home Ubuntu laptop running KVM. I am using the wireless connection so that the laptop itself has network connectivity. But to illustrate Linux bridge capability, I will create a VM and associate it to my wired NIC port on the same laptop. The newly created VM will get its IP address etc (via DHCP) from the router in the middle.</p>
 
 <h2 id="step-by-step-guide">Step-by-step guide</h2>
 
-<p><strong>Step &#8211; 1: </strong>The first step is to create a Linux bridge using the <em>brctl</em> command. <strong>Note:</strong> for more ways to create Linux bridges (depends on you distro) &#8211; <a href="http://xmodulo.com/2013/04/how-to-configure-linux-bridge-interface.html" target="_blank">check this out</a>.</p>
+<p><strong>Step - 1: </strong>The first step is to create a Linux bridge using the <em>brctl</em> command. <strong>Note:</strong> for more ways to create Linux bridges (depends on you distro) - <a href="http://xmodulo.com/2013/04/how-to-configure-linux-bridge-interface.html">check this out</a>.</p>
 
 <pre># sudo brctl addbr kvmbr0</pre>
 
-<p><strong>Step &#8211; 2: </strong>The next step is to associate the physical NIC of the server (eth0) to this bridge. <strong>Note:</strong>&#8211; prior to this step ensure that the physical NIC does not have any IP address configured.</p>
+<p><strong>Step - 2: </strong>The next step is to associate the physical NIC of the server (eth0) to this bridge. <strong>Note:</strong>- prior to this step ensure that the physical NIC does not have any IP address configured.</p>
 
 <pre># sudo brctl addif kvmbr0 eth0</pre>
 
 <p>At the end of these two steps, the network configuration would look something like this. Note that the <em>kvmbr0</em> Linux bridge has only one interface at this time (eth0).</p>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config.png"><img class="aligncenter  wp-image-915" alt="Linux Bridge Interface Config Sample" src="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config.png" width="507" height="324" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config.png 724w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Interface-Config-300x192.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></a>
-</p>
 
-<p><strong>Step &#8211; 3:</strong> The next step is to create a Virtual Machine and ensure that it uses the Linux bridge created above for the virtual networking. For this blog, I will demonstrate this step using &#8220;Virtual Machine Manager&#8221; (VMM) which is a GUI for <em>libvirt</em>. Here is a screenshot on how you can associate the Linux Bridge to a VM.**</p>
 
-<p>**</p>
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2013/Linux-Bridge-Interface-Config.png" alt="Linux Bridge Interface Config Sample"/>
+    </div>
+    <a href="/blogs/images/2013/Linux-Bridge-Interface-Config.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Linux Bridge Interface Config Sample</p>
+      </figcaption>
+  </figure>
+</div>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager.png"><img class="aligncenter  wp-image-918" alt="Associate Linux Bridge to a VM" src="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager.png" width="386" height="405" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager.png 552w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Linux-Bridge-Virt-Manager-286x300.png 286w" sizes="(max-width: 386px) 100vw, 386px" /></a>
-</p>
+
+<p><strong>Step - 3:</strong> The next step is to create a Virtual Machine and ensure that it uses the Linux bridge created above for the virtual networking. For this blog, I will demonstrate this step using &ldquo;Virtual Machine Manager&rdquo; (VMM) which is a GUI for <em>libvirt</em>. Here is a screenshot on how you can associate the Linux Bridge to a VM.**</p>
+
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2013/Linux-Bridge-Virt-Manager.png" alt="Associate Linux Bridge to a VM"/>
+    </div>
+    <a href="/blogs/images/2013/Linux-Bridge-Virt-Manager.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Associate Linux Bridge to a VM</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>Once the virtual machine is created and booted up, you will see that the virtual machine has external network connectivity.</p>
 
@@ -395,11 +429,22 @@ if (!doNotTrack) {
 
 <p>The output of _brctl_ <em>show</em> command shows that there is another interface on the _kvmbr0_ Linux bridge. This interface <strong><em>vnet0</em> is a virtual interface created by libvirt</strong> (VMM) as seen in the screenshot here. This virtual interface is also called a <strong><em>tap interface</em></strong>. You can see from the PS command that the _KVM/QEMU _command that started the VM, uses a <em>tap</em> interface as a network device. <em>More about this in the next post.</em></p>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28.png"><img class="aligncenter  wp-image-929" alt="Linux Bridge with Virtual Interface" src="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28.png" width="633" height="412" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28.png 904w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28-300x195.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_43_28-768x500.png 768w" sizes="(max-width: 633px) 100vw, 633px" /></a>
-</p>
 
-<p>Now just like you connect an Ethernet (RJ-45) cable from a physical NIC to an port (interface) on a physical switch, the VM&#8217;s virtual NIC is connected to this virtual _tap_ interface on the Linux bridge. The below screenshot highlights the relationship between the VM&#8217;s virtual NIC and the Linux Bridge tap interface.</p>
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2013/Screenshot-2013-12-02-22_43_28.png" alt="Linux Bridge with Virtual Interface"/>
+    </div>
+    <a href="/blogs/images/2013/Screenshot-2013-12-02-22_43_28.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Linux Bridge with Virtual Interface</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<p>Now just like you connect an Ethernet (RJ-45) cable from a physical NIC to an port (interface) on a physical switch, the VM&rsquo;s virtual NIC is connected to this virtual _tap_ interface on the Linux bridge. The below screenshot highlights the relationship between the VM&rsquo;s virtual NIC and the Linux Bridge tap interface.</p>
 
 <ol>
 <li>The first thing to notice is the similarities in the MAC address of vnet0 (on the host server) and the eth0 (virtual NIC in the VM).</li>
@@ -407,9 +452,20 @@ if (!doNotTrack) {
 <li>Finally, we can see that the Virtual NIC has been configured with IP address and gateway etc. This configuration is done using the DHCP server on my physical router. This implies that virtual NIC has external network connectivity.</li>
 </ol>
 
-<p style="text-align: center;">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24.png"><img class="aligncenter  wp-image-930" alt="VM NIC to Tap Interface relationship" src="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24.png" width="820" height="461" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24.png 1366w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24-300x169.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24-768x432.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2013/12/Screenshot-2013-12-02-22_46_24-1024x576.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a>
-</p>
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2013/Screenshot-2013-12-02-22_46_24.png" alt="VM NIC to Tap Interface relationship"/>
+    </div>
+    <a href="/blogs/images/2013/Screenshot-2013-12-02-22_46_24.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>VM NIC to Tap Interface relationship</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>To summarize:</p>
 
@@ -417,8 +473,8 @@ if (!doNotTrack) {
 <li>We created a Linux bridge and added a physical NIC interface of the host.</li>
 <li>Then while creating a VM, we specified the Linux bridge to be used for virtual networking.</li>
 <li>The Virtual Machine Manager (libvirt GUI) did some behind-the-scene work to associate the Virtual NIC to the Linux bridge and in turn to the Physical NIC.</li>
-<li>We then observed how the VM&#8217;s virtual NIC is associated to the virtual <em>tap</em> interface on the host. And how the tap interface is added to the Linux bridge.</li>
-<li>This shows that the traffic will flow from the VM&#8217;s virtual NIC to the <em>vnet0</em> tap interface, then onto the Linux bridge (virtual switch) which will send it out on the other virtual switch interface (eth0) on the host.</li>
+<li>We then observed how the VM&rsquo;s virtual NIC is associated to the virtual <em>tap</em> interface on the host. And how the tap interface is added to the Linux bridge.</li>
+<li>This shows that the traffic will flow from the VM&rsquo;s virtual NIC to the <em>vnet0</em> tap interface, then onto the Linux bridge (virtual switch) which will send it out on the other virtual switch interface (eth0) on the host.</li>
 </ul>
 
 <p>In the next blog post, we will understand what happened behind-the-scene.</p>
@@ -434,8 +490,6 @@ if (!doNotTrack) {
       <div class="post-tags">
           
           <a href="/blogs/tags/brctl/">brctl</a>
-          
-          <a href="/blogs/tags/eth0/">eth0</a>
           
           <a href="/blogs/tags/ethernet/">ethernet</a>
           
@@ -456,6 +510,10 @@ if (!doNotTrack) {
           <a href="/blogs/tags/virtualization/">Virtualization</a>
           
           <a href="/blogs/tags/vm/">VM</a>
+          
+          <a href="/blogs/tags/virtual-switch/">Virtual Switch</a>
+          
+          <a href="/blogs/tags/vswitch/">vswitch</a>
           
         </div>
 

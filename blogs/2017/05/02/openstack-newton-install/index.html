@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Sriram S" />
-  <meta name="description" content="Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release." />
+  <meta name="description" content="Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;rsquo;s latest release." />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -58,7 +58,7 @@
 
 
 <meta property="og:title" content="Newton release install scripts for OpenStack" />
-<meta property="og:description" content="Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&#8217;s latest release." />
+<meta property="og:description" content="Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&rsquo;s latest release." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2017/05/02/openstack-newton-install/" />
 
@@ -79,19 +79,19 @@
 
 
 <meta itemprop="name" content="Newton release install scripts for OpenStack">
-<meta itemprop="description" content="Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&#8217;s latest release.">
+<meta itemprop="description" content="Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&rsquo;s latest release.">
 
 
 <meta itemprop="datePublished" content="2017-05-02T05:07:42&#43;00:00" />
 <meta itemprop="dateModified" content="2017-05-02T05:07:42&#43;00:00" />
-<meta itemprop="wordCount" content="315">
+<meta itemprop="wordCount" content="314">
 
 
 
 <meta itemprop="keywords" content="install,keystone,Neutron,newton,Nova,OpenStack,Ubuntu," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Newton release install scripts for OpenStack"/>
-<meta name="twitter:description" content="Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&#8217;s latest release."/>
+<meta name="twitter:description" content="Newton is one the recent releases of OpenStack. I would like to share scripts that can be used to install the Newton release of OpenStack on Ubuntu 16.04 as per the installation guide. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&rsquo;s latest release."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -150,12 +150,12 @@ if (!doNotTrack) {
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/">
+        <a href="http://reachsrirams.github.io/">
           Home
         </a>
       </li><li class="mobile-menu-item">
-        <a href="http://reachsrirams.github.io/blogs/post/">
-          Archives
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
         </a>
       </li><li class="mobile-menu-item">
         <a href="http://reachsrirams.github.io/blogs/tags/">
@@ -248,7 +248,10 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Home</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
           
 
         
@@ -259,7 +262,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/post/">Archives</a>
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
           
 
         
@@ -313,7 +316,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/technology/"> Technology </a>
             
           </div>
-        <span class="more-meta"> 315 words </span>
+        <span class="more-meta"> 314 words </span>
         <span class="more-meta"> 2 min read </span>
       </div>
     </header>
@@ -328,7 +331,7 @@ if (!doNotTrack) {
 <li>
 <ul>
 <li><a href="#openstack-services-installed">OpenStack services installed</a></li>
-<li><a href="#what-8217-s-new-in-newton-in-terms-of-installation">What&#8217;s new in Newton in terms of Installation?</a></li>
+<li><a href="#what-s-new-in-newton-in-terms-of-installation">What&rsquo;s new in Newton in terms of Installation?</a></li>
 <li><a href="#newton-install-scripts-on-github">Newton install scripts on GitHub</a></li>
 <li><a href="#prerequisites">Prerequisites</a></li>
 <li><a href="#installation-steps">Installation steps</a></li>
@@ -343,7 +346,7 @@ if (!doNotTrack) {
     <div class="post-content">
       
 
-<p>Newton is one the recent releases of OpenStack.  I would like to share scripts that can be used to install the <a href="https://docs.openstack.org/newton/install-guide-ubuntu/">Newton release of OpenStack on Ubuntu 16.04 as per the installation guide</a>. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&#8217;s latest release.</p>
+<p>Newton is one the recent releases of OpenStack.  I would like to share scripts that can be used to install the <a href="https://docs.openstack.org/newton/install-guide-ubuntu/">Newton release of OpenStack on Ubuntu 16.04 as per the installation guide</a>. As part of my blogging, book writing projects, I have the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&rsquo;s latest release.</p>
 
 <h2 id="openstack-services-installed">OpenStack services installed</h2>
 
@@ -357,7 +360,7 @@ if (!doNotTrack) {
 <li>Horizon (Dashboard)</li>
 </ul>
 
-<h2 id="what-8217-s-new-in-newton-in-terms-of-installation">What&#8217;s new in Newton in terms of Installation?</h2>
+<h2 id="what-s-new-in-newton-in-terms-of-installation">What&rsquo;s new in Newton in terms of Installation?</h2>
 
 <p>Here are some changes in the installation steps of OpenStack Newton release.</p>
 
@@ -367,26 +370,34 @@ if (!doNotTrack) {
 <li>For Nova and Neutron, the OSLO configuration steps are not required</li>
 <li>The rabbitmq configuration steps are different in Newton release</li>
 <li>For Neutron Linux Bridge agent, the bridge name must be <em>provider</em></li>
-<li><strong>Important</strong> &#8211; Newton release does not ship with any Flavors for instances. This means that users need to create at least one flavor before they can spawn their first VM instance.</li>
+<li><strong>Important</strong> - Newton release does not ship with any Flavors for instances. This means that users need to create at least one flavor before they can spawn their first VM instance.</li>
 </ol>
 
 <h2 id="newton-install-scripts-on-github">Newton install scripts on GitHub</h2>
 
-<p>All the scripts are available as an open source package (Apache License). You can get the source code <a href="https://goo.gl/Jac2bv" target="_blank">from my GitHub repository</a>. I welcome you to fork the repo and enhance/extend it.</p>
+<p>All the scripts are available as an open source package (Apache License). You can get the source code <a href="https://goo.gl/Jac2bv">from my GitHub repository</a>. I welcome you to fork the repo and enhance/extend it.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
 <p><em>git</em> binaries must be installed on your Ubuntu server. This is needed to checkout the scripts to your Ubuntu server.</p>
 
-<p>If you are using VirtualBox, <a href="http://goo.gl/VTJVmv" target="_blank">refer to this blog for Network settings</a>.</p>
+<p>If you are using VirtualBox, <a href="http://goo.gl/VTJVmv">refer to this blog for Network settings.</a></p>
 
 <h2 id="installation-steps">Installation steps</h2>
 
 <p>The GitHub repository includes details about the installation steps.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02.png"><img class="aligncenter size-large wp-image-1492" src="http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-1024x887.png" alt="OpenStack Newton install scripts" width="620" height="537" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-1024x887.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-300x260.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2017/05/Screenshot-2017-05-02-10.24.02-768x665.png 768w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
 
-<p>&nbsp;</p>
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2017/Screenshot-2017-05-02-10.24.02.png" />
+    </div>
+    <a href="/blogs/images/2017/Screenshot-2017-05-02-10.24.02.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
 
 <h2 id="next-steps">Next steps</h2>
 

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Introduction to VMware Virtual Networking - Sriram S - Innervoice</title>
+  <link rel="alternate" hreflang="en" href="http://reachsrirams.github.io/blogs/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Sriram S" />
+  <meta name="description" content="In the previous blog we saw how Linux supports virtual networking using bridges. VMware vSphere is the most popular hypervisor brand in the world and it is natural that it also supports virtual networking. In fact vSphere supports some very advanced networking functions, that are not available in most of the other hypervisors.
+Let me introduce the key elements of VMware virtual networking. After reading this blog, I recommend that you read the official guide about virtual networking." />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="canonical" href="http://reachsrirams.github.io/blogs/2014/02/16/introduction-vmware-virtual-networking/" />
+
+
+
+<link rel="icon" href="/blogs/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/blogs/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Introduction to VMware Virtual Networking" />
+<meta property="og:description" content="In the previous blog we saw how Linux supports virtual networking using bridges. VMware vSphere is the most popular hypervisor brand in the world and it is natural that it also supports virtual networking. In fact vSphere supports some very advanced networking functions, that are not available in most of the other hypervisors.
+Let me introduce the key elements of VMware virtual networking. After reading this blog, I recommend that you read the official guide about virtual networking." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://reachsrirams.github.io/blogs/2014/02/16/introduction-vmware-virtual-networking/" />
+
+
+
+<meta property="article:published_time" content="2014-02-16T18:15:07&#43;00:00"/>
+
+<meta property="article:modified_time" content="2014-02-16T18:15:07&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Introduction to VMware Virtual Networking">
+<meta itemprop="description" content="In the previous blog we saw how Linux supports virtual networking using bridges. VMware vSphere is the most popular hypervisor brand in the world and it is natural that it also supports virtual networking. In fact vSphere supports some very advanced networking functions, that are not available in most of the other hypervisors.
+Let me introduce the key elements of VMware virtual networking. After reading this blog, I recommend that you read the official guide about virtual networking.">
+
+
+<meta itemprop="datePublished" content="2014-02-16T18:15:07&#43;00:00" />
+<meta itemprop="dateModified" content="2014-02-16T18:15:07&#43;00:00" />
+<meta itemprop="wordCount" content="582">
+
+
+
+<meta itemprop="keywords" content="DVS,Port Group,Uplink,VDS,Virtual Switch,VLAN,VMware,Virtual Network,vswitch," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Introduction to VMware Virtual Networking"/>
+<meta name="twitter:description" content="In the previous blog we saw how Linux supports virtual networking using bridges. VMware vSphere is the most popular hypervisor brand in the world and it is natural that it also supports virtual networking. In fact vSphere supports some very advanced networking functions, that are not available in most of the other hypervisors.
+Let me introduce the key elements of VMware virtual networking. After reading this blog, I recommend that you read the official guide about virtual networking."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-26491607-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+<style>
+	.post {
+		padding: 1em 2em;
+		margin: 0 2em 1em;
+	}
+	.content-wrapper {
+		padding: 1em 0 1px;
+	}
+	.post-header {
+		font-size: 1.0em;
+		font-weight: 600;
+	}
+	.post-content {
+		font-size: 16px;
+	}
+	.logo {
+		font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+	}
+</style>
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blogs/" class="logo">Sriram Subramanian</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/">
+          Blogs
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="http://reachsrirams.github.io/blogs/categories/">
+          Categories
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/blogs/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/blogs/" class="logo">
+    
+      Sriram Subramanian
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/" rel="noopener" target="_blank">
+              Home
+            <i class="iconfont icon-new-window"></i>
+            </a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/">Blogs</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://reachsrirams.github.io/blogs/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Introduction to VMware Virtual Networking</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2014-02-16 </span>
+        <div class="post-category">
+            
+              <a href="/blogs/categories/networking/"> Networking </a>
+            
+              <a href="/blogs/categories/tech-nuggets/"> Tech Nuggets </a>
+            
+              <a href="/blogs/categories/technology/"> Technology </a>
+            
+              <a href="/blogs/categories/virtualization/"> Virtualization </a>
+            
+          </div>
+        <span class="more-meta"> 582 words </span>
+        <span class="more-meta"> 3 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#vmware-virtual-networking-pictorial-overview">VMware Virtual Networking - pictorial overview</a></li>
+<li><a href="#virtual-switch">Virtual Switch</a></li>
+<li><a href="#virtual-port">Virtual Port</a></li>
+<li><a href="#port-group">Port Group</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>In the <a href="/blogs/2013/12/02/linux-bridge-virtual-networking/">previous blog</a> we saw how Linux supports virtual networking using bridges. VMware vSphere is the most popular hypervisor brand in the world and it is natural that it also supports virtual networking. In fact vSphere supports some very advanced networking functions, that are not available in most of the other hypervisors.</p>
+
+<p>Let me introduce the key elements of VMware virtual networking. <strong>After reading this blog</strong>, I recommend that you read the official <a href="https://www.vmware.com/files/pdf/virtual_networking_concepts.pdf">guide about virtual networking</a>.</p>
+
+<h2 id="vmware-virtual-networking-pictorial-overview">VMware Virtual Networking - pictorial overview</h2>
+
+<p>Here is a picture that captures the important entities part of VMware virtual networking.</p>
+
+
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2014/VMware-Virt-Net.png" alt="Components of VMware Virtual Networking"/>
+    </div>
+    <a href="/blogs/images/2014/VMware-Virt-Net.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Components of VMware Virtual Networking</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<h2 id="virtual-switch">Virtual Switch</h2>
+
+<p>The Virtual Switch is the most important entity in a Virtual Network. We have seen this in case of Linux Bridge also.</p>
+
+<p>VMware supports two flavors of virtual switches. These are vSphere Standard Switch (VSS) and vSphere Distributed Switch (VDS). While VSS is available on all editions of vSphere, the distributed switch (VDS) is available only on the Enterprise Plus Edition. In addition, you will need VMware vCenter software to exploit the capabilities of VDS.</p>
+
+<p>The main purpose of VSS and VDS is to support Layer-2 (Ethernet) packet processing and forwarding. They act as the _conduit _for carrying network traffic from virtual machines into the physical network.</p>
+
+<h2 id="virtual-port">Virtual Port</h2>
+
+<p>Virtual ports are supported in two flavors - access port and uplink port. Access ports are used to connect the virtual Ethernet adapter (vNIC) of a VM to the virtual switch. On the other hand, the uplink ports are used to connect the virtual switch to the host&rsquo;s physical Ethernet adapter (pNIC).</p>
+
+<p>The number of ports on a physical switch are limited by the physical dimension of the switch. But virtual switches can support very large number of ports.</p>
+
+<p>But managing large number of ports and their configuration can be a daunting task. In order to ease the management of virtual ports, VMware supports the notion of <strong>Port Group</strong>.</p>
+
+<h2 id="port-group">Port Group</h2>
+
+<p>The <em>main</em> entity that binds a VM&rsquo;s virtual Ethernet adapter (vNIC) to a virtual switch is actually the Port Group. In VMware virtual networking, all networking related operations and management is performed on a Port Group. And Port Group are quite simply a collection of virtual ports. When a VM is created, users have to select the Port Group for every vNIC in the VM. Internally the hypervisor creates a virtual port for this vNIC. <strong>Note:</strong> the virtual port <em>inherits</em> all the configuration from the selected Port Group.</p>
+
+<p>In addition to providing a convenient way to manage virtual ports, the Port Groups play another critical role. The logical separation of a LAN using VLANs is supported using Port Groups. As a user you can configure a VLAN ID on Port Group to logically partition your virtual network.</p>
+
+<p>Even though a Port Group exists as an entity within the hypervisor host, the association of a VLAN to a Port Group, gives it a network-wide flavor. In that sense, a &ldquo;set of Port Groups&rdquo; with same VLAN ID, represents a true virtual network in VMware virtual networking environment.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>The relationship between various entities in VMware Virtual networking can be described as follows:</p>
+
+<ol>
+<li>A virtual switch <em>contains</em> one or more port groups (zero or more for the purists).</li>
+<li>A port group <em>contains</em> one or more virtual ports.</li>
+<li>Access virtual port (or access port group) provides connectivity to a VM&rsquo;s virtual network adapter (vNIC)</li>
+<li>Uplink virtual port (or uplink port group) provides connectivity to the host&rsquo;s physical network adpater (pNIC)</li>
+</ol>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/blogs/tags/dvs/">DVS</a>
+          
+          <a href="/blogs/tags/port-group/">Port Group</a>
+          
+          <a href="/blogs/tags/uplink/">Uplink</a>
+          
+          <a href="/blogs/tags/vds/">VDS</a>
+          
+          <a href="/blogs/tags/virtual-switch/">Virtual Switch</a>
+          
+          <a href="/blogs/tags/vlan/">VLAN</a>
+          
+          <a href="/blogs/tags/vmware/">VMware</a>
+          
+          <a href="/blogs/tags/virtual-network/">Virtual Network</a>
+          
+          <a href="/blogs/tags/vswitch/">vswitch</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/blogs/2014/03/09/kvm-and-qemu/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">KVM and QEMU – do you know the connection?</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/blogs/2014/02/16/goals-first-half-2014/">
+            <span class="next-text nav-default">Goals for the first half of 2014</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'innervoiceblogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://www.twitter.com/reachsrirams" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/reachsrirams" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://www.github.com/reachsrirams" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://reachsrirams.github.io/blogs/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Sriram Subramanian</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/blogs/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blogs/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/blogs/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blogs/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/blogs/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>
