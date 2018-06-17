@@ -17,8 +17,19 @@
       <pubDate>Sun, 22 Jan 2017 17:42:35 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</guid>
-      <description>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;#8220;ports&amp;#8221; in your OpenStack based cloud.
+      <description>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;ldquo;ports&amp;rdquo; in your OpenStack based cloud.
 Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard.</description>
+    </item>
+    
+    <item>
+      <title>PyCharm and OpenStack programming</title>
+      <link>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</link>
+      <pubDate>Sat, 02 Jan 2016 17:43:51 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</guid>
+      <description>&lt;p&gt;OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the &lt;strong&gt;PyCharm IDE&lt;/strong&gt; from Jetbrains for your OpenStack programming. I will use the &lt;strong&gt;Neutron ML2 driver code from my book &lt;a href=&#34;http://goo.gl/TeXSYQ&#34;&gt;OpenStack Networking Cookbook&lt;/a&gt; to guide you&lt;/strong&gt; in setting up the PyCharm IDE.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

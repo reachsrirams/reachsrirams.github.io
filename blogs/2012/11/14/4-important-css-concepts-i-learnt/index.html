@@ -25,7 +25,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Sriram S" />
-  <meta name="description" content="As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts. CSS Box Model " />
+  <meta name="description" content="As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.
+
+" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -60,8 +62,6 @@
 <meta property="og:title" content="4 Important CSS Concepts I learnt" />
 <meta property="og:description" content="As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.
 
-
-  CSS Box Model
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2012/11/14/4-important-css-concepts-i-learnt/" />
@@ -85,14 +85,12 @@
 <meta itemprop="name" content="4 Important CSS Concepts I learnt">
 <meta itemprop="description" content="As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.
 
-
-  CSS Box Model
 ">
 
 
 <meta itemprop="datePublished" content="2012-11-14T07:05:23&#43;00:00" />
 <meta itemprop="dateModified" content="2012-11-14T07:05:23&#43;00:00" />
-<meta itemprop="wordCount" content="525">
+<meta itemprop="wordCount" content="540">
 
 
 
@@ -101,8 +99,6 @@
 <meta name="twitter:title" content="4 Important CSS Concepts I learnt"/>
 <meta name="twitter:description" content="As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.
 
-
-  CSS Box Model
 "/>
 
 <!--[if lte IE 9]>
@@ -328,7 +324,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/technology/"> Technology </a>
             
           </div>
-        <span class="more-meta"> 525 words </span>
+        <span class="more-meta"> 540 words </span>
         <span class="more-meta"> 3 min read </span>
       </div>
     </header>
@@ -338,106 +334,116 @@ if (!doNotTrack) {
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Table of Contents</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#css-box-model">CSS Box Model</a></li>
+<li><a href="#css-reset">CSS Reset</a></li>
+<li><a href="#css-troubleshooting">CSS Troubleshooting</a></li>
+<li><a href="#css-media-query">CSS Media Query</a></li>
+</ul></li>
+</ul>
+</nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p>As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.
+      <p>As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.</p>
 
-<p lang="en-US">
-  <span style="text-decoration: underline;"><strong>CSS Box Model</strong></span>
-</p></p>
+<p></p>
 
-<p lang="en-US">
-  CSS Box Model is the central concept behind CSS. In simplest of terms, CSS Box Model represents the <em>Rectangular</em> <em>Box </em>that wraps every HTML element. By adjusting different Box Model attributes we can create different layouts for web pages as well as position elements for optimum user experience. Here are some great tutorials on CSS Box Model.
-</p>
+<h2 id="css-box-model">CSS Box Model</h2>
 
-<p lang="en-US">
-  <span style="color: #000080;"><span style="text-decoration: underline;"><a href="http://www.w3schools.com/css/css_boxmodel.asp" target="_blank">http://www.w3schools.com/css/css_boxmodel.asp</a></span></span>
-</p>
+<p>CSS Box Model is the central concept behind CSS. In simplest of terms, CSS Box Model represents the <em>Rectangular</em> <em>Box </em>that wraps every HTML element. By adjusting different Box Model attributes we can create different layouts for web pages as well as position elements for optimum user experience. Here are some great tutorials on CSS Box Model.</p>
 
-<p lang="en-US">
-  <span style="color: #000080;"><span style="text-decoration: underline;"><a href="http://www.cssnewbie.com/understanding-the-css-box-model/" target="_blank">http://www.cssnewbie.com/understanding-the-css-box-model/</a></span></span>
-</p>
+<ul>
+<li><a href="http://www.w3schools.com/css/css_boxmodel.asp" target="_blank"><a href="http://www.w3schools.com/css/css_boxmodel.asp">http://www.w3schools.com/css/css_boxmodel.asp</a></a></li>
+<li><a href="http://www.cssnewbie.com/understanding-the-css-box-model/" target="_blank"><a href="http://www.cssnewbie.com/understanding-the-css-box-model/">http://www.cssnewbie.com/understanding-the-css-box-model/</a></a></li>
+</ul>
 
-<p lang="en-US">
-  <span style="text-decoration: underline;"><strong>CSS Reset</strong></span>
-</p>
+<h2 id="css-reset">CSS Reset</h2>
 
-<p lang="en-US">
-  While CSS Box Model is at the core of CSS, anyone learning and experimenting with CSS will probably encounter CSS Reset in the beginning. Let’s understand CSS reset with a short example.
-</p>
+<p>While CSS Box Model is at the core of CSS, anyone learning and experimenting with CSS will probably encounter CSS Reset in the beginning. Let’s understand CSS reset with a short example.</p>
 
-<p lang="en-US">
-  In the screenshot below, there is a simple web page with a H1 tag whose background color has been set. As you can see the <em>box</em> for the H1 tag is placed at a certain distance away from the edge of the browser viewport. This is because the browser has some pre-defined border and padding values for each element&#8217;s box. The gaps are highlighted by the red box.
-</p>
+<p>In the screenshot below, there is a simple web page with a H1 tag whose background color has been set. As you can see the <em>box</em> for the H1 tag is placed at a certain distance away from the edge of the browser viewport. This is because the browser has some pre-defined border and padding values for each element&rsquo;s box. The gaps are highlighted by the red box.</p>
 
-<p lang="en-US">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/11/CSSWithoutReset1.png"><img class="aligncenter size-full wp-image-495" title="CSSWithoutReset" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/11/CSSWithoutReset1.png" alt="Example of CSS without Reset" width="962" height="693" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/11/CSSWithoutReset1.png 962w, http://127.0.0.1/wordpress/wp-content/uploads/2012/11/CSSWithoutReset1-300x216.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2012/11/CSSWithoutReset1-768x553.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a>
-</p>
 
-<p lang="en-US">
-  Next let us force the the border and padding values for H1 tag to be zero. With that the same HTML content is rendered as below. We have effectively <em>reset</em> the browser default values and as a result the H1 element moves all the way to the edge of the browser viewport.
-</p>
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2012/CSSWithoutReset1.png" alt="Example of CSS without Reset"/>
+    </div>
+    <a href="/blogs/images/2012/CSSWithoutReset1.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Example of CSS without Reset</p>
+      </figcaption>
+  </figure>
+</div>
 
-<p lang="en-US">
-  <a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/11/CSSWithReset1.png"><img class="aligncenter size-full wp-image-493" title="CSSWithReset" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/11/CSSWithReset1.png" alt="Example of CSS with Reset" width="960" height="682" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/11/CSSWithReset1.png 960w, http://127.0.0.1/wordpress/wp-content/uploads/2012/11/CSSWithReset1-300x213.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2012/11/CSSWithReset1-768x546.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a>
-</p>
 
-<p lang="en-US">
-  <span style="text-decoration: underline;"><strong>CSS Troubleshooting</strong></span>
-</p>
+<p>Next let us force the the border and padding values for H1 tag to be zero. With that the same HTML content is rendered as below. We have effectively <em>reset</em> the browser default values and as a result the H1 element moves all the way to the edge of the browser viewport.</p>
 
-<p lang="en-US">
-  CSS Box model gives us the capability to place elements anywhere in the browser viewport. But this also means that alignment between various HTML elements has to be spot-on. While browsers such as Firefox and Chrome have advanced developer tools, we can employ a very simple CSS trick to view the alignment and troubleshoot the layout.
-</p>
 
-<p lang="en-US">
-  Just add the following style at the end of all styles or stylesheets in your HTML file.
-</p>
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2012/CSSWithReset1.png" alt="Example of CSS with Reset"/>
+    </div>
+    <a href="/blogs/images/2012/CSSWithReset1.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Example of CSS with Reset</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+<h2 id="css-troubleshooting">CSS Troubleshooting</h2>
+
+<p>CSS Box model gives us the capability to place elements anywhere in the browser viewport. But this also means that alignment between various HTML elements has to be spot-on. While browsers such as Firefox and Chrome have advanced developer tools, we can employ a very simple CSS trick to view the alignment and troubleshoot the layout.</p>
+
+<p>Just add the following style at the end of all styles or stylesheets in your HTML file.</p>
 
 <pre class="lang:css decode:true">* {border-style:dotted; border-color: red}</pre>
 
 <p><strong>Note</strong>: you can choose different border style and/or border color. Once this style is added, every element (represented by *) will have dotted red border. This provides a visual cue to view the alignment of all elements. Here is how the URL Generator web page looks like with this style.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2012/11/WithCSSBorder.png"><img class="aligncenter size-large wp-image-492" title="WithCSSBorder" src="http://127.0.0.1/wordpress/wp-content/uploads/2012/11/WithCSSBorder-1024x485.png" alt="Web page with CSS Border" width="640" height="303" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2012/11/WithCSSBorder-1024x485.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2012/11/WithCSSBorder-300x142.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2012/11/WithCSSBorder-768x364.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2012/11/WithCSSBorder.png 1137w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
 
-<p lang="en-US">
-  <span style="text-decoration: underline;"><strong>CSS Media Query</strong></span>
-</p>
 
-<p lang="en-US">
-  Mobile devices such as tablets and smartphones are increasingly being used to consume content on the Internet. So it is imperative that all websites support flexible layouts to improve the user experience on devices of varying sizes and resolution. Media Query techniques help us implement <em>responsive UI design </em>for different screen sizes and hence address this crucial requirement.
-</p>
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2012/WithCSSBorder.png" alt="Web page with CSS Border"/>
+    </div>
+    <a href="/blogs/images/2012/WithCSSBorder.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Web page with CSS Border</p>
+      </figcaption>
+  </figure>
+</div>
 
-<p lang="en-US">
-  Using media query you can load different CSS files based on device screen sizes. Here is the snippet of my URL Generator HTML file where I have used Media Query:
-</p>
+
+<h2 id="css-media-query">CSS Media Query</h2>
+
+<p>Mobile devices such as tablets and smartphones are increasingly being used to consume content on the Internet. So it is imperative that all websites support flexible layouts to improve the user experience on devices of varying sizes and resolution. Media Query techniques help us implement <em>responsive UI design </em>for different screen sizes and hence address this crucial requirement.</p>
+
+<p>Using media query you can load different CSS files based on device screen sizes. Here is the snippet of my URL Generator HTML file where I have used Media Query:</p>
 
 <pre class="lang:xhtml decode:true">&lt;link rel="stylesheet" media="screen and (min-device-width: 960px)" type="text/css" href="iv.urlgen.css" /&gt;
 &lt;link rel="stylesheet" media="screen and (max-device-width: 800px)" type="text/css" href="iv.urlgen.mobi.css" /&gt;</pre>
 
 <p>As you can see for device with screen width more that 960px (I am considering this as Desktop) I am using a different CSS file. This is probably among the simplest usage of Media query.</p>
 
-<p lang="en-US">
-  Here are some great tutorials on Media Query:
-</p>
+<p>Here are some great tutorials on Media Query:</p>
 
-<p lang="en-US">
-  <span style="color: #000080;"><a href="http://www.adobe.com/devnet/dreamweaver/articles/introducing-media-queries.html" target="_blank">http://www.adobe.com/devnet/dreamweaver/articles/introducing-media-queries.html</a></span>
-</p>
-
-<p lang="en-US">
-  <span style="color: #000080;"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries" target="_blank">http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries</a></span>
-</p>
-
-<p lang="en-US">
-  <span style="color: #000080;"><a href="http://www.htmlgoodies.com/html5/tutorials/an-introduction-to-css3-media-queries.html">http://www.htmlgoodies.com/html5/tutorials/an-introduction-to-css3-media-queries.html</a></span>
-</p>
-
-<p><p lang="en-US"></p>
+<ul>
+<li><span style="color: #000080;"><a href="http://www.adobe.com/devnet/dreamweaver/articles/introducing-media-queries.html" target="_blank"><a href="http://www.adobe.com/devnet/dreamweaver/articles/introducing-media-queries.html">http://www.adobe.com/devnet/dreamweaver/articles/introducing-media-queries.html</a></a></li>
+<li><span style="color: #000080;"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries" target="_blank"><a href="http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries">http://line25.com/tutorials/create-a-responsive-web-design-with-media-queries</a></a></li>
+<li><span style="color: #000080;"><a href="http://www.htmlgoodies.com/html5/tutorials/an-introduction-to-css3-media-queries.html"><a href="http://www.htmlgoodies.com/html5/tutorials/an-introduction-to-css3-media-queries.html">http://www.htmlgoodies.com/html5/tutorials/an-introduction-to-css3-media-queries.html</a>&lt;/a</li>
+</ul>
     </div>
 
     

@@ -697,7 +697,7 @@
   
   <url>
     <loc>http://reachsrirams.github.io/blogs/tags/django/</loc>
-    <lastmod>2017-01-22T17:42:35+00:00</lastmod>
+    <lastmod>2016-12-27T10:31:44+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1172,6 +1172,13 @@
   </url>
   
   <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/ml2/</loc>
+    <lastmod>2016-01-02T17:43:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://reachsrirams.github.io/blogs/tags/more/</loc>
     <lastmod>2014-11-28T09:10:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1391,6 +1398,13 @@
   <url>
     <loc>http://reachsrirams.github.io/blogs/categories/programming/</loc>
     <lastmod>2017-11-26T05:15:30+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://reachsrirams.github.io/blogs/tags/pycharm/</loc>
+    <lastmod>2016-01-02T17:43:51+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

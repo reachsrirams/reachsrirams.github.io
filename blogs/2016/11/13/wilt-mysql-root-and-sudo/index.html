@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Sriram S" />
-  <meta name="description" content="I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;#8220;unix socket&amp;#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+  <meta name="description" content="I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;ldquo;unix socket&amp;rdquo; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
 MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user." />
 
   <meta name="keywords" content="Hugo, theme, jane" />
@@ -59,7 +59,7 @@ MariaDB Install and root user In some earlier versions of MySQL as well as Maria
 
 
 <meta property="og:title" content="WILT – mysql, root and sudo" />
-<meta property="og:description" content="I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &#8220;unix socket&#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+<meta property="og:description" content="I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &ldquo;unix socket&rdquo; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
 MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/" />
@@ -81,20 +81,20 @@ MariaDB Install and root user In some earlier versions of MySQL as well as Maria
 
 
 <meta itemprop="name" content="WILT – mysql, root and sudo">
-<meta itemprop="description" content="I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &#8220;unix socket&#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+<meta itemprop="description" content="I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &ldquo;unix socket&rdquo; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
 MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user.">
 
 
 <meta itemprop="datePublished" content="2016-11-13T16:44:06&#43;00:00" />
 <meta itemprop="dateModified" content="2016-11-13T16:44:06&#43;00:00" />
-<meta itemprop="wordCount" content="569">
+<meta itemprop="wordCount" content="597">
 
 
 
 <meta itemprop="keywords" content="mariadb,mysql,root,sudo," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WILT – mysql, root and sudo"/>
-<meta name="twitter:description" content="I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &#8220;unix socket&#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+<meta name="twitter:description" content="I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &ldquo;unix socket&rdquo; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
 MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user."/>
 
 <!--[if lte IE 9]>
@@ -320,7 +320,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/wilt/"> WILT </a>
             
           </div>
-        <span class="more-meta"> 569 words </span>
+        <span class="more-meta"> 597 words </span>
         <span class="more-meta"> 3 min read </span>
       </div>
     </header>
@@ -350,7 +350,7 @@ if (!doNotTrack) {
     <div class="post-content">
       
 
-<p>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &#8220;unix socket&#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.</p>
+<p>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &ldquo;unix socket&rdquo; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.</p>
 
 <h2 id="mariadb-install-and-root-user">MariaDB Install and root user</h2>
 
@@ -360,25 +360,92 @@ if (!doNotTrack) {
 
 <p>As a first step we will set a specific password for root user using mysql_secure_installation command. The screenshot below shows how this can be performed. Note: after setting password the command will ask few more questions whose answer are not directly relevant for this blog.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08.png"><img class="aligncenter wp-image-1434 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08-1024x879.png" alt="mysql_secure_installation command to change root password" width="620" height="532" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08-1024x879.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08-300x258.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08-768x659.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.32.08.png 1202w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2016/Screenshot-2016-10-09-22.32.08.png" alt="mysql_secure_installation command to change root password"/>
+    </div>
+    <a href="/blogs/images/2016/Screenshot-2016-10-09-22.32.08.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>mysql_secure_installation command to change root password</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <h2 id="logging-into-the-mysql-client">Logging into the mysql client</h2>
 
 <p>Now we will see what happens if I try to access the mysql client using the root DB user. As shown below, even though mysql client prompts for root password, the authentication actually fails.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.44.03.png"><img class="aligncenter wp-image-1435 size-full" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.44.03.png" alt="mysql command using root" width="998" height="156" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.44.03.png 998w, http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.44.03-300x47.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/10/Screenshot-2016-10-09-22.44.03-768x120.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></p>
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2016/Screenshot-2016-10-09-22.44.03.png" alt="mysql command using root"/>
+    </div>
+    <a href="/blogs/images/2016/Screenshot-2016-10-09-22.44.03.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>mysql command using root</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <h2 id="logging-in-using-sudo">Logging in using sudo</h2>
 
 <p>Next I will try to access the mysql client with sudo.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02.png"><img class="aligncenter wp-image-1444 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02-1024x317.png" alt="mysql command using sudo and password" width="620" height="192" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02-1024x317.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02-300x93.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02-768x238.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.02.png 1286w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2016/Screenshot-2016-11-13-21.44.02.png" alt="mysql command using sudo and password"/>
+    </div>
+    <a href="/blogs/images/2016/Screenshot-2016-11-13-21.44.02.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>mysql command using sudo and password</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>As shown above, now when you enter the correct password for root DB user, you will be able to access the database. And this is where things start to get interesting. Even if you enter a wrong password, you will notice that you can access the MySQL client as root user.</p>
 
 <p>Next try accessing the MySQL without the -p option and without even the -u option, <strong>but with sudo_._ </strong>As shown below, in both cases you will be able to login into the MySQL client.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25.png"><img class="aligncenter wp-image-1445 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25-1024x294.png" alt="mysql without -p option" width="620" height="178" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25-1024x294.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25-300x86.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25-768x221.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.25.png 1274w" sizes="(max-width: 620px) 100vw, 620px" /></a><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42.png"><img class="aligncenter wp-image-1446 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42-1024x278.png" alt="mysql without -u option" width="620" height="168" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42-1024x278.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42-300x82.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42-768x209.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.44.42.png 1266w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2016/Screenshot-2016-11-13-21.44.25.png" alt="mysql without -p option"/>
+    </div>
+    <a href="/blogs/images/2016/Screenshot-2016-11-13-21.44.25.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>mysql without -p option</p>
+      </figcaption>
+  </figure>
+</div>
+
+
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2016/Screenshot-2016-11-13-21.44.42.png" alt="mysql without -u option"/>
+    </div>
+    <a href="/blogs/images/2016/Screenshot-2016-11-13-21.44.42.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>mysql without -u option</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>So it seems that with sudo mysql, we can get access to root DB user without any other authentication other than the one prompted by sudo.</p>
 
@@ -386,7 +453,20 @@ if (!doNotTrack) {
 
 <p>To understand what is going on, let us look at the user table inside the mysql database. Once you have successfully logged into the MySQL client, you can execute the SQL query shown below.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27.png"><img class="aligncenter wp-image-1447 size-large" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27-1024x196.png" alt="SQL query showing plugin" width="620" height="119" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27-1024x196.png 1024w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27-300x57.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27-768x147.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/11/Screenshot-2016-11-13-21.47.27.png 1296w" sizes="(max-width: 620px) 100vw, 620px" /></a></p>
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2016/Screenshot-2016-11-13-21.47.27.png" alt="SQL query showing plugin"/>
+    </div>
+    <a href="/blogs/images/2016/Screenshot-2016-11-13-21.47.27.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>SQL query showing plugin</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>The most important column here is the <strong>plugin</strong> column. For root DB user, we can see that the plugin is <strong>unix_socket</strong>. The plugin column indicates the pluggable authentication mechanism to authenticate the DB user. In case of root, the plugin of <strong>unix_socket </strong>means that MySQL will authenticate based on the <strong>ID of the user creating the client side socket</strong> for communicating with the MySQL server.</p>
 

@@ -17,7 +17,7 @@
       <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/</guid>
-      <description>&lt;p&gt;If you are a follower of this blog, you might have read about &lt;a href=&#34;http://www.innervoice.in/blogs/2017/11/19/using-docker-nginx-nodejs/&#34;&gt;Using Docker with nginx and NodeJS&lt;/a&gt;. In this blog, I will discuss the code to build  the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is &lt;a href=&#34;https://goo.gl/sBmSt3&#34;&gt;available on GitHub&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;If you are a follower of this blog, you might have read about &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2017/11/19/using-docker-nginx-nodejs/&#34;&gt;Using Docker with nginx and NodeJS&lt;/a&gt;. In this blog, I will discuss the code to build  the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is &lt;a href=&#34;https://goo.gl/sBmSt3&#34;&gt;available on GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -48,8 +48,8 @@
       <pubDate>Tue, 27 Dec 2016 10:31:44 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/</guid>
-      <description>OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&amp;#8217;s needs.
-OpenStack Horizon Background Horizon is a Django based web application and is hosted using an Apache web server.</description>
+      <description>&lt;p&gt;OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&amp;rsquo;s needs.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -58,7 +58,9 @@ OpenStack Horizon Background Horizon is a Django based web application and is ho
       <pubDate>Sat, 02 Jan 2016 17:43:51 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</guid>
-      <description>OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the PyCharm IDE from Jetbrains for your OpenStack programming. I will use the Neutron ML2 driver code from my book OpenStack Networking Cookbook to guide you in setting up the PyCharm IDE.</description>
+      <description>&lt;p&gt;OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the &lt;strong&gt;PyCharm IDE&lt;/strong&gt; from Jetbrains for your OpenStack programming. I will use the &lt;strong&gt;Neutron ML2 driver code from my book &lt;a href=&#34;http://goo.gl/TeXSYQ&#34;&gt;OpenStack Networking Cookbook&lt;/a&gt; to guide you&lt;/strong&gt; in setting up the PyCharm IDE.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -77,7 +79,7 @@ The general practice is to initialize logging related objects and parameters at 
       <pubDate>Sun, 20 Oct 2013 17:34:26 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2013/10/20/log-api-comparison-java-logger-vs-slf4j/</guid>
-      <description>&lt;p&gt;Log statements help record the flow of an application&amp;#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.&lt;/p&gt;
+      <description>&lt;p&gt;Log statements help record the flow of an application&amp;rsquo;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.&lt;/p&gt;
 
 &lt;p&gt;In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.&lt;/p&gt;
 
@@ -123,11 +125,9 @@ The general practice is to initialize logging related objects and parameters at 
       <pubDate>Wed, 14 Nov 2012 07:05:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2012/11/14/4-important-css-concepts-i-learnt/</guid>
-      <description>&lt;p&gt;As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.
+      <description>&lt;p&gt;As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.&lt;/p&gt;
 
-&lt;p lang=&#34;en-US&#34;&gt;
-  &lt;span style=&#34;text-decoration: underline;&#34;&gt;&lt;strong&gt;CSS Box Model&lt;/strong&gt;&lt;/span&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

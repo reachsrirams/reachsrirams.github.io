@@ -17,7 +17,7 @@
       <pubDate>Sun, 13 Nov 2016 16:44:06 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</guid>
-      <description>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;#8220;unix socket&amp;#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+      <description>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;ldquo;unix socket&amp;rdquo; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
 MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user.</description>
     </item>
     
@@ -37,7 +37,7 @@ MariaDB Install and root user In some earlier versions of MySQL as well as Maria
       <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</guid>
-      <description>&lt;p&gt;In the next installment of &amp;ldquo;What I learnt today&amp;rdquo; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a &lt;strong&gt;copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;p&gt;In the next installment of &amp;ldquo;What I learnt today&amp;rdquo; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a &lt;strong&gt;copy of the TCP/IP network stack -all the way from the Ethernet interfaces (L2), routing tables etc.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

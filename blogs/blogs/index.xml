@@ -28,7 +28,7 @@
       <pubDate>Sun, 26 Nov 2017 05:15:30 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2017/11/26/docker-compose-nginx-nodejs/</guid>
-      <description>&lt;p&gt;If you are a follower of this blog, you might have read about &lt;a href=&#34;http://www.innervoice.in/blogs/2017/11/19/using-docker-nginx-nodejs/&#34;&gt;Using Docker with nginx and NodeJS&lt;/a&gt;. In this blog, I will discuss the code to build  the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is &lt;a href=&#34;https://goo.gl/sBmSt3&#34;&gt;available on GitHub&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;If you are a follower of this blog, you might have read about &lt;a href=&#34;http://reachsrirams.github.io/blogs/blogs/2017/11/19/using-docker-nginx-nodejs/&#34;&gt;Using Docker with nginx and NodeJS&lt;/a&gt;. In this blog, I will discuss the code to build  the two containers using Docker Compose. Finally, I will highlight an important capability of Docker that I learnt in this exercise. The source code being referred in this blog is &lt;a href=&#34;https://goo.gl/sBmSt3&#34;&gt;available on GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -90,7 +90,7 @@
       <pubDate>Sun, 22 Jan 2017 17:42:35 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</guid>
-      <description>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;#8220;ports&amp;#8221; in your OpenStack based cloud.
+      <description>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;ldquo;ports&amp;rdquo; in your OpenStack based cloud.
 Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard.</description>
     </item>
     
@@ -100,8 +100,8 @@ Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboar
       <pubDate>Tue, 27 Dec 2016 10:31:44 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/</guid>
-      <description>OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&amp;#8217;s needs.
-OpenStack Horizon Background Horizon is a Django based web application and is hosted using an Apache web server.</description>
+      <description>&lt;p&gt;OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&amp;rsquo;s needs.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -110,7 +110,7 @@ OpenStack Horizon Background Horizon is a Django based web application and is ho
       <pubDate>Sun, 13 Nov 2016 16:44:06 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</guid>
-      <description>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;#8220;unix socket&amp;#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+      <description>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;ldquo;unix socket&amp;rdquo; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
 MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user.</description>
     </item>
     
@@ -120,7 +120,7 @@ MariaDB Install and root user In some earlier versions of MySQL as well as Maria
       <pubDate>Wed, 26 Oct 2016 14:57:29 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/10/26/book-announcement-launch-discounts/</guid>
-      <description>My second book titled &amp;#8220;Software Defined Networking with OpenStack&amp;#8221; is almost ready to be available publicly. You can find the overview of the book below.
+      <description>My second book titled &amp;ldquo;Software Defined Networking with OpenStack&amp;rdquo; is almost ready to be available publicly. You can find the overview of the book below.
 With OpenStack Summit going on in Barcelona, my publishers, Packt, have graciously announced pre-launch discounts for the new book. You can get the following discounts:
  15% off on Print copies (code: SDNWOS15) 50% off on eBooks (code: SDNWOS50)  Both discounts available at my publisher website.</description>
     </item>
@@ -142,7 +142,8 @@ With OpenStack Summit going on in Barcelona, my publishers, Packt, have gracious
       <pubDate>Wed, 06 Jul 2016 06:45:45 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/07/06/mitaka-on-ubuntu-install-scripts-for-openstack/</guid>
-      <description>Mitaka is the most recent release of OpenStack and currently it is supports Ubuntu 14.04 LTS (trusty). I would like to share scripts that can be used to install the Mitaka release of OpenStack on Ubuntu. As part of my blogging, book writing projects, I have had the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;#8217;s latest release.</description>
+      <description>&lt;p&gt;Mitaka is the most recent release of OpenStack and currently it is supports &lt;a href=&#34;http://docs.openstack.org/mitaka/install-guide-ubuntu/&#34;&gt;Ubuntu 14.04 LTS (trusty)&lt;/a&gt;. I would like to share scripts that can be used to install the Mitaka release of OpenStack on Ubuntu. As part of my blogging, book writing projects, I have had the need to install OpenStack many times. And I have been automating the installation by writing simple shell scripts. The result is a collection of scripts that should help you get going with OpenStack&amp;rsquo;s latest release.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -151,7 +152,8 @@ With OpenStack Summit going on in Barcelona, my publishers, Packt, have gracious
       <pubDate>Mon, 27 Jun 2016 18:22:07 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</guid>
-      <description>OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.</description>
+      <description>&lt;p&gt;OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -171,7 +173,9 @@ With OpenStack Summit going on in Barcelona, my publishers, Packt, have gracious
       <pubDate>Sat, 02 Jan 2016 17:43:51 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</guid>
-      <description>OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the PyCharm IDE from Jetbrains for your OpenStack programming. I will use the Neutron ML2 driver code from my book OpenStack Networking Cookbook to guide you in setting up the PyCharm IDE.</description>
+      <description>&lt;p&gt;OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the &lt;strong&gt;PyCharm IDE&lt;/strong&gt; from Jetbrains for your OpenStack programming. I will use the &lt;strong&gt;Neutron ML2 driver code from my book &lt;a href=&#34;http://goo.gl/TeXSYQ&#34;&gt;OpenStack Networking Cookbook&lt;/a&gt; to guide you&lt;/strong&gt; in setting up the PyCharm IDE.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

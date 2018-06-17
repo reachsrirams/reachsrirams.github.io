@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Sriram S" />
-  <meta name="description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser." />
+  <meta name="description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser. " />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -58,7 +58,8 @@
 
 
 <meta property="og:title" content="OpenStack Controller Logs – view using a browser" />
-<meta property="og:description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser." />
+<meta property="og:description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/" />
 
@@ -79,19 +80,21 @@
 
 
 <meta itemprop="name" content="OpenStack Controller Logs – view using a browser">
-<meta itemprop="description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.">
+<meta itemprop="description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.
+">
 
 
 <meta itemprop="datePublished" content="2016-06-27T18:22:07&#43;00:00" />
 <meta itemprop="dateModified" content="2016-06-27T18:22:07&#43;00:00" />
-<meta itemprop="wordCount" content="311">
+<meta itemprop="wordCount" content="321">
 
 
 
 <meta itemprop="keywords" content="Apache,browser,Controller,Logs,OpenStack," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OpenStack Controller Logs – view using a browser"/>
-<meta name="twitter:description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser."/>
+<meta name="twitter:description" content="OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -316,7 +319,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/technology/"> Technology </a>
             
           </div>
-        <span class="more-meta"> 311 words </span>
+        <span class="more-meta"> 321 words </span>
         <span class="more-meta"> 2 min read </span>
       </div>
     </header>
@@ -340,9 +343,8 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      
-
-<p>OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.</p>
+      <p>OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.
+</p>
 
 <h2 id="using-a-browser-for-openstack-controller-logs">Using a browser for OpenStack Controller Logs</h2>
 
@@ -353,31 +355,63 @@ if (!doNotTrack) {
 <p>OpenStack uses Apache web server for different projects. We will leverage the same web server to display logs of different services.</p>
 
 <ul>
-<li><strong>Step 1</strong> &#8211; The first step is to create a directory under /var/www/html. This directory will be used as part of the URL on the web browser. For example if you create a directory called openstacklogs, then point your web browser to &#8211; http://&lt;horizon-controller-ip/openstacklogs</li>
+<li><strong>Step 1</strong> - The first step is to create a directory under /var/www/html. This directory will be used as part of the URL on the web browser. For example if you create a directory called openstacklogs, then point your web browser to - http://&lt;horizon-controller-ip/openstacklogs</li>
 </ul>
 
-<pre class="lang:java decode:true ">sudo mkdir /var/www/html/openstacklogs</pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo mkdir /var/www/html/openstacklogs</code></pre></td></tr></table>
+</div>
+</div>
 
 <ul>
-<li><strong>Step 2</strong> &#8211; Give read and execute permissions to the log directories of OpenStack services. For example if you want to allow Nova and Neutron logs to be viewable using web browser, execute the steps below.</li>
+<li><strong>Step 2</strong> - Give read and execute permissions to the log directories of OpenStack services. For example if you want to allow Nova and Neutron logs to be viewable using web browser, execute the steps below.</li>
 </ul>
 
-<pre class="lang:java decode:true ">sudo chmod a+rx /var/log/nova
-sudo chmod a+rx /var/log/neutron</pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo chmod a+rx /var/log/nova
+sudo chmod a+rx /var/log/neutron</code></pre></td></tr></table>
+</div>
+</div>
 
 <ul>
-<li><strong>Step 3</strong> &#8211; Create symlinks for these log directories as shown below.</li>
+<li><strong>Step 3</strong> - Create symlinks for these log directories as shown below.</li>
 </ul>
 
-<pre class="lang:java decode:true ">sudo ln -s /var/log/nova /var/www/html/openstacklogs/nova
-sudo ln -s /var/log/neutron /var/www/html/openstacklogs/neutron</pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo ln -s /var/log/nova /var/www/html/openstacklogs/nova
+sudo ln -s /var/log/neutron /var/www/html/openstacklogs/neutron</code></pre></td></tr></table>
+</div>
+</div>
 
 <p>These steps ensure that Apache is able to show the OpenStack Controller Logs as browsable content. You can now point your browser to http://<horizon-controller-ip>/openstacklogs. Here is screenshot of the same from my setup.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21.png"><img class="aligncenter wp-image-1407 size-medium" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21-300x189.png" alt="OpenStack Controller Logs using Web Browser" width="300" height="189" srcset="http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21-300x189.png 300w, http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21-768x484.png 768w, http://127.0.0.1/wordpress/wp-content/uploads/2016/06/Screenshot-2016-06-27-23.35.21.png 918w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
 
-<p>&nbsp;</p>
-
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2016/Screenshot-2016-06-27-23.35.21.png" alt="OpenStack Controller Logs using Web Browser"/>
+    </div>
+    <a href="/blogs/images/2016/Screenshot-2016-06-27-23.35.21.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>OpenStack Controller Logs using Web Browser</p>
+      </figcaption>
+  </figure>
+</div>
     </div>
 
     

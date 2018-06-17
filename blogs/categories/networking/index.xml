@@ -17,7 +17,7 @@
       <pubDate>Sun, 22 Jan 2017 17:42:35 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2017/01/22/openstack-horizon-extending-dashboard-part-2/</guid>
-      <description>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;#8220;ports&amp;#8221; in your OpenStack based cloud.
+      <description>In this second installment of my blog on OpenStack Horizon, I will take you through different source code files that make a custom OpenStack dashboard. As a recap from the first installment, I will show you how to create a custom dashboard to view all the Neutron &amp;ldquo;ports&amp;rdquo; in your OpenStack based cloud.
 Enabling OpenStack Horizon Dashboard Django framework loads and enables dashboards based on entries present in the enabled directory of OpenStack Dashboard.</description>
     </item>
     
@@ -101,7 +101,7 @@ While most people use DevStack to accomplish this I prefer to setup a multi-node
       <pubDate>Wed, 17 Dec 2014 18:05:29 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2014/12/17/linux-network-namespace-wilt/</guid>
-      <description>&lt;p&gt;In the next installment of &amp;ldquo;What I learnt today&amp;rdquo; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a &lt;strong&gt;copy of the TCP/IP network stack &amp;#8211; all the way from the Ethernet interfaces (L2), routing tables etc.&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;p&gt;In the next installment of &amp;ldquo;What I learnt today&amp;rdquo; or WILT, I briefly touch upon Network Namespace. I came across Namespace as part of my ongoing study of OpenStack networking. Namespaces are powerful constructs in Linux that allows you to create a &lt;strong&gt;copy of the TCP/IP network stack -all the way from the Ethernet interfaces (L2), routing tables etc.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -188,7 +188,7 @@ Let me introduce the key elements of VMware virtual networking. After reading th
       <description>&lt;p&gt;In my first YouTube video, I discuss 3 networking concepts:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;span style=&#34;line-height: 13px;&#34;&gt;Default Gateway&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Default Gateway&lt;/li&gt;
 &lt;li&gt;DNS Server&lt;/li&gt;
 &lt;li&gt;Subnet Mask&lt;/li&gt;
 &lt;/ul&gt;

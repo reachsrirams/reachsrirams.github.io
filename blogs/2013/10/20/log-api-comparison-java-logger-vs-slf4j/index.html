@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Sriram S" />
-  <meta name="description" content="Log statements help record the flow of an application&amp;#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
+  <meta name="description" content="Log statements help record the flow of an application&amp;rsquo;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
 In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.
 
 " />
@@ -61,7 +61,7 @@ In this blog I will compare JUL against SLF4J and focus on these above mentioned
 
 
 <meta property="og:title" content="Log API Comparison – Java Logger vs SLF4J" />
-<meta property="og:description" content="Log statements help record the flow of an application&#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
+<meta property="og:description" content="Log statements help record the flow of an application&rsquo;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
 
 In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.
 
@@ -86,7 +86,7 @@ In this blog I will compare JUL against SLF4J and focus on these above mentioned
 
 
 <meta itemprop="name" content="Log API Comparison – Java Logger vs SLF4J">
-<meta itemprop="description" content="Log statements help record the flow of an application&#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
+<meta itemprop="description" content="Log statements help record the flow of an application&rsquo;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
 
 In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.
 
@@ -95,14 +95,14 @@ In this blog I will compare JUL against SLF4J and focus on these above mentioned
 
 <meta itemprop="datePublished" content="2013-10-20T17:34:26&#43;00:00" />
 <meta itemprop="dateModified" content="2013-10-20T17:34:26&#43;00:00" />
-<meta itemprop="wordCount" content="1081">
+<meta itemprop="wordCount" content="1159">
 
 
 
 <meta itemprop="keywords" content="java logger,JUL,log api,logger,SLF4J," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Log API Comparison – Java Logger vs SLF4J"/>
-<meta name="twitter:description" content="Log statements help record the flow of an application&#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
+<meta name="twitter:description" content="Log statements help record the flow of an application&rsquo;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.
 
 In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.
 
@@ -329,7 +329,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/technology/"> Technology </a>
             
           </div>
-        <span class="more-meta"> 1081 words </span>
+        <span class="more-meta"> 1159 words </span>
         <span class="more-meta"> 6 min read </span>
       </div>
     </header>
@@ -343,10 +343,10 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#log-api-8211-logging-to-console">Log API &#8211; Logging to Console</a></li>
-<li><a href="#log-api-8211-including-timestamp-and-changing-log-level">Log API &#8211; including timestamp and changing log level</a></li>
-<li><a href="#log-api-8211-redirecting-output-to-a-file">Log API &#8211; Redirecting output to a file</a></li>
-<li><a href="#log-api-8211-conclusion">Log API &#8211; Conclusion</a></li>
+<li><a href="#log-api-logging-to-console">Log API - Logging to Console</a></li>
+<li><a href="#log-api-including-timestamp-and-changing-log-level">Log API - including timestamp and changing log level</a></li>
+<li><a href="#log-api-redirecting-output-to-a-file">Log API - Redirecting output to a file</a></li>
+<li><a href="#log-api-conclusion">Log API - Conclusion</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -355,7 +355,7 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>Log statements help record the flow of an application&#8217;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.</p>
+      <p>Log statements help record the flow of an application&rsquo;s execution. Hence they are an important part of software coding process. For the Java language the common Log API libraries are Java Util Logger (commonly known as JUL), Apache Log4J, SLF4J etc. While these libraries support many advanced capabilities, most developers only use a handful of features. For example, ability to send log messages to files and the ability change log levels dynamically etc.</p>
 
 <p>In this blog I will compare JUL against SLF4J and focus on these above mentioned features. Many will argue that this is not a fair comparison since SFL4J is really a facade and supports JUL as well. To clarify, I will compare the SimpleLogger that is bundled with SLF4J against direct JUL usage.</p>
 
@@ -363,23 +363,42 @@ if (!doNotTrack) {
 
 <p>In order to setup SLF4J with SimpleLogger you just need to include both JAR files in your class path. Please refer to the <a href="http://slf4j.org/manual.html">SLF4J Manual</a>.</p>
 
-<h2 id="log-api-8211-logging-to-console">Log API &#8211; Logging to Console</h2>
+<h2 id="log-api-logging-to-console">Log API - Logging to Console</h2>
 
 <p>By default most Log API libraries support redirecting output to console. Let us look at a code snippet that shows how this is accomplished in JUL and SLF4J.</p>
 
-<pre class="lang:java decode:true" title="Logging Comparison 1 - JUL vs SLF4J">public class LoggerComparison1 {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoggerComparison1</span> <span class="o">{</span>
 
-    private static java.util.logging.Logger javaLogger = java.util.logging.Logger.getLogger("LoggerComparison1");
-    private static org.slf4j.Logger slf4jLogger = org.slf4j.LoggerFactory.getLogger("LoggerComparison1");
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Logger</span> <span class="n">javaLogger</span> <span class="o">=</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="s">&#34;LoggerComparison1&#34;</span><span class="o">);</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">org</span><span class="o">.</span><span class="na">slf4j</span><span class="o">.</span><span class="na">Logger</span> <span class="n">slf4jLogger</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="na">slf4j</span><span class="o">.</span><span class="na">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="s">&#34;LoggerComparison1&#34;</span><span class="o">);</span>
 
-    public static void main(String[] args)
-    {
-        javaLogger.severe("This message is from Java Util Logger");
-        javaLogger.finer("This is a finer message from Java Util Logger");
-        slf4jLogger.warn("This message is from SLF4J Logger");
-        slf4jLogger.debug("This is a debug log from SLF4J Logger");
-    }
-}</pre>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">javaLogger</span><span class="o">.</span><span class="na">severe</span><span class="o">(</span><span class="s">&#34;This message is from Java Util Logger&#34;</span><span class="o">);</span>
+        <span class="n">javaLogger</span><span class="o">.</span><span class="na">finer</span><span class="o">(</span><span class="s">&#34;This is a finer message from Java Util Logger&#34;</span><span class="o">);</span>
+        <span class="n">slf4jLogger</span><span class="o">.</span><span class="na">warn</span><span class="o">(</span><span class="s">&#34;This message is from SLF4J Logger&#34;</span><span class="o">);</span>
+        <span class="n">slf4jLogger</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&#34;This is a debug log from SLF4J Logger&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
 
 <p>The output of the above program is as follows:</p>
 
@@ -394,32 +413,60 @@ SEVERE: This message is from Java Util Logger                           ==&gt; T
 <li>Overall, both JUL and SLF4J have some drawbacks while use them in their minimally initialized avatars.</li>
 </ul>
 
-<h2 id="log-api-8211-including-timestamp-and-changing-log-level">Log API &#8211; including timestamp and changing log level</h2>
+<h2 id="log-api-including-timestamp-and-changing-log-level">Log API - including timestamp and changing log level</h2>
 
 <p>Let us see how we can include timestamp for SLF4J Simple Logger (JUL already includes it) and also check out how log levels can be changed.</p>
 
-<pre class="lang:java decode:true">public class LoggerComparison2 {
-    static {
-        // set a system property such that Simple Logger will include timestamp
-        System.setProperty("org.slf4j.simpleLogger.showDateTime", "true");
-        // set a system property such that Simple Logger will include timestamp in the given format
-        System.setProperty("org.slf4j.simpleLogger.dateTimeFormat", "dd-MM-yy HH:mm:ss");
-        // set minimum log level for SLF4J Simple Logger at warn
-        System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "warn");
-    }
-    private static java.util.logging.Logger javaLogger = java.util.logging.Logger.getLogger("LoggerComparison2");
-    private static org.slf4j.Logger slf4jLogger = org.slf4j.LoggerFactory.getLogger("LoggerComparison2");
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoggerComparison2</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="o">{</span>
+        <span class="c1">// set a system property such that Simple Logger will include timestamp
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">&#34;org.slf4j.simpleLogger.showDateTime&#34;</span><span class="o">,</span> <span class="s">&#34;true&#34;</span><span class="o">);</span>
+        <span class="c1">// set a system property such that Simple Logger will include timestamp in the given format
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">&#34;org.slf4j.simpleLogger.dateTimeFormat&#34;</span><span class="o">,</span> <span class="s">&#34;dd-MM-yy HH:mm:ss&#34;</span><span class="o">);</span>
+        <span class="c1">// set minimum log level for SLF4J Simple Logger at warn
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">&#34;org.slf4j.simpleLogger.defaultLogLevel&#34;</span><span class="o">,</span> <span class="s">&#34;warn&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Logger</span> <span class="n">javaLogger</span> <span class="o">=</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="s">&#34;LoggerComparison2&#34;</span><span class="o">);</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">org</span><span class="o">.</span><span class="na">slf4j</span><span class="o">.</span><span class="na">Logger</span> <span class="n">slf4jLogger</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="na">slf4j</span><span class="o">.</span><span class="na">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="s">&#34;LoggerComparison2&#34;</span><span class="o">);</span>
 
-    public static void main(String[] args)
-    {
-        // set minimum log level for JUL at WARNING
-        javaLogger.setLevel(java.util.logging.Level.WARNING);
-        javaLogger.severe("This SEVERE Log is from Java Util Logger.");
-        javaLogger.info("This INFO Log from Java Util Logger should not be printed.");
-        slf4jLogger.warn("This WARN Log is from SLF4J.");
-        slf4jLogger.debug("This DEBUG Log from SLF4J should not be printed.");
-    }
-}</pre>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="c1">// set minimum log level for JUL at WARNING
+</span><span class="c1"></span>        <span class="n">javaLogger</span><span class="o">.</span><span class="na">setLevel</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Level</span><span class="o">.</span><span class="na">WARNING</span><span class="o">);</span>
+        <span class="n">javaLogger</span><span class="o">.</span><span class="na">severe</span><span class="o">(</span><span class="s">&#34;This SEVERE Log is from Java Util Logger.&#34;</span><span class="o">);</span>
+        <span class="n">javaLogger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;This INFO Log from Java Util Logger should not be printed.&#34;</span><span class="o">);</span>
+        <span class="n">slf4jLogger</span><span class="o">.</span><span class="na">warn</span><span class="o">(</span><span class="s">&#34;This WARN Log is from SLF4J.&#34;</span><span class="o">);</span>
+        <span class="n">slf4jLogger</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&#34;This DEBUG Log from SLF4J should not be printed.&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
 
 <p>If you compile and run the above program, here is the output you get:</p>
 
@@ -433,53 +480,102 @@ SEVERE: This SEVERE Log is from Java Util Logger.
 <li>You can also see that by setting appropriate Log levels, we can include or exclude some statements from the output.</li>
 </ul>
 
-<h2 id="log-api-8211-redirecting-output-to-a-file">Log API &#8211; Redirecting output to a file</h2>
+<h2 id="log-api-redirecting-output-to-a-file">Log API - Redirecting output to a file</h2>
 
-<p>Finally, lets look at one more commonly used log API feature &#8211; redirecting output to a file. Here is the program:</p>
+<p>Finally, lets look at one more commonly used log API feature - redirecting output to a file. Here is the program:</p>
 
-<pre class="lang:java decode:true">import java.io.IOException;
-import java.util.logging.FileHandler;
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.logging.FileHandler</span><span class="o">;</span>
 
-public class LoggerComparison3 {
-    static {
-        // set a system property such that Simple Logger will include timestamp
-        System.setProperty("org.slf4j.simpleLogger.showDateTime", "true");
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoggerComparison3</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="o">{</span>
+        <span class="c1">// set a system property such that Simple Logger will include timestamp
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">&#34;org.slf4j.simpleLogger.showDateTime&#34;</span><span class="o">,</span> <span class="s">&#34;true&#34;</span><span class="o">);</span>
 
-        // set a system property such that Simple Logger will include timestamp in the given format
-        System.setProperty("org.slf4j.simpleLogger.dateTimeFormat", "dd-MM-yy HH:mm:ss");
+        <span class="c1">// set a system property such that Simple Logger will include timestamp in the given format
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">&#34;org.slf4j.simpleLogger.dateTimeFormat&#34;</span><span class="o">,</span> <span class="s">&#34;dd-MM-yy HH:mm:ss&#34;</span><span class="o">);</span>
 
-        // set minimum log level for SLF4J Simple Logger at warn
-        System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "warn");
+        <span class="c1">// set minimum log level for SLF4J Simple Logger at warn
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">&#34;org.slf4j.simpleLogger.defaultLogLevel&#34;</span><span class="o">,</span> <span class="s">&#34;warn&#34;</span><span class="o">);</span>
 
-        // configure SLF4J Simple Logger to redirect output to a file
-        System.setProperty("org.slf4j.simpleLogger.logFile", "SLF4J-File.log");
-    }
-    private static java.util.logging.Logger javaLogger = java.util.logging.Logger.getLogger("LoggerComparison3");
-    private static org.slf4j.Logger slf4jLogger = org.slf4j.LoggerFactory.getLogger("LoggerComparison3");
+        <span class="c1">// configure SLF4J Simple Logger to redirect output to a file
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">&#34;org.slf4j.simpleLogger.logFile&#34;</span><span class="o">,</span> <span class="s">&#34;SLF4J-File.log&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Logger</span> <span class="n">javaLogger</span> <span class="o">=</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="s">&#34;LoggerComparison3&#34;</span><span class="o">);</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">org</span><span class="o">.</span><span class="na">slf4j</span><span class="o">.</span><span class="na">Logger</span> <span class="n">slf4jLogger</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="na">slf4j</span><span class="o">.</span><span class="na">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="s">&#34;LoggerComparison3&#34;</span><span class="o">);</span>
 
-    public static void main(String[] args)
-    {
-        // configure File Handler for JUL
-        addFileHandlerToJavaLogger(javaLogger);
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="c1">// configure File Handler for JUL
+</span><span class="c1"></span>        <span class="n">addFileHandlerToJavaLogger</span><span class="o">(</span><span class="n">javaLogger</span><span class="o">);</span>
 
-        // set minimum log level for JUL at WARNING
-        javaLogger.setLevel(java.util.logging.Level.WARNING);
+        <span class="c1">// set minimum log level for JUL at WARNING
+</span><span class="c1"></span>        <span class="n">javaLogger</span><span class="o">.</span><span class="na">setLevel</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Level</span><span class="o">.</span><span class="na">WARNING</span><span class="o">);</span>
 
-        javaLogger.severe("This SEVERE Log is from Java Util Logger.");
-        javaLogger.info("This INFO Log from Java Util Logger should not be printed.");
-        slf4jLogger.warn("This WARN Log is from SLF4J.");
-        slf4jLogger.debug("This DEBUG Log from SLF4J should not be printed.");
-    }
+        <span class="n">javaLogger</span><span class="o">.</span><span class="na">severe</span><span class="o">(</span><span class="s">&#34;This SEVERE Log is from Java Util Logger.&#34;</span><span class="o">);</span>
+        <span class="n">javaLogger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;This INFO Log from Java Util Logger should not be printed.&#34;</span><span class="o">);</span>
+        <span class="n">slf4jLogger</span><span class="o">.</span><span class="na">warn</span><span class="o">(</span><span class="s">&#34;This WARN Log is from SLF4J.&#34;</span><span class="o">);</span>
+        <span class="n">slf4jLogger</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">&#34;This DEBUG Log from SLF4J should not be printed.&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    private static void addFileHandlerToJavaLogger(java.util.logging.Logger logger)
-    {
-        try {
-            logger.addHandler(new FileHandler("JUL-File.log"));
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
-}</pre>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addFileHandlerToJavaLogger</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">logging</span><span class="o">.</span><span class="na">Logger</span> <span class="n">logger</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">logger</span><span class="o">.</span><span class="na">addHandler</span><span class="o">(</span><span class="k">new</span> <span class="n">FileHandler</span><span class="o">(</span><span class="s">&#34;JUL-File.log&#34;</span><span class="o">));</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>  <span class="c1">//To change body of catch statement use File | Settings | File Templates.
+</span><span class="c1"></span>        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div></p>
 
 <p>If you compile and run the above, you will notice several interesting results.</p>
 
@@ -490,7 +586,7 @@ public class LoggerComparison3 {
 <li>This is yet again an unwanted design intent of Java Logger. Each Handler can have a Formatter associated with it. And the output format is controlled by the Formatter. For some weird reason, the FileHandler of JUL uses an XMLFormatter by default.</li>
 </ul>
 
-<h2 id="log-api-8211-conclusion">Log API &#8211; Conclusion</h2>
+<h2 id="log-api-conclusion">Log API - Conclusion</h2>
 
 <p>With these three simple programs, it can be seen that with SLF4J you can hit the ground running. For the most common and also the most used Log API features, SLF4J (Simple Logger) provides much simple APIs when compared to Java Util Logger.</p>
     </div>

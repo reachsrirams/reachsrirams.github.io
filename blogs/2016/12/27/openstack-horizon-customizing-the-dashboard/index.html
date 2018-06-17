@@ -25,8 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Sriram S" />
-  <meta name="description" content="OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&amp;#8217;s needs.
-OpenStack Horizon Background Horizon is a Django based web application and is hosted using an Apache web server." />
+  <meta name="description" content="OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&amp;rsquo;s needs. " />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -59,8 +58,8 @@ OpenStack Horizon Background Horizon is a Django based web application and is ho
 
 
 <meta property="og:title" content="OpenStack Horizon: extending the dashboard – Part 1" />
-<meta property="og:description" content="OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&#8217;s needs.
-OpenStack Horizon Background Horizon is a Django based web application and is hosted using an Apache web server." />
+<meta property="og:description" content="OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&rsquo;s needs.
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://reachsrirams.github.io/blogs/2016/12/27/openstack-horizon-customizing-the-dashboard/" />
 
@@ -81,21 +80,21 @@ OpenStack Horizon Background Horizon is a Django based web application and is ho
 
 
 <meta itemprop="name" content="OpenStack Horizon: extending the dashboard – Part 1">
-<meta itemprop="description" content="OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&#8217;s needs.
-OpenStack Horizon Background Horizon is a Django based web application and is hosted using an Apache web server.">
+<meta itemprop="description" content="OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&rsquo;s needs.
+">
 
 
 <meta itemprop="datePublished" content="2016-12-27T10:31:44&#43;00:00" />
 <meta itemprop="dateModified" content="2016-12-27T10:31:44&#43;00:00" />
-<meta itemprop="wordCount" content="364">
+<meta itemprop="wordCount" content="372">
 
 
 
 <meta itemprop="keywords" content="Cloud,Dashboard,Django,Horizon,OpenStack," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OpenStack Horizon: extending the dashboard – Part 1"/>
-<meta name="twitter:description" content="OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&#8217;s needs.
-OpenStack Horizon Background Horizon is a Django based web application and is hosted using an Apache web server."/>
+<meta name="twitter:description" content="OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&rsquo;s needs.
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -320,7 +319,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/technology/"> Technology </a>
             
           </div>
-        <span class="more-meta"> 364 words </span>
+        <span class="more-meta"> 372 words </span>
         <span class="more-meta"> 2 min read </span>
       </div>
     </header>
@@ -348,9 +347,8 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      
-
-<p>OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&#8217;s needs.</p>
+      <p>OpenStack Horizon is the project that provides the web based dashboard for OpenStack based clouds. In this 2-part blog I will show you how you can extend the dashboard. Customizing and extending is one of the most powerful capabilities in OpenStack and in private cloud environments it is common to add additional enhancements to address an organization&rsquo;s needs.
+</p>
 
 <h2 id="openstack-horizon-background">OpenStack Horizon Background</h2>
 
@@ -360,7 +358,20 @@ if (!doNotTrack) {
 
 <p>As a Django application the OpenStack Horizon dashboard follows and MVC (Model-View-Controller) based architecture. The dashboard provides a web based interface for almost all the services within an OpenStack cloud. This requires the Horizon code to interact with other OpenStack services such as Nova, Neutron, Keystone to name a few. This interaction is implemented using a library of OpenStack Horizon APIs.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/12/Horizon-UI-Components.png"><img class="aligncenter wp-image-1459 size-tiga-700px" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/12/Horizon-UI-Components-700x300.png" alt="OpenStack Horizon MVC Architecture" width="620" height="266" /></a></p>
+
+<link rel="stylesheet" href="/blogs/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2016/Horizon-UI-Components.png" alt="OpenStack Horizon MVC Architecture"/>
+    </div>
+    <a href="/blogs/images/2016/Horizon-UI-Components.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>OpenStack Horizon MVC Architecture</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>The above picture shows examples of directories containing code that make up the architecture of a typical OpenStack Horizon Dashboard.</p>
 
@@ -368,7 +379,20 @@ if (!doNotTrack) {
 
 <p>Visually the OpenStack Horizon UI is organized as a collection of <em>dashboards</em>. A dashboard is further organized as a collection of <em>panel groups</em>. And each panel group can support one more <em>panels</em>. The picture below highlight these components on a typical OpenStack Horizon UI.</p>
 
-<p><a href="http://127.0.0.1/wordpress/wp-content/uploads/2016/12/Horizon-View-Components.png"><img class="aligncenter wp-image-1460 size-tiga-460px" src="http://127.0.0.1/wordpress/wp-content/uploads/2016/12/Horizon-View-Components-460x300.png" alt="OpenStack Horizon UI Components" width="460" height="300" /></a></p>
+
+
+<div class="box" >
+  <figure class="center" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/blogs/images/2016/Horizon-View-Components.png" alt="OpenStack Horizon UI Components"/>
+    </div>
+    <a href="/blogs/images/2016/Horizon-View-Components.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>OpenStack Horizon UI Components</p>
+      </figcaption>
+  </figure>
+</div>
+
 
 <p>The View aspect of the Django MVC architecture maps to a panel on the navigation bar. So for a given panel on the Horizon UI, we will have to implement the MVC components.</p>
 
@@ -376,10 +400,9 @@ if (!doNotTrack) {
 
 <p>As part of this blog, I will show you how to add a completely new dashboard and support a panel (view) that lists all the Neutron ports in an OpenStack cloud. Neutron ports represent the ingress and egress points for network traffic. So it will be useful to view all ports in a single web page.</p>
 
-<p><a href="https://github.com/reachsrirams/openstack-custom-dashboard" target="_blank">The source code need for this blog is located on Github.</a></p>
+<p><a href="https://github.com/reachsrirams/openstack-custom-dashboard">The source code need for this blog is located on Github.</a></p>
 
 <p>In the next part, I will walk you through the important files for the custom OpenStack dashboard.</p>
-
     </div>
 
     

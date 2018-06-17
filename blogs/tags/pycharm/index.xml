@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pycharm on Sriram S - Innervoice</title>
+    <link>http://reachsrirams.github.io/blogs/tags/pycharm/</link>
+    <description>Recent content in Pycharm on Sriram S - Innervoice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Jan 2016 17:43:51 +0000</lastBuildDate>
+    
+	<atom:link href="http://reachsrirams.github.io/blogs/tags/pycharm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PyCharm and OpenStack programming</title>
+      <link>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</link>
+      <pubDate>Sat, 02 Jan 2016 17:43:51 +0000</pubDate>
+      
+      <guid>http://reachsrirams.github.io/blogs/2016/01/02/pycharm-and-openstack-programming/</guid>
+      <description>&lt;p&gt;OpenStack is based on the Python programming language and DevStack is the most common development and test environment for OpenStack. If you are doing serious, professional programming around OpenStack, it is very useful to have a proper development environment. In this blog, I will show you how to use the &lt;strong&gt;PyCharm IDE&lt;/strong&gt; from Jetbrains for your OpenStack programming. I will use the &lt;strong&gt;Neutron ML2 driver code from my book &lt;a href=&#34;http://goo.gl/TeXSYQ&#34;&gt;OpenStack Networking Cookbook&lt;/a&gt; to guide you&lt;/strong&gt; in setting up the PyCharm IDE.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

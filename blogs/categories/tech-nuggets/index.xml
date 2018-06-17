@@ -17,7 +17,7 @@
       <pubDate>Sun, 13 Nov 2016 16:44:06 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/11/13/wilt-mysql-root-and-sudo/</guid>
-      <description>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;#8220;unix socket&amp;#8221; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
+      <description>I came across an interesting behavior that helped me learn something about MySQL (MariaDB to be precise) authentication. In this WILT blog I will talk about the &amp;ldquo;unix socket&amp;rdquo; authentication plugin in MySQL/MariaDB. The steps shown in this blog have been tried on Ubuntu 16.04 and MariaDB Server 10.
 MariaDB Install and root user In some earlier versions of MySQL as well as MariaDB server, the installation process required you to enter password for root user.</description>
     </item>
     
@@ -27,7 +27,8 @@ MariaDB Install and root user In some earlier versions of MySQL as well as Maria
       <pubDate>Mon, 27 Jun 2016 18:22:07 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2016/06/27/openstack-controller-logs-view-using-browser/</guid>
-      <description>OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.</description>
+      <description>&lt;p&gt;OpenStack is made up of various services. These services have their own logs stored under /var/log directory. While working on OpenStack related projects it is quite common to monitor the logs for any problems or errors. While the tail command is the most popular, there are many benefits of using web browser to view the logs. In this blog let us see how we can view OpenStack Controller Logs using a browser.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,7 +47,7 @@ MariaDB Install and root user In some earlier versions of MySQL as well as Maria
       <pubDate>Wed, 31 Dec 2014 09:38:31 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2014/12/31/use-google-calendar-to-remind-reading/</guid>
-      <description>Have you come across a situation when you want to continue reading an interesting online article but do not have enough time? Have you felt the need to add a &amp;#8220;reminder to read it later&amp;#8221; and block out specific time on your calendar? If the answer to these questions is a Yes, then I will show a simple way to do this using Google Calendar.
+      <description>Have you come across a situation when you want to continue reading an interesting online article but do not have enough time? Have you felt the need to add a &amp;ldquo;reminder to read it later&amp;rdquo; and block out specific time on your calendar? If the answer to these questions is a Yes, then I will show a simple way to do this using Google Calendar.
 Before I give a step by step guide to adding a URL to Google Calendar, here are some details about the solution:</description>
     </item>
     
@@ -76,7 +77,7 @@ Before I give a step by step guide to adding a URL to Google Calendar, here are 
       <pubDate>Mon, 09 Jun 2014 05:46:04 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2014/06/09/intel-nuc-dn2820fykh-review/</guid>
-      <description>Most of us have &amp;#8216;cloud storage&amp;#8217; accounts to keep our important files backed up in a central location and yet be accessible across devices. But these accounts have limits unless you are willing to shell out more money. Also the network traffic for big files will eat up into your monthly broadband quota (especially in India). Therefore it is still common to have a &amp;#8220;backup&amp;#8221; store at home. Most people are probably using USB hard disk drives for this.</description>
+      <description>Most of us have &amp;ldquo;cloud storage&amp;rdquo; accounts to keep our important files backed up in a central location and yet be accessible across devices. But these accounts have limits unless you are willing to shell out more money. Also the network traffic for big files will eat up into your monthly broadband quota (especially in India). Therefore it is still common to have a &amp;ldquo;backup&amp;rdquo; store at home. Most people are probably using USB hard disk drives for this.</description>
     </item>
     
     <item>
@@ -136,11 +137,9 @@ The general understanding is that the statements below the default log level wi
       <pubDate>Wed, 14 Nov 2012 07:05:23 +0000</pubDate>
       
       <guid>http://reachsrirams.github.io/blogs/2012/11/14/4-important-css-concepts-i-learnt/</guid>
-      <description>&lt;p&gt;As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.
+      <description>&lt;p&gt;As part of Release 1.0 of my URL Generator project, I learnt several important CSS concepts. Here is a summary of four of those concepts.&lt;/p&gt;
 
-&lt;p lang=&#34;en-US&#34;&gt;
-  &lt;span style=&#34;text-decoration: underline;&#34;&gt;&lt;strong&gt;CSS Box Model&lt;/strong&gt;&lt;/span&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

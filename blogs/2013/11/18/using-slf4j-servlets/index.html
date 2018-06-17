@@ -87,7 +87,7 @@ The general practice is to initialize logging related objects and parameters at 
 
 <meta itemprop="datePublished" content="2013-11-18T16:07:04&#43;00:00" />
 <meta itemprop="dateModified" content="2013-11-18T16:07:04&#43;00:00" />
-<meta itemprop="wordCount" content="433">
+<meta itemprop="wordCount" content="465">
 
 
 
@@ -318,7 +318,7 @@ if (!doNotTrack) {
               <a href="/blogs/categories/technology/"> Technology </a>
             
           </div>
-        <span class="more-meta"> 433 words </span>
+        <span class="more-meta"> 465 words </span>
         <span class="more-meta"> 3 min read </span>
       </div>
     </header>
@@ -332,8 +332,8 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#step-8211-1">Step &#8211; 1</a></li>
-<li><a href="#step-8211-2">Step &#8211; 2</a></li>
+<li><a href="#step-1">Step -1</a></li>
+<li><a href="#step-2">Step -2</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -344,50 +344,90 @@ if (!doNotTrack) {
     <div class="post-content">
       
 
-<p>We saw in my <a title="Log API Comparison – Java Logger vs SLF4J" href="http://www.innervoice.in/blogs/2013/10/20/log-api-comparison-java-logger-vs-slf4j/" target="_blank">previous blog that SLF4J and SimpleLogger</a> support the most critical logging requirements with ease. In this blog, we will see how to use SLF4J in a Servlets based application.</p>
+<p>We saw in my <a href="/blogs/2013/10/20/log-api-comparison-java-logger-vs-slf4j/">previous blog that SLF4J and SimpleLogger</a> support the most critical logging requirements with ease. In this blog, we will see how to use SLF4J in a Servlets based application.</p>
 
 <p>The general practice is to initialize logging related objects and parameters at the startup of an application. In case of Servlets, any of the servlet in the Web Application can be invoked due to user action. So we need to use a different technique for initializing logging related objects.</p>
 
-<h2 id="step-8211-1">Step &#8211; 1</h2>
+<h2 id="step-1">Step -1</h2>
 
 <p>The first step is to implement the ServletContextListener. Here is a Java class that implements the ServletContextListener interface.</p>
 
-<pre class="width-set:true width:95 width-unit:1 lang:java decode:true">import org.slf4j.Logger;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
 
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
-import javax.servlet.http.*;
+<span class="kn">import</span> <span class="nn">javax.servlet.ServletContextEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.ServletContextListener</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.annotation.WebListener</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.*</span><span class="o">;</span>
 
-import static org.slf4j.LoggerFactory.getLogger;
+<span class="kn">import static</span> <span class="nn">org.slf4j.LoggerFactory.getLogger</span><span class="o">;</span>
 
-/**
- * Created with IntelliJ IDEA.
- * User: sriram
- */
+<span class="cm">/**
+</span><span class="cm"> * Created with IntelliJ IDEA.
+</span><span class="cm"> * User: sriram
+</span><span class="cm"> */</span>
 
-@WebListener
-public class ListenerForAllServletEvents implements ServletContextListener {
+<span class="nd">@WebListener</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ListenerForAllServletEvents</span> <span class="kd">implements</span> <span class="n">ServletContextListener</span> <span class="o">{</span>
 
-    Logger logger = null;
+    <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
-    @Override
-    public void contextInitialized(ServletContextEvent servletContextEvent) {
-        System.setProperty("org.slf4j.simpleLogger.showDateTime","true");
-        System.setProperty("org.slf4j.simpleLogger.defaultLogLevel","info");
-        System.setProperty("org.slf4j.simpleLogger.dateTimeFormat", "yyyy-MM-dd::HH-mm-ss-SSS");
-        logger = getLogger(this.getClass().getName());
-        logger.error("I have hit contextInitialized: "+servletContextEvent.getServletContext().toString());
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">contextInitialized</span><span class="o">(</span><span class="n">ServletContextEvent</span> <span class="n">servletContextEvent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">&#34;org.slf4j.simpleLogger.showDateTime&#34;</span><span class="o">,</span><span class="s">&#34;true&#34;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">&#34;org.slf4j.simpleLogger.defaultLogLevel&#34;</span><span class="o">,</span><span class="s">&#34;info&#34;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">&#34;org.slf4j.simpleLogger.dateTimeFormat&#34;</span><span class="o">,</span> <span class="s">&#34;yyyy-MM-dd::HH-mm-ss-SSS&#34;</span><span class="o">);</span>
+        <span class="n">logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getName</span><span class="o">());</span>
+        <span class="n">logger</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;I have hit contextInitialized: &#34;</span><span class="o">+</span><span class="n">servletContextEvent</span><span class="o">.</span><span class="na">getServletContext</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+    <span class="o">}</span>
 
-    @Override
-    public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        logger. debug("I have hit contextDestroyed.");
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">contextDestroyed</span><span class="o">(</span><span class="n">ServletContextEvent</span> <span class="n">servletContextEvent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">logger</span><span class="o">.</span> <span class="nf">debug</span><span class="o">(</span><span class="s">&#34;I have hit contextDestroyed.&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
 
-}</pre>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
 
-<h2 id="step-8211-2">Step &#8211; 2</h2>
+<h2 id="step-2">Step -2</h2>
 
 <p>The next step is to add an annotation called <em>@WebListener</em>. This is already shown in the above code snippet.</p>
 
